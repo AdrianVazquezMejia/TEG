@@ -1,0 +1,77 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Brea%
+}{%
+Brea%
+}{%
+{\protect \APACyear {2006}}%
+}]{%
+brea5}
+\APACinsertmetastar {%
+brea5}%
+\begin{APACrefauthors}%
+Brea, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2006}.
+\newblock
+\APACrefbtitle {{Cálculo Operacional}} {{Cálculo Operacional}}\
+  (\PrintOrdinal{1ra}\ \BEd).
+\newblock
+\APACaddressPublisher{Caracas}{Escuela de Ingeniería Eléctrica, Universidad
+  Central de Venezuela}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Brigham%
+}{%
+Brigham%
+}{%
+{\protect \APACyear {1974}}%
+}]{%
+brigham1}
+\APACinsertmetastar {%
+brigham1}%
+\begin{APACrefauthors}%
+Brigham, E\BPBI O.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{1974}.
+\newblock
+\APACrefbtitle {{The fast Fourier transform}} {{The fast Fourier transform}}.
+\newblock
+\APACaddressPublisher{Englewood Cliffs, N.J.}{Prentice Hall}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hvattum%
+\ \BBA {} Glover%
+}{%
+Hvattum%
+\ \BBA {} Glover%
+}{%
+{\protect \APACyear {2009}}%
+}]{%
+Hvattum200931}
+\APACinsertmetastar {%
+Hvattum200931}%
+\begin{APACrefauthors}%
+Hvattum, L\BPBI M.%
+\BCBT {}\ \BBA {} Glover, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Finding local optima of high-dimensional functions using
+  direct search methods} {Finding local optima of high-dimensional functions
+  using direct search methods}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{European Journal of Operational Research}{195}{1}{31 -
+  45}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
