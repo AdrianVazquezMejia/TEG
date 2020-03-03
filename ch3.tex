@@ -1,0 +1,11 @@
+\section{Diseño de una red mallada basada en el microcontrolador ESP32}
+
+La red mallada se diseño para una sola red Modbus, por lo que, solo puede existir un maestro y una cantidad de XXX esclavos (Citacion required). Teniendo en consideración lo anterior, se definió la topología de la red mallada; las rutas de comunicación se definieron según el esclavo que el maestro Mosbus esté interrogando. Así, aunque las rutas son estáticas, el enrutamiento de cada nodo varia según una tabla fija de enrutamiento determinada. 
+
+Por otro lado, existen otras características  de comunicación como lo es el estándar del bus serial y la características del mismo. Ya que se usa el estándar RS-485, quedaba por definir la tasa de transmisión. Esta puede variar, por lo que el nodo es configurable y compatible para las tasas de Baudios siguientes: 
+
+Entonces, quedando diferenciadas las dos etapas (la inalambrica y la serial) y además, se consideraron los dos sentidos de la información (desde y hacia el esclavo), para establecer una lógica para el funcionamiento del nodo. 
+
+Cada nodo contemplaron dos sentidos, el primero es si se le introduce la información por el bus serial entonces esta debe transmitirse inalambricamente; y si recibe información inalambricamente entonces debe pasarla a su bus serial o bien debe trasnmitirla a otro nodo.
+
+Cada  nodo debe ser configurable, para así adaptarlos a los entornos, y ya que se transmite el protocolo Modbus se consideran los nodos como esclavos. Es decir, se reservaron identificadores para los nodos para así configurar tanto el enrutamiento como la tasa de trasnmision serial.

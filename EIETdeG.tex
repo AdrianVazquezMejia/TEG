@@ -19,7 +19,6 @@
 
 \usepackage{tocbibind}
 \usepackage{acronym}
-\usepackage{caption2}
 \usepackage{epsfig}
 \usepackage{graphicx}
 %\usepackage{slashbox}
@@ -148,7 +147,7 @@
 \geometry{left=4cm,right=3cm,top=3cm,bottom=3cm}
 \frenchspacing %
 %\raggedright % Sólo para justificar el texto a la izquierda
-\renewcommand{\captionlabeldelim}{.}%
+%\renewcommand{\captionlabeldelim}{.}%
 \setlength{\parindent}{0.7cm}% Espacio de la sangría
 \setlength{\parskip}{14pt plus 1pt minus 1pt}% Separación entre párrafos
 
@@ -281,7 +280,7 @@ equipos de control industrial. \\}
 \noindent%
 \textbf{Tutor Académico: José Alonso. Tesis.
 Caracas, Universidad Central de Venezuela. Facultad de Ingeniería.
-Escuela de Ingeniería Eléctrica. Mención Comunicaciones. Año 2009,
+Escuela de Ingeniería Eléctrica. Mención Electrónica. Año 2020,
 xvii, 144 pp.}
 
 \noindent
@@ -320,24 +319,24 @@ xvii, 144 pp.}
 \chapter*{INTRODUCCIÓN}\label{CAP:intro}
 \setlength{\parskip}{14pt}% Separación entre párrafos
 \addcontentsline{toc}{chapter}{INTRODUCCIÓN}%
-%\markboth{Introducción}{Introducción}%
+\markboth{Introducción}{Introducción}%
 
 \pagenumbering{arabic}%
 \input{ch0.tex}%
 
 %==================================================================
 \chapter{MARCO HISTÓRICO}\label{CAP:hist}
-%\input{marcohistorico.tex}%
+%\input{ch0.tex}%
 
 %==================================================================
 \chapter{MARCO TEÓRICO}\label{CAP:teor}
 %\markboth{Tu Primer Capítulo}{Tu Primer Capítulo}%
-\input{ch1.tex}%
+%\input{ch1.tex}%
 
 %==================================================================
 \chapter{MARCO METODOLÓGICO}\label{CAP:met}
 %\markboth{Tu Segundo Capítulo}{Tu Segundo Capítulo}%
-%\input{ch3.tex}%
+\input{ch3.tex}%
 
 %==================================================================
 \chapter{DESCRIPCIÓN DEL MODELO}\label{CAP:mod}

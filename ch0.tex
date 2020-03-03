@@ -1,16 +1,19 @@
+% Agregar antecedentes
+En el área de la ingeniería eléctrica, las comunicaciones se pueden clasificar en dos grupos: las alámbricas y las inalámbricas. En el primer caso el medio es tangible estando, generalmente, compuesto por varios conductores metálicos o fibra  óptica y en el segundo no hay medio físico. Las comunicaciones inalámbricas se clasifican básicamente según la banda de frecuencia o el estándar que satisface, así las tecnologías IEEE 802.15.1 (bluetooth), IEEE 802.11 (WiFi) y GSM (telefonía celular).
 
+Las tecnologías basadas en el estandar IEEE 802.11, también conocidas como WiFi, han ganado popularidad en el mundo de las comunicaciones proveyendo interconectividad entre clientes (PC, laptops, smartphones) y puntos de acceso. Las redes que usan dicha tecnología se clasifican (según la topología) en centralizadas o descentralizadas dependiendo si la conectividad entre clientes posee como intermediario o no un punto de acceso \cite{article2}.
 
-En este archivo debe escribir su introducción.
+Dentro de las redes descentralizadas tenemos a las redes de topología mallada, donde los clientes están en capacidad de ser, simultáneamente, puntos de acceso brindando servicio a otros clientes y servir de puente a otros nodos. Además, las redes WiFi malladas difieren de las convencionales en que no es obligatorio que todos los nodos estén conectados al nodo central, en su lugar, cada nodo se puede conectar a el nodo vecino. Esto abre la posibilidad de ampliar la cobertura manteniendo la interconectividad de la red \nocite{inproceedings}.
+%ver el autor
 
-De acuerdo a Brea  la transformada de Laplace debe estudiarse como
-una función definida en el campo de los números complejos
-\cite{brea5}.
+Las redes WiFi brindan la posibilidad de que la adquisición de información pueda estar presentes en virtualmente cualquier cosa de manera inalámbrica, poseyendo potencialidad en el monitoreo y control de procesos. No obstante, los inconvenientes de ruido, seguridad y distancia han hecho que se hayan desarrollado arquitecturas que vayan superando estas limitaciones \nocite{inproceedings40}.
 
-Otro mode de referencial es \citep{brea5}
+Aunque el estándar IEEE 802.11s establece las normas generales de la comunicación WiFi mallada  \cite{article1}, todavía es un terreno actualmente se encuentra en exploración, especialmente en los  entornos electromagneticamente ruidosos o congestionados. En el mismo orden de ideas, existen reservas respecto al  manejo de datos críticos o sensibles en un proceso industrial, debido a la confiabilidad y seguridad de los datos\cite{article3}.
 
-El resto del reporte consta de: en el Capítulo \ref{CAP:hist} se
-describe...
+  
+%cita MODBUS organizacion INC
+Modbus es el protocolo de comunicación industrial estándar de facto desde 1979 \cite{online}. Al emplear un protocolo Modbus  se establece un sistema de comunicación de tipo maestro/esclavo. En este tipo de sistemas un nodo principal o maestro envía una solicitud específica a un esclavo y este genera la respuesta. Los esclavos no transmiten datos sin una instrucción previa y no se comunican con ningún otro esclavo. En la capa física del sistema de comunicación, el protocolo Modbus puede emplear diversas interfaces físicas, entre las que se encuentras la RS-485 y RS-232, en la cual la interfaz TIA/EIA-485 (RS-485) de dos cables es la más común \nocite{article40}.
 
-En el trabajo se emplea el enfoque de \cite{brigham1}
+En el ámbito industrial la reducción de costos es siempre una meta y las redes inalámbricas podrían ser una alternativa frente a las alámbricas, en las que las grandes distancias cubiertas por conductores representan un costo relativamente elevado \cite{article3}. Así mismo, los conductores instalados son vulnerables a hurtos, lo que se traduce en pérdidas económicas para las industrias.
 
-De acuerdo a la ecuación
+Tomando en cuenta lo anterior, se propone el diseño de una red inalámbrica WiFi mallada con una comunicación basada en el protocolo Modbus orientada a la implentación a un entorno industrial, cuyos nodos estarán constituidos por microcontroladores ESP32. Este trabajo tiene por finalidad presentar la metodología para el diseño e implementación de la red , además se presentan los detalles del planteamiento del problema y la factibilidad de proyecto así como el cronograma para la ejecución de actividades para lograr los objetivos planteados \nocite{article41}.
