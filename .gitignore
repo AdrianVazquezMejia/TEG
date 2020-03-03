@@ -1,8 +1,8 @@
-.aux
-.gz
-.log
-.cls
-.log
-.idx
-.blg
-.toc
+*.aux
+*.gz
+*.log
+*.cls
+*.log
+*.idx
+*.blg
+*.toc
