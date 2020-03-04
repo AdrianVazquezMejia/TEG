@@ -8,4 +8,12 @@ Entonces, quedando diferenciadas las dos etapas (la inalambrica y la serial) y a
 
 Cada nodo contemplaron dos sentidos, el primero es si se le introduce la información por el bus serial entonces esta debe transmitirse inalambricamente; y si recibe información inalambricamente entonces debe pasarla a su bus serial o bien debe trasnmitirla a otro nodo.
 
-Cada  nodo debe ser configurable, para así adaptarlos a los entornos, y ya que se transmite el protocolo Modbus se consideran los nodos como esclavos. Es decir, se reservaron identificadores para los nodos para así configurar tanto el enrutamiento como la tasa de trasnmision serial.
+Cada  nodo debe ser configurable respecto a su identificador, tabla de enrutamiento y  tasa de baudios de la interfaz serial, para así adaptarlos a los entornos de comunicación industriales. Sabiendo que se transmite el protocolo Modbus entoinces se consideró conveniente considerar a los nodos como esclavos en el sistema. Se reservaron identificadores para los nodos, lo que deja menos cantidad de identificadores de esclavos disponibles para la red en la que se implemente la red mallada.
+
+La comunicación entre los nodos es unicast para así aprovechar las ventajas que esto implica como lo son encriptación, respuesta de agradecimiento y ahorro de (sobrecarga). Para tener mayor cobertura, los esclavos pueden estar a mas de un nodo intermedio del nodo que posee el maestro y la red se diseño para poseyera la capacidad de reenviar dicha información  convenientemente.
+
+Definidas estar características de funcionamiento, se investigaron las librerías que el microcontrolador ESP32 poseía para hacer tales funciones. Se encontraros dos tipos de redes WiFi descritos por Espressif: mesh y espnow. Para elegir cual usar se tomó en cuenta la flexibilidad, descentralización, seguridad y alcance; pues bien son las cualidades que entraban en concordancia para la elaboración de la arquitectura de red descrita anteriormente.
+
+\section{Implementar el módulo del programa para el manejo del protocolo Modbus en el bus RS-485.}
+
+Como se  trabajó en en microcontrolador ESP32, los programas elaborados son administrados por un sistema operativo en tiempo real (RTOS). Al mismo tiempo, el diseño de los programas contempló todas las características que un RTOS implica. Esto se traduce en un paradigma de programación basado en tareas, eventos, colas, etc.
