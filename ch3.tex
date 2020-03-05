@@ -12,8 +12,20 @@ Cada  nodo debe ser configurable respecto a su identificador, tabla de enrutamie
 
 La comunicación entre los nodos es unicast para así aprovechar las ventajas que esto implica como lo son encriptación, respuesta de agradecimiento y ahorro de (sobrecarga). Para tener mayor cobertura, los esclavos pueden estar a mas de un nodo intermedio del nodo que posee el maestro y la red se diseño para poseyera la capacidad de reenviar dicha información  convenientemente.
 
-Definidas estar características de funcionamiento, se investigaron las librerías que el microcontrolador ESP32 poseía para hacer tales funciones. Se encontraros dos tipos de redes WiFi descritos por Espressif: mesh y espnow. Para elegir cual usar se tomó en cuenta la flexibilidad, descentralización, seguridad y alcance; pues bien son las cualidades que entraban en concordancia para la elaboración de la arquitectura de red descrita anteriormente.
+Definidas estar características de funcionamiento, se investigaron las librerías que el microcontrolador ESP32 poseía para hacer tales funciones. Se encontraros dos tipos de redes WiFi descritos por Espressif: mesh y espnow. Para elegir cual usar se tomó en cuenta la flexibilidad, descentralización, seguridad y alcance; pues bien son las cualidades que entraban en concordancia para la elaboración de la arquitectura de red anteriormente descrita.
 
 \section{Implementar el módulo del programa para el manejo del protocolo Modbus en el bus RS-485.}
 
 Como se  trabajó en en microcontrolador ESP32, los programas elaborados son administrados por un sistema operativo en tiempo real (RTOS). Al mismo tiempo, el diseño de los programas contempló todas las características que un RTOS implica. Esto se traduce en un paradigma de programación basado en tareas, eventos, colas, etc.
+
+Para manejar el protocoló Modbus en el bus RS-485 se creó una tarea especificamente para la recepción de los datos provenientes del UART conectado al chip MAX485.  Para contemplar los casos en los que los datos pudiesen estar corrompidos u otra falla en la comunicación serial, la recepción se baso en eventos. Por otro lado se agrego una cola para controlar el estado de la tarea del uart, para que no este activa mientras el bus serial esta ocioso, evitando así que consuma recursos innecesariamente. 
+
+Si los datos son recibidos bien se debe evaluar si la trama es una respuesta, una trama para el nodo en cuestión o si se debe enviar a otro nodo. Es por eso que se agrega un \emph{case} del lenguaje C para ello. La evaluación se baso en la tabla de enrutamiento, pues de allí deriva la lógica asociada a la acción.
+
+Si la trama recibida serialmente se debe enviar a otro nodo inalambricamente entonces los datos recibidos son escritos en una cola que se comunica con la tarea asociada a la transmisión WiFi.
+
+En la dirección opuesta, es decir, cuando la información es transmitia desde el uart, entonces este procesos es realizado desde una instrucción específica en las tareas que esto sea requerido. Por ejemplo, cuando la información recibida mediante WiFi sea para un nodo que este conectado a mi bus serial, en cuyo caso en la misma tarea de recepción inalambrica es llamada la instrucción de escritura hacia el uart.
+
+Otro aspecto que se consideró fue que la tasa de baudios fuese configurable. Para lograr esto, el la función de configuración del uart se deja como parámetro un valor que está asociado a la tasa de baudios.  Si se recibe la orden para cambiar la velocidad del uart, dicha función del configuración del uart es llamada dandole como parámetro el valor asocidado a la nueva tasa de baudios.
+
+\section{?}
