@@ -26,6 +26,27 @@ Si la trama recibida serialmente se debe enviar a otro nodo inalambricamente ent
 
 En la dirección opuesta, es decir, cuando la información es transmitia desde el uart, entonces este procesos es realizado desde una instrucción específica en las tareas que esto sea requerido. Por ejemplo, cuando la información recibida mediante WiFi sea para un nodo que este conectado a mi bus serial, en cuyo caso en la misma tarea de recepción inalambrica es llamada la instrucción de escritura hacia el uart.
 
-Otro aspecto que se consideró fue que la tasa de baudios fuese configurable. Para lograr esto, el la función de configuración del uart se deja como parámetro un valor que está asociado a la tasa de baudios.  Si se recibe la orden para cambiar la velocidad del uart, dicha función del configuración del uart es llamada dandole como parámetro el valor asocidado a la nueva tasa de baudios.
+Otro aspecto que se consideró fue que la tasa de baudios fuese configurable	. Para lograr esto, el la función de configuración del uart se deja como parámetro un valor que está asociado a la tasa de baudios.  Si se recibe la orden para cambiar la velocidad del uart, dicha función del configuración del uart es llamada dandole como parámetro el valor asocidado a la nueva tasa de baudios.
 
-\section{?}
+\section{Implementar el programa de la red diseñada que soporte la transmisión del protocolo Modbus}
+
+Para la implementación del programa se diseño una estructura basada en el diseño de la red. Esto quiere decir, que basado tareas que se ejecutan secuencialmente según la información es introducida al nodo. Así para se soporte la transmisión del protocolo Modbus basta enviar en la sección de carga la trama correspondiente. Para lograr esto se debe tener en cuenta que la librería usada requiere que se cubran ciertos parámetros.
+
+La dirección MAC del nodo destino, el buffer de datos y la longitud de la trama son los campos obligatorios. Sin embargo, para la comunicación unicast se necesita que adicionalmente el punto destino este registrado.
+
+Cumplidos estos requisitos el protocolo Modbus es exitosamente  soportado a nivel inalámbrico, sin más limitaciones que las definidas por la distancia entre los nodos.
+
+\section{Diseñar el circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32}
+
+El microcontrolador ESP32 no posee periférico de comunicación RS-485 por lo que se le agregó al circuito el chip MAX3485 para obtener dicha capacitad usando el uart. Adicionamente se colocó una resistecia de pull-up en el receptor del uart ya que cuando se está transmitiendo el R0 del MAX3485 se coloca en alta impedancia, dejando el receptor del uart en un comportamiento indeterminado (si no tuviese el pull-up). Cabe recordar el el transmisor del uart en estado ocioso posee nivel lógico alto.
+
+Por su puesto el microcontrolador en su encapsulado WROM-32, la cual se tomó por disponibilidad. Así mismo, se agregaron pin header en los pines necesarios para la programación del microcontraldor por los son el GPIO 0, el enable y los I/O del UART0. 
+
+Considerando que en un ámbito industrial es común tener presente la tensión de 24VDC, entonces se uso para la alimentación un convertidor DC/DC. Con la salida regulada permite que se pueda alimentar desde 24 v a 5 V. En caso de que este disponible solo la tensión de la red, se podría usar una fuente de 120VAC/ 5VDC muy comunes en el mercado.
+
+Para diseñar la topolgía se tomó en cuenta que disposión física de los elementos del circuito en el circuito impreso fuese el más optimo; aprovechando las dos capas y la dispocision de la fuente en la capa  posterior al MCU. 
+
+La capa 1 posee el MCU y el chip MAX485 y, la capa 2 los bloques terminales para la alimentación, la entrada de datos del bus RS-485, los pin header de programación y los de la colocación del chip DC/DC. De esta manera se logra la menor interferencia sobre el areá de antena del MCU. 
+
+Para el trazado de las pistas y vias no se tuvieron más limitación mas que las de área prohibida de lejanía de la antena y las propias de diseño de circuitos impresos.
+
