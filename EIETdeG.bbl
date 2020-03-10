@@ -1,77 +1,117 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
-Brea%
+Cheng%
+, Yang%
+\BCBL {}\ \BBA {} Huachun%
 }{%
-Brea%
-}{%
-{\protect \APACyear {2006}}%
+Cheng%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
 }]{%
-brea5}
+article3}
 \APACinsertmetastar {%
-brea5}%
+article3}%
 \begin{APACrefauthors}%
-Brea, E.%
+Cheng, Y.%
+, Yang, D.%
+\BCBL {}\ \BBA {} Huachun, Z.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYear{2006}.
+\APACrefYearMonthDay{2018}{02}{}.
 \newblock
-\APACrefbtitle {{Cálculo Operacional}} {{Cálculo Operacional}}\
-  (\PrintOrdinal{1ra}\ \BEd).
+{\BBOQ}\APACrefatitle {Det-LB: A Load Balancing Approach in 802.11 Wireless
+  Networks for Industrial Soft Real-Time Applications} {Det-lb: A load
+  balancing approach in 802.11 wireless networks for industrial soft real-time
+  applications}.{\BBCQ}
 \newblock
-\APACaddressPublisher{Caracas}{Escuela de Ingeniería Eléctrica, Universidad
-  Central de Venezuela}.
+\APACjournalVolNumPages{IEEE Access}{PP}{}{1-1}.
+\newblock
+\begin{APACrefDOI} \doi{10.1109/ACCESS.2018.2802541} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Brigham%
-}{%
-Brigham%
-}{%
-{\protect \APACyear {1974}}%
+Hiertz%
+\ \protect \BOthers {.}}{%
+Hiertz%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2010}}%
 }]{%
-brigham1}
+article1}
 \APACinsertmetastar {%
-brigham1}%
+article1}%
 \begin{APACrefauthors}%
-Brigham, E\BPBI O.%
+Hiertz, G.%
+, Denteneer, T.%
+, Max, S.%
+, Taori, R.%
+, Cardona, J.%
+, Berlemann, L.%
+\BCBL {}\ \BBA {} Walke, B.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYear{1974}.
+\APACrefYearMonthDay{2010}{03}{}.
 \newblock
-\APACrefbtitle {{The fast Fourier transform}} {{The fast Fourier transform}}.
+{\BBOQ}\APACrefatitle {IEEE 802.11s: the WLAN mesh standard} {Ieee 802.11s: the
+  wlan mesh standard}.{\BBCQ}
 \newblock
-\APACaddressPublisher{Englewood Cliffs, N.J.}{Prentice Hall}.
+\APACjournalVolNumPages{Wireless Communications, IEEE}{17}{}{104 - 111}.
+\newblock
+\begin{APACrefDOI} \doi{10.1109/MWC.2010.5416357} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Hvattum%
-\ \BBA {} Glover%
+Modbus~Organization%
 }{%
-Hvattum%
-\ \BBA {} Glover%
+Modbus~Organization%
 }{%
-{\protect \APACyear {2009}}%
+{\protect \APACyear {2017}}%
 }]{%
-Hvattum200931}
+online}
 \APACinsertmetastar {%
-Hvattum200931}%
+online}%
 \begin{APACrefauthors}%
-Hvattum, L\BPBI M.%
-\BCBT {}\ \BBA {} Glover, F.%
+Modbus~Organization, I.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2009}{}{}.
+\APACrefYearMonthDay{2017}{Abril}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Finding local optima of high-dimensional functions using
-  direct search methods} {Finding local optima of high-dimensional functions
-  using direct search methods}.{\BBCQ}
+\APACrefbtitle {Modbus application protocol specification.} {Modbus application
+  protocol specification.}
 \newblock
-\APACjournalVolNumPages{European Journal of Operational Research}{195}{1}{31 -
-  45}.
+\APACrefnote{[Internet; accedido el 25 de Octubre del 2019] Disponible en:
+  \url{http://modbus.org/docs/Modbus_Application_Protocol_V1_1b3.pdf}}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Sharma%
+\ \BBA {} Singh%
+}{%
+Sharma%
+\ \BBA {} Singh%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+article2}
+\APACinsertmetastar {%
+article2}%
+\begin{APACrefauthors}%
+Sharma, P.%
+\BCBT {}\ \BBA {} Singh, G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{10}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Comparison of Wi-Fi IEEE 802.11 Standards Relating to
+  Media Access Control Protocols} {Comparison of wi-fi ieee 802.11 standards
+  relating to media access control protocols}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{International Journal of Computer Science and
+  Information Security,}{14}{}{856-862}.
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}

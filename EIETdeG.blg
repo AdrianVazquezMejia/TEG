@@ -1,4 +1,62 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: EIETdeG.aux
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: EIETdeG.aux
 The style file: apacite.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: biblioteca.bib
+Database file #2: referencias.bib
+Warning--I didn't find a database entry for "inproceedings"
+Warning--I didn't find a database entry for "inproceedings40"
+Warning--I didn't find a database entry for "article40"
+Warning--I didn't find a database entry for "article41"
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
+You've used 4 entries,
+            6951 wiz_defined-function locations,
+            1302 strings with 11548 characters,
+and the built_in function-call counts, 8017 in all, are:
+= -- 935
+> -- 70
+< -- 403
++ -- 404
+- -- 8
+* -- 540
+:= -- 1564
+add.period$ -- 16
+call.type$ -- 4
+change.case$ -- 76
+chr.to.int$ -- 0
+cite$ -- 8
+duplicate$ -- 212
+empty$ -- 316
+format.name$ -- 128
+if$ -- 1457
+int.to.chr$ -- 0
+int.to.str$ -- 12
+missing$ -- 0
+newline$ -- 108
+num.names$ -- 32
+pop$ -- 149
+preamble$ -- 1
+purify$ -- 24
+quote$ -- 0
+skip$ -- 469
+stack$ -- 0
+substring$ -- 431
+swap$ -- 127
+text.length$ -- 16
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 320
+warning$ -- 0
+while$ -- 51
+width$ -- 0
+write$ -- 135
+(There were 4 warnings)

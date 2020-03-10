@@ -1,8 +1,10 @@
+\section{Documentar el funcionamiento de las redes WiFi malladas}
+
 \section{Diseño de una red mallada basada en el microcontrolador ESP32}
 
-La red mallada se diseño para una sola red Modbus, por lo que, solo puede existir un maestro y una cantidad de XXX esclavos (Citacion required). Teniendo en consideración lo anterior, se definió la topología de la red mallada; las rutas de comunicación se definieron según el esclavo que el maestro Mosbus esté interrogando. Así, aunque las rutas son estáticas, el enrutamiento de cada nodo varia según una tabla fija de enrutamiento determinada. 
+La red mallada se diseño para una sola red Modbus, por lo que, solo puede existir un maestro y una cantidad de XXX esclavos (Citacion required). Teniendo en consideración lo anterior, se definió la topología de la red mallada; las rutas de comunicación se determinan según el esclavo que el maestro Modbus esté interrogando. Así, aunque las rutas sean estáticas, el enrutamiento de cada nodo variaría según una tabla de enrutamiento determinada. 
 
-Por otro lado, existen otras características  de comunicación como lo es el estándar del bus serial y la características del mismo. Ya que se usa el estándar RS-485, quedaba por definir la tasa de transmisión. Esta puede variar, por lo que el nodo es configurable y compatible para las tasas de Baudios siguientes: 
+Por otro lado, existen otras características  de comunicación, como lo es el estándar del bus serial y la características del mismo. Ya que se usa el estándar RS-485, quedaba por definir la tasa de transmisión. Esta  variar, por lo que el nodo es configurable y compatible para las tasas de Baudios siguientes: 
 
 Entonces, quedando diferenciadas las dos etapas (la inalambrica y la serial) y además, se consideraron los dos sentidos de la información (desde y hacia el esclavo), para establecer una lógica para el funcionamiento del nodo. 
 
@@ -50,3 +52,6 @@ La capa 1 posee el MCU y el chip MAX485 y, la capa 2 los bloques terminales para
 
 Para el trazado de las pistas y vias no se tuvieron más limitación mas que las de área prohibida de lejanía de la antena y las propias de diseño de circuitos impresos.
 
+\section{Implementar la red mallada diseñada.}
+
+\section{Analizar el rendimiento de la red de acuerdo a variaciones en los parámetros de transmisión de datos}
