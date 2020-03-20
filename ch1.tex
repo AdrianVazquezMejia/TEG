@@ -1,44 +1,60 @@
+En este capítulo se tratarán los fundamentos del funcionamientos de las redes WiFi malladas, protocolo Modbus y características de sofware y hardware del microcontrolador ESP32. 
+
+\section{Fundamentos de las redes WiFi malladas}
 
 
-Un ejemplo de tabla es
+Una red WiFi mallada es una red inalámbrica establecida en la banda establecidas para comunicación WiFi (sea 2,4 GHz o 5GHz), donde hay estaciones que soportan comunicación de multiples saltos (multi-hop) para transferir información en la red. Así mismo se tiene que, el enrutamiento y la capacidades de reenvios de datos residen en la capa de Control de Acceso Medio (MAC) \cite{article1}.
 
-\begin{table}
-  \centering
-\begin{tabular}{llr}
- \toprule
-\multicolumn{2}{c}{Item} \\
-\cmidrule(r){1-2}
-Animal & Description & Price (\$) \\
-\midrule
-Gnat  & per gram & 13.65 \\
-      & each     &  0.01 \\
-Gnu   & stuffed  & 92.50 \\
-Emu   & stuffed  & 33.33 \\
-Armadillo & frozen & 8.99 \\
-\bottomrule
-\end{tabular}
-
-  \caption{Otra tabla}\label{Tab:otra}
-\end{table}
+%imagen de una red mallada.
 
 
-Según \cite{Hvattum200931}
 
 
-\begin{table}
-  \centering
-  \caption{Ejemplo}\label{Tab:producion}
-\begin{tabular}{llr}
-\toprule
-\multicolumn{2}{c}{Item} \\
-\cmidrule(r){1-2}
-Animal & Description & Price (\$) \\
-\midrule
-Gnat  & per gram & 13.65 \\
-      & each     &  0.01 \\
-Gnu   & stuffed  & 92.50 \\
-Emu   & stuffed  & 33.33 \\
-Armadillo & frozen & 8.99 \\
-\bottomrule
-\end{tabular}
-\end{table}
+
+
+
+
+%
+%
+%Un ejemplo de tabla es
+%
+%\begin{table}
+%  \centering
+%\begin{tabular}{llr}
+% \toprule
+%\multicolumn{2}{c}{Item} \\
+%\cmidrule(r){1-2}
+%Animal & Description & Price (\$) \\
+%\midrule
+%Gnat  & per gram & 13.65 \\
+%      & each     &  0.01 \\
+%Gnu   & stuffed  & 92.50 \\
+%Emu   & stuffed  & 33.33 \\
+%Armadillo & frozen & 8.99 \\
+%\bottomrule
+%\end{tabular}
+%
+%  \caption{Otra tabla}\label{Tab:otra}
+%\end{table}
+%
+%
+%Según \cite{Hvattum200931}
+%
+%
+%\begin{table}
+%  \centering
+%  \caption{Ejemplo}\label{Tab:producion}
+%\begin{tabular}{llr}
+%\toprule
+%\multicolumn{2}{c}{Item} \\
+%\cmidrule(r){1-2}
+%Animal & Description & Price (\$) \\
+%\midrule
+%Gnat  & per gram & 13.65 \\
+%      & each     &  0.01 \\
+%Gnu   & stuffed  & 92.50 \\
+%Emu   & stuffed  & 33.33 \\
+%Armadillo & frozen & 8.99 \\
+%\bottomrule
+%\end{tabular}
+%\end{table}
