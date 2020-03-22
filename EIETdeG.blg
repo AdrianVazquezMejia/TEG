@@ -13,50 +13,52 @@ Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: biblioteca.bib
 Database file #2: referencias.bib
+Database file #3: bibliografia.bib
 Warning--I didn't find a database entry for "inproceedings"
 Warning--I didn't find a database entry for "inproceedings40"
 Warning--I didn't find a database entry for "article40"
 Warning--I didn't find a database entry for "article41"
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-You've used 4 entries,
+Warning--No journal in MACen
+You've used 8 entries,
             6951 wiz_defined-function locations,
-            1302 strings with 11548 characters,
-and the built_in function-call counts, 8017 in all, are:
-= -- 935
-> -- 70
-< -- 403
-+ -- 404
-- -- 8
-* -- 540
-:= -- 1564
-add.period$ -- 16
-call.type$ -- 4
-change.case$ -- 76
+            1323 strings with 12028 characters,
+and the built_in function-call counts, 14558 in all, are:
+= -- 1774
+> -- 117
+< -- 679
++ -- 654
+- -- 16
+* -- 912
+:= -- 2705
+add.period$ -- 34
+call.type$ -- 8
+change.case$ -- 150
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 212
-empty$ -- 316
-format.name$ -- 128
-if$ -- 1457
+cite$ -- 17
+duplicate$ -- 350
+empty$ -- 603
+format.name$ -- 184
+if$ -- 2765
 int.to.chr$ -- 0
-int.to.str$ -- 12
+int.to.str$ -- 24
 missing$ -- 0
-newline$ -- 108
-num.names$ -- 32
-pop$ -- 149
+newline$ -- 198
+num.names$ -- 64
+pop$ -- 264
 preamble$ -- 1
-purify$ -- 24
+purify$ -- 46
 quote$ -- 0
-skip$ -- 469
+skip$ -- 999
 stack$ -- 0
-substring$ -- 431
-swap$ -- 127
-text.length$ -- 16
+substring$ -- 721
+swap$ -- 219
+text.length$ -- 37
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 320
-warning$ -- 0
-while$ -- 51
+type$ -- 704
+warning$ -- 1
+while$ -- 78
 width$ -- 0
-write$ -- 135
-(There were 4 warnings)
+write$ -- 233
+(There were 5 warnings)

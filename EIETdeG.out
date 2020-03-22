@@ -6,20 +6,27 @@
 \BOOKMARK [0][-]{chapter*.6}{INTRODUCCI\323N}{}% 6
 \BOOKMARK [0][-]{chapter.1}{MARCO HIST\323RICO}{}% 7
 \BOOKMARK [0][-]{chapter.2}{MARCO TE\323RICO}{}% 8
-\BOOKMARK [0][-]{chapter.3}{MARCO METODOL\323GICO}{}% 9
-\BOOKMARK [1][-]{section.3.1}{3.1 Documentar el funcionamiento de las redes WiFi malladas}{chapter.3}% 10
-\BOOKMARK [1][-]{section.3.2}{3.2 Dise\361o de una red mallada basada en el microcontrolador ESP32}{chapter.3}% 11
-\BOOKMARK [1][-]{section.3.3}{3.3 Implementar el m\363dulo del programa para el manejo del protocolo Modbus en el bus RS-485.}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.4}{3.4 Implementar el programa de la red dise\361ada que soporte la transmisi\363n del protocolo Modbus}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.5}{3.5 Dise\361ar el circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32}{chapter.3}% 14
-\BOOKMARK [1][-]{section.3.6}{3.6 Implementar la red mallada dise\361ada.}{chapter.3}% 15
-\BOOKMARK [1][-]{section.3.7}{3.7 Analizar el rendimiento de la red de acuerdo a variaciones en los par\341metros de transmisi\363n de datos}{chapter.3}% 16
-\BOOKMARK [0][-]{chapter.4}{DESCRIPCI\323N DEL MODELO}{}% 17
-\BOOKMARK [0][-]{chapter.5}{PRUEBAS EXPERIMENTALES}{}% 18
-\BOOKMARK [0][-]{chapter.6}{RESULTADOS}{}% 19
-\BOOKMARK [0][-]{chapter.7}{CONCLUSIONES}{}% 20
-\BOOKMARK [0][-]{chapter.8}{RECOMENDACIONES}{}% 21
-\BOOKMARK [0][-]{appendix.Alph1}{T\315TULO DEL ANEXO}{}% 22
-\BOOKMARK [0][-]{appendix.Alph2}{T\315TULO DEL ANEXO}{}% 23
-\BOOKMARK [0][-]{appendix.Alph3}{T\315TULO DEL ANEXO}{}% 24
-\BOOKMARK [0][-]{appendix*.7}{REFERENCIAS}{}% 25
+\BOOKMARK [1][-]{section.2.1}{2.1 Fundamentos de las redes WiFi malladas}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.2}{2.2 La Referencia del Modelo OSI}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 La capa F\355sica}{section.2.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 La capa de v\355nculo de datos}{section.2.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.3}{2.2.3 La capa de red}{section.2.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.4}{2.2.4 La capa de transporte}{section.2.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.5}{2.2.5 ?}{section.2.2}% 15
+\BOOKMARK [0][-]{chapter.3}{MARCO METODOL\323GICO}{}% 16
+\BOOKMARK [1][-]{section.3.1}{3.1 Documentar el funcionamiento de las redes WiFi malladas}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.2}{3.2 Dise\361o de una red mallada basada en el microcontrolador ESP32}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.3}{3.3 Implementar el m\363dulo del programa para el manejo del protocolo Modbus en el bus RS-485.}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.4}{3.4 Implementar el programa de la red dise\361ada que soporte la transmisi\363n del protocolo Modbus}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.5}{3.5 Dise\361ar el circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.6}{3.6 Implementar la red mallada dise\361ada.}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.7}{3.7 Analizar el rendimiento de la red de acuerdo a variaciones en los par\341metros de transmisi\363n de datos}{chapter.3}% 23
+\BOOKMARK [0][-]{chapter.4}{DESCRIPCI\323N DEL MODELO}{}% 24
+\BOOKMARK [0][-]{chapter.5}{PRUEBAS EXPERIMENTALES}{}% 25
+\BOOKMARK [0][-]{chapter.6}{RESULTADOS}{}% 26
+\BOOKMARK [0][-]{chapter.7}{CONCLUSIONES}{}% 27
+\BOOKMARK [0][-]{chapter.8}{RECOMENDACIONES}{}% 28
+\BOOKMARK [0][-]{appendix.Alph1}{T\315TULO DEL ANEXO}{}% 29
+\BOOKMARK [0][-]{appendix.Alph2}{T\315TULO DEL ANEXO}{}% 30
+\BOOKMARK [0][-]{appendix.Alph3}{T\315TULO DEL ANEXO}{}% 31
+\BOOKMARK [0][-]{appendix*.7}{REFERENCIAS}{}% 32

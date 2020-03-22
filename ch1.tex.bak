@@ -19,7 +19,7 @@ Una red WiFi mallada es  establecida en la banda para comunicación WiFi (sea 2,4
 
 La capa MAC administra el acceso al medio compartido, proyendo sincronización entre diferentes nodos para permitir la transimisión inalambrica. Dicha incronización se convierte cada vez más importante tanto el metodo de acceso es más complejo. Como un ejemplo, sincronización  puede ser necesaria entre nodos de un sistema que emplee el un espectro abierto. Como otro ejemplo, nodos individuales puediesen necesitar permiso de un controlador en una red inalámbrica para transmitir en un canal dado. La capa MAC administra las negociaciones con un nodo de control para el acceso.
 
-Las funciones específicas que estan encapsuladas en la capa MAC, varian de un protocolo a otro. Estas funciones incluyen, pero no estan limitadas a, técnicas de acceso múltiple, sincronización un medio abierto,  y correccción de errores. \cite{inbook}
+Las funciones específicas que estan encapsuladas en la capa MAC, varian de un protocolo a otro. Estas funciones incluyen, pero no estan limitadas a, técnicas de acceso múltiple, sincronización un medio abierto,  y correccción de errores. \nocite{inbook}
 
 \begin{figure}[H]
 \centering
@@ -90,7 +90,7 @@ La capa de red tiene que lidiar con problemas relacionados con las diferentes ar
  Ña capa de transporte es la primera capa fin-a-fin  de la pila. En las capas más bajas, la intección real no necesitaba estar entre los sistemasa de de fuente y destino. Enrutadores o sistemas intermedios podian ser parte de la transacción. La interacción en esta capa, sin embargo, es siempre entre puntos finales.
  
  El control de flujo juega un rol importante en la capa de transporte (Así como en las otras capas). 
-
+ \subsection{?}
  
  
 

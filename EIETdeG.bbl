@@ -1,6 +1,54 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Al-Husainy%
+}{%
+Al-Husainy%
+}{%
+{\protect \APACyear {2013}}%
+}]{%
+MACen}
+\APACinsertmetastar {%
+MACen}%
+\begin{APACrefauthors}%
+Al-Husainy, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{11}{}.
+\newblock
+{\BBOQ}\APACrefatitle {MAC Address as a Key for Data Encryption} {Mac address
+  as a key for data encryption}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{}{}{}{1}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Bahr%
+}{%
+Bahr%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+bahr}
+\APACinsertmetastar {%
+bahr}%
+\begin{APACrefauthors}%
+Bahr, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{10}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Update on the Hybrid Wireless Mesh Protocol of IEEE
+  802.11s} {Update on the hybrid wireless mesh protocol of ieee
+  802.11s}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Siemens Corporate Technology, Information and
+  Communications}{}{}{1}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Cheng%
 , Yang%
 \BCBL {}\ \BBA {} Huachun%
@@ -29,6 +77,30 @@ Cheng, Y.%
 \APACjournalVolNumPages{IEEE Access}{PP}{}{1-1}.
 \newblock
 \begin{APACrefDOI} \doi{10.1109/ACCESS.2018.2802541} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Chew%
+}{%
+Chew%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+inbook}
+\APACinsertmetastar {%
+inbook}%
+\begin{APACrefauthors}%
+Chew, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{10}{}.
+\newblock
+{\BBOQ}\APACrefatitle {MAC Layer} {Mac layer}.{\BBCQ}
+\newblock
+\BIn{} (\BPG~139-171).
+\newblock
+\begin{APACrefDOI} \doi{10.1002/9781119260608.ch5} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -84,6 +156,31 @@ Modbus~Organization, I.%
 \newblock
 \APACrefnote{[Internet; accedido el 25 de Octubre del 2019] Disponible en:
   \url{http://modbus.org/docs/Modbus_Application_Protocol_V1_1b3.pdf}}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Rifki~Muhendra%
+}{%
+Rifki~Muhendra%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+ScienceDirect}
+\APACinsertmetastar {%
+ScienceDirect}%
+\begin{APACrefauthors}%
+Rifki~Muhendra, M\BPBI B., Aditya~Rinaldi.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Development of WiFi Mesh Infrastructure for Internet of
+  Things applications} {Development of wifi mesh infrastructure for internet of
+  things applications}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Engineering Physics International Conference, EPIC
+  2016}{}{}{331}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
