@@ -12,21 +12,35 @@
 \BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 La capa de v\355nculo de datos}{section.2.2}% 12
 \BOOKMARK [2][-]{subsection.2.2.3}{2.2.3 La capa de red}{section.2.2}% 13
 \BOOKMARK [2][-]{subsection.2.2.4}{2.2.4 La capa de transporte}{section.2.2}% 14
-\BOOKMARK [2][-]{subsection.2.2.5}{2.2.5 ?}{section.2.2}% 15
-\BOOKMARK [0][-]{chapter.3}{MARCO METODOL\323GICO}{}% 16
-\BOOKMARK [1][-]{section.3.1}{3.1 Documentar el funcionamiento de las redes WiFi malladas}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.2}{3.2 Dise\361o de una red mallada basada en el microcontrolador ESP32}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.3}{3.3 Implementar el m\363dulo del programa para el manejo del protocolo Modbus en el bus RS-485.}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.4}{3.4 Implementar el programa de la red dise\361ada que soporte la transmisi\363n del protocolo Modbus}{chapter.3}% 20
-\BOOKMARK [1][-]{section.3.5}{3.5 Dise\361ar el circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32}{chapter.3}% 21
-\BOOKMARK [1][-]{section.3.6}{3.6 Implementar la red mallada dise\361ada.}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.7}{3.7 Analizar el rendimiento de la red de acuerdo a variaciones en los par\341metros de transmisi\363n de datos}{chapter.3}% 23
-\BOOKMARK [0][-]{chapter.4}{DESCRIPCI\323N DEL MODELO}{}% 24
-\BOOKMARK [0][-]{chapter.5}{PRUEBAS EXPERIMENTALES}{}% 25
-\BOOKMARK [0][-]{chapter.6}{RESULTADOS}{}% 26
-\BOOKMARK [0][-]{chapter.7}{CONCLUSIONES}{}% 27
-\BOOKMARK [0][-]{chapter.8}{RECOMENDACIONES}{}% 28
-\BOOKMARK [0][-]{appendix.Alph1}{T\315TULO DEL ANEXO}{}% 29
-\BOOKMARK [0][-]{appendix.Alph2}{T\315TULO DEL ANEXO}{}% 30
-\BOOKMARK [0][-]{appendix.Alph3}{T\315TULO DEL ANEXO}{}% 31
-\BOOKMARK [0][-]{appendix*.7}{REFERENCIAS}{}% 32
+\BOOKMARK [2][-]{subsection.2.2.5}{2.2.5 Capa de sesi\363n}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.6}{2.2.6 La capa de presentaci\363n}{section.2.2}% 16
+\BOOKMARK [2][-]{subsection.2.2.7}{2.2.7 La capa de aplicaci\363n}{section.2.2}% 17
+\BOOKMARK [1][-]{section.2.3}{2.3 Funcionamiento de las redes WiFi malladas}{chapter.2}% 18
+\BOOKMARK [2][-]{subsection.2.3.1}{2.3.1 Pior Lech and Przemyslaw Wlodarski}{section.2.3}% 19
+\BOOKMARK [2][-]{subsection.2.3.2}{2.3.2 Yujun Cheng, Dong Yang y Huachun Zhou}{section.2.3}% 20
+\BOOKMARK [2][-]{subsection.2.3.3}{2.3.3 El protocolo ESP-MESH de Espressif}{section.2.3}% 21
+\BOOKMARK [1][-]{section.2.4}{2.4 Protocolo MODBUS}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.4.1}{2.4.1 Modelo de datos MODBUS}{section.2.4}% 23
+\BOOKMARK [1][-]{section.2.5}{2.5 Microcontrolador ESP32}{chapter.2}% 24
+\BOOKMARK [2][-]{subsection.2.5.1}{2.5.1 Caracter\355sticas principales del WiFi}{section.2.5}% 25
+\BOOKMARK [2][-]{subsection.2.5.2}{2.5.2 Caracter\355sticas principales de CPU y memoria}{section.2.5}% 26
+\BOOKMARK [2][-]{subsection.2.5.3}{2.5.3 Relojes y Temporizadores}{section.2.5}% 27
+\BOOKMARK [2][-]{subsection.2.5.4}{2.5.4 Intefaces de perif\351ricos avanzadas}{section.2.5}% 28
+\BOOKMARK [2][-]{subsection.2.5.5}{2.5.5 Seguridad}{section.2.5}% 29
+\BOOKMARK [0][-]{chapter.3}{MARCO METODOL\323GICO}{}% 30
+\BOOKMARK [1][-]{section.3.1}{3.1 Documentar el funcionamiento de las redes WiFi malladas}{chapter.3}% 31
+\BOOKMARK [1][-]{section.3.2}{3.2 Dise\361o de una red mallada basada en el microcontrolador ESP32}{chapter.3}% 32
+\BOOKMARK [1][-]{section.3.3}{3.3 Implementar el m\363dulo del programa para el manejo del protocolo Modbus en el bus RS-485.}{chapter.3}% 33
+\BOOKMARK [1][-]{section.3.4}{3.4 Implementar el programa de la red dise\361ada que soporte la transmisi\363n del protocolo Modbus}{chapter.3}% 34
+\BOOKMARK [1][-]{section.3.5}{3.5 Dise\361ar el circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32}{chapter.3}% 35
+\BOOKMARK [1][-]{section.3.6}{3.6 Implementar la red mallada dise\361ada.}{chapter.3}% 36
+\BOOKMARK [1][-]{section.3.7}{3.7 Analizar el rendimiento de la red de acuerdo a variaciones en los par\341metros de transmisi\363n de datos}{chapter.3}% 37
+\BOOKMARK [0][-]{chapter.4}{DESCRIPCI\323N DEL MODELO}{}% 38
+\BOOKMARK [0][-]{chapter.5}{PRUEBAS EXPERIMENTALES}{}% 39
+\BOOKMARK [0][-]{chapter.6}{RESULTADOS}{}% 40
+\BOOKMARK [0][-]{chapter.7}{CONCLUSIONES}{}% 41
+\BOOKMARK [0][-]{chapter.8}{RECOMENDACIONES}{}% 42
+\BOOKMARK [0][-]{appendix.Alph1}{T\315TULO DEL ANEXO}{}% 43
+\BOOKMARK [0][-]{appendix.Alph2}{T\315TULO DEL ANEXO}{}% 44
+\BOOKMARK [0][-]{appendix.Alph3}{T\315TULO DEL ANEXO}{}% 45
+\BOOKMARK [0][-]{appendix*.10}{REFERENCIAS}{}% 46

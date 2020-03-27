@@ -1,0 +1,75 @@
+
+@article{article1,
+author = {Hiertz, Guido and Denteneer, T. and Max, Sebastian and Taori, Rakesh and Cardona, Javier and Berlemann, Lars and Walke, B.},
+year = {2010},
+month = {03},
+pages = {104 - 111},
+title = {IEEE 802.11s: the WLAN mesh standard},
+volume = {17},
+journal = {Wireless Communications, IEEE},
+doi = {10.1109/MWC.2010.5416357}
+}
+
+@article{article2,
+author = {Sharma, Priya and Singh, Gurpreet},
+year = {2016},
+month = {10},
+pages = {856-862},
+title = {Comparison of Wi-Fi IEEE 802.11 Standards Relating to Media Access Control Protocols},
+volume = {14},
+journal = {International Journal of Computer Science and Information Security,}
+}
+
+@article{article3,
+author = {Cheng, Yujun and Yang, Dong and Huachun, Zhou},
+year = {2018},
+month = {02},
+pages = {1-1},
+title = {Det-LB: A Load Balancing Approach in 802.11 Wireless Networks for Industrial Soft Real-Time Applications},
+volume = {PP},
+journal = {IEEE Access},
+doi = {10.1109/ACCESS.2018.2802541}
+}
+
+@inproceedings{inproceedings2,
+author = {Mesquita, Joao and Guimaraes, Diana and Pereira, Carlos and Santos, Frederico and Almeida, Luis},
+year = {2018},
+month = {09},
+pages = {},
+title = {Assessing the ESP8266 WiFi module for the Internet of Things},
+doi = {10.1109/ETFA.2018.8502562}
+}
+
+@Misc{Online,
+author={Modbus Organization, Inc},
+title={Modbus application protocol specification},
+year={2017},
+month={Abril},
+note={[Internet; accedido el  25 de Octubre del 2019] Disponible en: \url{http://modbus.org/docs/Modbus_Application_Protocol_V1_1b3.pdf}}
+}
+
+
+@article{bahr,
+author = {Michael Bahr},
+year = {2016},
+month = {10},
+pages = {1},
+title = {Update on the Hybrid Wireless Mesh Protocol of IEEE 802.11s},
+journal = {Siemens Corporate Technology, Information and Communications}
+}
+%falta el DOI
+@article{ScienceDirect,
+author = {Rifki Muhendra, Aditya Rinaldi, Maman Budiman},
+year = {2016},
+pages = {331},
+title = {Development of WiFi Mesh Infrastructure for Internet of Things applications},
+journal = {Engineering Physics International Conference, EPIC 2016}
+}
+
+@article{MACen,
+author = {Al-Husainy, Mohammed},
+year = {2013},
+month = {11},
+pages = {1},
+title = {MAC Address as a Key for Data Encryption}
+}
