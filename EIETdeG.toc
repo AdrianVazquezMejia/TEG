@@ -25,26 +25,22 @@
 \contentsline {subsubsection}{Las tablas de enrutamiento}{19}{subsubsection*.9}
 \contentsline {section}{\numberline {2.4}Protocolo MODBUS}{19}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Modelo de datos MODBUS}{21}{subsection.2.4.1}
-\contentsline {section}{\numberline {2.5}Microcontrolador ESP32}{21}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Caracter\IeC {\'\i }sticas principales del WiFi}{22}{subsection.2.5.1}
+\contentsline {section}{\numberline {2.5}Microcontrolador ESP32}{22}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Caracter\IeC {\'\i }sticas principales del WiFi}{23}{subsection.2.5.1}
 \contentsline {subsection}{\numberline {2.5.2}Caracter\IeC {\'\i }sticas principales de CPU y memoria}{23}{subsection.2.5.2}
 \contentsline {subsection}{\numberline {2.5.3}Relojes y Temporizadores}{23}{subsection.2.5.3}
 \contentsline {subsection}{\numberline {2.5.4}Intefaces de perif\'ericos avanzadas}{24}{subsection.2.5.4}
-\contentsline {subsection}{\numberline {2.5.5}Seguridad}{24}{subsection.2.5.5}
+\contentsline {subsection}{\numberline {2.5.5}Seguridad}{25}{subsection.2.5.5}
 \contentsline {chapter}{MARCO METODOL\'OGICO}{26}{chapter.3}
-\contentsline {section}{\numberline {3.1}Documentar el funcionamiento de las redes WiFi malladas}{26}{section.3.1}
-\contentsline {section}{\numberline {3.2}Dise\~no de una red mallada basada en el microcontrolador ESP32}{26}{section.3.2}
-\contentsline {section}{\numberline {3.3}Implementar el m\'odulo del programa para el manejo del protocolo Modbus en el bus RS-485.}{27}{section.3.3}
-\contentsline {section}{\numberline {3.4}Implementar el programa de la red dise\~nada que soporte la transmisi\'on del protocolo Modbus}{29}{section.3.4}
-\contentsline {section}{\numberline {3.5}Dise\~nar el circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32}{29}{section.3.5}
-\contentsline {section}{\numberline {3.6}Implementar la red mallada dise\~nada.}{30}{section.3.6}
-\contentsline {section}{\numberline {3.7}Analizar el rendimiento de la red de acuerdo a variaciones en los par\'ametros de transmisi\'on de datos}{30}{section.3.7}
-\contentsline {chapter}{DESCRIPCI\'ON DEL MODELO}{31}{chapter.4}
-\contentsline {chapter}{PRUEBAS EXPERIMENTALES}{32}{chapter.5}
-\contentsline {chapter}{RESULTADOS}{33}{chapter.6}
-\contentsline {chapter}{CONCLUSIONES}{34}{chapter.7}
-\contentsline {chapter}{RECOMENDACIONES}{35}{chapter.8}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{36}{appendix.Alph1}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{37}{appendix.Alph2}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{38}{appendix.Alph3}
-\contentsline {chapter}{REFERENCIAS}{39}{appendix*.10}
+\contentsline {section}{\numberline {3.1}Dise\~no de la red mallada}{26}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Caracter\IeC {\'\i }sticas de los nodos}{27}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Caracter\IeC {\'\i }sticas de enrutamiento}{27}{subsection.3.1.2}
+\contentsline {chapter}{DESCRIPCI\'ON DEL MODELO}{28}{chapter.4}
+\contentsline {chapter}{PRUEBAS EXPERIMENTALES}{29}{chapter.5}
+\contentsline {chapter}{RESULTADOS}{30}{chapter.6}
+\contentsline {chapter}{CONCLUSIONES}{31}{chapter.7}
+\contentsline {chapter}{RECOMENDACIONES}{32}{chapter.8}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{33}{appendix.Alph1}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{34}{appendix.Alph2}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{35}{appendix.Alph3}
+\contentsline {chapter}{REFERENCIAS}{36}{appendix*.10}

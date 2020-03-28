@@ -1,57 +1,57 @@
-En este capítulo se tratarán los fundamentos del funcionamientos de las redes WiFi malladas, protocolo Modbus y características de sofware y hardware del microcontrolador ESP32. 
+En este capítulo se tratarán los fundamentoss de las redes WiFi malladas, protocolo Modbus y c del microcontrolador ESP32. 
 
 \section{Fundamentos de las redes WiFi malladas}
 
-Las redes WiFi malladas (WMN)se pueden definir como una red que permite la comunicaion entre nodos a través de múltiples saltos en una topología mallada \cite{bahr}. Los nodos intermedios son capaces de reenviar los datos hasta llegar al nodo destino. Las WMN usualmente se componen de clientes, enrutadores y puertas de enlace. Los clientes son dispositivos electrónicos, sistemas embebidos o sensores que pueden comunicarse con otros en la red. El enrutador en un dispositivo electrónicos que sirve como un intermediario entre dos o mas redes para transportar los datos de una red a otra.  Y las compuertas de enlace es un dispositivo electrónico que conecta la red con Internet. 
+Las redes WiFi malladas(WMN) se pueden definir como una red que permite la comunicaion entre nodos a través de múltiples saltos en una topología mallada \cite{bahr}. Los nodos intermedios son capaces de reenviar los datos hasta llegar al nodo destino. Las WMN usualmente se componen de clientes, enrutadores y puertas de enlace. Los clientes son dispositivos electrónicos, sistemas embebidos o sensores que pueden comunicarse con otros en la red. El enrutador en un dispositivo electrónicos que sirve como un intermediario entre dos o mas redes para transportar los datos de una red a otra.  Y las compuertas de enlace es un dispositivo electrónico que conecta la red con Internet. 
 
-Cuando un nodo no puede operar, el resto de los nodos en la WMN aun pueden comunicarse con los otros, bien sea directa o indirectamente a través de uno o mas nodos intermediarios.\citep{ScienceDirect}.
+Cuando un nodo no puede operar, el resto de los nodos en la WMN aún pueden comunicarse con los otros, bien sea directa o indirectamente, a través de uno o más nodos intermediarios\citep{ScienceDirect}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{topologia1.png}\label{Fig1: Topologia Mallada}
+\includegraphics[scale=0.8]{topologia1.png}\label{Fig1: Topologia Mallada}
 \caption{Topología Mallada}
 \end{figure}
 %imagen de una red mallada.
  
-Una red WiFi mallada es  establecida en la banda para comunicación WiFi (sea 2,4 GHz o 5GHz), donde hay estaciones que soportan comunicación de multiples saltos (multi-hop) para transferir información en la red. Así mismo se tiene que, el enrutamiento y la capacidades de reenvios de datos residen en la capa de Control de Acceso al Medio (MAC) \cite{article1}.
+Una red WiFi mallada se establece en la banda para comunicación WiFi (sea 2,4 GHz o 5GHz), donde hay estaciones que soportan comunicación de múltiples saltos (multi-hop) para transferir información en la red. Así mismo se tiene que, el enrutamiento y la capacidades de reenvios de datos residen en la capa de Control de Acceso al Medio (MAC) \cite{article1}.
 
 \subsection*{La capa de Control de Acceso al Medio (MAC)}
 
-La capa MAC administra el acceso al medio compartido, proyendo sincronización entre diferentes nodos para permitir la transimisión inalambrica. Dicha incronización se convierte cada vez más importante tanto el metodo de acceso es más complejo. Como un ejemplo, sincronización  puede ser necesaria entre nodos de un sistema que emplee el un espectro abierto. Como otro ejemplo, nodos individuales puediesen necesitar permiso de un controlador en una red inalámbrica para transmitir en un canal dado. La capa MAC administra las negociaciones con un nodo de control para el acceso.
+La capa MAC administra el acceso a un medio compartido, proveyendo sincronización entre diferentes nodos para permitir la transmisión inalámbrica. Dicha sincronización es cada vez más esencial para la red en tanto el método de acceso es más complejo. Como un ejemplo, la sincronización  puede ser necesaria entre nodos de un sistema que emplee un espectro abierto. Como otro ejemplo, nodos individuales pudiesen necesitar permiso de un controlador en una red inalámbrica para transmitir en un canal dado. La capa MAC administra las negociaciones con un nodo de control para el acceso al medio.
 
-Las funciones específicas que estan encapsuladas en la capa MAC, varian de un protocolo a otro. Estas funciones incluyen, pero no estan limitadas a, técnicas de acceso múltiple, sincronización un medio abierto,  y correccción de errores. \cite{inbook}
+Las funciones específicas que estan encapsuladas en la capa MAC, varian de un protocolo a otro. Estas funciones incluyen, pero no estan limitadas a, técnicas de acceso múltiple, sincronización un medio abierto  y correccción de errores. \cite{inbook}
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{mac.png}\label{Fig2: Esquema Mac}
-\caption{El propósito de la capa MAC es administrar el medio}
+\caption{El propósito de la capa MAC es administrar el espectro}
 \end{figure}
 
 \subsection*{Dirección MAC}
 
-En una red de computadoras, la dirección Mac es un valor único asociado a un adaptador de red. La dirección MAC también es conocida como dirección de hardware o dirección física.  La dirección MAC trabaja en la segunda capa del modelo OSI, siendo identificada como  com en la capa de vínculo.  
+En una red de computadoras, la dirección MAC es un valor único asociado a un adaptador de red. La dirección MAC también es conocida como dirección de hardware o dirección física.  La dirección MAC trabaja en la segunda capa del modelo OSI, siendo identificada como capa de vínculo.  
 
-Las direcciones MAC se componen de 12 número hexadecimales (48  bits de longitud). Por convención las direcciones MAC son escritas en una de los dos formatos siguientes:
+Las direcciones MAC se componen de 12 número hexadecimales (48  bits de longitud). Por convención las direcciones MAC son escritas en uno de los dos formatos siguientes:
 {\small
 \begin{equation}
 MM:MM:MM:SS:SS:SS \quad o \quad MM-MM-MM-SS-SS-SS
 \end{equation}
 }
-La primera mitad de la dirección MAC contiene el número identificador del fabricante  del adaptador(i.e 00:A0:C9:14:C8:29). Dichos identificadores por un estadar de Internet. La segunda parte de la dirección MAC representa el número de serial asignado al adaptador por el fabricante. La suplantación de MAC es equivalente a hacerce cargo de los controladores de interfaz de red (NIC). La unicidad de la dirección MAC es esencial en todas la fases de la comunicación de red porque mapea todos los identificadores de las capas superiores \cite{MACen}.
+La primera mitad de la dirección MAC contiene el número identificador del fabricante  del adaptador(i.e 00:A0:C9:14:C8:29). Dichos identificadores estan regulados por un estadar de Internet. La segunda parte de la dirección MAC representa el número de serial asignado al adaptador por el fabricante. La suplantación de MAC es equivalente a hacerce cargo de los controladores de interfaz de red (NIC). La unicidad de la dirección MAC es esencial en todas la fases de la comunicación de red porque mapea todos los identificadores de las capas superiores \cite{MACen}.
 
 \section{La Referencia del Modelo OSI}
 
-El modelo del sistema de interconxión abierta (OSI) esta basado en una  propuesta del la Organización Internacional de estandares (ISO) para la la estadarización de pilas de protocolos. El modelo consiste en siete (7) capas.
+El modelo del sistema de interconexión abierta (OSI) esta basado en una  propuesta del la Organización Internacional de estándares (ISO) para la la estandarización de pilas de protocolos. El modelo consiste en siete (7) capas.
 
 \begin{enumerate}
-\item Una caoa debe existir para cada nivel de abstracción.
+\item Una capa debe existir para cada nivel de abstracción.
 \item Cada para debe ejecutar una función bien definida.
-\item La función de cada capa debe formar parte de un estadar internacional.
+\item La función de cada capa debe formar parte de un estándar internacional.
 \item Los límites de cada capa  deben minimizar el flujo de información a través de las interfaces.
-\item El número de capas debe de suficientemente grande para no forzar multiples funciones en una sola capa, pero lo sufientemente pequeña para que la arquitectura no sea incómoda,
+\item El número de capas debe de suficientemente grande para no forzar múltiples funciones en una sola capa, pero lo sufientemente pequeña para que la arquitectura no sea incómoda.
 \end{enumerate}
 
-Las siete capas del modelo osei, juntas, son solo un modelo de referencia, y no son una arquitectura de red, Los estandar de la ISO existe para varios niveles, y no son parte de este modelo. Las capas son:
+Las siete capas del modelo OSI juntas son solo un modelo de referencia, y no son una arquitectura de red. Los estándares de la ISO existe para varios niveles, y no son parte de este modelo. Las capas son:
 
 \begin{enumerate}
 \item La capa de aplicación,
@@ -63,31 +63,31 @@ Las siete capas del modelo osei, juntas, son solo un modelo de referencia, y no 
 \item La capa física.
 \end{enumerate}
 
-Para entender las funcionalidadesd y la interreñación entres estas capas, es beneficioso estudiarlar desde la capa física hacia arriba.
+Para entender las funcionalidades y la interrelación entres estas capas, es beneficioso estudiarla desde la capa física.
 
 \subsection{La capa Física}
 
-A la capa capa física  le concierne la transmisión de los bits de data cruda sobre el canal de comunicación. Es reponsable por asegurarse de la integridad de dichos bits tanto por la entrega como por la interpretación. Los detalles específicos de cuantos Volts representan el "0" lógico y cuantos representan el "1", la duración de la señal, el mecanismo de conexión y la desconexión, etc., son dependientes de los medios físicos y los dispositivos empleados.
+A la capa capa física  le concierne la transmisión de los bits de data cruda sobre el canal de comunicación. Es responsable por asegurarse de la integridad de dichos bits tanto por la entrega como por la interpretación. Los detalles específicos de cuantos Volts representan el "0" lógico y cuantos representan el "1", la duración de la señal, el mecanismo de conexión y desconexión, etc., son dependientes de los medios físicos y los dispositivos empleados.
 
  \subsection{La capa de vínculo de datos}
  
- La capa de vínculo de datos provee la primera capa de abstracción en la pila. Esta proteje la capa de red de detalles de nivel bajo y errores de la capa física. Esto es logrado agrupando los bits crudos en una unidad de nivel más alta llamada trama de datos, la cual puede ser usada en la capa de red.
+ La capa de vínculo de datos provee la primera capa de abstracción en la pila. Esta protege la capa de red de detalles de nivel bajo y errores de la capa física. Esto es logrado agrupando los bits crudos en una unidad de nivel más alta llamada trama de datos, la cual puede ser usada en la capa de red.
  
- La trama de datos consiste en un unos cuantos cientos o miles de bytes. Patrones  especiales de bits delimitan la carga, para que la trama de datos sea reconocida. Esto significa que especial cuidado se debe posee para asegurar que estos patrones especiales no ocurren dentro de la carga, en cuyo caso la trama se perdería. Un mecanismo apropiado debe existir para notificar que la fuente retransmite la trama. 
+ La trama de datos consiste en un grupo de bytes. Patrones  especiales de bits delimitan la carga, para que la trama de datos sea reconocida. Esto significa que especial cuidado se debe posee para asegurar que estos patrones especiales no ocurren dentro de la carga, en cuyo caso la trama se perdería. Un mecanismo apropiado debe existir para notificar que la fuente retransmite la trama. 
  
-Otra característica en esta capa es la inclusión del control de flujo y los agradecimientos. Redes broadcast estan basadas en un canal compartido.  Una subcapa ha sido introducida en la capa de de vínculo de datos para manejar con el control de acceso a canales compartidos, con el nombre de subcapa de control  de acceso al medio.
+Otra característica en esta capa es la inclusión del control de flujo y los agradecimientos. Redes broadcast están basadas en un canal compartido.  Una subcapa ha sido introducida en la capa de de vínculo de datos, para manejar el control de acceso a canales compartidos, con el nombre de subcapa de control  de acceso al medio (MAC).
 
 
 \subsection{La capa de red}
 
-La capa de red en la responsable por controlar la operación de la subred. La carga de la trama de datos, en esta capa, es llamada paquete. Esta capa determina como mover el paquete desde la fuente al destino usando las rutas apropiadas. La determinación de dichas rutas puede puede ser estático o dinámico. La capa de red tambien maneja la conjestión de la red. 
+La capa de red en la responsable por controlar la operación de la subred. La carga de la trama de datos, en esta capa, es llamada paquete. Esta capa determina como mover el paquete desde la fuente al destino usando las rutas apropiadas. La determinación de dichas rutas puede puede ser estático o dinámico. La capa de red también maneja la congestión de la red. 
 
 La capa de red tiene que lidiar con problemas relacionados con las diferentes arquitecturas de red, diferentes direccionamientos, y diferentes condiciones de operación y restricciones, tanto en los sistemas de origen como en los de destino. La heterogeneidad de red es tomada en cuenta en esta capa.
 
 \subsection{La capa de transporte}
- La función básica de la capa de transporte es aceptar datos de un capa más alta, descomponerla en unidades más pequeñas, si es  nececesario, para pasarlas a la capa de red, y asegurarse que estas piezas llegar correctamente al destino. Para propósitos de eficiencia, la capa de trasnporte puede multiplexar varias conexiones de transporte en una sola conexión.
+ La función básica de la capa de transporte es aceptar datos de un capa más alta, descomponerla en unidades más pequeñas, si es  necesario, para pasarlas a la capa de red, y asegurarse que estas piezas llegar correctamente al destino. Para propósitos de eficiencia, la capa de transporte puede multiplexar varias conexiones de transporte en una sola conexión.
  
- Ña capa de transporte es la primera capa fin-a-fin  de la pila. En las capas más bajas, la intección real no necesitaba estar entre los sistemasa de de fuente y destino. Enrutadores o sistemas intermedios podian ser parte de la transacción. La interacción en esta capa, sin embargo, es siempre entre puntos finales.
+ La capa de transporte es la primera capa fin-a-fin  de la pila. En las capas más bajas, la intección real no necesitaba estar entre los sistemas de de fuente y destino. Enrutadores o sistemas intermedios podían ser parte de la transacción. La interacción en esta capa, sin embargo, es siempre entre puntos finales.
  
  El control de flujo juega un rol importante en la capa de transporte (Así como en las otras capas). 
 
@@ -96,30 +96,28 @@ La capa de red tiene que lidiar con problemas relacionados con las diferentes ar
 
 La capa de sesión provee algunos servicios adicionales comparados a la capa de transporte. Como por ejemplo incluye el manejo de suscripción, transferencia de archivos y manejo de tokens.
 
-Otro servicio de sesión es la sincronización, y proveer las funciones para la inserción de puntos de revisión dentro de los datos que se están transmitiendo, para que la reanudación o reconxión de datos pueda llevarse a cabo.
+Otro servicio de sesión es la sincronización, y proveer las funciones para la inserción de puntos de revisión dentro de los datos que se están transmitiendo, para que la reanudación o reconexión de datos pueda llevarse a cabo.
 
 \subsection{La capa de presentación}
 
 La capa de presentación es la encargada de  la sintaxis y la semántica de la información transmitida. Un ejemplo típico es la codificación y decodificación de los datos. Para que los datos sean correctamente interpretados en cada punto, debe haber una codificación estándar. La capa de presentación provee los servicios para manejar la conversión de las estructuras de datos del usuario a la red, y \textit{vice versa}.
 
 \subsection{La capa de aplicación}
- Esta es la capa más familiar para el usuario,  la cual comprende varios protocolos. El ejemplo más famoso incluye los clásicos protocolos de terminales.
+ Esta es la capa más familiar para el usuario,  la cual comprende varios protocolos. El ejemplo más famoso incluye los clásicos protocolos de terminales. Las definiciones de protocolos en esta capa son un nivel alto, normalmente entendibles para el usuario.
  
- Las definiciones de protocolos en esta capa son un nivel alto, normalmente entendibles para el usuario.
- 
- Protocolos de comando-respuesta, basados en texto, forman parte de esta capa.
+ Protocolos de comando-respuesta y basados en texto, forman parte de esta capa.
 
 \section{Funcionamiento de las redes WiFi malladas}
 
-La implemtación de la topología Mesh ha encontrado problemas con la necesidad de procedimientos adicioales relacionados con el enrutamiento. Hay algunos protolos que soportan el servicio de red mallada sobre la red IP, por ejemplo: B.A.T.M.A.N. (Better Approach To MobiLle Adhoc Networking), Babel (a distance-vector routing protocol for IPv6 and IPv4 con propiedades de convergencia rápida), HWMP (Protocolo Híbrido Inalámbrico Mallado).  El uso de estos protocolos requiere la completa implementación de la pila TCP/IP y una poder de computación significativo, lo cual limita sus implementaciones. Sin embargo, es de notar que no todo los equipos (para comunicaciones WiFi) soportan un protocolo particular como es el caso de HWMP. El uso de microcontroladores avanzados incrementa altamente la construcción de la red, y muchas veces se necesita obtener información sobre los procesos lentos a través de mediciones periódicas , usando recursos libres de los microcontroladores para propagar datos a través de los nodos de la red. Un amplio rango de módulos simples WiFi hechos como Sistemas en un Chip (SoC), que además de manejar estandares de comunicación pueden adquirir datos a través de entradas y salidas de propósito general. Estos abren la posibilidad para la construcción de sensores de red de bajo costo en la amplimente usada red inalambrica WiFi. Sin embargo, cuando muy poco poder de procesamiento no permite la implentación de algoritmos avanzados que soporten el enrutamiento IP en la topología mallada, es posible crear una red simplificada mientras se mantiene las características de las redes malladas. 
+La implementación de la topología mallada ha encontrado problemas con la necesidad de procedimientos adicionales relacionados con el enrutamiento. Hay algunos protocolos que soportan el servicio de red mallada sobre la red IP, por ejemplo: B.A.T.M.A.N. (Better Approach To MobiLle Adhoc Networking), Babel (a distance-vector routing protocol for IPv6 and IPv4 con propiedades de convergencia rápida), HWMP (Protocolo Híbrido Inalámbrico Mallado).  El uso de estos protocolos requiere la completa implementación de la pila TCP/IP y una poder de computación significativo, lo cual limita sus implementaciones. Sin embargo, es de notar que no todo los equipos (para comunicaciones WiFi) soportan un protocolo particular como es el caso de HWMP. El uso de microcontroladores avanzados incrementa altamente el costo  de la construcción de la red, que muchas veces no son necesarios para aplicaciones donde se necesita obtener información sobre los procesos lentos a través de mediciones periódicas.  Un amplio rango de módulos simples WiFi hechos como Sistemas en un Chip (SoC), que además de manejar estándares de comunicación pueden adquirir datos a través de entradas y salidas de propósito general. Estos abren la posibilidad para la construcción de sensores de red de bajo costo en la ampliamente usada WMN. Sin embargo, cuando muy poco poder de procesamiento no permite la implementación de algoritmos avanzados que soporten el enrutamiento IP en la topología mallada, es posible crear una red simplificada mientras se mantienen las características principales de las redes malladas. 
 
-A continuación se describe el funcionamiento de algunas de redes WiFi malladas, es de observar que existe una amplia gama de funcionamientos, cada una caracterizada por su aplicación, se resaltan las más relacionadas con el hardware e implementación del objetivo del trabajo. 
+A continuación se describe el funcionamiento de algunas de redes WiFi malladas, es de observar que existe una amplia gama de funcionamientos, cada una caracterizada por su aplicación, se resaltan las más relacionadas con el objetivo del trabajo. 
 
 \subsection{Pior Lech and Przemyslaw Wlodarski}
 
-En su artículo llamado Analysis of the IoT WiFi Mesh Network (Análisis de las redes WiFi malladas IoT), llevan a cabo un análisis estadístico de una red WiFi mallada. Para lograr eso usan la version de desarrollo del módulo de comunicación NodeMCU ESP8266 . La operación básica en la red de cada node es en el modo AP+STA(Punto de acceso y estación). La estategia de comunicacion entre los nodos esta basada en la transmisión de un único mensaje a los nodos con número mayor de el asociado a la estación receptora. Todos los nodos posee un número fijo asignado que crece desde la fuente (RPi 1) en la dirección de la estación destino (RPi 2).
+En su artículo llamado \textit{Analysis of the IoT WiFi Mesh Network} (Análisis de las redes WiFi malladas IoT), llevan a cabo un análisis estadístico de rendimiento sobre una red WiFi mallada. Para lograr eso usan la version de desarrollo del módulo de comunicación NodeMCU ESP8266. La operación básica en la red de cada node es en el modo AP+STA(Punto de acceso y estación). La estrategia de entre los nodos esta basada en la transmisión de un único mensaje a los nodos con número mayor de el asociado a la estación receptora. Todos los nodos posee un número fijo asignado que crece desde la fuente (RPi 1) en la dirección de la estación destino (RPi 2).
 
-De acuerdo a la figura  \ref{Fig3: Esquema WMN 1} se pueden seleccionar las siguientes rutas: 1-2-5, 1-2-3-5, 1-2-4-5, 1-3-5 y 1-4-5. El número asignado esta estrechamente relacionado con las direcciones IP. Los mensajes son enviados a través del protocolo UTP.  La fuente de los mensajes es la microcomputadora Raspberry Pi v.2 (Rpi 1) la cual envía mensajes a el nodo 1. Los módulos NodeMCU duplican el mensaje y lo reenvian acorde a la estrategía antes mencionada. Todo el trafico de datos termina en el segundo Raspberry Pi (RPi 2) a través del nodo 5. Los nodos que llevan a cabo la duplicación del mensaje, envían estos en un ciclo, del menor al mayor número asociado con el nodo. 
+De acuerdo a la figura  \ref{Fig3: Esquema WMN 1} se pueden seleccionar las siguientes rutas: 1-2-5, 1-2-3-5, 1-2-4-5, 1-3-5 y 1-4-5. El número asignado esta estrechamente relacionado con las direcciones IP. Los mensajes son enviados a través del protocolo UTP.  La fuente de los mensajes es la microcomputadora Raspberry Pi v.2 (Rpi 1) la cual envía mensajes a el nodo 1. Los módulos NodeMCU duplican el mensaje y lo reenvian acorde a la estrategia antes mencionada. Todo el tráfico de datos termina en el segundo Raspberry Pi (RPi 2) a través del nodo 5. Los nodos que llevan a cabo la duplicación del mensaje, envían estos en un ciclo, del menor al mayor número asociado con el nodo. 
 
 
 
@@ -131,14 +129,14 @@ De acuerdo a la figura  \ref{Fig3: Esquema WMN 1} se pueden seleccionar las sigu
 
 \subsection{Yujun Cheng, Dong Yang y Huachun Zhou}
 
-Yujun Cheng, Dong Yang y Huachun Zhou en su artículo \textit{A Load Balancing Approach in 802.11 Wireless Networks for Industrial Soft Real-Time Applications} (Un Enfoque de Carga Equilibrada  en Redes Inalámbricas 802.11 para  Aplicaciones  Industriales ligeras en Tiempo Real) propone un arquitectura basada en el que distribución de los nodos esta directamente relacionada con la cantidad de enlaces que posee cada uno, de manera de distribuirlos equitativamente.
+Yujun Cheng, Dong Yang y Huachun Zhou en su artículo \textit{A Load Balancing Approach in 802.11 Wireless Networks for Industrial Soft Real-Time Applications} (Un Enfoque de Carga Equilibrada  en Redes Inalámbricas 802.11 para  Aplicaciones  Industriales Ligeras en Tiempo Real) propone un arquitectura basada en el que distribución de los nodos esta directamente relacionada con la cantidad de enlaces que posee cada uno, de manera de distribuirlos equitativamente.
 
-El estandar 802.11 no define ningún mecanismo para el balaceamiento de carga. Casi todos los adaptadores 802.11 se asocian con el punto de acceso que posea la mayor intensidad de señal. Basados en la mayor intensidad señal las redes son propensas a  una distrubución desigual de recursos, lo que significa que algunas APs exceden o se acercan a la capacidad de carga mientras que la de otras permanecen relativamente baja. En este enfoque, el proceso de asociación de las estaciones  no esta simplemente relacionado con la intensidad de señal, sino que también esta basado en la carga que posee cada AP.  El algoritmo provee una compensación entre la intensidad de señal y la carga cambiando las estaciones de  los punto de acceso  sobre cargados con una intensidad de señal alta,  a un punto de acceso vecino menos cargado y la intensidad de señal pudiese ser más debil.
+El estándar 802.11 no define ningún mecanismo para el balaceamiento de carga. Casi todos los adaptadores 802.11 se asocian con el punto de acceso que posea la mayor intensidad de señal. Basados en la mayor intensidad señal las redes son propensas a  una distribución desigual de recursos, lo que significa que algunas APs exceden o se acercan a la capacidad de carga máxima, mientras que la de otras permanecen relativamente baja. En este enfoque, el proceso de asociación de las estaciones  no esta simplemente relacionado con la intensidad de señal, sino que también esta basado en la carga que posee cada AP.  El algoritmo provee una compensación entre la intensidad de señal y la carga, cambiando las estaciones de  los punto de acceso  sobre cargados con una intensidad de señal alta,  a un punto de acceso vecino menos cargado y la intensidad de señal que pudiese ser más débil.
 
-En la red enfocada al balanceo, una unidad central llamada controlador de red es usada para administrar el balanceo de las cargas. El controlador de red pudiese actuar como un simple punto de acceso o como una entidad independiente directamente conectada a la central cableada.  Cada punto de acceso envía su información al controlador de red, y así el controlador conoce la condición básica global de la red. La acquitectura jerárquica de la red del enfoque se muestra en la figura \ref{Fig4: Esquema WMN 2}.
+En la red enfocada al balanceo, una unidad central llamada controlador de red es usada para administrar el balanceo de las cargas. El controlador de red pudiese actuar como un simple punto de acceso o como una entidad independiente directamente conectada a la central cableada.  Cada punto de acceso envía su información al controlador de red, y así el controlador conoce la condición básica global de la red. La arquitectura jerárquica de la red del enfoque se muestra en la figura \ref{Fig4: Esquema WMN 2}.
 
 
-Un algoritmos es el encargado de balancear la red, el cual está basado en revisiones métricas y un proceso de distribución de carga.  Tomando la topología de la Figura \ref{Fig4: Esquema WMN 2} como un ejemplo donde hay más de dos estaciones conectadas a AP2 y AP3 comparadas con la situación de carga de la AP1 y AP4. Así, la carga de la red esta relativamente desbalanceada, si las características de tráfico de cada estación son similares, por lo tanto, la red requiere un algoritmo de balanceo específico.  El algoritmo de revisión métrica comienza cuando una estación (STA1 ) es alertada de una situación de potencial desbalanceo. Este mismo algoritmo verifica las métricas designadas y decide si el nodo en cuestión esta o no sobrecargado. Si la métrica se encuentra más allá de determinado límite, entonces la estación STA1 debe decidir si abandonar la actual AP (AP2) y enviar una solicitud de disociación a el controlador, o por otro lado mantener la conexión. Si STA1 decide desconectarse, entonces el controlador de red ejecuta el algoritmo de distribución de caga  y distribuye la estación a otra AP en el área de solapamiento que posee menor carga, tal como AP1. Antes de que el algoritmo de distribución de carga termine, la estación STA1 poseerá un mejor rendimiento, así como las estaciónes que aún estarías asociadas con AP2. 
+Un algoritmos es el encargado de balancear la red, el cual está basado en revisiones métricas y un proceso de distribución de carga.  Tomando la topología de la Figura \ref{Fig4: Esquema WMN 2} como un ejemplo donde hay más de dos estaciones conectadas a AP2 y AP3 comparadas con la situación de carga de la AP1 y AP4. Así, la carga de la red esta relativamente desbalanceada; si las características de tráfico de cada estación son similares, por lo tanto, la red requiere un algoritmo de balanceo específico.  El algoritmo de revisión métrica comienza cuando una estación (STA1 ) es alertada de una situación de potencial desbalanceo. Este mismo algoritmo verifica las métricas designadas y decide si el nodo en cuestión está o no sobrecargado. Si la métrica se encuentra más allá de determinado límite, entonces la estación STA1 debe decidir si abandonar la actual AP (AP2) y enviar una solicitud de disociación a el controlador, o por otro lado mantener la conexión. Si STA1 decide desconectarse, entonces el controlador de red ejecuta el algoritmo de distribución de carga  y distribuye la estación a otra AP en el área de solapamiento que posee menor carga, tal como AP1. Antes de que el algoritmo de distribución de carga termine, la estación STA1 deberá poseer un mejor rendimiento, así como las estaciónes que aún estarías asociadas con AP2. 
 
 \begin{figure}[H]
 \centering
@@ -149,41 +147,41 @@ Un algoritmos es el encargado de balancear la red, el cual está basado en revisi
  
  \subsection{El protocolo ESP-MESH de Espressif}
  
- ESP- MESH es un protocolo de red construido encima del protocolo WiFi.  Dicho procolo permite que numeros dispoitivos (Nodos) posicionados sobre un área física estén interconectados bajo única Red de Área Local Inalámbrica (WLAN). Las redes ESP-MESH son auto-organizadas y auto-reparables, es decir, que la red pueden ser construidas y mantenidas de manera autónoma.
+ ESP-MESH es un protocolo de red construido encima del protocolo WiFi.  Dicho protocolo permite que numerosos dispositivos(Nodos) posicionados sobre un área física estén interconectados bajo única Red de Área Local Inalámbrica (WLAN). Las redes ESP-MESH son auto-organizadas y auto-reparables, es decir, que la red pueden ser construidas y mantenidas de manera autónoma.
  
- ESP-MESH permite que los nodos actuen simultaneamente como estación y como punto de acceso (AP). Por lo tanto un nodo puede poseer multiples conecciones de estaciones a su punto de acceso, mientras que simultaneamente su estación posee una única conexión a otro otro punto de acceso a una capa superior. Lo que naturalmente resulta en una topología de arbol  de multiples capas con una jerarquia en patre-hijo(Observe Figura \ref{Fig5: Topologia ESP-MESH}).
+ ESP-MESH permite que los nodos actúen simultáneamente como estación y como punto de acceso (AP). Por lo tanto un nodo puede poseer múltiples conexiones de estaciones a su punto de acceso, mientras que  su estación posee una única conexión a un punto de acceso de una capa superior. Lo que naturalmente resulta en una topología de árbol  de múltiples capas con una jerarquía de padre-hijo(Observe Figura \ref{Fig5: Topologia ESP-MESH}).
  
  \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{wmn-ex_3.png}\label{Fig5: Topologia ESP-MESH}
+\includegraphics[scale=0.6]{wmn-ex_3.png}\label{Fig5: Topologia ESP-MESH}
 \caption{Topología de árbol de ESP-IDF}
 \end{figure}
  
  \subsubsection{Tramas de faro y límite de RSSI}
  
- Cada nodo que pueda formar connecciones downstream (desde el nodo raíz a algún hijo) transmite periodicamente una trama de faro, para comunicar su presencia, estado o para formar nuevas conexiones. 
+ Cada nodo que pueda formar conexiones downstream (desde el nodo a hijos) transmite periódicamente una trama de faro, para comunicar su presencia, estado o para formar nuevas conexiones. 
  
- La intensidad de señal de una potencial conxion upstream(desde algún hijo a un padre) esta representada por RSSI (Indicación de la Intensidad de Señal Recibida) en la trama de faro. Esta se una para prevenir que los nodos formen enlaces debiles. 
+ La intensidad de señal de una potencial conexión upstream(desde algún hijo a un padre) esta representada por RSSI (Indicación de la Intensidad de Señal Recibida) en la trama de faro. Esta se una para prevenir que los nodos formen enlaces débiles. 
  
  \subsubsection{La selección del nodo padre}
  
- Cuando un nodo posee varios candidatos de nodos padre la selección se lleva a cabo tomando en cuenta en cual capa se encuentran y la cantidad de conxiones downstream que posee cada uno de los candidatos; con prioridad en el que este en una capa más baja, esto se hace para minimizar el número de capas que posee la red. 
+ Cuando un nodo posee varios candidatos de nodos padre la selección se lleva a cabo tomando en cuenta en cual capa se encuentran y la cantidad de conexiones downstream que posee cada uno de los candidatos; con prioridad en el que este en una capa más baja, esto se hace para minimizar el número de capas que posee la red. 
  
  \subsubsection{Las tablas de enrutamiento}
  
- Cada nodo dentro de una red ESP-MESH mantiene su tabla enrutamiento individual, usada para enrutar correctamente los paquetes al node destino correcto. La tabla de enrutamiento consisdete de las direcciones MAC de todos los nodos en la subred del nodo particular (incluyendola dirección MAC del nodo en cuestión). Cada tabla de enrutamiento es particionada internamente en las subtablas de enrutamiento de sus hijos. Las tablas de enrutamiento determinan si los paquetes deben ser reenviados upstream o downstream, basados en las siguientes reglas:
+ Cada nodo dentro de una red ESP-MESH mantiene su tabla enrutamiento individual, usada para enrutar correctamente los paquetes al node destino correcto. La tabla de enrutamiento contiene de las direcciones MAC de todos los nodos en la subred del nodo particular (incluyendola dirección MAC del nodo en cuestión). Cada tabla de enrutamiento es particionada internamente en las subtablas de enrutamiento de sus hijos. Las tablas de enrutamiento determinan si los paquetes deben ser reenviados upstream o downstream, basados en las siguientes reglas:
  
  \begin{enumerate}
- \item Si la dirección MAC del nodo destino se encuentra en la tabla de enrutamiento y no es el nodo en cuestion, entonces reenvia los paquetes downstream al el hijo correspondiente en la tabla de enrutamiento.
+ \item Si la dirección MAC del nodo destino se encuentra en la tabla de enrutamiento y no es el nodo en cuestión, entonces reenvía los paquetes downstream al el hijo correspondiente en la tabla de enrutamiento.
 
-\item Si la dirección MAC destino o esta en la tabla de enrutamiento, reenvia los paquetes upstream al correspondiente nodo padre. De esta manera el mensaje terminaría en el nodo raiz, cuya tabla de enrutamiento debe contener todos los nodos de la red.
+\item Si la dirección MAC destino o esta en la tabla de enrutamiento, reenvia los paquetes upstream al correspondiente nodo padre. De esta manera el mensaje terminaría en el nodo raíz, cuya tabla de enrutamiento debe contener todos los nodos de la red.
  \end{enumerate}
 
 \section{Protocolo MODBUS}
 
 MODBUS es un protocolo de mensajes de capa de aplicación, posicionada en el nivel 7 del modelo OSI, el cual provee comunicación cliente/servidor entre dispositivos conectados en diferentes tipos de buses o redes. 
 
-El protocolo MODBUS define un unidad de datos de protocolo (PDU) independiente de las capas inferiores de comunicación. El mapeo del protocolo MODBUS en  buses o redes específicas pueden introducir campos adiciones en la unidad de datos de aplicación (ADU).
+El protocolo MODBUS define la unidad de datos de protocolo (PDU) independiente de las capas inferiores de comunicación. El mapeo del protocolo MODBUS en  buses o redes específicas pueden introducir campos adiciones en la unidad de datos de aplicación (ADU).
 
  \begin{figure}[H]
 \centering
@@ -191,9 +189,9 @@ El protocolo MODBUS define un unidad de datos de protocolo (PDU) independiente d
 \caption{Trama general de procolo MODBUS}
 \end{figure}
 
-La ADU es construida por el cliente que inicializa la transacción MODBUS, con una forma específica defina por el protocolo de aplicación MODBUS. El protocolo posee códigos en las PDU, llamados códigos de funciones, que son los elementos a través de los cuales el protocolo ofrece diferentes servicios, es decir, la función indica al servidos que tipo de acción llevar a cabo. 
+La ADU es construida por el cliente que inicializa la transacción MODBUS, con una forma específica defina por el protocolo. El protocolo posee códigos en las PDU, llamados códigos de funciones, que son los elementos a través de los cuales el protocolo ofrece diferentes servicios, es decir, la función indica al servidos que tipo de acción llevar a cabo. 
 
-El código de función ocupa un byte, poseyendo valores válidos entre 1 y 255 ( el rango de 128 - 255 está reservado para respuesta de excepciones). Además, se pueden agregar  códigos de sub-funciones que contienen información adicional que el servidor usa para ejecutar la acción definida por el código de la función, como lo son direcciones de registros, cantidad de items y número de bytes en un campo.  El campo del código de la función se utiliza también para indicar si hubo una respuesta normal (sin errores) o si hubieron errores (repuesta de excepción). Para respuesta normales, el servidor simplemente responde con un eco del código de función en la respuesta, mientras que para repuestas de excepción este campo posee el código asociado a la excepción.
+El código de función ocupa un byte, poseyendo valores válidos entre 1 y 255 ( el rango de 128 - 255 está reservado para respuesta de excepciones). Además, se pueden agregar  códigos de sub-funciones que contienen información adicional que el servidor usa para ejecutar la acción definida por el código de la función, como  direcciones de registros, cantidad de items y número de bytes en un campo.  El campo del código de la función se utiliza también para indicar si hubo una respuesta normal (sin errores) o si hubieron errores (repuesta de excepción). Para respuesta normales, el servidor simplemente responde con un eco del código de función en la respuesta, mientras que para repuestas de excepción este campo posee el código asociado a la excepción.
 
 El tamaño de la ADU  está limitado en una línea serial a 256 bytes, por lo tanto, si le restamos un byte para la dirección del servidos y dos bytes de chequeo de errores, se tiene que el tamaño de la PDU es de 253 bytes.
 
@@ -228,13 +226,13 @@ Registros de renteción & Word de 16-bits & Leer y escribir \\
 \end{table}
 
 
-Toda los datos manejados v[ia MODBUS (bits y registros) deben estar localizados en la memoria de aplicación del dispositivo interrogado; la memoria física no debe ser confundida con las referencia de los datos. El único requerimiento es la vinculación de la referencia de los datos con la memoria física.
+Toda los datos manejados vía MODBUS (bits y registros) deben estar localizados en la memoria de aplicación del dispositivo interrogado; la memoria física no debe ser confundida con las referencia de los datos. El único requerimiento es la vinculación de la referencia de los datos con la memoria física.
 \section{Microcontrolador ESP32}
 El ESP32 es un chip con integración WiFi y Bluetooth diseñado con la tecnología de ultra bajo consumo de 40 nm. Está diseñado para alcanzar desempeño importante de energía sobre radio frecuencia.
 
 El ESP32 esta diseñado para aplicaciones móviles, electrónicos personales, y de Internet de las cosas (IoT). Posee características de bajo consumo, incluyendo reloj de alta precisión, múltiples estados de energía, y escalamiento de consumo dinámico. 
 
-Además es una solución integrada, ya que posee WiFi, Bluetooth, junto con alrededor de 20 componentes externos. El chip incluye una interruptor de antena, acoplador de radio-frecuencia, almplificador de potencia, amplificador de recepción de bajo ruido, filtros, y módulos de administración de consumo. 
+Además es una solución integrada, ya que posee WiFi, Bluetooth, junto con alrededor de 20 componentes externos. El chip incluye una interruptor de antena, acoplador de radio-frecuencia, amplificador de potencia, amplificador de recepción de bajo ruido, filtros, y módulos de administración de consumo. 
 
  \begin{figure}[H]
 \centering
