@@ -1,18 +1,18 @@
 \section{Diseño de la red mallada}
  
- Cada red mallada se formó como para que la información del protocolo MODBUS proveniente de esclavos o maestro viaje por ella sin que represente ninguna diferencia respecto a una linea serial, es decir, para los elementos MODBUS es transparente la red. Así, la red se puede instalar para equipos que funcionen sobre la linea serial sin modificación alguna.
+ Cada red mallada se diseñó para que la información del protocolo MODBUS viaje por la red sin que represente alguna diferencia respecto a una linea serial, es decir, para los elementos MODBUS es transparente la red. Por lo tanto, se puede instalar para equipos que funcionen sobre la linea serial sin modificación alguna.
  
- El enrutamiento de la red se lleva a cabo a partir del esclavo al que este interrogando el maestro. El maestro esta conectado serialmente a un nodo, este al recibir la información vía serial identifica el esclavo y en consecuencia envía la trama MODBUS a un nodo específico que se encuentra el camino hacia el esclavo en cuestión.  Un nodo al recibir la trama inalambricamente identifica el esclavo en la trama y verifica si debe reenviar la trama a otro nodo, o en su defecto transmitirlo serialmente ya que posee el esclavo MODBUS en dicha interfaz. Luego de generada la respuesta esta es analogamente llevada hasta el maestro.
+ El enrutamiento de la red se lleva a cabo a partir del esclavo al que este interrogando el maestro. El maestro esta conectado serialmente a un nodo, este al recibir la información  identifica el esclavo y en consecuencia envía la trama MODBUS a un nodo específico que se encuentra el camino hacia el esclavo.  Un nodo al recibir la trama inalámbricamente identifica el esclavo en la trama y verifica si debe reenviar la trama a otro nodo, o en su defecto transmitirlo serialmente. Luego de generada la respuesta esta es análogamente llevada hasta el maestro.
  
  La red es experta, es decir, conoce de antemano en que nodo se encuentra cada esclavo, lo cual es usado para enrutar los mensajes.
  
 %agregar esquema 
  \subsection{Características de los nodos}
- Se realizó el programa para que todos los nodos tuviesen el mismo código, sin importar el rol que posea en la red (maestro, intermedio o final). Se llama nodo maestro a el que posee el maestro conectado, nodo intermedio aquel cuya funcionalidad solo en reenviar datos y nodo final a el que posee esclavos Modbus. Sin embargo, los nodos finales también pueden reenviar datos.
+ Se realizó el programa para que todos los nodos tuviesen el mismo código, sin importar el rol que posea en la red (maestro, intermedio o final). Se llama nodo maestro a el que posee el maestro Modbus conectado, nodo intermedio aquel cuya funcionalidad solo en reenviar datos y nodo final a el que posee esclavos Modbus. Sin embargo, los nodos finales también pueden reenviar datos.
  
  Los nodos en sí soportan el protocolo Modbus para ser interrogados y configurados. Por lo que los se reservaron direcciones para  los nodos, en este caso los identificadores desde 101 a 255.  
  
- Cada nodo se le agregó la posibilidad de ofrecer el servicio de configuración de su identificador Modbus,la tasa de baudios de la interfaz RS-485, y la tabla de enrutamiento. Esto a través del acceso a los registros de retención. Además de la funcionalidad de reinicio y reseteo de fabrica(hardware). %xxx Agregar que otras funcionalidades.
+ Cada nodo se le agregó la posibilidad de ofrecer el servicio de configuración de su identificador Modbus,la tasa de baudios de la interfaz RS-485, y la tabla de enrutamiento. Esto a través del acceso a los registros de retención. Además de la funcionalidad de reinicio y reseteo de fabrica(hardware). Más concretamente, los nodos de la red son esclavos adicionales de la red Modbus. %xxx Agregar que otras funcionalidades.
  Las direcciones de los registros con sus funcionalidades se expresan en la tabla \ref{Tabla 1: Espec HR}.
  
  \begin{table}[H]
@@ -30,19 +30,97 @@ Dirección & Tipo de registro & Descripción  \\
 \caption{Tablas primarias de los modelos de datos Modbus}\label{Tabla 1: Espec HR}
 \end{table}
 
-Más concretamente, los nodos de la red son esclavos adicionales de la red Modbus.
- %Nodos modbus, configuracion, serial'wifin %limitaciones
+ Un esquema del funcionamiento se puede apreciar en la figura\ref{Fig 1: ULM enrutamiento}.
  
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{UML2.eps}\label{Fig 1: ULM enrutamiento}
+\caption{Diagrama de flujo del funcionamiento general de un nodo de la red}
+\end{figure}
+
+
  \subsection{Características de enrutamiento}
  
  Bien sea que los datos sean recibidos serial o inalambricamente,  las decisiones siguientes se toman en base a tabla de enrutamiento.
  
- La tabla de enrutamiento consisten en un arreglo de 256 casillas, donde la posición está asociada a el esclavo Modbus y el valor en la casilla se relaciona con la ubicación de dicho esclavo. Cabe resaltar que la ubicación a la que se refiere la tabla de enrutamiento no es la posción del esclavo en la red, en su lugar es el siguiente nodo a reenviar los datos para llegar al esclavo en cuestión, es decir, los nodos solo conocen un salto hacia adelante y un salto hacia atrás.
+ La tabla de enrutamiento consisten en un arreglo de 256 casillas, donde la posición está asociada a el esclavo Modbus y el valor en la casilla se relaciona con la ubicación de dicho esclavo. Cabe resaltar que el identificador a la que se refiere la tabla de enrutamiento como destino no es la localización del esclavo en la red, en su lugar es el siguiente nodo a reenviar los datos para llegar al esclavo en cuestión, es decir, los nodos solo conocen un salto hacia adelante y un salto hacia atrás para cada esclavo.
 
 La tabla de enrutamiento se llena  mediante los registros de retención, a partir de la dirección 256, la cual se asocia al esclavo 1. Esta debe ser determinada por el usuario que conoce la posición de los nodos en el área a implementar. 
  
-Cuando se recibe un trama, se extrae de la trama el identificador del esclavo, y surgen dos casos: corresponde a un número diferente de cero ó es cero. Si es cero, entonces el nodo no tiene ruta a ese nodo, en caso contrario el número puede corrponder al indentificador del nodo en cuestión o a otro nodo al cual se reenviarán la trama. En caso de que sea el nodo en cuestión entonces ha llegado la trama ha llegado a su destino. 
+Cuando se recibe un trama, se extrae el identificador del esclavo  y surgen dos casos: corresponde a un número diferente de cero ó es cero. Si es cero, entonces el nodo no tiene ruta a ese nodo, en caso contrario el número puede corresponder al identificador del nodo en cuestión o a otro nodo al cual se reenviarán la trama. En caso de que sea el nodo en cuestión entonces ha llegado la trama ha llegado a su destino. 
 
-Un esquema más detallado del enrutamiento se puede apreciar en el esquema de la figura  \ref{Fig 1: ULM enrutamiento}.
- 
- %tablas de enrutamiento 
+En la figura \ref{Fig 1: ULM enrutamiento} se muestra un ejemplo de la tabla de enrutamiento. En el primer lugar supondremos que se trata de la tabla de enrutamiento del esclavo 255. Luego, se observa que para cuando el identificador del nodo coincide con elemento de la tabla de enrutamiento, se dice que el esclavo se encuentra en dicho nodo, así el esclavo coincide con el nodo destino significa que el esclavo a interrogar es el nodo. Finalmente si posee cero significa que no posee ruta para dicho esclavo.
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{rt.eps}\label{Fig  2: Tabla de enrutamiento}
+\caption{Ilustración de la estructuras de la tabla de enrutamiento}
+\end{figure}
+
+En la ADU de la comunicación inalámbrica existe un dato de la trama que identifica el sentido de la trama (hacia o desde el maestro). Cuando se recibe información  inalambricamente y se debe reenviar, la aplicación usa la información del sentido para asignar la dirección del nodo destino, es decir, si va hacia adelante (desde el maestro) se usa la tabla de enrutamiento de manera convencional y si hacia atrás se usa el nodo de donde provino la trama inicialmente; por ejemplo, si la trama hacia el esclavo provino desde el nodo 200, cuando vaya hacia el maestro reenviaré la trama al nodo 200. Concretamente, las tramas posee el mismo camino en ambos sentidos.
+
+Existe una diferencia cuando se reciben datos serialmente, porque no hay una manera directa de determinar el sentido de la información simplemente analizando la trama recibida, sin embargo, es posible asignarla con el apoyo de la tabla de enrutamiento, pues si el nodo destino es el nodo en cuestión significa que es una respuesta Modbus.
+
+\subsection{Características Modbus de los nodos}
+
+La capacidad del nodo para funcionar como esclavo Modbus dentro de la red permite que sea configurable los parámetros de funcionamiento como la velocidad de comunicación serial, identificadores Modbus respecto y la tabla de enrutamiento. 
+
+Estos parámetros se le asignaron direcciones de aplicación Modbus en los registros de retención, para que pudiesen ser leidos y escritos desde el maestro. Otras funciones binarias como la de reinicio se ejecuta a través de la escritura de la bobina cero.
+\begin{itemize}
+\item La dirección cero corresponde al identificador del nodo.
+\item La dirección uno corresponde a la tasa de baudios.
+\item Desde la dirección 256 hasta 512 corresponde a la tabla de enrutamiento.
+\end{itemize} 
+
+Cabe resaltar que estos nodo pueden ser interrogados tanto serialmente como inalambricamente, es decir, con la red ya instalada. Las funciones no usadas proveerán la respuesta de "Función ilegal".
+
+
+\section{Programación del microcontroladores ESP32}
+
+Espressif provee los recursos básicos de hardware y software relacionados con el desarrollo de aplicaciones que usen la serie de hardware del ESP32.
+
+El hardware necesario son: Un tarjeta ESP32, un cable USB y computador que posea Windows, Linux o MACOS. Para el desarrollo del programa se usaron tarjetas de desarrollo ESP32-DevKitC V4 y un computador con sistema operativo Ubuntu 18.94 LTS.
+
+En cuanto al software se puede representar por capas:
+\begin{enumerate}
+\item Un \textbf{Toolchain} para compilar el código para el ESP32.
+\item \textbf{Herramientas de construcción}  para construir toda la aplicación para el microcontrolador, en este caso se usó  \textit{CMake}
+\item ESP-IDF  que contiene esencialmente las librerias y los scripts para operar con el \textbf{Toolchain}.
+\item \textbf{Editor de texto } para escribir los programas en C, en este caso \textit{Eclipse IDE}.
+\end{enumerate}
+
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{toolchain.png}\label{Fig  3: Desarrollo de aplicaciones}
+\caption{Ilustración del combo para el desarrollo de aplicaciones en el ESP32 }
+\end{figure}
+
+Los detalles de la instalación de cada uno de estas herramientas se llevo a cabo siguiendo la metodología propuesta por \textit{Espressif } en el su pagina web \url{https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html}.
+
+\subsection{El sistema operativo en tiempo real}
+
+El microcontrolador ESP32 está diseñado para correr un sistema operativo en tiempo real basado en el  \textit{FreeRTOS} desarrollado por \textit{Amazon}. Y soporta las casi las misma características desde el punto de vista de  creación y manejo de tareas, así como de las demás herramientas que ofrece un sistema operativo en tiempo real.
+
+Por lo tanto, el desarrollo del programa se basó en la creación de tareas y la comunicación entre ellas basada en colas. 
+
+Se crearon tareas dos tareas para el manejo de los datos inalámbricos: una para enviar y otra para manejar los datos recibidos; Y otra tarea para la recepción de datos mediante el UART. 
+\section{El hardware}
+
+El hardware del nodo se puede dividir en tres bloques: el microcontrolador, la alimentación y la interfaz RS-485. Esto de puede ilustrar en el esquema de la figura ZZZZ.
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{diagrama.esp}\label{Fig  4: Diagrama de bloques}
+\caption{Ilustración del combo para el desarrollo de aplicaciones en el ESP32 }
+\end{figure}
+\subsection{El microcontrolador}
+
+Para la aplicación se usó el encapsulado  ESP-WROOM-32, debido a disponibilidad. Se debe tener en cuenta que se deben dejar diponibles los pines del UART cero para la programación del, además de dos pines adicionales para inducir el estado de programación, los cuales son el pin \textit{EN} y el pin de propósito general cero.
+
+\subsection{La alimentación}
+Para proveer los 3,3 V necesarios se usó la tarjeta pre-fabricada basada en el regulador lineal LM259S, que posee la capacidad de salida ajustable a la tensión requerida con tensiones de entrada de hasta 30V. 
+Lo cual es beneficioso ya que en el contexto industrial es común  las tensiones del 24 V y 5 V.
+
+\subsection{La intefaz RS-485}
+
+Usando el chip d MAX-485 de \textit{MAXIM} es posible obtener niveles de RS-485 a partir de una interfaz serial TLL, proveniente del UART1. 

@@ -31,12 +31,19 @@
 \BOOKMARK [1][-]{section.3.1}{3.1 Dise\361o de la red mallada}{chapter.3}% 31
 \BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Caracter\355sticas de los nodos}{section.3.1}% 32
 \BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Caracter\355sticas de enrutamiento}{section.3.1}% 33
-\BOOKMARK [0][-]{chapter.4}{DESCRIPCI\323N DEL MODELO}{}% 34
-\BOOKMARK [0][-]{chapter.5}{PRUEBAS EXPERIMENTALES}{}% 35
-\BOOKMARK [0][-]{chapter.6}{RESULTADOS}{}% 36
-\BOOKMARK [0][-]{chapter.7}{CONCLUSIONES}{}% 37
-\BOOKMARK [0][-]{chapter.8}{RECOMENDACIONES}{}% 38
-\BOOKMARK [0][-]{appendix.Alph1}{T\315TULO DEL ANEXO}{}% 39
-\BOOKMARK [0][-]{appendix.Alph2}{T\315TULO DEL ANEXO}{}% 40
-\BOOKMARK [0][-]{appendix.Alph3}{T\315TULO DEL ANEXO}{}% 41
-\BOOKMARK [0][-]{appendix*.10}{REFERENCIAS}{}% 42
+\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 Caracter\355sticas Modbus de los nodos}{section.3.1}% 34
+\BOOKMARK [1][-]{section.3.2}{3.2 Programaci\363n del microcontroladores ESP32}{chapter.3}% 35
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 El sistema operativo en tiempo real}{section.3.2}% 36
+\BOOKMARK [1][-]{section.3.3}{3.3 El hardware}{chapter.3}% 37
+\BOOKMARK [2][-]{subsection.3.3.1}{3.3.1 El microcontrolador}{section.3.3}% 38
+\BOOKMARK [2][-]{subsection.3.3.2}{3.3.2 La alimentaci\363n}{section.3.3}% 39
+\BOOKMARK [2][-]{subsection.3.3.3}{3.3.3 La intefaz RS-485}{section.3.3}% 40
+\BOOKMARK [0][-]{chapter.4}{DESCRIPCI\323N DEL MODELO}{}% 41
+\BOOKMARK [0][-]{chapter.5}{PRUEBAS EXPERIMENTALES}{}% 42
+\BOOKMARK [0][-]{chapter.6}{RESULTADOS}{}% 43
+\BOOKMARK [0][-]{chapter.7}{CONCLUSIONES}{}% 44
+\BOOKMARK [0][-]{chapter.8}{RECOMENDACIONES}{}% 45
+\BOOKMARK [0][-]{appendix.Alph1}{T\315TULO DEL ANEXO}{}% 46
+\BOOKMARK [0][-]{appendix.Alph2}{T\315TULO DEL ANEXO}{}% 47
+\BOOKMARK [0][-]{appendix.Alph3}{T\315TULO DEL ANEXO}{}% 48
+\BOOKMARK [0][-]{appendix*.10}{REFERENCIAS}{}% 49
