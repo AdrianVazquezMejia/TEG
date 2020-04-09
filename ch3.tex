@@ -1,19 +1,40 @@
-\section{Diseño de la red mallada}
+\section{DISEÑO DE LA RED MALLADA}
  
- Cada red mallada se diseñó para que la información del protocolo MODBUS viaje por la red sin que represente alguna diferencia respecto a una linea serial, es decir, para los elementos MODBUS es transparente la red. Por lo tanto, se puede instalar para equipos que funcionen sobre la linea serial sin modificación alguna.
+Tomando en cuenta la investigaciones realizadas se encontró que en el campo de las redes WiFi malladas, no existe un protocolo de aplicación definido, en su lugar las redes se ajustas a las necesidades específicas del campo en cual se vaya a implementar, esto trae como consecuencia que las especificaciones se concentren en el máximo rendimiento en las áreas críticas del problema. 
+
+Dentro de los funcionamiento descritos anteriormente, se tiene que la primera se concentra en el algoritmo de optimización de la topología de la red, sin tomar en consideración el hardware de implentación. La segunda, provee una aproximación más realista, proveyendo las especificaciones del hardware, sin embargo no hay justificación para el enrutamiento usado y las medidas de rendimiento aplicadas no son de interés para el área industrial. Por último, se tiene que la ESP-MESH parecía  brindar extensibilidad y rápido desarrollo, no obstante, posee la desventaja de que para la formación de la red es necesario un enrutador WiFi externo que brinde las direcciones IP a la red mallada, lo que deriva en un centralización, pues si el router falla, la red perece. 
+
+Sabiendo que la implentación se realizará en el microcontrolador ESP-32, se encontró que la librería ESP-NOW provee comunicación WiFi punto a punto entre microcontroladores, con posibilidades de encriptación, comunicación broadcast, multicast y unicast. Además, provee de direccionamiento por direcciones MAC.
+Dicha librería no está orientada a redes malladas, sin embargo, posee las características para la contruccion de una, ya que se puede formar de forma descentralizada, extensible, y ajustable a los protocolo de aplicación.
+
+Por otro lado tenemos que la interfaz serial puede ser lograda usando un UART del MCU configurado para el funcionamiento \textit{half-duplex} de RS-485. Existen diferentes en el mercado variedad de chips para la conversión de niveles TTL a RS-485, dentro de los más usados se encuentra el MAX-485 de \textit{Maxim Integrated}. 
+
+Las aplicaciones del procotocolo MODBUS son numerosas, sin embargo, la variación MODBUS RTU provee alto aprovechamiento de la memoria, ya que la información ocupa solo los bytes necesario y puede ser directamente interpretada por el microcontrolador a diferencia de la versión ANSII.
+
+
+\subsection{Requerimientos de diseño} 
  
- El enrutamiento de la red se lleva a cabo a partir del esclavo al que este interrogando el maestro. El maestro esta conectado serialmente a un nodo, este al recibir la información  identifica el esclavo y en consecuencia envía la trama MODBUS a un nodo específico que se encuentra el camino hacia el esclavo.  Un nodo al recibir la trama inalámbricamente identifica el esclavo en la trama y verifica si debe reenviar la trama a otro nodo, o en su defecto transmitirlo serialmente. Luego de generada la respuesta esta es análogamente llevada hasta el maestro.
+ Principalmente debe ser una red confiable, estable, y eficaz; aprovechando las principales características de las redes malladas, como saltos múltiples y un enrutamiento flexible. 
  
- La red es experta, es decir, conoce de antemano en que nodo se encuentra cada esclavo, lo cual es usado para enrutar los mensajes.
+ La red mallada tiene que ser aplicable a dispositivos existentes que trabajen sobre linea serial MODBUS RTU, sin ninguna modificación, es decir, que la red   sería transparente para los equipos Modbus, para permitir que sea de rápida instalación y no altere la infraestructa ya implenetada en la industria. Así mismo, debe soportar la transmisión todas las funciones Modbus entre los equipos. 
  
+ Los nodos deben poder ser configurables, pudiendo ajustar las rutas de la red y la tasa de baudios de la interfaz serial. Así, se crea un red adaptable a los parámetros disponibles en las aplicaciones. 
+ 
+El ESP-32 brinda la posibilidad de llevar a cabo las mencionadas características a cabalidad, sin embargo, solo bajo pruebas es posible determinar la calidad de las características.
+
+\subsection{Diseño Básico de la red}
+ En primer lugar se estableció que la rutas de la información fueran estáticas, esto permite la implentación de algoritmos más simples que sean más confiables sobre la arquitectura del microcontrolador. El establecimientos de la rutas se ejecuta mediante la implentación de tablas de enrutamiento en cada uno de los nodos. 
+ 
+ Se estableció que una serie de identificadores Modbus esten reservados para los nodos de la red, es decir, los nodos serán esclavos adicionales de la red. Esto permite que se use el protocolo Modbus para el acceso a la configuración del nodo, como lo es establecer la tabla de enrutamiento, la velocidad de los baudios de la linea serial y el identificador del mismo. 
+ 
+  
 %agregar esquema 
- \subsection{Características de los nodos}
- Se realizó el programa para que todos los nodos tuviesen el mismo código, sin importar el rol que posea en la red (maestro, intermedio o final). Se llama nodo maestro a el que posee el maestro Modbus conectado, nodo intermedio aquel cuya funcionalidad solo en reenviar datos y nodo final a el que posee esclavos Modbus. Sin embargo, los nodos finales también pueden reenviar datos.
+ \subsubsection{Características de los nodos}
+ Se realizó el programa para que todos los nodos tuviesen el mismo programa sin importar el rol que posea en la red (maestro, intermedio o final). Se llama nodo maestro a el que posee el maestro Modbus conectado, nodo intermedio a  aquel cuya funcionalidad solo en reenviar datos inalámbricos y nodo final a el que posee esclavos Modbus. Sin embargo, los nodos finales también pueden reenviar datos.
  
- Los nodos en sí soportan el protocolo Modbus para ser interrogados y configurados. Por lo que los se reservaron direcciones para  los nodos, en este caso los identificadores desde 101 a 255.  
+ Los nodos en sí soportan el protocolo Modbus para ser interrogados y configurados. Por lo que los se reservaron direcciones para  los nodos, en este caso los identificadores desde 101 a 255. Más concretamente, los nodos de la red son esclavos adicionales de la red Modbus. %xxx 
  
- Cada nodo se le agregó la posibilidad de ofrecer el servicio de configuración de su identificador Modbus,la tasa de baudios de la interfaz RS-485, y la tabla de enrutamiento. Esto a través del acceso a los registros de retención. Además de la funcionalidad de reinicio y reseteo de fabrica(hardware). Más concretamente, los nodos de la red son esclavos adicionales de la red Modbus. %xxx Agregar que otras funcionalidades.
- Las direcciones de los registros con sus funcionalidades se expresan en la tabla \ref{Tabla 1: Espec HR}.
+ Cada nodo tiene la posibilidad de ofrecer el servicio de configuración de su identificador Modbus, la tasa de baudios de la interfaz RS-485, y la tabla de enrutamiento. Esto a través del acceso a los registros de retención. Además de la funcionalidad de reinicio y reseteo de fabrica(hardware). Las direcciones de los registros con sus funcionalidades se expresan en la tabla \ref{Tabla 1: Espec HR}.%xxx Agregar que otras funcionalidades.
  
  \begin{table}[H]
   \centering
@@ -30,7 +51,7 @@ Dirección & Tipo de registro & Descripción  \\
 \caption{Tablas primarias de los modelos de datos Modbus}\label{Tabla 1: Espec HR}
 \end{table}
 
- Un esquema del funcionamiento se puede apreciar en la figura\ref{Fig 1: ULM enrutamiento}.
+ Un esquema del funcionamiento se puede apreciar en la figura \ref{Fig 1: ULM enrutamiento}.
  
  \begin{figure}[H]
 \centering
@@ -39,17 +60,15 @@ Dirección & Tipo de registro & Descripción  \\
 \end{figure}
 
 
- \subsection{Características de enrutamiento}
- 
- Bien sea que los datos sean recibidos serial o inalambricamente,  las decisiones siguientes se toman en base a tabla de enrutamiento.
- 
- La tabla de enrutamiento consisten en un arreglo de 256 casillas, donde la posición está asociada a el esclavo Modbus y el valor en la casilla se relaciona con la ubicación de dicho esclavo. Cabe resaltar que el identificador a la que se refiere la tabla de enrutamiento como destino no es la localización del esclavo en la red, en su lugar es el siguiente nodo a reenviar los datos para llegar al esclavo en cuestión, es decir, los nodos solo conocen un salto hacia adelante y un salto hacia atrás para cada esclavo.
+ \subsubsection{Características de enrutamiento}
+  
+ La tabla de enrutamiento consisten en un vector de 256 casillas, donde la posición está asociada a el esclavo Modbus y el valor en la casilla se relaciona con la ubicación de dicho esclavo. Cabe resaltar que el identificador a la que se refiere la tabla de enrutamiento como destino no es la localización del esclavo en la red, en su lugar es el siguiente nodo a reenviar los datos para llegar al esclavo en cuestión, es decir, los nodos solo conocen un salto hacia adelante y un salto hacia atrás para cada esclavo.
 
 La tabla de enrutamiento se llena  mediante los registros de retención, a partir de la dirección 256, la cual se asocia al esclavo 1. Esta debe ser determinada por el usuario que conoce la posición de los nodos en el área a implementar. 
  
 Cuando se recibe un trama, se extrae el identificador del esclavo  y surgen dos casos: corresponde a un número diferente de cero ó es cero. Si es cero, entonces el nodo no tiene ruta a ese nodo, en caso contrario el número puede corresponder al identificador del nodo en cuestión o a otro nodo al cual se reenviarán la trama. En caso de que sea el nodo en cuestión entonces ha llegado la trama ha llegado a su destino. 
 
-En la figura \ref{Fig 1: ULM enrutamiento} se muestra un ejemplo de la tabla de enrutamiento. En el primer lugar supondremos que se trata de la tabla de enrutamiento del esclavo 255. Luego, se observa que para cuando el identificador del nodo coincide con elemento de la tabla de enrutamiento, se dice que el esclavo se encuentra en dicho nodo, así el esclavo coincide con el nodo destino significa que el esclavo a interrogar es el nodo. Finalmente si posee cero significa que no posee ruta para dicho esclavo.
+En la figura \ref{Fig 1: ULM enrutamiento} se muestra un ejemplo de la tabla de enrutamiento. En el primer lugar supondremos que se trata de la tabla de enrutamiento del esclavo 255. Luego, se observa que para cuando el identificador del nodo coincide con elemento de la tabla de enrutamiento, se dice que el esclavo se encuentra en la linea serial de dicho nodo, así el esclavo coincide con el nodo destino significa que el esclavo a interrogar es el nodo.
 
  \begin{figure}[H]
 \centering
@@ -57,15 +76,15 @@ En la figura \ref{Fig 1: ULM enrutamiento} se muestra un ejemplo de la tabla de 
 \caption{Ilustración de la estructuras de la tabla de enrutamiento}
 \end{figure}
 
-En la ADU de la comunicación inalámbrica existe un dato de la trama que identifica el sentido de la trama (hacia o desde el maestro). Cuando se recibe información  inalambricamente y se debe reenviar, la aplicación usa la información del sentido para asignar la dirección del nodo destino, es decir, si va hacia adelante (desde el maestro) se usa la tabla de enrutamiento de manera convencional y si hacia atrás se usa el nodo de donde provino la trama inicialmente; por ejemplo, si la trama hacia el esclavo provino desde el nodo 200, cuando vaya hacia el maestro reenviaré la trama al nodo 200. Concretamente, las tramas posee el mismo camino en ambos sentidos.
+En la ADU de la comunicación inalámbrica existe un dato de la trama que identifica el sentido de la trama (hacia o desde el maestro). Cuando se recibe información  inalambricamente y se debe reenviar, la aplicación usa la información del sentido para asignar la dirección del nodo destino, es decir, si va hacia adelante (desde el maestro), entonces se usa la tabla de enrutamiento de manera convencional y si hacia atrás se usa el nodo de donde provino la trama inicialmente; por ejemplo, si la trama hacia el esclavo provino desde el nodo 200, cuando vaya hacia el maestro se reenviará la trama a través del nodo 200. Concretamente, las tramas posee el mismo camino en ambos sentidos.
 
 Existe una diferencia cuando se reciben datos serialmente, porque no hay una manera directa de determinar el sentido de la información simplemente analizando la trama recibida, sin embargo, es posible asignarla con el apoyo de la tabla de enrutamiento, pues si el nodo destino es el nodo en cuestión significa que es una respuesta Modbus.
 
-\subsection{Características Modbus de los nodos}
+\subsubsection{Características Modbus de los nodos}
 
 La capacidad del nodo para funcionar como esclavo Modbus dentro de la red permite que sea configurable los parámetros de funcionamiento como la velocidad de comunicación serial, identificadores Modbus respecto y la tabla de enrutamiento. 
 
-Estos parámetros se le asignaron direcciones de aplicación Modbus en los registros de retención, para que pudiesen ser leidos y escritos desde el maestro. Otras funciones binarias como la de reinicio se ejecuta a través de la escritura de la bobina cero.
+Estos parámetros se le asignaron direcciones de aplicación Modbus en los registros de retención, para que pudiesen ser leídos y escritos desde el maestro. Otras funciones binarias como la de reinicio se ejecuta a través de la escritura de la bobina cero.
 \begin{itemize}
 \item La dirección cero corresponde al identificador del nodo.
 \item La dirección uno corresponde a la tasa de baudios.
@@ -74,19 +93,40 @@ Estos parámetros se le asignaron direcciones de aplicación Modbus en los registr
 
 Cabe resaltar que estos nodo pueden ser interrogados tanto serialmente como inalambricamente, es decir, con la red ya instalada. Las funciones no usadas proveerán la respuesta de "Función ilegal".
 
+\subsubsection{El hardware}
 
-\section{Programación del microcontroladores ESP32}
+El hardware del nodo se puede dividir en tres bloques: el microcontrolador, la alimentación y la interfaz RS-485. Esto de puede ilustrar en el esquema de la figura \ref{Fig  4: Diagrama de bloques}.
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{diagrama.eps}\label{Fig  4: Diagrama de bloques}
+\caption{Diagrama de bloques para el hardware del nodo}
+\end{figure}
 
-Espressif provee los recursos básicos de hardware y software relacionados con el desarrollo de aplicaciones que usen la serie de hardware del ESP32.
 
-El hardware necesario son: Un tarjeta ESP32, un cable USB y computador que posea Windows, Linux o MACOS. Para el desarrollo del programa se usaron tarjetas de desarrollo ESP32-DevKitC V4 y un computador con sistema operativo Ubuntu 18.94 LTS.
+\paragraph{Microcontrolador}
+
+Para la aplicación se usó el encapsulado  ESP-WROOM-32, debido a disponibilidad. Se debe tener en cuenta que se deben dejar diponibles los pines del UART cero para la programación del, además de dos pines adicionales para inducir el estado de programación, los cuales son el pin \textit{EN} y el pin de propósito general cero.
+
+\paragraph{Alimentación}
+Para proveer los 3,3 V necesarios se usó la tarjeta pre-fabricada basada en el regulador lineal LM259S, que posee la capacidad de salida ajustable a la tensión requerida con tensiones de entrada de hasta 30 V. 
+Lo cual es beneficioso ya que en el contexto industrial es común  las tensiones del 24 V y 5 V.%xxx reference required
+
+\paragraph{Intefaz RS-485}
+
+Usando el chip d \emph{MAX-485} de \textit{MAXIM} es posible obtener niveles de RS-485 a partir de una interfaz serial TLL, proveniente del UART1. 
+
+\section{Detalle del Diseño}
+\subsection{Programación del ESP-32}
+\textit{Espressif} provee los recursos básicos de hardware y software relacionados con el desarrollo de aplicaciones que usen la serie de hardware del ESP32.
+
+El hardware necesario son: una tarjeta de desarrollo con un ESP32, un cable USB y computador que posea Windows, Linux o MACOS. Para el desarrollo del programa se usaron tarjetas de desarrollo ESP32-DevKitC V1 y un computador con sistema operativo Ubuntu 18.04 LTS.
 
 En cuanto al software se puede representar por capas:
 \begin{enumerate}
-\item Un \textbf{Toolchain} para compilar el código para el ESP32.
-\item \textbf{Herramientas de construcción}  para construir toda la aplicación para el microcontrolador, en este caso se usó  \textit{CMake}
-\item ESP-IDF  que contiene esencialmente las librerias y los scripts para operar con el \textbf{Toolchain}.
-\item \textbf{Editor de texto } para escribir los programas en C, en este caso \textit{Eclipse IDE}.
+\item Un \textbf{Toolchain} para compilar el código para el ESP32: Xtensa-ELF 1.22.0.
+\item \textbf{Herramientas de construcción}  para construir toda la aplicación para el microcontrolador, en este caso se usó  \textit{GNU Make} 4.1.
+\item ESP-IDF  que contiene esencialmente las librerias y los scripts para operar con el \textbf{Toolchain}, versión 4.0.
+\item \textbf{Editor de texto } para escribir los programas en C, en este caso \textit{Eclipse IDE} 2019-12.
 \end{enumerate}
 
 
@@ -98,31 +138,61 @@ En cuanto al software se puede representar por capas:
 
 Los detalles de la instalación de cada uno de estas herramientas se llevo a cabo siguiendo la metodología propuesta por \textit{Espressif } en el su pagina web \url{https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html}.
 
-\subsection{El sistema operativo en tiempo real}
 
-El microcontrolador ESP32 está diseñado para correr un sistema operativo en tiempo real basado en el  \textit{FreeRTOS} desarrollado por \textit{Amazon}. Y soporta las casi las misma características desde el punto de vista de  creación y manejo de tareas, así como de las demás herramientas que ofrece un sistema operativo en tiempo real.
+\subsubsection{El sistema operativo en tiempo real}
 
-Por lo tanto, el desarrollo del programa se basó en la creación de tareas y la comunicación entre ellas basada en colas. 
+El microcontrolador ESP32 está diseñado para correr un sistema operativo en tiempo real(RTOS) basado en el  \textit{FreeRTOS} desarrollado por \textit{Amazon}.Un sistema operativo de tiempo real es una herramienta eficiente para dispositivos con poca capacidad de procesamiento. Es decir, aquellos dispositivos que no cuentan con una variedad de núcleos o kernels. RTOS trata de implementar en estos microsistemas una similud de comportamiento de múltiples unidades de procesamiento aún estando contenidas en un solo núcleo. Lo cuál es una ventajaimportante para la implementación de sistemas de mayor complejidad de código.La lógica funcional del método de programación RTOS es mediante establecimiento de tareas e interrupciones controladas por órden de prioridad y por el timer principal del sistema. Y soporta las casi las misma características desde el punto de vista de  creación y manejo de tareas, así como de las demás herramientas que ofrece un sistema operativo en tiempo real. 
 
-Se crearon tareas dos tareas para el manejo de los datos inalámbricos: una para enviar y otra para manejar los datos recibidos; Y otra tarea para la recepción de datos mediante el UART. 
-\section{El hardware}
+Dicho sistema operativo permite que se creen y desarrollen programas en lenguaje ANSI C, implementado las librerias para el manejo del microcontrolador proveidas por ESP-IDF de \textit{espressif}. Por lo tanto, el desarrollo del programa se basó en la creación de tareas y la comunicación entre ellas basada en colas. Se crearon tareas dos tareas para el manejo de los datos inalámbricos, una para la recepción de datos mediante el UART  y otras tareas con funciones de monitores fueron añadidas.
 
-El hardware del nodo se puede dividir en tres bloques: el microcontrolador, la alimentación y la interfaz RS-485. Esto de puede ilustrar en el esquema de la figura \ref{Fig  4: Diagrama de bloques}.
- \begin{figure}[H]
-\centering
-\includegraphics[scale=0.5]{diagrama.eps}\label{Fig  4: Diagrama de bloques}
-\caption{Diagrama de bloques para el hardware del nodo}
-\end{figure}
+\subsection{ Programa de la red diseñada que soporte la transmisión del protocolo Modbus}
+  
+  En primer lugar se definen el la aplicación principal (app main) las funciones que se llevaran a cabo al iniciar el microcontrolador. La incialización de la flash, el módulo WiFi, el UART y la creación de tareas toma lugar en esta parte. Esta sección se ejecuta solo una vez. 
+\subsubsection{Librerías y macros}
+ En el programa se incluyen la librerías estándar de C  <stdlib.h> , <time.h>, <string.h>, y  <assert.h>, para el uso y manejo de las principales funciones de C. Luego tenemos que freertos/file.h provee del las funciones necesarias parar la ejecución y uso del sistema operativo en tiempo real.  Restando las inclusiones asociadas al ESP-IDF para el uso de las librerías de funciones del microcontrolador.
+ 
+ La libreria nvs-flash.h, habilita para el uso de la funciones de acceso a la flash, necesarias para guardar y cargar la configuración a los nodos.
+ 
+ Las inclusiones  esp-log.h, esp-system.h, esp32/rom/ets-sys.h, esp32/rom/ets-sys.h y esp32/rom/crc.h permiten el uso del sistema del ESP-32 para el acceso a estado del sistema como estado de la pila, reinicio, etc.
+ 
+ Finalmente, para el uso de las funciones para la construcción de la red mallada son necesarias las inclusiones siguientes: tcpip-adapter.h, esp-wifi.h, esp-now.h, espdefine.h
+ 
+\subsubsection{Inicialización}
+La rutina para las tareas de la red mallada comienzan con la inicialización del periferico WiFi y funciones ESP-NOW mediante las funciones \emph{wifi-init()} y \emph{espnow-init()} respectivamente.
+  
+Con la función  \emph{wifi-init()} se inicializan el adaptador TCP/IP, el manejador de eventos WiFi y se carga la confiuración, en este caso como sigue:
+\begin{enumerate}
+\item Modo de punto de acceso
+\item Canal cero
+\item Modo de largo alcance
+\item Soporte de los protocolos 802.11b,802.11g y 802.11n.
+\end{enumerate}
 
+Luego tenemos la función  \emph{espnow-init()} que prepara las variables iniciales, crea las colas de recepción y envío, registra las funciones de \textit{callback} de recepción y envío, establece las claves de encriptación, registra los nodos y crea la tareas.
 
-\subsection{El microcontrolador}
+\subsection{Creación de colas (\emph{Queue})}
+ 
+ En la incialización se crean tres colas 
+ \begin{enumerate}
+ \item \emph{espnow_queue} que se usa para transmitir los datos de las funciones de \textit{callback}  a las tareas que manejan la red. 
 
-Para la aplicación se usó el encapsulado  ESP-WROOM-32, debido a disponibilidad. Se debe tener en cuenta que se deben dejar diponibles los pines del UART cero para la programación del, además de dos pines adicionales para inducir el estado de programación, los cuales son el pin \textit{EN} y el pin de propósito general cero.
+ \item \emph{espnow_Squeue} se usa para la transmisión de los datos desde la tarea asociada al UART.
+ 
+  \item \emph{espnow_Rqueue} se usa para transmitir los datos hacia la tarea que envía información inalambricamente.
+ \end{enumerate}
+ \subsection{Las funciones de callback}
+ 
+ Estas son funciones escritas por el programador que son llamadas dentro del pila WiFi automáticamente, y permite que la información del proceso de enviar y recibir se pueda manejar desde otras funciones o tareas más complejas. El fabricante recomienda que se mantenan cortas dichas funciones, que en su lugar se use una cola y se maneje la información desde otras funciones.
+ 
+ Estas funciones son activadas cuando se envía o recibe información mediante ESP-NOW. La de envío provee información de la MAC y el estado (envío exitoso o no) y la de recepción la MAC, los datos y la longitud de la trama.
+ 
+ En estas funciones basicamente se pasan los datos a la aplicación principal junto con una variable que ayuda a conocer el estado del sistema del tipo \emph{espnow-event}.
+ 
+ \subsection{Registro de puntos}
+\subsection{Programa para el manejo del protocolo Modbus en el bus RS-485.}
 
-\subsection{La alimentación}
-Para proveer los 3,3 V necesarios se usó la tarjeta pre-fabricada basada en el regulador lineal LM259S, que posee la capacidad de salida ajustable a la tensión requerida con tensiones de entrada de hasta 30V. 
-Lo cual es beneficioso ya que en el contexto industrial es común  las tensiones del 24 V y 5 V.
+\subsection{ Circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32.}
 
-\subsection{La intefaz RS-485}
+\subsection{ Implementación  la red mallada diseñada.}
 
-Usando el chip d MAX-485 de \textit{MAXIM} es posible obtener niveles de RS-485 a partir de una interfaz serial TLL, proveniente del UART1. 
+\subsection{Análisis el rendimiento de la red de acuerdo a variaciones en los parámetros de transmisión de datos}

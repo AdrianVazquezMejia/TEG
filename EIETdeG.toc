@@ -32,22 +32,35 @@
 \contentsline {subsection}{\numberline {2.5.4}Intefaces de perif\'ericos avanzadas}{24}{subsection.2.5.4}
 \contentsline {subsection}{\numberline {2.5.5}Seguridad}{25}{subsection.2.5.5}
 \contentsline {chapter}{MARCO METODOL\'OGICO}{26}{chapter.3}
-\contentsline {section}{\numberline {3.1}Dise\~no de la red mallada}{26}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Caracter\IeC {\'\i }sticas de los nodos}{27}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Caracter\IeC {\'\i }sticas de enrutamiento}{28}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Caracter\IeC {\'\i }sticas Modbus de los nodos}{30}{subsection.3.1.3}
-\contentsline {section}{\numberline {3.2}Programaci\'on del microcontroladores ESP32}{31}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}El sistema operativo en tiempo real}{32}{subsection.3.2.1}
-\contentsline {section}{\numberline {3.3}El hardware}{33}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}El microcontrolador}{33}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}La alimentaci\'on}{33}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}La intefaz RS-485}{34}{subsection.3.3.3}
-\contentsline {chapter}{DESCRIPCI\'ON DEL MODELO}{35}{chapter.4}
-\contentsline {chapter}{PRUEBAS EXPERIMENTALES}{36}{chapter.5}
-\contentsline {chapter}{RESULTADOS}{37}{chapter.6}
-\contentsline {chapter}{CONCLUSIONES}{38}{chapter.7}
-\contentsline {chapter}{RECOMENDACIONES}{39}{chapter.8}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{40}{appendix.Alph1}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{41}{appendix.Alph2}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{42}{appendix.Alph3}
-\contentsline {chapter}{REFERENCIAS}{43}{appendix*.10}
+\contentsline {section}{\numberline {3.1}DISE\~NO DE LA RED MALLADA}{26}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Requerimientos de dise\~no}{27}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Dise\~no B\'asico de la red}{28}{subsection.3.1.2}
+\contentsline {subsubsection}{Caracter\IeC {\'\i }sticas de los nodos}{28}{subsubsection*.10}
+\contentsline {subsubsection}{Caracter\IeC {\'\i }sticas de enrutamiento}{30}{subsubsection*.11}
+\contentsline {subsubsection}{Caracter\IeC {\'\i }sticas Modbus de los nodos}{32}{subsubsection*.12}
+\contentsline {subsubsection}{El hardware}{32}{subsubsection*.13}
+\contentsline {paragraph}{Microcontrolador}{33}{paragraph*.14}
+\contentsline {paragraph}{Alimentaci\'on}{33}{paragraph*.15}
+\contentsline {paragraph}{Intefaz RS-485}{33}{paragraph*.16}
+\contentsline {section}{\numberline {3.2}Detalle del Dise\~no}{33}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Programaci\'on del ESP-32}{33}{subsection.3.2.1}
+\contentsline {subsubsection}{El sistema operativo en tiempo real}{35}{subsubsection*.17}
+\contentsline {subsection}{\numberline {3.2.2} Programa de la red dise\~nada que soporte la transmisi\'on del protocolo Modbus}{35}{subsection.3.2.2}
+\contentsline {subsubsection}{Librer\IeC {\'\i }as y macros}{36}{subsubsection*.18}
+\contentsline {subsubsection}{Inicializaci\'on}{36}{subsubsection*.19}
+\contentsline {subsection}{\numberline {3.2.3}Creaci\'on de colas (\emph {Queue})}{37}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Las funciones de callback}{37}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Registro de puntos}{38}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Programa para el manejo del protocolo Modbus en el bus RS-485.}{38}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.7} Circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32.}{38}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.8} Implementaci\'on la red mallada dise\~nada.}{38}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.9}An\'alisis el rendimiento de la red de acuerdo a variaciones en los par\'ametros de transmisi\'on de datos}{38}{subsection.3.2.9}
+\contentsline {chapter}{DESCRIPCI\'ON DEL MODELO}{39}{chapter.4}
+\contentsline {chapter}{PRUEBAS EXPERIMENTALES}{40}{chapter.5}
+\contentsline {chapter}{RESULTADOS}{41}{chapter.6}
+\contentsline {chapter}{CONCLUSIONES}{42}{chapter.7}
+\contentsline {chapter}{RECOMENDACIONES}{43}{chapter.8}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{44}{appendix.Alph1}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{45}{appendix.Alph2}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{46}{appendix.Alph3}
+\contentsline {chapter}{REFERENCIAS}{47}{appendix*.20}
