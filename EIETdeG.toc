@@ -48,19 +48,24 @@
 \contentsline {subsection}{\numberline {3.2.2} Programa de la red dise\~nada que soporte la transmisi\'on del protocolo Modbus}{35}{subsection.3.2.2}
 \contentsline {subsubsection}{Librer\IeC {\'\i }as y macros}{36}{subsubsection*.18}
 \contentsline {subsubsection}{Inicializaci\'on}{36}{subsubsection*.19}
-\contentsline {subsection}{\numberline {3.2.3}Creaci\'on de colas (\emph {Queue})}{37}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Las funciones de callback}{37}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Registro de puntos}{38}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Programa para el manejo del protocolo Modbus en el bus RS-485.}{38}{subsection.3.2.6}
-\contentsline {subsection}{\numberline {3.2.7} Circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32.}{38}{subsection.3.2.7}
-\contentsline {subsection}{\numberline {3.2.8} Implementaci\'on la red mallada dise\~nada.}{38}{subsection.3.2.8}
-\contentsline {subsection}{\numberline {3.2.9}An\'alisis el rendimiento de la red de acuerdo a variaciones en los par\'ametros de transmisi\'on de datos}{38}{subsection.3.2.9}
-\contentsline {chapter}{DESCRIPCI\'ON DEL MODELO}{39}{chapter.4}
-\contentsline {chapter}{PRUEBAS EXPERIMENTALES}{40}{chapter.5}
-\contentsline {chapter}{RESULTADOS}{41}{chapter.6}
-\contentsline {chapter}{CONCLUSIONES}{42}{chapter.7}
-\contentsline {chapter}{RECOMENDACIONES}{43}{chapter.8}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{44}{appendix.Alph1}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{45}{appendix.Alph2}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{46}{appendix.Alph3}
-\contentsline {chapter}{REFERENCIAS}{47}{appendix*.20}
+\contentsline {subsubsection}{Creaci\'on de colas (\emph {Queue})}{37}{subsubsection*.20}
+\contentsline {subsubsection}{Las funciones de callback}{37}{subsubsection*.21}
+\contentsline {subsubsection}{Registro de puntos}{38}{subsubsection*.22}
+\contentsline {subsubsection}{Estructuras de datos relevantes}{39}{subsubsection*.23}
+\contentsline {subsection}{\numberline {3.2.3}Tarea esp\_now\_manage\_task}{39}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Tarea espnow\_send}{43}{subsection.3.2.4}
+\contentsline {subsubsection}{Direcciones MAC}{43}{subsubsection*.24}
+\contentsline {subsection}{\numberline {3.2.5}Programa para el manejo del protocolo Modbus en el bus RS-485.}{45}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Funciones auxiliares}{45}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.7} Circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32.}{45}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.8} Implementaci\'on la red mallada dise\~nada.}{45}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.9}An\'alisis el rendimiento de la red de acuerdo a variaciones en los par\'ametros de transmisi\'on de datos}{45}{subsection.3.2.9}
+\contentsline {chapter}{DESCRIPCI\'ON DEL MODELO}{46}{chapter.4}
+\contentsline {chapter}{PRUEBAS EXPERIMENTALES}{47}{chapter.5}
+\contentsline {chapter}{RESULTADOS}{48}{chapter.6}
+\contentsline {chapter}{CONCLUSIONES}{49}{chapter.7}
+\contentsline {chapter}{RECOMENDACIONES}{50}{chapter.8}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{51}{appendix.Alph1}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{52}{appendix.Alph2}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{53}{appendix.Alph3}
+\contentsline {chapter}{REFERENCIAS}{54}{appendix*.25}

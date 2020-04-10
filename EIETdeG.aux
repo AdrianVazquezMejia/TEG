@@ -21,6 +21,7 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
+\providecommand \oddpage@label [2]{}
 \babel@aux{spanish}{}
 \newlabel{Fig.aprobacion}{{}{\es@scroman  {i}}{}{Doc-Start}{}}
 \newlabel{Fig.mencion}{{}{\es@scroman  {i}}{}{Doc-Start}{}}
@@ -43,12 +44,14 @@
 \@writefile{toc}{\contentsline {chapter}{MARCO HIST\'ORICO}{4}{chapter.1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
 \newlabel{CAP:hist}{{1}{4}{MARCO HISTÓRICO}{chapter.1}{}}
 \citation{bahr}
 \citation{ScienceDirect}
 \@writefile{toc}{\contentsline {chapter}{MARCO TE\'ORICO}{6}{chapter.2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
 \newlabel{CAP:teor}{{2}{6}{MARCO TEÓRICO}{chapter.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Fundamentos de las redes WiFi malladas}{6}{section.2.1}}
 \citation{article1}
@@ -96,6 +99,7 @@
 \@writefile{toc}{\contentsline {chapter}{MARCO METODOL\'OGICO}{26}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
 \newlabel{CAP:met}{{3}{26}{MARCO METODOLÓGICO}{chapter.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}DISE\~NO DE LA RED MALLADA}{26}{section.3.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Requerimientos de dise\~no}{27}{subsection.3.1.1}}
@@ -123,45 +127,66 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2} Programa de la red dise\~nada que soporte la transmisi\'on del protocolo Modbus}{35}{subsection.3.2.2}}
 \@writefile{toc}{\contentsline {subsubsection}{Librer\IeC {\'\i }as y macros}{36}{subsubsection*.18}}
 \@writefile{toc}{\contentsline {subsubsection}{Inicializaci\'on}{36}{subsubsection*.19}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Creaci\'on de colas (\emph  {Queue})}{37}{subsection.3.2.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Las funciones de callback}{37}{subsection.3.2.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.5}Registro de puntos}{38}{subsection.3.2.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.6}Programa para el manejo del protocolo Modbus en el bus RS-485.}{38}{subsection.3.2.6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.7} Circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32.}{38}{subsection.3.2.7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.8} Implementaci\'on la red mallada dise\~nada.}{38}{subsection.3.2.8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.9}An\'alisis el rendimiento de la red de acuerdo a variaciones en los par\'ametros de transmisi\'on de datos}{38}{subsection.3.2.9}}
-\@writefile{toc}{\contentsline {chapter}{DESCRIPCI\'ON DEL MODELO}{39}{chapter.4}}
+\@writefile{toc}{\contentsline {subsubsection}{Creaci\'on de colas (\emph  {Queue})}{37}{subsubsection*.20}}
+\@writefile{toc}{\contentsline {subsubsection}{Las funciones de callback}{37}{subsubsection*.21}}
+\@writefile{toc}{\contentsline {subsubsection}{Registro de puntos}{38}{subsubsection*.22}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Tablas primarias de los modelos de datos Modbus}}{38}{table.3.2}}
+\newlabel{Tabla 2: informaci\'on de peers}{{3.2}{38}{Tablas primarias de los modelos de datos Modbus}{table.3.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Estructuras de datos relevantes}{39}{subsubsection*.23}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Tarea esp\_now\_manage\_task}{39}{subsection.3.2.3}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Algoritmo tarea esp\_now\_manage\_task}}{41}{algocf.1}}
+\newlabel{Algo1}{{1}{41}{Tarea esp\_now\_manage\_task}{algocf.1}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Algoritmo para datos recibidos unicast}}{42}{algocf.2}}
+\newlabel{Algo2}{{2}{42}{Tarea esp\_now\_manage\_task}{algocf.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Tarea espnow\_send}{43}{subsection.3.2.4}}
+\@writefile{toc}{\contentsline {subsubsection}{Direcciones MAC}{43}{subsubsection*.24}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Algoritmo de enrutamiento de los datos en la tarea \emph  {espnow\_send()}}}{44}{algocf.3}}
+\newlabel{Algo3: espnowsend}{{3}{44}{Tarea espnow\_send}{algocf.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.5}Programa para el manejo del protocolo Modbus en el bus RS-485.}{45}{subsection.3.2.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.6}Funciones auxiliares}{45}{subsection.3.2.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.7} Circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32.}{45}{subsection.3.2.7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.8} Implementaci\'on la red mallada dise\~nada.}{45}{subsection.3.2.8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.9}An\'alisis el rendimiento de la red de acuerdo a variaciones en los par\'ametros de transmisi\'on de datos}{45}{subsection.3.2.9}}
+\@writefile{toc}{\contentsline {chapter}{DESCRIPCI\'ON DEL MODELO}{46}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{CAP:mod}{{4}{39}{DESCRIPCIÓN DEL MODELO}{chapter.4}{}}
-\@writefile{toc}{\contentsline {chapter}{PRUEBAS EXPERIMENTALES}{40}{chapter.5}}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{CAP:mod}{{4}{46}{DESCRIPCIÓN DEL MODELO}{chapter.4}{}}
+\@writefile{toc}{\contentsline {chapter}{PRUEBAS EXPERIMENTALES}{47}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{CAP:exp}{{5}{40}{PRUEBAS EXPERIMENTALES}{chapter.5}{}}
-\@writefile{toc}{\contentsline {chapter}{RESULTADOS}{41}{chapter.6}}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{CAP:exp}{{5}{47}{PRUEBAS EXPERIMENTALES}{chapter.5}{}}
+\@writefile{toc}{\contentsline {chapter}{RESULTADOS}{48}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{CAP:resultados}{{6}{41}{RESULTADOS}{chapter.6}{}}
-\@writefile{toc}{\contentsline {chapter}{CONCLUSIONES}{42}{chapter.7}}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{CAP:resultados}{{6}{48}{RESULTADOS}{chapter.6}{}}
+\@writefile{toc}{\contentsline {chapter}{CONCLUSIONES}{49}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{CAP:conclu}{{7}{42}{CONCLUSIONES}{chapter.7}{}}
-\@writefile{toc}{\contentsline {chapter}{RECOMENDACIONES}{43}{chapter.8}}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{CAP:conclu}{{7}{49}{CONCLUSIONES}{chapter.7}{}}
+\@writefile{toc}{\contentsline {chapter}{RECOMENDACIONES}{50}{chapter.8}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{CAP:recomendaciones}{{8}{43}{RECOMENDACIONES}{chapter.8}{}}
-\@writefile{toc}{\contentsline {chapter}{T\'ITULO DEL ANEXO}{44}{appendix.Alph1}}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{CAP:recomendaciones}{{8}{50}{RECOMENDACIONES}{chapter.8}{}}
+\@writefile{toc}{\contentsline {chapter}{T\'ITULO DEL ANEXO}{51}{appendix.Alph1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{CAP:anexo0}{{I}{44}{TÍTULO DEL ANEXO}{appendix.Alph1}{}}
-\@writefile{toc}{\contentsline {chapter}{T\'ITULO DEL ANEXO}{45}{appendix.Alph2}}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{CAP:anexo0}{{I}{51}{TÍTULO DEL ANEXO}{appendix.Alph1}{}}
+\@writefile{toc}{\contentsline {chapter}{T\'ITULO DEL ANEXO}{52}{appendix.Alph2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{CAP:anexo1}{{II}{45}{TÍTULO DEL ANEXO}{appendix.Alph2}{}}
-\@writefile{toc}{\contentsline {chapter}{T\'ITULO DEL ANEXO}{46}{appendix.Alph3}}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{CAP:anexo1}{{II}{52}{TÍTULO DEL ANEXO}{appendix.Alph2}{}}
+\@writefile{toc}{\contentsline {chapter}{T\'ITULO DEL ANEXO}{53}{appendix.Alph3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{CAP:anexo2}{{III}{46}{TÍTULO DEL ANEXO}{appendix.Alph3}{}}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{CAP:anexo2}{{III}{53}{TÍTULO DEL ANEXO}{appendix.Alph3}{}}
 \bibstyle{apacite}
 \bibdata{biblioteca,referencias,bibliografia}
 \bibcite{MACen}{{1}{{\APACyear {2013}}}{{Al-Husainy}}{{Al-Husainy}}}
@@ -172,4 +197,4 @@
 \bibcite{online}{{6}{{\APACyear {2017}}}{{Modbus~Organization}}{{Modbus~Organization}}}
 \bibcite{ScienceDirect}{{7}{{\APACyear {2016}}}{{Rifki~Muhendra}}{{Rifki~Muhendra}}}
 \bibcite{article2}{{8}{{\APACyear {2016}}}{{Sharma\ \BBA  {} Singh}}{{Sharma\ \BBA  {} Singh}}}
-\@writefile{toc}{\contentsline {chapter}{REFERENCIAS}{47}{appendix*.20}}
+\@writefile{toc}{\contentsline {chapter}{REFERENCIAS}{54}{appendix*.25}}

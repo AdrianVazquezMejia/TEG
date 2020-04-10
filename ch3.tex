@@ -151,16 +151,16 @@ Dicho sistema operativo permite que se creen y desarrollen programas en lenguaje
 \subsubsection{Librerías y macros}
  En el programa se incluyen la librerías estándar de C  <stdlib.h> , <time.h>, <string.h>, y  <assert.h>, para el uso y manejo de las principales funciones de C. Luego tenemos que freertos/file.h provee del las funciones necesarias parar la ejecución y uso del sistema operativo en tiempo real.  Restando las inclusiones asociadas al ESP-IDF para el uso de las librerías de funciones del microcontrolador.
  
- La libreria nvs-flash.h, habilita para el uso de la funciones de acceso a la flash, necesarias para guardar y cargar la configuración a los nodos.
+ La libreria nvs\-flash.h, habilita para el uso de la funciones de acceso a la flash, necesarias para guardar y cargar la configuración a los nodos.
  
- Las inclusiones  esp-log.h, esp-system.h, esp32/rom/ets-sys.h, esp32/rom/ets-sys.h y esp32/rom/crc.h permiten el uso del sistema del ESP-32 para el acceso a estado del sistema como estado de la pila, reinicio, etc.
+ Las inclusiones  esp\_log.h, esp\_system.h, esp32/rom/ets\_sys.h, esp32/rom/ets\_sys.h y esp32/rom/crc.h permiten el uso del sistema del ESP-32 para el acceso a estado del sistema como estado de la pila, reinicio, etc.
  
  Finalmente, para el uso de las funciones para la construcción de la red mallada son necesarias las inclusiones siguientes: tcpip-adapter.h, esp-wifi.h, esp-now.h, espdefine.h
  
 \subsubsection{Inicialización}
-La rutina para las tareas de la red mallada comienzan con la inicialización del periferico WiFi y funciones ESP-NOW mediante las funciones \emph{wifi-init()} y \emph{espnow-init()} respectivamente.
+La rutina para las tareas de la red mallada comienzan con la inicialización del periferico WiFi y funciones ESP-NOW mediante las funciones \emph{wifi\_init()} y \emph{espnow\_init()} respectivamente.
   
-Con la función  \emph{wifi-init()} se inicializan el adaptador TCP/IP, el manejador de eventos WiFi y se carga la confiuración, en este caso como sigue:
+Con la función  \emph{wifi\_init()} se inicializan el adaptador TCP/IP, el manejador de eventos WiFi y se carga la confiuración, en este caso como sigue:
 \begin{enumerate}
 \item Modo de punto de acceso
 \item Canal cero
@@ -168,29 +168,191 @@ Con la función  \emph{wifi-init()} se inicializan el adaptador TCP/IP, el maneja
 \item Soporte de los protocolos 802.11b,802.11g y 802.11n.
 \end{enumerate}
 
-Luego tenemos la función  \emph{espnow-init()} que prepara las variables iniciales, crea las colas de recepción y envío, registra las funciones de \textit{callback} de recepción y envío, establece las claves de encriptación, registra los nodos y crea la tareas.
+Luego tenemos la función  \emph{espnow\_init()} que prepara las variables iniciales, crea las colas de recepción y envío, registra las funciones de \textit{callback} de recepción y envío, establece las claves de encriptación, registra los nodos y crea la tareas.
 
-\subsection{Creación de colas (\emph{Queue})}
+\subsubsection{Creación de colas (\emph{Queue})}
  
  En la incialización se crean tres colas 
  \begin{enumerate}
- \item \emph{espnow_queue} que se usa para transmitir los datos de las funciones de \textit{callback}  a las tareas que manejan la red. 
+ \item \emph{espnow\_queue} que se usa para transmitir los datos de las funciones de \textit{callback}  a las tareas que manejan la red. 
 
- \item \emph{espnow_Squeue} se usa para la transmisión de los datos desde la tarea asociada al UART.
+ \item \emph{espnow\_Squeue} se usa para la transmisión de los datos desde la tarea asociada al UART.
  
-  \item \emph{espnow_Rqueue} se usa para transmitir los datos hacia la tarea que envía información inalambricamente.
+  \item \emph{espnow\_Rqueue} se usa para transmitir los datos hacia la tarea que envía información inalambricamente.
  \end{enumerate}
- \subsection{Las funciones de callback}
+ \subsubsection{Las funciones de callback}
  
  Estas son funciones escritas por el programador que son llamadas dentro del pila WiFi automáticamente, y permite que la información del proceso de enviar y recibir se pueda manejar desde otras funciones o tareas más complejas. El fabricante recomienda que se mantenan cortas dichas funciones, que en su lugar se use una cola y se maneje la información desde otras funciones.
  
  Estas funciones son activadas cuando se envía o recibe información mediante ESP-NOW. La de envío provee información de la MAC y el estado (envío exitoso o no) y la de recepción la MAC, los datos y la longitud de la trama.
  
- En estas funciones basicamente se pasan los datos a la aplicación principal junto con una variable que ayuda a conocer el estado del sistema del tipo \emph{espnow-event}.
+ En estas funciones basicamente se pasan los datos a la aplicación principal junto con una variable que ayuda a conocer el estado del sistema del tipo \emph{espnow\_event}.
  
- \subsection{Registro de puntos}
-\subsection{Programa para el manejo del protocolo Modbus en el bus RS-485.}
+ \subsubsection{Registro de puntos}
+ 
+ En la librería \emph{espnow} existen unos entes llamados \emph{Peers} (Puntos), los cuales conservan la información de cada dispositivo con el que se pueda interactuar. Si un peer no está registrado, es imposible enviar información a el o recibirla. Hay un peer virtual para enviar información brodacast cuya característica es la dirección MAC, la cual es la mayor posible (FF:FF:FF:FF:FF:FF).
+ 
+ Los campos de cada puntos son los descritos en la tabla \ref{Tabla 2: información de peers}
+ 
+  \begin{table}[H]
+  \centering
+\begin{tabular}{lr}
+ \toprule
+Parámetro & Descripción  \\
+\midrule
+peer address &  Dirección MAC \\
+lmk & Clave maestra local que es usada para cifrar los datos  \\
+channel & Canal WiFi\\
+ifidx & Interface que usa el WiFi para enviar y recibir datos \\
+encrypt & Habilitador de cifrado \\
+*priv & Datos privados de la librería  \\
+\bottomrule
+\end{tabular}
+\caption{Tablas primarias de los modelos de datos Modbus}\label{Tabla 2: información de peers}
+\end{table}
 
+La información de los puntos es guardada mediante la función \emph{esp\_now\_add\_peer()}.
+\subsubsection{Estructuras de datos relevantes}
+
+Se crearon ciertas estructuras usando el lenguaje C, para manejar los datos con mayor facilidad y orden. 
+
+\begin{enumerate}
+\item \emph{espnow\_send\_param\_t}: esta estructura esta diseñada para contener los datos en la transmisión de los datos. Indica si la trama es unicast o bradcast. La longitud de los datos, los datos a enviar, el número de secuencia, el estado de la transmisión, etc.
+
+\item \emph{espnow\_event\_t} : es la estrutura usada para manejar los estados nodo. Permite que posea información relacionada con los datos trasmitidos, la dirección y el estado. 
+
+
+\item \emph{esp\_uart\_data\_t}: Esta estructura de datos se creó para comunicar las tareas del uart y las de ESP-NOW, no solo posee los datos recibidos si no también el sentido en la red de estos. 
+\end{enumerate}
+
+
+
+\subsection{Tarea esp\_now\_manage\_task}
+
+Es la tarea principal del sistema de comunicación inalámbrica, es administrada por la cola \emph{espnow\_queue}. Cabe mencionar que las colar permiten que la tarea se ejecute solo si se recibió un dato en ella, lo cual ayuda mantener la eficiencia del procesador.
+
+En esta tarea se verifica si se estaba enviando o recibiendo datos. Y exiten ciertos procesos que se ejecutan en cada caso, considerando si es broadcast o unicast.
+
+La cola se habilita por las funciones de \emph{callback} y por la tarea del UART.
+
+A continuación se presenta pseudocódigo de la ejecución de la tarea.\\
+%%%Pseudo codigo goes here.
+\begin{algorithm}[H]
+ \KwData{ADU MODBUS, EVENT\_DATA}
+ \KwResult{ADU MODBUS ADMINISTRADA }
+ Inicialización\;
+ \While{Se recibe algo en la cola}{
+ 	\Switch{Event ID}{
+		\Case{Desde enviar}{ 
+			\Switch{Origen}{
+				\Case{De la función de Callback}{
+					\eIf{desMAC == broadMAC}{
+						\If{contador ==0}{break}
+							contador--;\\
+							Enviar broadcast;\\
+					}{
+					\eIf{estado de envío == exito \emph{or} intentsos == 5}{break;}{
+						Intentos ++\\
+						Enviar a la cola espnow\_Squeue;\\
+					}						
+					}
+				}
+				\Case {De la tarea UART}{
+					Enviar a la cola espnow\_Squeue;\\
+				}			
+				
+		} 
+		\Case{Desde recibir}{
+			\eIf{Broadcast}{
+				\If{Nodo no está registrado}{
+					Registrar nodo;\\
+				}
+			}{\eIf{Unicast}{
+				\emph{UnicastAlgo();}
+			}
+			{Error}				
+			}			
+			}
+		}
+ 	}
+ }
+
+ \caption{Algoritmo tarea esp\_now\_manage\_task}\label{Algo1}
+\end{algorithm}[H]
+\begin{algorithm}
+ \KwData{ADU MODBUS, EVENT\_DATA}
+ \KwResult{ADU MODBUS Direcionada }
+ Inicialización\;
+ \If{Dirección hacia adelante}{
+ 	\tcc{Guardar el esclavo del cual provino}
+	 TablaEnrutamiento[Esclavo+offset] = NodoIDRecivido;\\
+	\tcc{Crear una ruta para el nodo}	 
+	 TablaEnrutamiento[NodoIDRecivido] = NodoIDRecivido;\\
+ }
+ \Switch{Dirección}{
+ 	\Case{Hacia adelante}{
+ 		\Switch{Modo}{
+			\Case{Serial}{
+				Envia datos serialmente;\\	
+			}
+			\Case{Configuración Nodo}{
+				Usa la trama para configuración propia;\\	
+			}
+			\Case{Salto}{
+			Reenvia a la tarea \emph{espnow\_send();}	
+			}
+		}
+	}
+	\Case{Hacia atrás}{
+		desMAC = RoutingTable[esclavo+offset];\\
+		\If{desMAC == broadMAC}{
+			\tcc{Se trata una respuesta en el maestro}	 
+			Enviar a la interfaz serial;\\
+		}
+	}	
+ }
+ \caption{Algoritmo para datos recibidos unicast}\label{Algo2}
+\end{algorithm}
+
+El \emph{offset} en la tabla de enrutamiento representa a la posición a partir de la cual las rutas hacia atrás son automáticamente llenadas, para que la ruta de información sea la misma hacia adelante que hacia atrás.
+
+Cuando se envía información se entra a la primera \emph{SEND\_CB}, si es unicast se envia cinco veces o hasta sea recibida la trama por el nodo destino. Solo cuando se incializa en nodo se envia tramas broadcast para indicar a los nodos vecinos su precencia.
+
+En la sección de recepción tenemos que cuando se recibe broadcast se registra el nodo si no esta registrado y responde con un broadcast. Si se recibe unicast entonces se pasa a una maquina de estado que determina el destino de la información.
+
+
+\subsection{Tarea espnow\_send}
+Esta tarea se encarga de preparar, enrutar y enviar los datos unicast. Es activada mediante la cola \emph{espnow\_Squeue}.  El algoritmo bajo el cual se rige es el siguiente:
+
+\begin{algorithm}[H]
+\tcc{idNode: ID nodo actual}
+\tcc{direcciónDe: Dirección recibida en la data}
+\tcc{dataRecibida: Carga de de datos}
+\KwData{idNode, direcciónDe, dataRecivida}
+\KwResult{Data enviada al nodo respectivo}
+
+\While{Se recibe información en la cola \emph{espnow\_queue}}{
+desNode = TabladeEnrutamiento[Esclavo];\\
+direccionA = hacia adelante;\\
+\If{desNode == idNode or direcciónDe == hacia atrás}{
+	desNode == TablaEnrutamiento[offset + Esclavo];\\
+	direcciónA = hacia atrás;\\
+}
+dataAEnviar = dataRecivida;\\
+espnow\_send(dataAEnviar, desNode ,direcciónA);\\
+}
+\caption{Algoritmo de enrutamiento de los datos en la tarea \emph{espnow\_send()}}\label{Algo3: espnowsend}
+\end{algorithm}
+
+Como se observa en el algoritmo \ref{Algo3: espnowsend}, se toma en cuenta si los datos van hacia adelante o hacia atrás, para elegir la sección de la parte de enrutamiento a usar.
+\subsubsection{Direcciones MAC}
+Como se dijo anteriormente, la libreria ESP-NOW usa las direcciones MAC para direccionar los datos. Ya que la tabla de enrutamiento considera solo identificadores referenciales, es necesaria la obtención de las MAC por otro método.
+
+Cuando se envía datos broadcast las MAC son registradas en todos los dos que alcance la señal, y dicho identificador se encuentre en la tabla de enrutamiento respectiva (Observe algoritmo \ref{Algo1}). Al mismo tiempo se guarda la dirección MAC respectiva en un arreglo de 255*6 casillas, es decir, la cantidad de nodos por los campos que ocupa una dirección MAC.
+
+Para acceder a las posiciones solo basta usar el identificador del nodo del que se desee obtener la dirección MAC, multificarla por seis y usar el número resultante como la posición a partir de la cual se tomarán seis campos.
+\subsection{Programa para el manejo del protocolo Modbus en el bus RS-485.}
+\subsection{Funciones auxiliares}
 \subsection{ Circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32.}
 
 \subsection{ Implementación  la red mallada diseñada.}
