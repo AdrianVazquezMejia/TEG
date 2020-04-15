@@ -1,0 +1,18 @@
+
+\section*{Planteamiento del problema}
+
+La creciente popularidad de las redes inalámbricas en casi todos los sectores ha hecho que las infraestructuras asociadas, dispositivos y protocolos se vean en la necesidad de mejorar constantemente para manejar la creciente cantidad de usuarios de manera segura y eficiente. Así mismo, las redes WiFi centralizadas están limitadas por la capacidad del punto de acceso, en el ámbito de cobertura y  cantidad de clientes, restricciones que se pudiesen superar con las redes WiFi malladas.
+
+Actualmente  la redes malladas están en una etapa de desarrollo, por lo que no existe un estándar sólido para la implementación de toda la red, lo que causa reservas en las industrias, especialmente debido a la vulnerabilidad de los datos, la confiabilidad en ambientes electromagnéticamente ruidosos y el rendimiento. Es por eso que una  red mallada WiFi con comunicación basada en el protocolo Modbus  podría representar una solución a este problema.
+
+\section*{Justificación}
+
+Se plantea una red WiFi lo cual representaría una reducción de costos en la implementación de un sistema de control y adquisición de datos, dado que se necesitan menos conductores. Además, se explorará el campo popular hoy en día de las redes WiFi y su rendimiento como red mallada. Dicha red representa una alternativa a superar la limitaciones de número de clientes y área de cobertura presentes en las redes WiFi centralizadas, y más aún, supone una solución a llegar a lugares lejanos de un nodo central sin la necesidad de agregar puntos de acceso adicionales.
+
+La constitución de la red mallada se elaborará basados en comunicación WiFi a través de microcontroladores ESP32, que poseen características de tamaño, potencia y costos aunado a las  ventajas principales de las redes mallada de cobertura y conectividad. También se sustentará la transmisión de información en el protocolo Modbus debido a su confiabilidad todos los sectores aplicables, especialmente el industrial.
+
+\section*{Alcance y limitaciones}
+
+La red se compondrá de al menos cuatro nodos, donde cada nodo tendrá conexión con al menos otro nodo usando red WiFi y  estarán constituidos por microcontroladores ESP32  con módulo WiFi integrado y el programa asociado a la red. Los nodos deben estar apropiadamente alimentados, cuyo diseño no forma parte del proyecto.
+
+El programa se diseñará para que se logre transportar la información bajo el protocolo Modbus  por la red inalámbrica, considerando que solo en un nodo está conectado el maestro. Así mismo, algunos de los nodos restantes poseerán esclavos. Cabe resaltar que las unidades que generan los datos del protocolo Modbus (maestro y esclavos) no forman parte de la red a diseñar, ya que se asume que se recibe información en los  nodos sin tener en cuenta mayor detalle de su origen.

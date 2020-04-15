@@ -4,7 +4,7 @@ Tomando en cuenta la investigaciones realizadas se encontró que en el campo de l
 
 Dentro de los funcionamiento descritos anteriormente, se tiene que la primera se concentra en el algoritmo de optimización de la topología de la red, sin tomar en consideración el hardware de implentación. La segunda, provee una aproximación más realista, proveyendo las especificaciones del hardware, sin embargo no hay justificación para el enrutamiento usado y las medidas de rendimiento aplicadas no son de interés para el área industrial. Por último, se tiene que la ESP-MESH parecía  brindar extensibilidad y rápido desarrollo, no obstante, posee la desventaja de que para la formación de la red es necesario un enrutador WiFi externo que brinde las direcciones IP a la red mallada, lo que deriva en un centralización, pues si el router falla, la red perece. 
 
-Sabiendo que la implentación se realizará en el microcontrolador ESP-32, se encontró que la librería ESP-NOW provee comunicación WiFi punto a punto entre microcontroladores, con posibilidades de encriptación, comunicación broadcast, multicast y unicast. Además, provee de direccionamiento por direcciones MAC.
+Sabiendo que la implementación se realizará en el microcontrolador ESP-32, se encontró que la librería ESP-NOW provee comunicación WiFi punto a punto entre microcontroladores, con posibilidades de encriptación, comunicación broadcast, multicast y unicast. Además, provee de direccionamiento por direcciones MAC.
 Dicha librería no está orientada a redes malladas, sin embargo, posee las características para la contruccion de una, ya que se puede formar de forma descentralizada, extensible, y ajustable a los protocolo de aplicación.
 
 Por otro lado tenemos que la interfaz serial puede ser lograda usando un UART del MCU configurado para el funcionamiento \textit{half-duplex} de RS-485. Existen diferentes en el mercado variedad de chips para la conversión de niveles TTL a RS-485, dentro de los más usados se encuentra el MAX-485 de \textit{Maxim Integrated}. 
@@ -93,7 +93,7 @@ Estos parámetros se le asignaron direcciones de aplicación Modbus en los registr
 
 Cabe resaltar que estos nodo pueden ser interrogados tanto serialmente como inalambricamente, es decir, con la red ya instalada. Las funciones no usadas proveerán la respuesta de "Función ilegal".
 
-\subsubsection{El hardware}
+\subsubsection{El hardware}\label{hardware}
 
 El hardware del nodo se puede dividir en tres bloques: el microcontrolador, la alimentación y la interfaz RS-485. Esto de puede ilustrar en el esquema de la figura \ref{Fig  4: Diagrama de bloques}.
  \begin{figure}[H]
@@ -148,14 +148,14 @@ Dicho sistema operativo permite que se creen y desarrollen programas en lenguaje
 \subsection{ Programa de la red diseñada que soporte la transmisión del protocolo Modbus}
   
   En primer lugar se definen el la aplicación principal (app main) las funciones que se llevaran a cabo al iniciar el microcontrolador. La incialización de la flash, el módulo WiFi, el UART y la creación de tareas toma lugar en esta parte. Esta sección se ejecuta solo una vez. 
-\subsubsection{Librerías y macros}
+\subsubsection{Librerías}
  En el programa se incluyen la librerías estándar de C  <stdlib.h> , <time.h>, <string.h>, y  <assert.h>, para el uso y manejo de las principales funciones de C. Luego tenemos que freertos/file.h provee del las funciones necesarias parar la ejecución y uso del sistema operativo en tiempo real.  Restando las inclusiones asociadas al ESP-IDF para el uso de las librerías de funciones del microcontrolador.
  
- La libreria nvs\-flash.h, habilita para el uso de la funciones de acceso a la flash, necesarias para guardar y cargar la configuración a los nodos.
+ La libreria nvs\_flash.h, habilita para el uso de la funciones de acceso a la flash, necesarias para guardar y cargar la configuración a los nodos.
  
  Las inclusiones  esp\_log.h, esp\_system.h, esp32/rom/ets\_sys.h, esp32/rom/ets\_sys.h y esp32/rom/crc.h permiten el uso del sistema del ESP-32 para el acceso a estado del sistema como estado de la pila, reinicio, etc.
  
- Finalmente, para el uso de las funciones para la construcción de la red mallada son necesarias las inclusiones siguientes: tcpip-adapter.h, esp-wifi.h, esp-now.h, espdefine.h
+ Finalmente, para el uso de las funciones para la construcción de la red mallada son necesarias las inclusiones siguientes: tcpip\_adapter.h, esp\_wifi.h, esp\_now.h, espdefine.h
  
 \subsubsection{Inicialización}
 La rutina para las tareas de la red mallada comienzan con la inicialización del periferico WiFi y funciones ESP-NOW mediante las funciones \emph{wifi\_init()} y \emph{espnow\_init()} respectivamente.
@@ -194,8 +194,8 @@ Luego tenemos la función  \emph{espnow\_init()} que prepara las variables inicia
  
  Los campos de cada puntos son los descritos en la tabla \ref{Tabla 2: información de peers}
  
-  \begin{table}[H]
-  \centering
+\begin{table}[H]
+\centering
 \begin{tabular}{lr}
  \toprule
 Parámetro & Descripción  \\
@@ -352,9 +352,321 @@ Cuando se envía datos broadcast las MAC son registradas en todos los dos que alc
 
 Para acceder a las posiciones solo basta usar el identificador del nodo del que se desee obtener la dirección MAC, multificarla por seis y usar el número resultante como la posición a partir de la cual se tomarán seis campos.
 \subsection{Programa para el manejo del protocolo Modbus en el bus RS-485.}
+
+El ESP-IDF provee un manejador de eventos para el UART, así como estruturas de datos diseñadas para su configuración. Por lo tanto, se configuró el UART1 para la comunicación RS-485 \emph{half-duplex}. El UART0 esta reservado para la quema del microcontrolador y logs de información y error.
+
+El manejador de eventos proporciona una  arquitectura de maquina de estados donde se puede aceptar los datos si estos se reciben correctamente. Una vez esto pasa que crea una maquina de estados adicional para determinar el destino de la trama, que es básicamente hacia el nodo en cuestión o para un nodo externo.
+ 
+ En el algoritmo \ref{Algo4: UARTtask} describe el funcionamiento de la rutina de la tarea \emph{rx\_task()}.
+ 
+\begin{algorithm}
+\KwData{ADU MODBUS serial}
+\KwResult{Datos direccionada}
+UARTinit()\;
+\While{Se recibe información en la cola \emph{uart1\_queue}}{
+	Limpia el buffer\;
+	\Switch{Tipo de evento}{
+		\Case{Datos recibidos}{
+			tramaModbus = recibirDatos()\;
+			dirección = obtenerDireccion(tramaModbus)\;
+			\Switch{dirección}{
+				\Case{Nodo externo}{
+					eventoID = desdeUART;
+					colaEnviar(espnow\_queue, eventoID, tramaModbus)\;				
+				}
+				\Case{Configuración Nodo}{
+					configurarNodo(tramaModbus)\;
+				}			
+			}
+			Limpiar buffer\;
+			Resetear Cola\;
+		}
+		\Case{Excepciones UART}{
+			Limpiar buffer\;
+			Resetear Cola\;
+		}
+	
+	}
+}
+
+\caption{Algoritmo de la tarea que administra el UART}\label{Algo4: UARTtask}
+\end{algorithm}
+
+La función \emph{UARTinit()} se encarga de incializar el uart con la configuración adecuada. Por defecto 115200 baudios, paridad desactivada, un bit de parada y modo RS-485 half-duplex.
+
+\subsubsection{Librerías}
+ 
+ Para el uso del UART y las estructuras de datos relevante asociadas de usan las librerias de ESP-IDF \emph{driver/uart.h}, \emph{uart\_func.h} y \emph{soc/uart\_struct.h}.
 \subsection{Funciones auxiliares}
+\subsubsection{Función \emph{vNotiLEDinit}}
+\begin{table}[H]
+\centering
+\begin{tabular}{lr}
+ \toprule
+Nombre  & vNotiLEDinit \\
+Descripción & Parpadeo de encendido\\
+Parámetro &  Vacío \\
+Resultado & Crea que en un pin 3 parpadeo de 1s\\
+\bottomrule
+\end{tabular}
+\caption{Descripción de la función \emph{vNotiLEDinit} }\label{Tabla f:vNotiLED}
+\end{table}
+
+Ejecuta un parpadeo en el GPIO 2 del microcotrolador al que se le conectó  un LED, esto para indicar el que nodo se ha encendido correctamente. 
+\subsubsection{Función \emph{FormatFactory}}
+\begin{table}[H]
+\centering
+\begin{tabular}{lr}
+ \toprule
+Nombre  & FormatFactory \\
+Descripción & Función de la tarea de reseteo de fábrica\\
+Parámetro &  Vacío \\
+Resultado & Limpia la configuración del nodo\\
+\bottomrule
+\end{tabular}
+\caption{Descripción de la función \emph{FormatFactory} }\label{Tabla f:FormatFactory}
+\end{table}
+
+Esta tarea recibe una activación mediante un semáforo binario proveniente de una interrupción por hardware en el GPIO 0, también usado como \emph{BOOT}; en caso de que se desee formatear el nodo a sus parámetros por defecto.  Se debe mantener presionado por al menos cinco segundos.
+
+\subsubsection{Función \emph{vConfigLoad}}
+\begin{table}[H]
+\centering
+\begin{tabular}{lr}
+ \toprule
+Nombre  & vConfigLoad \\
+Descripción & Función para cargar la configuración al nodo\\
+Parámetro &  Vacío \\
+Resultado & Carga datos desde la flash a la RAM\\
+\bottomrule
+\end{tabular}
+\caption{Descripción de la función \emph{vConfigLoad} }\label{Tabla f:vConfigLoad}
+\end{table}
+
+Esta función carga los parámetros de funcionamiento e identificación del nodo, como lo son las tablas de enrutamiento, las direcciones MAC, el identificador del nodo y la configuración del UART. Se ejcuta al energizar el nodo.
+
+\subsubsection{Función \emph{vConfigGetNVS}}
+\begin{table}[H]
+\centering
+\begin{tabular}{lr}
+ \toprule
+Nombre  & vConfigGetNVS \\
+Descripción & Función para obtener datos en la flash\\
+Parámetros &  Arreglo, String \\
+Resultado & Carga información asociada al String en el Arreglo\\
+\bottomrule
+\end{tabular}
+\caption{Descripción de la función \emph{vConfigGetNVS} }\label{Tabla f:vConfigGetNVS}
+\end{table}
+
+Se usa para obtener la configuración desde flash, y solo funciona para los registros de retención, tabla de MAC's y tabla de enrutamiento. Esta información de carga el parámetro del arreglo. 
+
+Analogamente con la función \emph{vConfigSetNVS} que en ese caso carga información en la flash desde la RAM. 
+\subsubsection{Función \emph{vConfigSetNode}}
+\begin{table}[H]
+\centering
+\begin{tabular}{lr}
+ \toprule
+Nombre  & vConfigSetNode \\
+Descripción & Función para procesar tramas Modbus\\
+Parámetros &  Trama Modbus, origen (serial o inalambrico) \\
+Resultado & Respuesta Modbus\\
+\bottomrule
+\end{tabular}
+\caption{Descripción de la función \emph{vConfigGetNVS} }\label{Tabla f:vConfigSetNode}
+\end{table}
+
+Es la función asociada al Modbus de cada nodo, puede ejecutar las funciones de lectura y escritura de los registros de retención y escritura de la bobinas. Posee la capacidad de generar la respuesta inalambricamente si la solicitud fue inalámbrica o serial si la solicitud fue serial.
+
+\subsubsection{Función \emph{uComDirection}}\label{FuncuComDir}
+\begin{table}[H]
+\centering
+\begin{tabular}{lr}
+ \toprule
+Nombre  & uComDirection \\
+Descripción & Comparar el esclavo de la trama con el identificador del nodo\\
+Parámetros &  Esclavo \\
+Resultado & Nodo externo o Nodo en cuestión\\
+\bottomrule
+\end{tabular}
+\caption{Descripción de la función \emph{vConfigGetNVS} }\label{uComDirection}
+\end{table}
+
+Se usa en la tarea del UART para dirigir la información Modbus que se recibe, comparando el esclavo recibido con el identificador del nodo que recibió la trama. Posee una salida binaria:  va o no la trama dirigida el nodo en cuestión.
+
+\subsubsection{Función \emph{uComGetTransData}}
+\begin{table}[H]
+\centering
+\begin{tabular}{lr}
+ \toprule
+Nombre  & uComGetTransData \\
+Descripción & Máquina de estados para determinar destino de la trama\\
+Parámetros &  Esclavo \\
+Resultado & Serial, Reenvío o configuración \\
+\bottomrule
+\end{tabular}
+\caption{Descripción de la función \emph{uComGetTransData} }\label{Tabla f:uComGetTransData}
+\end{table}
+
+Es una función similar a la descrita en la sección \ref{uComDirection}, sin embargo, esta arroja tres posibilidades. Determina si la trama recibida debe ser enviada seriamente, reenviarse a otro nodo o simplemente configurarse a si mismo. 
+\subsubsection{Función \emph{vEspnowGetOldPeers}}
+\begin{table}[H]
+\centering
+\begin{tabular}{lr}
+ \toprule
+Nombre  & vEspnowGetOldPeers \\
+Descripción & Registrar los nodos al iniciar\\
+Parámetros &  Vacío\\
+Resultado & Serial, Reenvío o configuración \\
+\bottomrule
+\end{tabular}
+\caption{Descripción de la función \emph{vEspnowGetOldPeers} }\label{vEspnowGetOldPeers}
+\end{table}
+
+Junto con la función \emph{RegisterPeer} registra MAC de los nodos al energizar el nodo. Pues el registro se hace en la memoria volátil.
+\subsubsection{Función \emph{espnow\_data\_prepare}}\label{prepare}
+\begin{table}[H]
+\centering
+\begin{tabular}{lr}
+ \toprule
+Nombre  & espnow\_data\_prepare \\
+Descripción & Preparar los datos a enviar\\
+Parámetros &  variable \emph{send\_param}\\
+Resultado & cargar datos de trama \emph{espnow}\\
+\bottomrule
+\end{tabular}
+\caption{Descripción de la función \emph{espnow\_data\_prepare } }\label{espnowprepare }
+\end{table}
+
+Esta función prepara los trama inalámbrica, que contiene el chequeo de error, el identificador de nodo, si es unicast o broadcast, la dirección, etc. 
+\subsubsection{Función \emph{espnow\_data\_parse}}
+\begin{table}[H]
+\centering
+\begin{tabular}{lr}
+ \toprule
+Nombre  & espnow\_data\_parse \\
+Descripción & Descompone los datos recibidos\\
+Parámetros &  datos, longitud de datos, estado\\
+Resultado & cargar datos de trama \emph{esp\_now} \\
+\bottomrule
+\end{tabular}
+\caption{Descripción de la función \emph{espnow\_data\_parse} }\label{espnowparse }
+\end{table}
+
+Cumple la función complementaría a la función \ref{prepare}, descompone los datos recibidos, comprueba el chequeo de error, etc. Se usa en la maquina de estado de recepción inalámbrica.
 \subsection{ Circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32.}
 
-\subsection{ Implementación  la red mallada diseñada.}
+El desarrollo del software de la red fue desarrollado de forma iterativa sobre las tarjetas de desarrollo, por lo que la red fue implementada miestras era desarrollada. 
+
+Aunque el desarrollo se realizó en las tarjetas de desarrollo, y la implementación con estas es totalmente válido para realizar pruebas se diseño un circuito más específico para el nodo de la red.
+
+Se consideran las  especificaciones del diseño en la sección \ref{hardware} y las recomendaciones  \href{https://www.espressif.com/sites/default/files/documentation/esp-wroom-02_pcb_design_and_module_placement_guide_0.pdf}{recomendaciones}técnicas realizadas por Espressif para el diseño de PCB con el ESP32.  
+\subsubsection{Posicionamiento del ESP32 en el PCB}
+El encapsulado  ESP-WROOM-32D está diseñada para ser soldado en una PCB huésped. La PCB de la antena usado en el ESP-WROOM-32D es una antena meandered inverted F (MIFA),  para la banda de WiFi 2,4 GHz,  con un ganancia de antena de 2dBi. La figura \ref{Fig  1: Antenna Placement} muestra las seis opciones de colocación que son comunmente usadas. La opción uno es usada como referencia. Los resultados de las pruebas ejecutadas por \emph{Espressif} muestran que las opciones 2 y 3 tienen los mejores rendimientos, mientras el de las otras son sub-óptimos.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{opcionesPCB.png}\label{Fig  1: Antenna Placement}
+\caption{Opciones para colocación en PCB}
+\end{figure}
+
+Los resultados del estudio de basan en las mediciones de potencia WiFi y parámetros EVM para varios canales de 802.11 OFDM (MCS1-7) para verificar el rendimiento del la antenas en diferentes posiciones. Los resultados fueron los siguientes:
+\begin{enumerate}
+\item Las opciones de colocación 1,2 y 3 basicamente no se muestran afectadas en el redimiento RF de la antena siempre y cuando esta este enfrente de espacio abierto. Es recomendado proveer una espacio de al menos 5 mm alrededor de antena en cada dirección.
+
+\item Si el PCB de la antes tiene que ser colocado en una tarjeta huesped, es recomendada la opción 4, que no posee plano de cobre bajo la antena, así hayan algunas pérdidas del rendimiento RF.\label{recomendacion}
+
+\item La opción 6 posee el peor rendimiento RF tanto en la trasnmisión como la recpeción, pues el rendimiento RF se ve afectado por por la tarjeta huésped.
+\end{enumerate}
+
+Por lo tanto se tomo la recomentación \ref{recomendacion} eligiendo la opción 4 para el diseño.
+
+\subsubsection{El chip MAX-485}
+
+\emph{Espressif} provee una ejemplo de conexión para el uso del chip MAX-485, en cual se indica la topología para usar el UART como interfaz.  Se agrega, sin embargo, una resistencia de  \emph{pull-up} en el terminal asociado a TDX para evitar niveles indeterminados en dicho pin. 
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{maxim.png}\label{Fig  2: MAX y UART}
+\caption{Ejemplo de conexión entre MAX-485 y UART}
+\end{figure}
+
+\subsubsection{Alimentación}%xxx agregar foto
+Como se mencionó anteriormente, se usó la fuente LM2596S debido a una potencial rápida implementación, bajo costo y flexibilidad.  Sin embargo, la tarjeta posee un tamaño comparable al del nodo, lo que es deteminante en la arquitectura del PCB.
+
+\subsubsection{Arquitectura Circuito Impreso}
+
+Se considera una capa con elementos de superficie (resistencia y condensadores). La fuente se adapta a través de pin headers en la parte posterior de la capa. Se agregan los bloques terminales para el acceso de la alimentación externa y el bus RS-485.  Así mismo, se agregaron 3 pin header para el acceso al UART 0 y dos pares de pin header adicionales para el accionamiento de las funciones de \emph{BOOT} y \emph{EN}, en el ingreso al modo de programación del microcontrolador.
+
+Los terminales se agregaron en la parte posterior de la capa de trama para evitar obstruir el espacio libre de la antena WiFi.  En la figuras %% xxx esta y esta se presentan el esquemático electrónico y el diseño del PCB. 
+
+Adicionalemente se agregó un LED con el propósito de que sirva como testigo de comunicación en el encendido y durante la instalación. La tabla \ref{BOM} refleja la lista de materiales empleados  y sus características. 
+\begin{table}[H]
+\begin{tabular}{llr}
+ \toprule
+Nombre  & Descripción & Encapsulado  \\
+\midrule
+Descripción & Preparar los datos a enviar& \\
+Parámetros &  variable \emph{send\_param} &  \\
+Resultado & cargar datos de trama \emph{espnow} & \\
+\bottomrule
+\end{tabular}
+\caption{Descripción de la función \emph{espnow\_data\_prepare } }\label{espnowprepare }
+\end{table}
+
+\subsection{Implementación  la red mallada diseñada}\label{implementacion}
+La red mallada se implementó usando como nodos tarjetas de desarrollo junto con tarjetas para conversión RS-485 a TTL, donde aplicaba. Cada tarjeta se programó y configuró de acuerdo a la tabla \ref{Configuracion}. Se usaron un total de cuatro nodos con la topología de la figura \ref{topo}.  En el bus RS-485 del maestro se conectó un maestro Modbus proveniente de un computador a través de un convertido USB a RS-485; para enviar las tramas Modbus generadas por el software. 
+\begin{table}[H]
+\centering
+\begin{tabular}{llr}
+ \toprule
+Nodo &  Descripción & Tasa de baudios serial\\
+\midrule
+150 & Maestro conectado & Variable\\
+151 &  Esclavos conectados  & 9600\\
+152 & Modo de salto & No aplica\\
+153 & Esclavos conectados & 9600\\
+\bottomrule
+\end{tabular}
+\caption{Configuración de los esclavos para la implementación}\label{Configuracion}
+\end{table}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{topo.eps}\label{topo}
+\caption{Topología de implementación}
+\end{figure}
+Por otro lado, en el bus serial de los esclavos se conectaron unas unidades terminales remotas con capacidad de comunicación Modbus. En este caso se conectaron solo una remota por nodo. 
+
+Las características de los elementos equipos Mosbus usados fueron los descritos en la tabla %\ref{Dispositivos Modbus}.%foto nodo
 
 \subsection{Análisis el rendimiento de la red de acuerdo a variaciones en los parámetros de transmisión de datos}
+
+Las características principales de funcionamiento de la red Modbus son: distancia entre nodos, topología, tasa de baudios de la interfaz serial, velocidad de muestreo Modbus, número de variables Modbus. Para la evaluación del rendimiento se variará un parámetro respecto al que tenga mejor desempeño del otro. Así se observa la degradación de la calidad de servicio sin caer en numerosas pruebas redundantes. 
+
+Se comenzó con la topología descrita en la figura \ref{topo}, y para variaciones en los parámetros Modbus: velocidad de muestreo, número de variables y tasa de baudios. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{llr}
+ \toprule
+Tasa serial [Baudios]&  Número de variables& velocidad de muestreo [s]\\
+\midrule
+2400& 50 & 10,0 \\
+4800 &  10 & 5,0 \\
+9600 & 150 & 2,0 \\
+19200 & 200 & 1,0 \\
+38400 & - & 0,5 \\
+115200 & - & 0,2 \\
+\bottomrule
+\end{tabular}
+\caption{Variación de parámetros en la pruebas de rendiemietno}\label{parámteros}
+\end{table}
+
+Se estimará el error en función de la cantidad de excepciones Modbus que se obtengan en el maestro por cada esclavo, considerando la ecuacion \ref{Ecuacion1}
+\begin{equation}
+error = \dfrac{ cantidad  de excepciones}{cantidad de solicitudes solicitudes}  \cdot 100 \%\label{Ecuacion1}
+\end{equation}
+

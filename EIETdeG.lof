@@ -13,6 +13,9 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Ilustraci\'on de la estructuras de la tabla de enrutamiento}}{31}{figure.3.2}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Diagrama de bloques para el hardware del nodo}}{33}{figure.3.3}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Ilustraci\'on del combo para el desarrollo de aplicaciones en el ESP32 }}{34}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Opciones para colocaci\'on en PCB}}{52}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Ejemplo de conexi\'on entre MAX-485 y UART}}{54}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Topolog\IeC {\'\i }a de implementaci\'on}}{56}{figure.3.7}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
