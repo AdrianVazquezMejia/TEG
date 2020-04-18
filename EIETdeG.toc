@@ -38,21 +38,21 @@
 \contentsline {subsubsection}{Caracter\IeC {\'\i }sticas de los nodos}{28}{subsubsection*.10}
 \contentsline {subsubsection}{Caracter\IeC {\'\i }sticas de enrutamiento}{30}{subsubsection*.11}
 \contentsline {subsubsection}{Caracter\IeC {\'\i }sticas Modbus de los nodos}{32}{subsubsection*.12}
-\contentsline {subsubsection}{El hardware}{32}{subsubsection*.13}
+\contentsline {subsubsection}{El hardware}{33}{subsubsection*.13}
 \contentsline {paragraph}{Microcontrolador}{33}{paragraph*.14}
 \contentsline {paragraph}{Alimentaci\'on}{33}{paragraph*.15}
 \contentsline {paragraph}{Intefaz RS-485}{33}{paragraph*.16}
-\contentsline {section}{\numberline {3.2}Detalle del Dise\~no}{33}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Programaci\'on del ESP-32}{33}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.2}Detalle del Dise\~no}{34}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Programaci\'on del ESP-32}{34}{subsection.3.2.1}
 \contentsline {subsubsection}{El sistema operativo en tiempo real}{35}{subsubsection*.17}
-\contentsline {subsection}{\numberline {3.2.2} Programa de la red dise\~nada que soporte la transmisi\'on del protocolo Modbus}{35}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2} Programa de la red dise\~nada que soporte la transmisi\'on del protocolo Modbus}{36}{subsection.3.2.2}
 \contentsline {subsubsection}{Librer\IeC {\'\i }as}{36}{subsubsection*.18}
-\contentsline {subsubsection}{Inicializaci\'on}{36}{subsubsection*.19}
+\contentsline {subsubsection}{Inicializaci\'on}{37}{subsubsection*.19}
 \contentsline {subsubsection}{Creaci\'on de colas (\emph {Queue})}{37}{subsubsection*.20}
-\contentsline {subsubsection}{Las funciones de callback}{37}{subsubsection*.21}
+\contentsline {subsubsection}{Las funciones de callback}{38}{subsubsection*.21}
 \contentsline {subsubsection}{Registro de puntos}{38}{subsubsection*.22}
 \contentsline {subsubsection}{Estructuras de datos relevantes}{39}{subsubsection*.23}
-\contentsline {subsection}{\numberline {3.2.3}Tarea esp\_now\_manage\_task}{39}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}Tarea esp\_now\_manage\_task}{40}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Tarea espnow\_send}{43}{subsection.3.2.4}
 \contentsline {subsubsection}{Direcciones MAC}{44}{subsubsection*.24}
 \contentsline {subsection}{\numberline {3.2.5}Programa para el manejo del protocolo Modbus en el bus RS-485.}{44}{subsection.3.2.5}
@@ -73,14 +73,14 @@
 \contentsline {subsubsection}{El chip MAX-485}{53}{subsubsection*.37}
 \contentsline {subsubsection}{Alimentaci\'on}{54}{subsubsection*.38}
 \contentsline {subsubsection}{Arquitectura Circuito Impreso}{54}{subsubsection*.39}
-\contentsline {subsection}{\numberline {3.2.8}Implementaci\'on la red mallada dise\~nada}{55}{subsection.3.2.8}
-\contentsline {subsection}{\numberline {3.2.9}An\'alisis el rendimiento de la red de acuerdo a variaciones en los par\'ametros de transmisi\'on de datos}{57}{subsection.3.2.9}
-\contentsline {chapter}{DESCRIPCI\'ON DEL MODELO}{58}{chapter.4}
-\contentsline {chapter}{PRUEBAS EXPERIMENTALES}{59}{chapter.5}
-\contentsline {chapter}{RESULTADOS}{60}{chapter.6}
-\contentsline {chapter}{CONCLUSIONES}{61}{chapter.7}
-\contentsline {chapter}{RECOMENDACIONES}{62}{chapter.8}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{63}{appendix.Alph1}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{64}{appendix.Alph2}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{65}{appendix.Alph3}
-\contentsline {chapter}{REFERENCIAS}{66}{appendix*.40}
+\contentsline {subsection}{\numberline {3.2.8}Implementaci\'on la red mallada dise\~nada}{56}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.9}An\'alisis el rendimiento de la red de acuerdo a variaciones en los par\'ametros de transmisi\'on de datos}{58}{subsection.3.2.9}
+\contentsline {chapter}{DESCRIPCI\'ON DEL MODELO}{60}{chapter.4}
+\contentsline {chapter}{PRUEBAS EXPERIMENTALES}{61}{chapter.5}
+\contentsline {chapter}{RESULTADOS}{62}{chapter.6}
+\contentsline {chapter}{CONCLUSIONES}{63}{chapter.7}
+\contentsline {chapter}{RECOMENDACIONES}{64}{chapter.8}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{65}{appendix.Alph1}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{66}{appendix.Alph2}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{67}{appendix.Alph3}
+\contentsline {chapter}{REFERENCIAS}{68}{appendix*.40}

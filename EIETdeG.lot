@@ -4,7 +4,7 @@
 \contentsline {table}{\numberline {2.1}{\ignorespaces Tablas primarias de los modelos de datos MODBUS}}{21}{table.2.1}
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces Tablas primarias de los modelos de datos Modbus}}{29}{table.3.1}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Tablas primarias de los modelos de datos Modbus}}{38}{table.3.2}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Tablas primarias de los modelos de datos Modbus}}{39}{table.3.2}
 \contentsline {table}{\numberline {3.3}{\ignorespaces Descripci\'on de la funci\'on \emph {vNotiLEDinit} }}{46}{table.3.3}
 \contentsline {table}{\numberline {3.4}{\ignorespaces Descripci\'on de la funci\'on \emph {FormatFactory} }}{46}{table.3.4}
 \contentsline {table}{\numberline {3.5}{\ignorespaces Descripci\'on de la funci\'on \emph {vConfigLoad} }}{47}{table.3.5}
@@ -15,9 +15,10 @@
 \contentsline {table}{\numberline {3.10}{\ignorespaces Descripci\'on de la funci\'on \emph {vEspnowGetOldPeers} }}{49}{table.3.10}
 \contentsline {table}{\numberline {3.11}{\ignorespaces Descripci\'on de la funci\'on \emph {espnow\_data\_prepare } }}{49}{table.3.11}
 \contentsline {table}{\numberline {3.12}{\ignorespaces Descripci\'on de la funci\'on \emph {espnow\_data\_parse} }}{50}{table.3.12}
-\contentsline {table}{\numberline {3.13}{\ignorespaces Descripci\'on de la funci\'on \emph {espnow\_data\_prepare } }}{55}{table.3.13}
-\contentsline {table}{\numberline {3.14}{\ignorespaces Configuraci\'on de los esclavos para la implementaci\'on}}{55}{table.3.14}
-\contentsline {table}{\numberline {3.15}{\ignorespaces Variaci\'on de par\'ametros en la pruebas de rendiemietno}}{57}{table.3.15}
+\contentsline {table}{\numberline {3.13}{\ignorespaces Lista de materiales del circuito}}{55}{table.3.13}
+\contentsline {table}{\numberline {3.14}{\ignorespaces Configuraci\'on de los esclavos para la implementaci\'on}}{56}{table.3.14}
+\contentsline {table}{\numberline {3.15}{\ignorespaces Lista de materiales del circuito de implementaci\'on}}{58}{table.3.15}
+\contentsline {table}{\numberline {3.16}{\ignorespaces Variaci\'on de par\'ametros en la pruebas de rendiemietno}}{59}{table.3.16}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
