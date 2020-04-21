@@ -563,6 +563,7 @@ El desarrollo del software de la red fue desarrollado de forma iterativa sobre l
 Aunque el desarrollo se realizó en las tarjetas de desarrollo, y la implementación con estas es totalmente válido para realizar pruebas se diseño un circuito más específico para el nodo de la red.
 
 Se consideran las  especificaciones del diseño en la sección \ref{hardware} y las recomendaciones  \href{https://www.espressif.com/sites/default/files/documentation/esp-wroom-02_pcb_design_and_module_placement_guide_0.pdf}{recomendaciones}técnicas realizadas por Espressif para el diseño de PCB con el ESP32.  
+
 \subsubsection{Posicionamiento del ESP32 en el PCB}
 El encapsulado  ESP-WROOM-32D está diseñada para ser soldado en una PCB huésped. La PCB de la antena usado en el ESP-WROOM-32D es una antena meandered inverted F (MIFA),  para la banda de WiFi 2,4 GHz,  con un ganancia de antena de 2dBi. La figura \ref{Fig  1: Antenna Placement} muestra las seis opciones de colocación que son comunmente usadas. La opción uno es usada como referencia. Los resultados de las pruebas ejecutadas por \emph{Espressif} muestran que las opciones 2 y 3 tienen los mejores rendimientos, mientras el de las otras son sub-óptimos.
 
@@ -599,11 +600,11 @@ Como se mencionó anteriormente, se usó la fuente LM2596S debido a una potencial 
 
 \subsubsection{Arquitectura Circuito Impreso}
 
-Se considera una capa con elementos de superficie (resistencia y condensadores). La fuente se adapta a través de pin headers en la parte posterior de la capa. Se agregan los bloques terminales para el acceso de la alimentación externa y el bus RS-485.  Así mismo, se agregaron 3 pin header para el acceso al UART 0 y dos pares de pin header adicionales para el accionamiento de las funciones de \emph{BOOT} y \emph{EN}, en el ingreso al modo de programación del microcontrolador.
+Se considera una capa con elementos de superficie (resistencia y condensadores). La fuente se adaptada a través de pin headers en la parte posterior de la capa. Se agregan los bloques terminales para el acceso de la alimentación externa y el bus RS-485.  Así mismo, se agregaron 3 pin header para el acceso al UART 0 y dos pares de pin header adicionales para el accionamiento de las funciones de \emph{BOOT} y \emph{EN}, en el ingreso al modo de programación del microcontrolador.
 
 Los terminales se agregaron en la parte posterior de la capa de trama para evitar obstruir el espacio libre de la antena WiFi.  En la figuras %% xxx esta y esta se presentan el esquemático electrónico y el diseño del PCB. 
 
-Adicionalemente se agregó un LED con el propósito de que sirva como testigo de comunicación en el encendido y durante la instalación. La tabla \ref{BOM} refleja la lista de materiales empleados  y sus características. 
+Adicionalemente, se agregó un LED con el propósito de que sirva como testigo de comunicación en el encendido y durante la instalación. La tabla \ref{BOM} refleja la lista de materiales empleados  y sus características. 
 \begin{table}[H]
 \begin{tabular}{ccc}
  \toprule
