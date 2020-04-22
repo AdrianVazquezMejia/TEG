@@ -135,6 +135,29 @@ Hiertz, G.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+http://www.Modbus IDA.org%
+}{%
+http://www.Modbus IDA.org%
+}{%
+{\protect \APACyear {2006}}%
+}]{%
+modbusMensaging}
+\APACinsertmetastar {%
+modbusMensaging}%
+\begin{APACrefauthors}%
+http://www.Modbus IDA.org.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2006}{10}{}.
+\newblock
+{\BBOQ}\APACrefatitle {MODBUS Messaging on TCP/IP Implementation Guide V1.0b}
+  {Modbus messaging on tcp/ip implementation guide v1.0b}.{\BBCQ}
+\newblock
+\BIn{} (\BPG~2-32).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Modbus~Organization%
 }{%
 Modbus~Organization%
