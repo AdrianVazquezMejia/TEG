@@ -225,14 +225,40 @@ Registros de retención & Word de 16-bits & Leer y escribir \\
 
 
 Toda los datos manejados vía Modbus (bits y registros) deben estar localizados en la memoria de aplicación del dispositivo interrogado; la memoria física no debe ser confundida con las referencia de los datos. El único requerimiento es la vinculación de la referencia de los datos con la memoria física.
+\subsection{Protocolo Modbus sobre linea serial}
+El estándar del protocolo Modbus define una capa de aplicación posicionada en el nivel siete del modelo OSI.  También estandariza un protocolo específico en la linea serial para el intercambio de solicitudes Modbus entre el maestro y uno o varios esclavos, que se ubica en las capas uno y dos del modelo OSI.
+
+Un sistema del tipo maestro-esclavo tiene un nodo maestro que envía comandos a los nodos esclavos. Los nodos esclavos no transmiten datos si una solicitud y no se comunican con otros esclavos. 
+
+En nivel físico, el protocolo Modbus sobre linea serial puede usar diferentes interfaces, sin embargo, la TIA/EIA-485 (RS-485) es la más común.  
+
+En la linea serial solo un maestro puede estar conectado en un dado momento y un límite de 247 esclavos. 
+\subsubsection{Modos de transmisión serial}
+ Existen dos modos transmisión: el modo RTU y el modo ANSII. Estos definen cómo la información es empaquetada en los campos del mensaje y cómo es decodificada. Por lo tanto, el modo de transmisión debe ser el mismo para todos los dispositivos Modbus en la linea serial.
+ 
+ Para la lograr la interoperativilidad entre los equipos Modbus, el modo RTU tiene que ser implementado y debe estar configurado por defecto; el modo ANSII es opcional.
+ 
+Cuando la comunicación se ejecuta usando el modo RTU, cada byte en un mensaje contiene dos caracteres hexadecimales de 4-bits. La principal ventaja de este modo que se logra una mayor densidad de caracteres  que el modo ANSII para la misma tasa de baudios.  El formato para cada byte en el modo RTU es binario de 8 bits como sigue:
+
+\begin{enumerate}
+\item 1 bit de inicio.
+\item 8 bits de datos, se envía el menos significativo primero.
+\item 1 bit de paridad.
+\item 1 bit de parada.
+\end{enumerate}
+
+El bit de paridad es requerido, para asegurar la máxima compatibilidad.  Es recomendado soportar también el modo sin paridad. El modo por defecto de paridad es la paridad par.
+
+Toda la trama Modbus debe ser enviada de forma continua sin superar silencios de un tiempo equivalente de 1,5 caracter entre dos caracteres, de otra manera se originaria un error de trama.  El espaciado entre tramas es marcado por silencios mayores entre 3,5 caracteres. 
+
 \section{Microcontrolador ESP32}
 El ESP32 es un chip con integración WiFi y Bluetooth diseñado con la tecnología de ultra bajo consumo de 40 nm. Está diseñado para alcanzar desempeño importante de energía sobre radio frecuencia.
 
-El ESP32 esta diseñado para aplicaciones móviles, electrónicos personales, y de Internet de las cosas (IoT). Posee características de bajo consumo, incluyendo reloj de alta precisión, múltiples estados de energía, y escalamiento de consumo dinámico. 
+Este microcontrolador esta diseñado para aplicaciones móviles, electrónicos personales, y de Internet de las cosas (IoT). Posee características de bajo consumo, incluyendo reloj de alta precisión, múltiples estados de energía, y escalamiento de consumo dinámico. 
 
 Además es una solución integrada, ya que posee WiFi, Bluetooth, junto con alrededor de 20 componentes externos. El chip incluye una interruptor de antena, acoplador de radio-frecuencia, amplificador de potencia, amplificador de recepción de bajo ruido, filtros, y módulos de administración de consumo. 
 
- \begin{figure}[H]
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{block-diagram.png}\label{Fig7: Diagrama ESP32}
 \caption{Diagrama funcional del ESP-32}
