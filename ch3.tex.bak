@@ -355,7 +355,7 @@ Cuando se envía datos broadcast las MAC son registradas en todos los dos que alc
 Para acceder a las posiciones solo basta usar el identificador del nodo del que se desee obtener la dirección MAC, multificarla por seis y usar el número resultante como la posición a partir de la cual se tomarán seis campos.
 \subsection{Programa para el manejo del protocolo Modbus en el bus RS-485.}
 
-El ESP-IDF provee un manejador de eventos para el UART, así como estruturas de datos diseñadas para su configuración. Por lo tanto, se configuró el UART1 para la comunicación RS-485 \emph{half-duplex}. El UART0 esta reservado para la quema del microcontrolador y logs de información y error.
+El ESP-IDF provee un manejador de eventos para el UART, así como estructuras de datos diseñadas para su configuración. Por lo tanto, se configuró el UART 1 para la comunicación RS-485 \emph{half-duplex}. El UART 0 esta reservado para la quema del microcontrolador y notificaciones de información y error.
 
 El manejador de eventos proporciona una  arquitectura de maquina de estados donde se puede aceptar los datos si estos se reciben correctamente. Una vez esto pasa que crea una maquina de estados adicional para determinar el destino de la trama, que es básicamente hacia el nodo en cuestión o para un nodo externo.
  
@@ -414,7 +414,7 @@ Resultado & Crea que en un pin 3 parpadeo de 1s\\
 \caption{Descripción de la función \emph{vNotiLEDinit} }\label{Tabla f:vNotiLED}
 \end{table}
 
-Ejecuta un parpadeo en el GPIO 2 del microcotrolador al que se le conectó  un LED, esto para indicar el que nodo se ha encendido correctamente. 
+Ejecuta un parpadeo en el GPIO 2 del microcotrolador al que se le conectó un LED para indicar el que el nodo se ha encendido correctamente. 
 \subsubsection{Función \emph{FormatFactory}}
 \begin{table}[H]
 \centering
