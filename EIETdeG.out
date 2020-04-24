@@ -21,32 +21,34 @@
 \BOOKMARK [2][-]{subsection.2.3.3}{2.3.3 El protocolo ESP-MESH de Espressif}{section.2.3}% 21
 \BOOKMARK [1][-]{section.2.4}{2.4 Protocolo MODBUS}{chapter.2}% 22
 \BOOKMARK [2][-]{subsection.2.4.1}{2.4.1 Modelo de datos MODBUS}{section.2.4}% 23
-\BOOKMARK [1][-]{section.2.5}{2.5 Microcontrolador ESP32}{chapter.2}% 24
-\BOOKMARK [2][-]{subsection.2.5.1}{2.5.1 Caracter\355sticas principales del WiFi}{section.2.5}% 25
-\BOOKMARK [2][-]{subsection.2.5.2}{2.5.2 Caracter\355sticas principales de CPU y memoria}{section.2.5}% 26
-\BOOKMARK [2][-]{subsection.2.5.3}{2.5.3 Relojes y Temporizadores}{section.2.5}% 27
-\BOOKMARK [2][-]{subsection.2.5.4}{2.5.4 Intefaces de perif\351ricos avanzadas}{section.2.5}% 28
-\BOOKMARK [2][-]{subsection.2.5.5}{2.5.5 Seguridad}{section.2.5}% 29
-\BOOKMARK [0][-]{chapter.3}{MARCO METODOL\323GICO}{}% 30
-\BOOKMARK [1][-]{section.3.1}{3.1 DISE\321O DE LA RED MALLADA}{chapter.3}% 31
-\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Requerimientos de dise\361o}{section.3.1}% 32
-\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Dise\361o B\341sico de la red}{section.3.1}% 33
-\BOOKMARK [1][-]{section.3.2}{3.2 Detalle del Dise\361o}{chapter.3}% 34
-\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Programaci\363n del ESP-32}{section.3.2}% 35
-\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 \040Programa de la red dise\361ada que soporte la transmisi\363n del protocolo Modbus}{section.3.2}% 36
-\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Tarea esp\137now\137manage\137task}{section.3.2}% 37
-\BOOKMARK [2][-]{subsection.3.2.4}{3.2.4 Tarea espnow\137send}{section.3.2}% 38
-\BOOKMARK [2][-]{subsection.3.2.5}{3.2.5 Programa para el manejo del protocolo Modbus en el bus RS-485.}{section.3.2}% 39
-\BOOKMARK [2][-]{subsection.3.2.6}{3.2.6 Funciones auxiliares}{section.3.2}% 40
-\BOOKMARK [2][-]{subsection.3.2.7}{3.2.7 \040Circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32.}{section.3.2}% 41
-\BOOKMARK [2][-]{subsection.3.2.8}{3.2.8 Implementaci\363n la red mallada dise\361ada}{section.3.2}% 42
-\BOOKMARK [2][-]{subsection.3.2.9}{3.2.9 An\341lisis el rendimiento de la red de acuerdo a variaciones en los par\341metros de transmisi\363n de datos}{section.3.2}% 43
-\BOOKMARK [0][-]{chapter.4}{DESCRIPCI\323N DEL MODELO}{}% 44
-\BOOKMARK [0][-]{chapter.5}{PRUEBAS EXPERIMENTALES}{}% 45
-\BOOKMARK [0][-]{chapter.6}{RESULTADOS}{}% 46
-\BOOKMARK [0][-]{chapter.7}{CONCLUSIONES}{}% 47
-\BOOKMARK [0][-]{chapter.8}{RECOMENDACIONES}{}% 48
-\BOOKMARK [0][-]{appendix.Alph1}{T\315TULO DEL ANEXO}{}% 49
-\BOOKMARK [0][-]{appendix.Alph2}{T\315TULO DEL ANEXO}{}% 50
-\BOOKMARK [0][-]{appendix.Alph3}{T\315TULO DEL ANEXO}{}% 51
-\BOOKMARK [0][-]{appendix*.40}{REFERENCIAS}{}% 52
+\BOOKMARK [2][-]{subsection.2.4.2}{2.4.2 Protocolo Modbus sobre linea serial}{section.2.4}% 24
+\BOOKMARK [1][-]{section.2.5}{2.5 Microcontrolador ESP32}{chapter.2}% 25
+\BOOKMARK [2][-]{subsection.2.5.1}{2.5.1 Caracter\355sticas principales del WiFi}{section.2.5}% 26
+\BOOKMARK [2][-]{subsection.2.5.2}{2.5.2 Caracter\355sticas principales de CPU y memoria}{section.2.5}% 27
+\BOOKMARK [2][-]{subsection.2.5.3}{2.5.3 Relojes y Temporizadores}{section.2.5}% 28
+\BOOKMARK [2][-]{subsection.2.5.4}{2.5.4 Intefaces de perif\351ricos avanzadas}{section.2.5}% 29
+\BOOKMARK [2][-]{subsection.2.5.5}{2.5.5 Seguridad}{section.2.5}% 30
+\BOOKMARK [0][-]{chapter.3}{MARCO METODOL\323GICO}{}% 31
+\BOOKMARK [1][-]{section.3.1}{3.1 DISE\321O DE LA RED MALLADA}{chapter.3}% 32
+\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 ESP-NOW}{section.3.1}% 33
+\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Requerimientos de dise\361o}{section.3.1}% 34
+\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 Dise\361o B\341sico de la red}{section.3.1}% 35
+\BOOKMARK [1][-]{section.3.2}{3.2 Detalle del Dise\361o}{chapter.3}% 36
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Programaci\363n del ESP-32}{section.3.2}% 37
+\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 \040Programa de la red dise\361ada que soporte la transmisi\363n del protocolo Modbus}{section.3.2}% 38
+\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Tarea esp\137now\137manage\137task}{section.3.2}% 39
+\BOOKMARK [2][-]{subsection.3.2.4}{3.2.4 Tarea espnow\137send}{section.3.2}% 40
+\BOOKMARK [2][-]{subsection.3.2.5}{3.2.5 Programa para el manejo del protocolo Modbus en el bus RS-485.}{section.3.2}% 41
+\BOOKMARK [2][-]{subsection.3.2.6}{3.2.6 Funciones auxiliares}{section.3.2}% 42
+\BOOKMARK [2][-]{subsection.3.2.7}{3.2.7 \040Circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32.}{section.3.2}% 43
+\BOOKMARK [2][-]{subsection.3.2.8}{3.2.8 Implementaci\363n la red mallada dise\361ada}{section.3.2}% 44
+\BOOKMARK [2][-]{subsection.3.2.9}{3.2.9 An\341lisis el rendimiento de la red de acuerdo a variaciones en los par\341metros de transmisi\363n de datos}{section.3.2}% 45
+\BOOKMARK [0][-]{chapter.4}{DESCRIPCI\323N DEL MODELO}{}% 46
+\BOOKMARK [0][-]{chapter.5}{PRUEBAS EXPERIMENTALES}{}% 47
+\BOOKMARK [0][-]{chapter.6}{RESULTADOS}{}% 48
+\BOOKMARK [0][-]{chapter.7}{CONCLUSIONES}{}% 49
+\BOOKMARK [0][-]{chapter.8}{RECOMENDACIONES}{}% 50
+\BOOKMARK [0][-]{appendix.Alph1}{T\315TULO DEL ANEXO}{}% 51
+\BOOKMARK [0][-]{appendix.Alph2}{T\315TULO DEL ANEXO}{}% 52
+\BOOKMARK [0][-]{appendix.Alph3}{T\315TULO DEL ANEXO}{}% 53
+\BOOKMARK [0][-]{appendix*.44}{REFERENCIAS}{}% 54

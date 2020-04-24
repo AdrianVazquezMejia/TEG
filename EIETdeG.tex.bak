@@ -183,7 +183,9 @@
   \def\glossaryname{Glosario}
   }%
 
-
+\newcommand{\espn}{ESP-NOW }
+\newcommand{\mcu}{ESP-32 }
+\newcommand{\wf}{WiFi }
 
 %==================================================================
 

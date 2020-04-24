@@ -14,6 +14,10 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: biblioteca.bib
 Database file #2: referencias.bib
 Database file #3: bibliografia.bib
+Repeated entry---line 33 of file bibliografia.bib
+ : @misc{Online
+ :             ,
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "inproceedings"
 Warning--I didn't find a database entry for "inproceedings40"
 Warning--I didn't find a database entry for "article40"
@@ -22,38 +26,38 @@ apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Warning--No journal in MACen
 You've used 9 entries,
             6951 wiz_defined-function locations,
-            1329 strings with 12144 characters,
-and the built_in function-call counts, 16439 in all, are:
-= -- 2033
+            1328 strings with 12119 characters,
+and the built_in function-call counts, 16471 in all, are:
+= -- 2042
 > -- 131
-< -- 752
-+ -- 716
-- -- 20
-* -- 1004
-:= -- 3012
+< -- 753
++ -- 721
+- -- 18
+* -- 1007
+:= -- 3011
 add.period$ -- 40
 call.type$ -- 9
 change.case$ -- 169
 chr.to.int$ -- 0
 cite$ -- 19
-duplicate$ -- 383
+duplicate$ -- 385
 empty$ -- 681
 format.name$ -- 198
-if$ -- 3152
+if$ -- 3161
 int.to.chr$ -- 0
 int.to.str$ -- 27
 missing$ -- 0
 newline$ -- 220
 num.names$ -- 72
-pop$ -- 316
+pop$ -- 315
 preamble$ -- 1
 purify$ -- 52
 quote$ -- 0
-skip$ -- 1155
+skip$ -- 1156
 stack$ -- 0
-substring$ -- 796
-swap$ -- 242
-text.length$ -- 46
+substring$ -- 802
+swap$ -- 243
+text.length$ -- 45
 text.prefix$ -- 0
 top$ -- 1
 type$ -- 848
@@ -61,4 +65,4 @@ warning$ -- 1
 while$ -- 86
 width$ -- 0
 write$ -- 257
-(There were 5 warnings)
+(There was 1 error message)

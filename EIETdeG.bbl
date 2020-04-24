@@ -135,9 +135,9 @@ Hiertz, G.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-http://www.Modbus IDA.org%
+Modbus~Organization%
 }{%
-http://www.Modbus IDA.org%
+Modbus~Organization%
 }{%
 {\protect \APACyear {2006}}%
 }]{%
@@ -145,7 +145,7 @@ modbusMensaging}
 \APACinsertmetastar {%
 modbusMensaging}%
 \begin{APACrefauthors}%
-http://www.Modbus IDA.org.%
+Modbus~Organization, I.%
 \end{APACrefauthors}%
 \unskip\
 \newblock

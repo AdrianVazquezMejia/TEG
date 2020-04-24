@@ -113,7 +113,7 @@ La implementación de la topología mallada ha encontrado problemas con la necesid
 
 A continuación se describe el funcionamiento de algunas de redes WiFi malladas, es de observar que existe una amplia gama de funcionamientos, cada una caracterizada por su aplicación, se resaltan las más relacionadas con el objetivo del trabajo. 
 
-\subsection{Pior Lech and Przemyslaw Wlodarski}
+\subsection{Pior Lech and Przemyslaw Wlodarski}\label{primera}
 
 En su artículo llamado \textit{Analysis of the IoT WiFi Mesh Network} (Análisis de las redes WiFi malladas IoT), llevan a cabo un análisis estadístico de rendimiento sobre una red WiFi mallada. Para lograrlo usan la version de desarrollo del módulo de comunicación NodeMCU ESP8266. La operación básica de cada nodo en la red es el modo AP+STA(Punto de acceso y estación). La estrategia de entre los nodos esta basada en la transmisión de un único mensaje a los nodos con número mayor de el asociado a la estación receptora. Todos los nodos posee un número fijo asignado que crece desde la fuente (RPi 1) en la dirección de la estación destino (RPi 2).
 
@@ -127,7 +127,7 @@ De acuerdo a la figura  \ref{Fig3: Esquema WMN 1} se pueden seleccionar las sigu
 \caption{Topología usada por Lech y Wlodarski}
 \end{figure}
 
-\subsection{Yujun Cheng, Dong Yang y Huachun Zhou}
+\subsection{Yujun Cheng, Dong Yang y Huachun Zhou}\label{segunda}
 
 Yujun Cheng, Dong Yang y Huachun Zhou en su artículo \textit{A Load Balancing Approach in 802.11 Wireless Networks for Industrial Soft Real-Time Applications} (Un Enfoque de Carga Equilibrada  en Redes Inalámbricas 802.11 para  Aplicaciones  Industriales Ligeras en Tiempo Real) propone un arquitectura basada en el que distribución de los nodos esta directamente relacionada con la cantidad de enlaces que posee cada uno, de manera de distribuirlos equitativamente.
 
@@ -145,7 +145,7 @@ Un algoritmos es el encargado de balancear la red, el cual está basado en revisi
 \end{figure}
  
  
- \subsection{El protocolo ESP-MESH de Espressif}
+ \subsection{El protocolo ESP-MESH de Espressif}\label{tercera}
  
  ESP-MESH es un protocolo de red construido sobre del protocolo WiFi.  Dicho protocolo permite que numerosos dispositivos(Nodos) posicionados sobre un área física estén interconectados bajo única Red de Área Local Inalámbrica (WLAN). Las redes ESP-MESH son auto-organizadas y auto-reparables, es decir, que la red pueden ser construidas y mantenidas de manera autónoma.
  
@@ -243,18 +243,19 @@ Cuando la comunicación se ejecuta usando el modo RTU, cada byte en un mensaje co
 \begin{enumerate}
 \item 1 bit de inicio.
 \item 8 bits de datos, se envía el menos significativo primero.
-\item 1 bit de paridad
-\item 1 bit de parada
+\item 1 bit de paridad.
+\item 1 bit de parada.
 \end{enumerate}
 
 El bit de paridad es requerido, para asegurar la máxima compatibilidad.  Es recomendado soportar también el modo sin paridad. El modo por defecto de paridad es la paridad par.
 
-Toda la trama Modbus debe ser enviada de forma continua sin superar silencios de un tiempo equivalente de 1.5 caracteres entre dos caracteres, de otra manera se originaria un error de trama.  El espaciado entre tramas es marcado por silencios mayores entre 3,5 caracteres. 
+Toda la trama Modbus debe ser enviada de forma continua sin superar silencios de un tiempo equivalente de 1,5 caracter entre dos caracteres, de otra manera se originaria un error de trama.  El espaciado entre tramas es marcado por silencios mayores entre 3,5 caracteres. 
 
 \section{Microcontrolador ESP32}
+
 El ESP32 es un chip con integración WiFi y Bluetooth diseñado con la tecnología de ultra bajo consumo de 40 nm. Está diseñado para alcanzar desempeño importante de energía sobre radio frecuencia.
 
-El ESP32 esta diseñado para aplicaciones móviles, electrónicos personales, y de Internet de las cosas (IoT). Posee características de bajo consumo, incluyendo reloj de alta precisión, múltiples estados de energía, y escalamiento de consumo dinámico. 
+Este microcontrolador esta diseñado para aplicaciones móviles, electrónicos personales, y de Internet de las cosas (IoT). Posee características de bajo consumo, incluyendo reloj de alta precisión, múltiples estados de energía, y escalamiento de consumo dinámico. 
 
 Además es una solución integrada, ya que posee WiFi, Bluetooth, junto con alrededor de 20 componentes externos. El chip incluye una interruptor de antena, acoplador de radio-frecuencia, amplificador de potencia, amplificador de recepción de bajo ruido, filtros, y módulos de administración de consumo. 
 
