@@ -13,7 +13,36 @@ Para la creación de red inalámbricas WiFi usando el microcontrolador ESP-32, \em
 \subsection{ESP-NOW}
 \espn  es un tipo de protocolo de comunicación WiFi sin vínculo permanente definido por \emph{Espressif}. En la comunicación \espn los datos de aplicación son encapsulados en una trama específica por el proveedor y es transmitida de un dispositivo \wf a otro. Para proteger la trama de acción por seguridad se usa CTR con el protocolo CBC-MAC (CCMP). \espn es ampliamente usada en luces inteligente, control remoto y sensores.
 
-\subsubsection{Formato de la trama}
+
+\subsubsection{Seguridad}
+\espn usa el método CCMP, el cual está descrito en el estándar 802.11- 2012, para proteger la trama de acción específica del proveedor. El dispositivo WiFi mantiene una llave maestra primaria (PMK) y varias llaves maestras locales (LMK), cuyas longitudes son de 16 bytes.
+
+\begin{itemize}
+\item PMK: es usada para cifrar  con el algoritmo AES-128. La función \emph{esp\_now\_set\_pmk()} es usada para establecer dicha clave. Si no se especifica, una por defecto es usada.
+\item LMK: es usada para cifrar la trama bajo el método CCMP. El número máximo de de diferentes LMKs es de seis. Si esta llave no es configurada, la trama no es cifrada.
+\item El cifrado de las tramas broadcast no es soportado. 
+\end{itemize}
+ 
+ Para que la comunicación unicast tome lugar los dispositivos involucrados deben estar emparejados. Cada punto o nodo soporta hasta veinte nodos emparejados. El modo \wf puede ser de estación, punto de acceso o ambas. El rango de canales WiFi es de 14. 
+
+\subsubsection{Flexibilidad}
+
+\espn permite desarrollar redes según la arquitectura definida en la capa de aplicación, por lo que es ideal para la implementación de nuevas topologías y procesos de red. Además, debido a que la comunicación es punto a punto, la red no se centraliza. Por otro lado, posee una capacidad de carga aceptable para la transmisión de tramas Modbus, por lo que fue la librería utilizada para el diseño e implementación de la red.
+
+
+\subsection{Requerimientos de diseño} 
+ 
+ Principalmente debe ser una red confiable, estable, y eficaz; aprovechando las principales características de las redes malladas, como saltos múltiples y descentralización. La nodos deben soportar al menos la configuración básica descrita por Modbus para linea serial para garantizar la interoperatividad con otros equipos Modbus.
+ Los nodos deben poder ser configurables, pudiendo ajustar las rutas de la red y la tasa de baudios de la interfaz serial. Para así, obtener una red adaptable a los parámetros disponibles en las aplicaciones. 
+
+
+\subsection{Diseño Básico de la red}
+ Un nodo es una estación de comunicación con una dirección MAC bajo el estándar 802.11 y  una implementación de capa física (En este caso el \mcu) para la comunicación bajo este protocolo, además, constituye la entidad básica de la red.  La red más elemental, llamada  conjunto de servicios básicos (BSS), puede  ser formada por dos nodos. Para que otros nodos se unan, los integrantes del BSS provee de servicios a través de un sistema de distribución (DS) que permiten la comunicación con con dispositivos fuera del BSS para su integración.  Los enlaces se forman a partir del nodo que genere la trama (salto inicial) e indique el nodo siguiente (nodos intermedios) hasta llegar al nodo final (salto final). En este proceso de formación los nodos involucrados en el proceso forman una BSS que permanece establecido. 
+ 
+\subsubsection{Estructura de la trama}
+
+Actualmente, el estándar 802.11 clasifica las tramas como datos, control, o gestión. La trama de datos transmite la información en las capas más altas. Las tramas de control son usadas para agradecimientos y reservaciones. Finalmente los dispositivos usan las tramas de gestión para configurar, organizar y mantener el enlace local.
+
 \espn usa una trama de acción específica de proveedor para transmitir datos. La tasa de transmisión por defecto es de 1 Mbps.  El formato de la trama es como se muestra en la tabla \ref{Tabla: espn}.
 \begin{table}[H]
 \resizebox{15cm}{!}{
@@ -23,9 +52,9 @@ Dirección MAC & Código de categoría & Identificador de organización & Valores al
 \hline 
 24 bytes & 1 byte & 3 bytes & 4 bytes & 7-255 bytes & 4 bytes \\ 
 \hline 
-\end{tabular} 
+\end{tabular}\label{Tabla: espn}
 }
-\caption{Trama de acción  \espn}\label{Tabla: espn}
+\caption{Trama de acción  \espn}
 \end{table}
 
 \begin{enumerate}
@@ -55,50 +84,40 @@ ID de elemento& Longitud & ID de organización & Tipo & Versión & Cuerpo\\
 \item Cuerpo: El  cuerpo contiene los datas \espn.
 \end{enumerate}
 
-En las tramas \espn los bits de control de tramas \textit{FromDS} y \textit{ToDS} son ambos cero.
-El tercer campo de direcciones configura la dirección broadcast como (0xFF:0xFF:0xFF:0xFF:0xFF:0xFF).
+En el protocolo \espn la cabecera MAC varia respecto a las convencionales, el primer campo es dedicado a la dirección destino, la segunda la dirección de origen y la tercera es usada para establecer la dirección broadcast (0xFF:0xFF:0xFF:0xFF:0xFF:0xFF).En las tramas \espn los bits de control de tramas \textit{FromDS} y \textit{ToDS} son ambos cero. 
 
-\subsubsection{Seguridad}
-\espn usa el método CCMP, el cual está descrito en el estándar 802.11- 2012, para proteger la trama de acción específica del proveedor. El dispositivo WiFi mantiene una llave maestra primaria (PMK) y varias llaves maestras locales (LMK), cuyas longitudes son de 16 bytes.
+Los campos de gestión que indican las direcciones MAC son usados para mantener la red, y el servicio de distribución para ingresar nuevos nodos, se logra a partir de la dirección broadcast. 
 
-\begin{itemize}
-\item PMK: es usada para cifrar  con el algoritmo AES-128. La función \emph{esp\_now\_set\_pmk()} es usada para establecer dicha clave. Si no se especifica, una por defecto es usada.
-\item LMK: es usada para cifrar la trama bajo el método CCMP. El número máximo de de diferentes LMKs es de seis. Si esta llave no es configurada, la trama no es cifrada.
-\item El cifrado de las tramas broadcast no es soportado. 
-\end{itemize}
- 
- Para que la comunicación unicast tome lugar los dispositivos involucrados deben estar emparejados. Cada punto o nodo soporta hasta veinte nodos emparejados. El modo \wf puede ser de estación, punto de acceso o ambas. El rango de canales WiFi es de 14. 
+Los campos de cuerpo de la trama también son usados para manejar la comunicación en la red mallada, estos se usan para determinar los estados de cada nodo al recibir la trama inalámbrica. La trama de cuerpo toma la forma definida en la tabla \ref{Estructura}.
 
-\subsubsection{Flexibilidad}
+\begin{table}{H}
+\centering
+\begin{tabular}{|c|c|}
+\hline 
+type & Broadcast o unicast \\ 
+\hline 
+state & Indica si se han recibido datos broadcast  \\ 
+\hline 
+seq\_num & Numero de secuencia \\ 
+\hline 
+crc & Crc de los datos \\ 
+\hline 
+dir & Dirección desde o hacia el maestro \\ 
+\hline 
+Nodeid & Identificador del nodo \\ 
+\hline 
+payload & Carga  \\ 
+\hline 
+data\_len & Longitud de los datos \\ 
+\hline 
+\end{tabular}
+\caption{Estructura de datos envidada en el cuerpo de la trama \espn}\label{Estructura}
+\end{table}
 
-\espn permite desarrollar redes según la arquitectura definida en la capa de aplicación, por lo que es ideal para la implementación de nuevas topologías y procesos de red. Además, debido a que la comunicación es punto a punto, la red no se centraliza. Por otro lado, posee una capacidad de carga aceptable para la transmisión de tramas Modbus, por lo que fue la librería utilizada para el diseño e implementación de la red.
+\subsection{Gestión y formación mallada}
 
+Una trama proveniente de un nodo ayuda a los demás a detectar la red y a obtener información sobre sus configuración. Los nodos se detectan entre si en un escaneo activo. 
 
-\subsection{Requerimientos de diseño} 
- 
- Principalmente debe ser una red confiable, estable, y eficaz; aprovechando las principales características de las redes malladas, como saltos múltiples y descentralización. 
- 
-La nodos deben soportar al menos la configuración básica descrita por Modbus para linea serial, que indica: 
-\begin{itemize}
-\item Dirección configurable desde 1 a 247.
-\item funcionalidad de broadcast.
-\item Tasa de baudios.
-\item Paridad par.
-\item Interfaz eléctrica RS-485 (dos cables) o RS-232. 
-\item Modo RTU.
-\end{itemize}
- 
- También debe cumplir con otras especificaciones que Modbus \emph{Modbus organization} dicte para garantizar la interoperatividad con otros equipos Modbus.
-  
- Los nodos deben poder ser configurables, pudiendo ajustar las rutas de la red y la tasa de baudios de la interfaz serial. Así, se crea un red adaptable a los parámetros disponibles en las aplicaciones. 
-
-
-\subsection{Diseño Básico de la red}
- En primer lugar se estableció que la rutas de la información fueran estáticas, esto permite la implementación de algoritmos más simples que sean más confiables sobre la arquitectura del microcontrolador. El establecimientos de la rutas se ejecuta mediante la implementación de tablas de enrutamiento en cada uno de los nodos. 
- 
- Se estableció que una serie de identificadores Modbus estén reservados para los nodos de la red, es decir, los nodos serán esclavos adicionales de la red. Esto permite que se use el protocolo Modbus para el acceso a la configuración del nodo, como lo es establecer la tabla de enrutamiento, la velocidad de los baudios de la linea serial y el identificador del mismo. 
- 
-  
 %agregar esquema 
  \subsubsection{Características de los nodos}
  Se realizó el programa para que todos los nodos tuviesen el mismo programa sin importar el rol que posea en la red (maestro, intermedio o final). Se llama nodo maestro al que posee el maestro Modbus conectado, nodo intermedio a  aquel cuya funcionalidad solo en reenviar datos inalámbricos y nodo final a el que posee esclavos Modbus. Sin embargo, los nodos finales también pueden reenviar datos.
@@ -107,8 +126,8 @@ La nodos deben soportar al menos la configuración básica descrita por Modbus par
  
  Cada nodo tiene la posibilidad de ofrecer el servicio de configuración de su identificador Modbus, la tasa de baudios de la interfaz serial, y la tabla de enrutamiento. Esto a través del acceso a los registros de retención. Además de la funcionalidad de reinicio y reseteo de fabrica(hardware). Las direcciones de los registros con sus funcionalidades se expresan en la tabla \ref{Tabla 1: Espec HR}.%xxx Agregar que otras funcionalidades.
  
- \begin{table}[H]
-  \centering
+\begin{table}[H]
+\centering
 \begin{tabular}{llr}
  \toprule
 Dirección & Tipo de registro & Descripción  \\
@@ -176,7 +195,7 @@ El hardware del nodo se puede dividir en tres bloques: el microcontrolador, la a
 
 \paragraph{Microcontrolador}
 
-Para la aplicación se usó el encapsulado  ESP-WROOM-32, debido a disponibilidad. Se debe tener en cuenta que se deben dejar disponibles los pines del UART cero para la programación del, además de dos pines adicionales para inducir el estado de programación, los cuales son el pin \textit{EN} y el pin de propósito general cero.
+Para la aplicación se usó el encapsulado  ESP-WROOM-32, debido a disponibilidad y encapsulado con escudo WiFi . Se debe tener en cuenta que se deben dejar disponibles los pines del UART cero para la programación del, además de dos pines adicionales para inducir el estado de programación, los cuales son el pin \textit{EN} y el pin de propósito general cero.
 
 \paragraph{Alimentación}
 Para proveer los 3,3 V necesarios se usó la tarjeta pre-fabricada basada en el regulador lineal LM259S, que posee la capacidad de salida ajustable a la tensión requerida con tensiones de entrada de hasta 30 V. 
