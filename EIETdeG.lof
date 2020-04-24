@@ -9,16 +9,16 @@
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Trama general de procolo MODBUS}}{20}{figure.2.6}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Diagrama funcional del ESP-32}}{24}{figure.2.7}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama de flujo del funcionamiento general de un nodo de la red}}{34}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Ilustraci\'on de la estructuras de la tabla de enrutamiento}}{35}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagrama de bloques para el hardware del nodo}}{37}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Ilustraci\'on del combo para el desarrollo de aplicaciones en el ESP32 }}{39}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Opciones para colocaci\'on en PCB}}{56}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Ejemplo de conexi\'on entre MAX-485 y UART}}{58}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Esquem\'atico del nodo}}{59}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Diagrama de circuito impreso capa superior}}{60}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Diagrama de circuito impreso capa inferior}}{60}{figure.3.9}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Topolog\IeC {\'\i }a de implementaci\'on}}{61}{figure.3.10}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama de flujo del funcionamiento general de un nodo de la red}}{35}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Ilustraci\'on de la estructuras de la tabla de enrutamiento}}{37}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagrama de bloques para el hardware del nodo}}{39}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Ilustraci\'on del combo para el desarrollo de aplicaciones en el ESP32 }}{40}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Opciones para colocaci\'on en PCB}}{58}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Ejemplo de conexi\'on entre MAX-485 y UART}}{60}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Esquem\'atico del nodo}}{61}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Diagrama de circuito impreso capa superior}}{62}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Diagrama de circuito impreso capa inferior}}{62}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Topolog\IeC {\'\i }a de implementaci\'on}}{63}{figure.3.10}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

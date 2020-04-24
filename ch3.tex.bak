@@ -15,7 +15,7 @@ Para la creación de red inalámbricas WiFi usando el microcontrolador ESP-32, \em
 
 
 \subsubsection{Seguridad}
-\espn usa el método CCMP, el cual está descrito en el estándar 802.11- 2012, para proteger la trama de acción específica del proveedor. El dispositivo WiFi mantiene una llave maestra primaria (PMK) y varias llaves maestras locales (LMK), cuyas longitudes son de 16 bytes.
+
 
 \begin{itemize}
 \item PMK: es usada para cifrar  con el algoritmo AES-128. La función \emph{esp\_now\_set\_pmk()} es usada para establecer dicha clave. Si no se especifica, una por defecto es usada.
@@ -114,11 +114,19 @@ data\_len & Longitud de los datos \\
 \caption{Estructura de datos envidada en el cuerpo de la trama \espn}\label{Estructura}
 \end{table}
 
-\subsection{Gestión y formación mallada}
+\subsubsection{Gestión y formación mallada}
 
-Una trama proveniente de un nodo ayuda a los demás a detectar la red y a obtener información sobre sus configuración. Los nodos se detectan entre si en un escaneo activo. 
+Una trama proveniente de un nodo ayuda a los demás a detectar la red y a obtener información sobre sus configuración. Los nodos se detectan entre sí en un escaneo activo. La trama de escaneo se identifica debido a que es generada mediante broadcast. La trama posee información del identificador del nodo, si se ha recibido o no información broadcast antes del nodo por el que se está buscando, y un campo adicional Mosbus. El escaneo se realiza cuando un nodo no posee la dirección MAC de un nodo en su tabla de enrutamiento y se requiere enviar datos a este. La fuente de datos posee el esclavo Modbus destino, lo que es usado para registrar solo aquellos nodos que tengan relación con el esclavo particular.  Una vez los nodos se han registrado unos a otros la relación permanece, incluso si algún nodo es apagado, una vez sea se reinicie la red permite una rápida reconexión.
 
+Los nodos solo usan un transceptor simple, por lo tanto, la red mallada opera en un solo canal de frecuencia. Esto indica que se puede colocar una red en cada canal WiFi en un mismo espacio físico, sin llegar a tener conflictos de canal. 
+
+\subsubsection{Seguridad}
+Cada nodo \espn usa el método CCMP, el cual está descrito en el estándar 802.11- 2012, para proteger la trama de acción específica del proveedor. Esto junto con un algoritmo de cifrado mutuo, los nodos emparejados usan una llave maestra primaria (PMK) que es usada para cifrar las  llaves de cifrado locales (LMK) con el algoritmo AES-128. Este método de permite la autenticación entre dos nodos emparejados. Debido a que es un cifrado por emparejamiento, cada vínculo es independientemente asegurado, como consecuencia, \espn no provee cifrado fin-a-fin. 
+
+El cifrado para comunicación broadcast no esta soportado. Las llaves locales(LMK) son usadas por el método CCMP y cada nodo puede contener hasta seis llaves diferentes, si la llave local no se establece la trama de acción permanece sin cifrado. 
 %agregar esquema 
+
+
  \subsubsection{Características de los nodos}
  Se realizó el programa para que todos los nodos tuviesen el mismo programa sin importar el rol que posea en la red (maestro, intermedio o final). Se llama nodo maestro al que posee el maestro Modbus conectado, nodo intermedio a  aquel cuya funcionalidad solo en reenviar datos inalámbricos y nodo final a el que posee esclavos Modbus. Sin embargo, los nodos finales también pueden reenviar datos.
  
@@ -148,8 +156,11 @@ Dirección & Tipo de registro & Descripción  \\
 \includegraphics[scale=0.4]{UML2.eps}\label{Fig 1: ULM enrutamiento}
 \caption{Diagrama de flujo del funcionamiento general de un nodo de la red}
 \end{figure}
+\subsubsection{Selección de rutas}
 
+Las rutas no son determinadas por la red, si no por el usuario que la implemente. Las rutas son estáticas y no se reasignan automáticamente. Las rutas son asignadas a una tabla unidimensional, con los identificadores de los nodos destinos. El enrutamiento está estrechamente relacionado con el esclavo Modbus involucrado en la comunicación, por lo que las posiciones en la tabla de enrutamiento representan esclavos Modbus.
 
+La red no propaga información de las rutas, por lo que cada nodo solo conoce la ruta para una salto en cualquier sentido. Sin embargo, es posible solicitar y configurar las rutas de los nodos inalabricamente.
  \subsubsection{Características de enrutamiento}
   
  La tabla de enrutamiento consisten en un arreglo de 256 casillas, donde la posición está asociada al esclavo Modbus y el valor en la casilla se relaciona con la ubicación de dicho esclavo. Cabe resaltar que el identificador al que se refiere la tabla de enrutamiento como destino no es la localización del esclavo en la red, en su lugar, es el siguiente nodo a reenviar los datos para llegar al esclavo en cuestión, es decir, los nodos solo conocen un salto hacia adelante y un salto hacia atrás para cada esclavo.
