@@ -11,29 +11,15 @@ Por lo tanto, es conveniente poseer una arquitectura especifica de la red mallad
 Para la creación de red inalámbricas WiFi usando el microcontrolador ESP-32, \emph{Espressif} a través del \emph{ESP-IDF} (Espacio de trabajo para desarrollo de Internet de las cosas) provee de dos librerías: la ya mencionada ESP-IDF y ESP-NOW.  La librería ESP-NOW fue ideada para comunicaciones punto a punto en esquemas maestro/esclavo, no para creaciones de redes multi-salto, sin embargo, posee la expansibilidad de manipular el direccionamiento de los datos, brindado la potencialidad de crear redes de diversas arquitectura.
 
 \subsection{ESP-NOW}
-\espn  es un tipo de protocolo de comunicación WiFi sin vínculo permanente definido por \emph{Espressif}. En la comunicación \espn los datos de aplicación son encapsulados en una trama específica por el proveedor y es transmitida de un dispositivo \wf a otro. Para proteger la trama de acción por seguridad se usa CTR con el protocolo CBC-MAC (CCMP). \espn es ampliamente usada en luces inteligente, control remoto y sensores.
+\espn  es un tipo de protocolo de comunicación WiFi definido por \emph{Espressif Systems}. En la comunicación \espn los datos de aplicación son encapsulados en una trama específica por el proveedor y es transmitida de un dispositivo \wf a otro. Para proteger la trama de acción por seguridad se usa CTR con el protocolo CBC-MAC (CCMP). \espn es ampliamente usada en luces inteligente, control remoto y sensores.
 
-
-\subsubsection{Seguridad}
-
-
-\begin{itemize}
-\item PMK: es usada para cifrar  con el algoritmo AES-128. La función \emph{esp\_now\_set\_pmk()} es usada para establecer dicha clave. Si no se especifica, una por defecto es usada.
-\item LMK: es usada para cifrar la trama bajo el método CCMP. El número máximo de de diferentes LMKs es de seis. Si esta llave no es configurada, la trama no es cifrada.
-\item El cifrado de las tramas broadcast no es soportado. 
-\end{itemize}
- 
- Para que la comunicación unicast tome lugar los dispositivos involucrados deben estar emparejados. Cada punto o nodo soporta hasta veinte nodos emparejados. El modo \wf puede ser de estación, punto de acceso o ambas. El rango de canales WiFi es de 14. 
-
-\subsubsection{Flexibilidad}
-
-\espn permite desarrollar redes según la arquitectura definida en la capa de aplicación, por lo que es ideal para la implementación de nuevas topologías y procesos de red. Además, debido a que la comunicación es punto a punto, la red no se centraliza. Por otro lado, posee una capacidad de carga aceptable para la transmisión de tramas Modbus, por lo que fue la librería utilizada para el diseño e implementación de la red.
+\espn permite desarrollar redes según la arquitectura definida en la capa de aplicación, por lo que es ideal para la implementación de nuevas topologías y procesos de red. Además, debido a que la comunicación es punto a punto, la red no se centraliza. Así mismo, posee una capacidad de carga aceptable para la transmisión de tramas Modbus, por lo que fue la librería utilizada para el diseño e implementación de la red.
 
 
 \subsection{Requerimientos de diseño} 
  
- Principalmente debe ser una red confiable, estable, y eficaz; aprovechando las principales características de las redes malladas, como saltos múltiples y descentralización. La nodos deben soportar al menos la configuración básica descrita por Modbus para linea serial para garantizar la interoperatividad con otros equipos Modbus.
- Los nodos deben poder ser configurables, pudiendo ajustar las rutas de la red y la tasa de baudios de la interfaz serial. Para así, obtener una red adaptable a los parámetros disponibles en las aplicaciones. 
+ Principalmente debe ser una red confiable, estable, y eficaz; aprovechando las principales características de las redes malladas, como saltos múltiples y descentralización. La nodos deben soportar al menos la configuración básica descrita por Modbus para linea serial garantizando la interoperatividad con otros equipos Modbus.
+ Los nodos deben  ser configurables, pudiendo ajustar las rutas de la red y la tasa de baudios de la interfaz serial, para así, obtener una red extensible. 
 
 
 \subsection{Diseño Básico de la red}
@@ -41,9 +27,9 @@ Para la creación de red inalámbricas WiFi usando el microcontrolador ESP-32, \em
  
 \subsubsection{Estructura de la trama}
 
-Actualmente, el estándar 802.11 clasifica las tramas como datos, control, o gestión. La trama de datos transmite la información en las capas más altas. Las tramas de control son usadas para agradecimientos y reservaciones. Finalmente los dispositivos usan las tramas de gestión para configurar, organizar y mantener el enlace local.
+Actualmente, el estándar 802.11 clasifica las tramas como tramas datos, tramas de control, o tramas gestión. La trama de datos transmite la información en las capas más altas. Las tramas de control son usadas para agradecimientos y reservaciones. Finalmente, los dispositivos usan las tramas de gestión para configurar, organizar y mantener el enlace local.
 
-\espn usa una trama de acción específica de proveedor para transmitir datos. La tasa de transmisión por defecto es de 1 Mbps.  El formato de la trama es como se muestra en la tabla \ref{Tabla: espn}.
+\espn usa una trama de acción específica de proveedor para transmitir datos. La tasa de transmisión por defecto es de 1 Mbps y formato de la trama es como se muestra en la tabla \ref{Tabla: espn}.
 \begin{table}[H]
 \resizebox{15cm}{!}{
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -61,7 +47,8 @@ Dirección MAC & Código de categoría & Identificador de organización & Valores al
 \item Código de categoría:  es establecido en 127 para indicar la trama específica de proveedor.
 \item Identificador de organización:  contiene un identificador único (0x18fe34), los cuales son las primeros tres bytes de la MAC aplicada por \emph{Espressif}.
 \item Valores aleatorios: son usador para prevenir ataques de retransmisión.
-\item Contenido de proveedor: Contenido de específico de proveedor, contiene datos adicionales. 
+\item Contenido de proveedor: Contenido de específico de proveedor, contiene datos adicionales.
+\item FCS: Chequeo de errores.
 \end{enumerate}
  
 \begin{table}[H]
@@ -88,7 +75,7 @@ En el protocolo \espn la cabecera MAC varia respecto a las convencionales, el pr
 
 Los campos de gestión que indican las direcciones MAC son usados para mantener la red, y el servicio de distribución para ingresar nuevos nodos, se logra a partir de la dirección broadcast. 
 
-Los campos de cuerpo de la trama también son usados para manejar la comunicación en la red mallada, estos se usan para determinar los estados de cada nodo al recibir la trama inalámbrica. La trama de cuerpo toma la forma definida en la tabla \ref{Estructura}.
+Los campos de cuerpo de la trama también son usados para manejar la comunicación en la red mallada en la capa de aplicación, cada nodo posee una lógica dependiente de la tramas recibidas. La estructura de datos del cuerpo toma la forma definida en la tabla \ref{Estructura}.
 
 \begin{table}{H}
 \centering
@@ -116,9 +103,9 @@ data\_len & Longitud de los datos \\
 
 \subsubsection{Gestión y formación mallada}
 
-Una trama proveniente de un nodo ayuda a los demás a detectar la red y a obtener información sobre sus configuración. Los nodos se detectan entre sí en un escaneo activo. La trama de escaneo se identifica debido a que es generada mediante broadcast. La trama posee información del identificador del nodo, si se ha recibido o no información broadcast antes del nodo por el que se está buscando, y un campo adicional Mosbus. El escaneo se realiza cuando un nodo no posee la dirección MAC de un nodo en su tabla de enrutamiento y se requiere enviar datos a este. La fuente de datos posee el esclavo Modbus destino, lo que es usado para registrar solo aquellos nodos que tengan relación con el esclavo particular.  Una vez los nodos se han registrado unos a otros la relación permanece, incluso si algún nodo es apagado, una vez sea se reinicie la red permite una rápida reconexión.
+Una señal broadcast proveniente de un nodo se usa para detectar la red y obtener información sobre sus configuración. Los nodos se detectan entre sí en un escaneo activo. La trama de escaneo se identifica debido a que es generada mediante broadcast. La información recibida posee tres campos claves: información del identificador del nodo, si se ha recibido o no información broadcast antes del nodo por el que se está buscando y un campo adicional Modbus. El escaneo se realiza cuando un nodo no posee la dirección MAC de otro nodo en su tabla de enrutamiento y se requiere enviar datos a este. La fuente de datos posee el esclavo Modbus destino, lo que es usado para registrar solo aquellos nodos que tengan relación con el esclavo particular.  Una vez los nodos se han registrado unos a otros la relación permanece, incluso si algún nodo es apagado, una vez sea se reinicie la red permite una rápida reconexión.
 
-Los nodos solo usan un transceptor simple, por lo tanto, la red mallada opera en un solo canal de frecuencia. Esto indica que se puede colocar una red en cada canal WiFi en un mismo espacio físico, sin llegar a tener conflictos de canal. 
+Los nodos solo usan un transceptor simple, por lo tanto, la red mallada opera en un solo canal de frecuencia WiFi. Esto indica que se puede colocar una red en cada canal WiFi en un mismo espacio físico, sin llegar a tener conflictos de canal. 
 
 \subsubsection{Seguridad}
 Cada nodo \espn usa el método CCMP, el cual está descrito en el estándar 802.11- 2012, para proteger la trama de acción específica del proveedor. Esto junto con un algoritmo de cifrado mutuo, los nodos emparejados usan una llave maestra primaria (PMK) que es usada para cifrar las  llaves de cifrado locales (LMK) con el algoritmo AES-128. Este método de permite la autenticación entre dos nodos emparejados. Debido a que es un cifrado por emparejamiento, cada vínculo es independientemente asegurado, como consecuencia, \espn no provee cifrado fin-a-fin. 
@@ -126,13 +113,48 @@ Cada nodo \espn usa el método CCMP, el cual está descrito en el estándar 802.11-
 El cifrado para comunicación broadcast no esta soportado. Las llaves locales(LMK) son usadas por el método CCMP y cada nodo puede contener hasta seis llaves diferentes, si la llave local no se establece la trama de acción permanece sin cifrado. 
 %agregar esquema 
 
+\subsubsection{Selección de rutas}
 
- \subsubsection{Características de los nodos}
- Se realizó el programa para que todos los nodos tuviesen el mismo programa sin importar el rol que posea en la red (maestro, intermedio o final). Se llama nodo maestro al que posee el maestro Modbus conectado, nodo intermedio a  aquel cuya funcionalidad solo en reenviar datos inalámbricos y nodo final a el que posee esclavos Modbus. Sin embargo, los nodos finales también pueden reenviar datos.
+Las rutas no son determinadas por la red, si no por el usuario que la implemente. Además, son estáticas y no se reasignan automáticamente, estas rutas son asignadas a una tabla unidimensional, con los identificadores de los nodos destinos. El enrutamiento está estrechamente relacionado con los esclavo Modbus, y están representados por las posiciones en la tabla de enrutamiento.
+
+La red no propaga información de las rutas, por lo que cada nodo solo conoce la ruta para una salto en cualquier sentido. Sin embargo, es posible solicitar y configurar las rutas de los nodos inalabricamente.
+
+La tabla de enrutamiento posee 256 casillas (una para cada esclavo Modbus), donde la posición está asociada al esclavo Modbus y el valor en la casilla se relaciona con la ubicación de dicho esclavo. Cabe resaltar que el identificador al que se refiere la tabla de enrutamiento como destino no es la localización del esclavo en la red. En la figura En la figura \ref{Fig  2: Tabla de enrutamiento} se ilustra el la arquitectura e interpretación de la tabla de enrutamiento asociada al nodo 255.
  
- Los nodos en sí soportan el protocolo Modbus para ser interrogados y configurados. Por lo que los se reservaron direcciones para  los nodos, en este caso los identificadores desde 101 a 255. Concretamente, los nodos de la red son esclavos adicionales de la red Modbus. %xxx 
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{rt.eps}\label{Fig  2: Tabla de enrutamiento}
+\caption{Ilustración de la estructuras de la tabla de enrutamiento}
+\end{figure}
+
+Existe otra tabla de enrutamiento para las respuestas, de manera tal que las rutas sean bidireccionales y únicas. La tabla de respuesta es configurada y mantenida automaticamente por cada nodo. Cuando se reciben solicitudes Modbus, se guarda el identificador del nodo del cual provino dicha información, y dicho identificador se usa para enrutar la trama respuesta.
+
+ Un esquema del funcionamiento se puede apreciar en las figuras \ref{Fig 1: ULM enrutamiento} y \ref{Fig 1: ULM serial} .
  
- Cada nodo tiene la posibilidad de ofrecer el servicio de configuración de su identificador Modbus, la tasa de baudios de la interfaz serial, y la tabla de enrutamiento. Esto a través del acceso a los registros de retención. Además de la funcionalidad de reinicio y reseteo de fabrica(hardware). Las direcciones de los registros con sus funcionalidades se expresan en la tabla \ref{Tabla 1: Espec HR}.%xxx Agregar que otras funcionalidades.
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{UML2.eps}\label{Fig 1: ULM enrutamiento}
+\caption{Diagrama de flujo del funcionamiento general de un nodo de la red recibiendo información WiFi}
+\end{figure}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{UMLSerial.eps}\label{Fig 1: ULM serial}
+\caption{Diagrama de flujo del funcionamiento general de un nodo de la red recibiendo información serial}
+\end{figure}
+
+\subsubsection{Características Modbus de los nodos}
+ 
+Los nodos de la red son esclavos adicionales de la red Modbus, con direcciones reservadas para ellos desde el identificador(101). El modo de operación Modbus en los nodos permite que se puedan obtener  y configurar parámetros de la red, como la tabla de enrutamiento de los nodos. Además el proceso es realizado mediante un protocolo estandarizado y que esta relacionado con la red.
+
+El funcionamiento como esclavo Modbus de los nodos es permanente, incluso cuando ya se ha implementado la red con esclavos Modbus seriales, permitiendo actualización de parámetro de la red en cualquier momento. 
+
+Los nodos poseen un diagnóstico visual que indica cuando se ha recibido o enviado correctamente una trama  serial o inalambricamente. Dicho diagnóstico de basa en un LED que emite un pulso. Además, otro diagnóstico visual para indicar que se ha encendido el equipo, del mismo tipo se encuentra en la tarjeta de alimentación. No hay diagnostico visual para errores de comunicación.%observe hardaware para mas detalle.
+
+Los registros disponibles para acceso son los registros de retención desde la dirección cero hasta la 512, y también las diez primeras bobinas. Para las bobinas solo es soportada la función de escribir una bobina simple. La tabla \ref{Tabla 1: Espec HR} describe la asignación de los registros.
+
+
  
 \begin{table}[H]
 \centering
@@ -144,55 +166,32 @@ Dirección & Tipo de registro & Descripción  \\
 02 & Registros de retención    &  Tasa de baudios  \\
 256-512 & Registros de retención  & Tabla de enrutamiento\\
 0 & Bobina &Reinicio \\
+1 & Bobina &Guardar valores Modbus para ejecución\\
+2 & Bobina &Guardar valores Modbus en  la memoria Flash\\
 \bottomrule
 \end{tabular}
 \caption{Tablas primarias de los modelos de datos Modbus}\label{Tabla 1: Espec HR}
 \end{table}
 
- Un esquema del funcionamiento se puede apreciar en la figura \ref{Fig 1: ULM enrutamiento}.
- 
- \begin{figure}[H]
+La tabla \ref{Tabla 1: Espec Modbus} posee una descripción de la parámetros Modbus.
+ \begin{table}[H]
 \centering
-\includegraphics[scale=0.4]{UML2.eps}\label{Fig 1: ULM enrutamiento}
-\caption{Diagrama de flujo del funcionamiento general de un nodo de la red}
-\end{figure}
-\subsubsection{Selección de rutas}
+\begin{tabular}{llr}
+ \toprule
+Dirección & Por defecto & Opciones \\
+\midrule
+ID Modbus & 255 & 101 a 255 \\
+Tasa de baudios serial & 19200   &  300 a 115200 \\
+Tabla enrutamiento & Nula &Valores válidos de ID Modbus \\
+Modo & RTU & Ninguna \\
+Paridad & Ninguna & Ninguna \\
+Bits de parada & 1 & Ninguna \\
+\bottomrule
+\end{tabular}
+\caption{Parámtros Modbus}\label{Tabla 1: Espec Modbus}
+\end{table}
 
-Las rutas no son determinadas por la red, si no por el usuario que la implemente. Las rutas son estáticas y no se reasignan automáticamente. Las rutas son asignadas a una tabla unidimensional, con los identificadores de los nodos destinos. El enrutamiento está estrechamente relacionado con el esclavo Modbus involucrado en la comunicación, por lo que las posiciones en la tabla de enrutamiento representan esclavos Modbus.
-
-La red no propaga información de las rutas, por lo que cada nodo solo conoce la ruta para una salto en cualquier sentido. Sin embargo, es posible solicitar y configurar las rutas de los nodos inalabricamente.
- \subsubsection{Características de enrutamiento}
-  
- La tabla de enrutamiento consisten en un arreglo de 256 casillas, donde la posición está asociada al esclavo Modbus y el valor en la casilla se relaciona con la ubicación de dicho esclavo. Cabe resaltar que el identificador al que se refiere la tabla de enrutamiento como destino no es la localización del esclavo en la red, en su lugar, es el siguiente nodo a reenviar los datos para llegar al esclavo en cuestión, es decir, los nodos solo conocen un salto hacia adelante y un salto hacia atrás para cada esclavo.
-
-La tabla de enrutamiento se llena  mediante los registros de retención, a partir de la dirección 257, la cual se asocia al esclavo 1. Esta debe ser determinada por el usuario que conoce la posición de los nodos en el área a implementar. 
- 
-Cuando se recibe una trama, se extrae el identificador del esclavo  y surgen dos casos: corresponde a un número diferente de cero ó es cero. Si es cero, entonces el nodo no tiene ruta a ese nodo, en caso contrario el número puede corresponder al identificador del nodo en cuestión o a otro nodo al cual se reenviarán la trama. En caso de que sea el nodo en cuestión entonces ha llegado la trama ha llegado a su destino. 
-
-En la figura \ref{Fig  2: Tabla de enrutamiento} se muestra un ejemplo de la tabla de enrutamiento. En el primer lugar supondremos que se trata de la tabla de enrutamiento del esclavo 255. Luego, se observa que para cuando el identificador del nodo coincide con elemento de la tabla de enrutamiento, se dice que el esclavo se encuentra en la linea serial de dicho nodo. Por otro lado, si el esclavo destino coincide con el nodo destino significa que el esclavo a interrogar es el nodo en cuestión.
-
- \begin{figure}[H]
-\centering
-\includegraphics[scale=0.4]{rt.eps}\label{Fig  2: Tabla de enrutamiento}
-\caption{Ilustración de la estructuras de la tabla de enrutamiento}
-\end{figure}
-
-En la ADU de la comunicación inalámbrica existe un dato de la trama que identifica el sentido de la trama (hacia o desde el maestro). Cuando se recibe información  inalambricamente y se debe reenviar, la aplicación usa la información del sentido para asignar la dirección del nodo destino, es decir, si va hacia adelante (desde el maestro), entonces se usa la tabla de enrutamiento de manera convencional y si hacia atrás se usa el nodo de donde provino la trama inicialmente; por ejemplo, si la trama hacia el esclavo provino desde el nodo 200, cuando vaya hacia el maestro se reenviará la trama a través del nodo 200. Es decir, las tramas posee el mismo camino en ambos sentidos.
-
-Existe una diferencia cuando se reciben datos serialmente, ya que  no hay una manera directa de determinar el sentido de la información simplemente analizando la trama recibida, sin embargo, es posible asignarla con el apoyo de la tabla de enrutamiento, pues si el nodo destino recibido serialmente es el nodo en cuestión significa que es una respuesta Modbus.
-
-\subsubsection{Características Modbus de los nodos}
-
-La capacidad del nodo para funcionar como esclavo Modbus dentro de la red permite que sea configurable los parámetros de funcionamiento como la velocidad de comunicación serial, identificadores Modbus y la tabla de enrutamiento. 
-
-A estos parámetros se le asignaron direcciones de aplicación Modbus en los registros de retención, para que pudiesen ser leídos y escritos desde el maestro. Otras funciones binarias como la de reinicio se ejecuta a través de la escritura de la bobina cero.
-\begin{itemize}
-\item La dirección cero corresponde al identificador del nodo.
-\item La dirección uno corresponde a la tasa de baudios.
-\item Desde la dirección 256 hasta 512 corresponde a la tabla de enrutamiento.
-\end{itemize} 
-
-Cabe resaltar que estos nodo pueden ser interrogados tanto serialmente como inalambricamente, es decir, con la red ya instalada. Las funciones no usadas proveerán la respuesta de "Función ilegal".
+Cabe resaltar que estos nodos pueden ser interrogados tanto serial como inalambricamente, es decir, con la red ya instalada. Las funciones no usadas proveerán la excepción Modbus "Función ilegal". 
 
 \subsubsection{El hardware}\label{hardware}
 
@@ -206,19 +205,70 @@ El hardware del nodo se puede dividir en tres bloques: el microcontrolador, la a
 
 \paragraph{Microcontrolador}
 
-Para la aplicación se usó el encapsulado  ESP-WROOM-32, debido a disponibilidad y encapsulado con escudo WiFi . Se debe tener en cuenta que se deben dejar disponibles los pines del UART cero para la programación del, además de dos pines adicionales para inducir el estado de programación, los cuales son el pin \textit{EN} y el pin de propósito general cero.
+Para la aplicación se usó el encapsulado  ESP-WROOM-32, debido a disponibilidad y encapsulado con escudo WiFi . Se debe tener en cuenta que se dejaron disponibles los pines del UART cero para la descarga del software, además de dos pines adicionales para inducir el estado de programación, los cuales son el pin \textit{EN} y el pin de propósito general cero.
 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{ESP-WROOM-32.jpg}\label{Fig  x: ESP-WROOM-32}
+\caption{Encapsulado ESP-WROOM-32 del ESP32}
+\end{figure}
+ 
 \paragraph{Alimentación}
-Para proveer los 3,3 V necesarios se usó la tarjeta pre-fabricada basada en el regulador lineal LM259S, que posee la capacidad de salida ajustable a la tensión requerida con tensiones de entrada de hasta 30 V. 
-Lo cual es beneficioso ya que en el contexto industrial es común  las tensiones del 24 V y 5 V.%xxx reference required
+La alimentación del microcontrolador es de 3,3 V y además los equipos Modbus especifican un rango de tensión de funcionamiento entre 5 V y 25 V. Por lo tanto se escogió el regulador conmutado LM2596S que brinda estas características y además existe una tarjeta pre-fabricada para rápida implementación. La figura \ref{dcdc.jpg} muestra la forma de dicha tarjeta. Además posee un LED testigo de su encendido, que es usado como señal de diagnóstico Modbus.
 
-\paragraph{Intefaz RS-485}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{dcdc.jpg}\label{dcdc}
+\caption{Tarjeta con regulador lineal para alimentación}
+\end{figure}
+ %Otras especifiaciones
+ 
+ Las características eléctricas son presentadas en la tabla \ref{Espec dcdc}
+ \begin{table}
+ \centering
+ \begin{tabular}{|c|c|}
+ \hline 
+ Voltaje de entrada & 4 V - 35 V \\ 
+ \hline 
+ Voltajes de salida & 1,23 V 30 V \\ 
+ \hline 
+ Corriente de entrada &  3 A (Máxima) \\ 
+ \hline 
+ Eficiencia de conversión & 92\% (Máxima) \\ 
+ \hline 
+ Frecuencia de conmutación & 150 kHz \\ 
+ \hline 
+ Ripple de salida &  30 mA (Máximo) \\ 
+ \hline 
+ \end{tabular} 
+ \caption{Especificaciones de la fuente de alimentación}\label{dcdc}
+ \end{table}
 
-Usando el chip d \emph{MAX-485} de \textit{MAXIM} es posible obtener niveles de RS-485 a partir de una interfaz serial TLL, proveniente del UART1. 
+\paragraph{Interfaz serial}
+
+Modbus en sus clases básica dicta que los equipos Modbus  seriales tienen que poseer la interfaz eléctrica RS-485 de dos cables de acuerdo con el estándar EIA/TIA-485. Por esto se seleccionó para la implementación en el nodo, asegurando la máxima compatibilidad. 
+
+El chip MAX3485 de \emph{Maxim Integrated} provee de las características antes descritas y admite tensión de alimentación de 3,3 V, lo cual hace que se posea un solo nivel de tensión para la alimentación del nodo.
+
+Este chip soporta hasta 32 dispositivos, pero teniendo en cuenta que el uso de nodos distribuye la carga de los esclavos, la utilización de repetidores se vería disminuida.
+
+La topología RS-485 Modbus sin repetidor posee cables truncados en un par trenzado, sobre los cuales los dispositivos están conectados bien sea directamente o a través de cables de derivación. Los cables truncados también llamado bus, cuya longitud depende de la tasa de baudios, los parámetros del cable y  la carga de dispositivos, para 9600 baudios y un cable calibre de 26 AWG, la máxima longitud es de 1000 m. 
+
+Las derivaciones no deben estar a más de 20 m. En caso del uso de una derivación de puertos múltiples con $n$ derivaciones, cada una tiene que respetar una distancia máxima de 40 m dividida por $n$.
+
+El circuito común de cada bus debe estar conectado a tierra, preferiblemente a un solo punto para todo el bus.  Esto no aplica para la red, pues evidentemente la comunicación inalámbrica brinda aislamiento galvánico.
+
+Para minimizar las reflexiones del final del cable RS-485 se requiere colocar un terminador de linea cerca del final de cada punto del bus (Resistencia de 150 $\Omega$ y 0,5 W). No se deben colocar más de dos terminadores de linea en el bus, ni colocar terminadores de linea en los cable de derivación.
+
+Si el sistema requiere polarización esta de debe implementar en cada bus serial del sistema, los nodos inalámbricos no requieren polarización.
+
+La interfaz mecánica consta de de Bloques terminales, la identificación  RS-485 se encuentra en la el circuito impreso.
+
+Los cables de la linea serial deben estar blindados, deben formar una par balanceado y deben poseer un tercer cable (Común).  Estos deben posee el calibre suficiente para permitir la máxima distancia. Un calibre de 24 AWG es siempre suficiente. Además, preferiblemente se debe seleccionar cables con una impedancia características mayor a
 
 \section{Detalle del Diseño}
 \subsection{Programación del ESP-32}
-\textit{Espressif} provee los recursos básicos de hardware y software relacionados con el desarrollo de aplicaciones que usen la serie de hardware del ESP32.
+El fabricante del \mcu \textit{Espressif Systems} especifica  los recursos básicos de hardware y software relacionados con el desarrollo de aplicaciones que usen la serie de hardware del ESP32.
 
 El hardware necesario son: una tarjeta de desarrollo con un ESP32, un cable USB y computador que posea Windows, Linux o MACOS. Para el desarrollo del programa se usaron tarjetas de desarrollo ESP32-DevKitC V1 y un computador con sistema operativo Ubuntu 18.04 LTS.
 
@@ -247,6 +297,8 @@ El microcontrolador ESP32 está diseñado para correr un sistema operativo en tiem
 Dicho sistema operativo permite que se creen y desarrollen programas en lenguaje ANSI C, implementado las librerías para el manejo del microcontrolador proveídas por ESP-IDF de \textit{espressif}. Por lo tanto, el desarrollo del programa se basó en la creación de tareas y la comunicación entre ellas basada en colas. Se crearon tareas dos tareas para el manejo de los datos inalámbricos, una para la recepción de datos mediante el UART  y otras tareas con funciones de monitores fueron añadidas.
 
 \subsection{ Programa de la red diseñada que soporte la transmisión del protocolo Modbus}
+El rol de cada nodo en la red es determinado por la secuencia de estados durante operación, por lo que el programa es idéntico para todos los microcontroladores, incluido el que posee conectado el maestro. Cualquier nodo puede enviar datos, incluso aquellos que posee esclavos Modbus en su interfaz serial.
+  
   
   En primer lugar se definen el la aplicación principal (app main) las funciones que se llevaran a cabo al iniciar el microcontrolador. La inicialización de la flash, el módulo WiFi, el UART y la creación de tareas toma lugar en esta parte. Esta sección se ejecuta solo una vez. 
 \subsubsection{Librerías}

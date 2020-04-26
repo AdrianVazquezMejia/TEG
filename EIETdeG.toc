@@ -2,8 +2,8 @@
 \contentsline {chapter}{RECONOCIMIENTOS Y AGRADECIMIENTOS}{\es@scroman {iii}}{chapter*.1}
 \contentsline {chapter}{\'INDICE GENERAL}{\es@scroman {viii}}{chapter*.2}
 \contentsline {chapter}{LISTA DE FIGURAS}{\es@scroman {xi}}{chapter*.3}
-\contentsline {chapter}{LISTA DE TABLAS}{\es@scroman {xii}}{chapter*.4}
-\contentsline {chapter}{LISTA DE ACR\'ONIMOS}{\es@scroman {xiii}}{chapter*.5}
+\contentsline {chapter}{LISTA DE TABLAS}{\es@scroman {xiii}}{chapter*.4}
+\contentsline {chapter}{LISTA DE ACR\'ONIMOS}{\es@scroman {xv}}{chapter*.5}
 \contentsline {chapter}{INTRODUCCI\'ON}{1}{chapter*.6}
 \contentsline {chapter}{MARCO HIST\'ORICO}{4}{chapter.1}
 \contentsline {chapter}{MARCO TE\'ORICO}{6}{chapter.2}
@@ -36,60 +36,56 @@
 \contentsline {chapter}{MARCO METODOL\'OGICO}{28}{chapter.3}
 \contentsline {section}{\numberline {3.1}DISE\~NO DE LA RED MALLADA}{28}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}ESP-NOW}{29}{subsection.3.1.1}
-\contentsline {subsubsection}{Seguridad}{29}{subsubsection*.11}
-\contentsline {subsubsection}{Flexibilidad}{30}{subsubsection*.12}
 \contentsline {subsection}{\numberline {3.1.2}Requerimientos de dise\~no}{30}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Dise\~no B\'asico de la red}{31}{subsection.3.1.3}
-\contentsline {subsubsection}{Estructura de la trama}{31}{subsubsection*.13}
-\contentsline {subsubsection}{Gesti\'on y formaci\'on mallada}{33}{subsubsection*.14}
-\contentsline {subsubsection}{Seguridad}{34}{subsubsection*.15}
-\contentsline {subsubsection}{Caracter\IeC {\'\i }sticas de los nodos}{34}{subsubsection*.16}
-\contentsline {subsubsection}{Selecci\'on de rutas}{35}{subsubsection*.17}
-\contentsline {subsubsection}{Caracter\IeC {\'\i }sticas de enrutamiento}{36}{subsubsection*.18}
-\contentsline {subsubsection}{Caracter\IeC {\'\i }sticas Modbus de los nodos}{38}{subsubsection*.19}
-\contentsline {subsubsection}{El hardware}{38}{subsubsection*.20}
-\contentsline {paragraph}{Microcontrolador}{39}{paragraph*.21}
-\contentsline {paragraph}{Alimentaci\'on}{39}{paragraph*.22}
-\contentsline {paragraph}{Intefaz RS-485}{39}{paragraph*.23}
-\contentsline {section}{\numberline {3.2}Detalle del Dise\~no}{39}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Programaci\'on del ESP-32}{39}{subsection.3.2.1}
-\contentsline {subsubsection}{El sistema operativo en tiempo real}{41}{subsubsection*.24}
-\contentsline {subsection}{\numberline {3.2.2} Programa de la red dise\~nada que soporte la transmisi\'on del protocolo Modbus}{41}{subsection.3.2.2}
-\contentsline {subsubsection}{Librer\IeC {\'\i }as}{42}{subsubsection*.25}
-\contentsline {subsubsection}{Inicializaci\'on}{42}{subsubsection*.26}
-\contentsline {subsubsection}{Creaci\'on de colas (\emph {Queue})}{43}{subsubsection*.27}
-\contentsline {subsubsection}{Las funciones de callback}{43}{subsubsection*.28}
-\contentsline {subsubsection}{Registro de puntos}{44}{subsubsection*.29}
-\contentsline {subsubsection}{Estructuras de datos relevantes}{45}{subsubsection*.30}
-\contentsline {subsection}{\numberline {3.2.3}Tarea esp\_now\_manage\_task}{45}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Tarea espnow\_send}{49}{subsection.3.2.4}
-\contentsline {subsubsection}{Direcciones MAC}{50}{subsubsection*.31}
-\contentsline {subsection}{\numberline {3.2.5}Programa para el manejo del protocolo Modbus en el bus RS-485.}{50}{subsection.3.2.5}
-\contentsline {subsubsection}{Librer\IeC {\'\i }as}{52}{subsubsection*.32}
-\contentsline {subsection}{\numberline {3.2.6}Funciones auxiliares}{52}{subsection.3.2.6}
-\contentsline {subsubsection}{Funci\'on \emph {vNotiLEDinit}}{52}{subsubsection*.33}
-\contentsline {subsubsection}{Funci\'on \emph {FormatFactory}}{52}{subsubsection*.34}
-\contentsline {subsubsection}{Funci\'on \emph {vConfigLoad}}{53}{subsubsection*.35}
-\contentsline {subsubsection}{Funci\'on \emph {vConfigGetNVS}}{53}{subsubsection*.36}
-\contentsline {subsubsection}{Funci\'on \emph {vConfigSetNode}}{54}{subsubsection*.37}
-\contentsline {subsubsection}{Funci\'on \emph {uComDirection}}{54}{subsubsection*.38}
-\contentsline {subsubsection}{Funci\'on \emph {uComGetTransData}}{55}{subsubsection*.39}
-\contentsline {subsubsection}{Funci\'on \emph {vEspnowGetOldPeers}}{55}{subsubsection*.40}
-\contentsline {subsubsection}{Funci\'on \emph {espnow\_data\_prepare}}{55}{subsubsection*.41}
-\contentsline {subsubsection}{Funci\'on \emph {espnow\_data\_parse}}{56}{subsubsection*.42}
-\contentsline {subsection}{\numberline {3.2.7} Circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32.}{56}{subsection.3.2.7}
-\contentsline {subsubsection}{Posicionamiento del ESP32 en el PCB}{57}{subsubsection*.43}
-\contentsline {subsubsection}{El chip MAX-485}{59}{subsubsection*.44}
-\contentsline {subsubsection}{Alimentaci\'on}{60}{subsubsection*.45}
-\contentsline {subsubsection}{Arquitectura Circuito Impreso}{60}{subsubsection*.46}
-\contentsline {subsection}{\numberline {3.2.8}Implementaci\'on la red mallada dise\~nada}{62}{subsection.3.2.8}
-\contentsline {subsection}{\numberline {3.2.9}An\'alisis el rendimiento de la red de acuerdo a variaciones en los par\'ametros de transmisi\'on de datos}{64}{subsection.3.2.9}
-\contentsline {chapter}{DESCRIPCI\'ON DEL MODELO}{66}{chapter.4}
-\contentsline {chapter}{PRUEBAS EXPERIMENTALES}{67}{chapter.5}
-\contentsline {chapter}{RESULTADOS}{68}{chapter.6}
-\contentsline {chapter}{CONCLUSIONES}{69}{chapter.7}
-\contentsline {chapter}{RECOMENDACIONES}{70}{chapter.8}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{71}{appendix.Alph1}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{72}{appendix.Alph2}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{73}{appendix.Alph3}
-\contentsline {chapter}{REFERENCIAS}{74}{appendix*.47}
+\contentsline {subsection}{\numberline {3.1.3}Dise\~no B\'asico de la red}{30}{subsection.3.1.3}
+\contentsline {subsubsection}{Estructura de la trama}{30}{subsubsection*.11}
+\contentsline {subsubsection}{Gesti\'on y formaci\'on mallada}{32}{subsubsection*.12}
+\contentsline {subsubsection}{Seguridad}{33}{subsubsection*.13}
+\contentsline {subsubsection}{Selecci\'on de rutas}{34}{subsubsection*.14}
+\contentsline {subsubsection}{Caracter\IeC {\'\i }sticas Modbus de los nodos}{36}{subsubsection*.15}
+\contentsline {subsubsection}{El hardware}{38}{subsubsection*.16}
+\contentsline {paragraph}{Microcontrolador}{38}{paragraph*.17}
+\contentsline {paragraph}{Alimentaci\'on}{39}{paragraph*.18}
+\contentsline {paragraph}{Interfaz serial}{40}{paragraph*.19}
+\contentsline {section}{\numberline {3.2}Detalle del Dise\~no}{41}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Programaci\'on del ESP-32}{41}{subsection.3.2.1}
+\contentsline {subsubsection}{El sistema operativo en tiempo real}{43}{subsubsection*.20}
+\contentsline {subsection}{\numberline {3.2.2} Programa de la red dise\~nada que soporte la transmisi\'on del protocolo Modbus}{44}{subsection.3.2.2}
+\contentsline {subsubsection}{Librer\IeC {\'\i }as}{44}{subsubsection*.21}
+\contentsline {subsubsection}{Inicializaci\'on}{45}{subsubsection*.22}
+\contentsline {subsubsection}{Creaci\'on de colas (\emph {Queue})}{45}{subsubsection*.23}
+\contentsline {subsubsection}{Las funciones de callback}{46}{subsubsection*.24}
+\contentsline {subsubsection}{Registro de puntos}{46}{subsubsection*.25}
+\contentsline {subsubsection}{Estructuras de datos relevantes}{47}{subsubsection*.26}
+\contentsline {subsection}{\numberline {3.2.3}Tarea esp\_now\_manage\_task}{48}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Tarea espnow\_send}{51}{subsection.3.2.4}
+\contentsline {subsubsection}{Direcciones MAC}{52}{subsubsection*.27}
+\contentsline {subsection}{\numberline {3.2.5}Programa para el manejo del protocolo Modbus en el bus RS-485.}{52}{subsection.3.2.5}
+\contentsline {subsubsection}{Librer\IeC {\'\i }as}{54}{subsubsection*.28}
+\contentsline {subsection}{\numberline {3.2.6}Funciones auxiliares}{54}{subsection.3.2.6}
+\contentsline {subsubsection}{Funci\'on \emph {vNotiLEDinit}}{54}{subsubsection*.29}
+\contentsline {subsubsection}{Funci\'on \emph {FormatFactory}}{54}{subsubsection*.30}
+\contentsline {subsubsection}{Funci\'on \emph {vConfigLoad}}{55}{subsubsection*.31}
+\contentsline {subsubsection}{Funci\'on \emph {vConfigGetNVS}}{55}{subsubsection*.32}
+\contentsline {subsubsection}{Funci\'on \emph {vConfigSetNode}}{56}{subsubsection*.33}
+\contentsline {subsubsection}{Funci\'on \emph {uComDirection}}{56}{subsubsection*.34}
+\contentsline {subsubsection}{Funci\'on \emph {uComGetTransData}}{57}{subsubsection*.35}
+\contentsline {subsubsection}{Funci\'on \emph {vEspnowGetOldPeers}}{57}{subsubsection*.36}
+\contentsline {subsubsection}{Funci\'on \emph {espnow\_data\_prepare}}{57}{subsubsection*.37}
+\contentsline {subsubsection}{Funci\'on \emph {espnow\_data\_parse}}{58}{subsubsection*.38}
+\contentsline {subsection}{\numberline {3.2.7} Circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32.}{58}{subsection.3.2.7}
+\contentsline {subsubsection}{Posicionamiento del ESP32 en el PCB}{59}{subsubsection*.39}
+\contentsline {subsubsection}{El chip MAX-485}{61}{subsubsection*.40}
+\contentsline {subsubsection}{Alimentaci\'on}{62}{subsubsection*.41}
+\contentsline {subsubsection}{Arquitectura Circuito Impreso}{62}{subsubsection*.42}
+\contentsline {subsection}{\numberline {3.2.8}Implementaci\'on la red mallada dise\~nada}{64}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.9}An\'alisis el rendimiento de la red de acuerdo a variaciones en los par\'ametros de transmisi\'on de datos}{66}{subsection.3.2.9}
+\contentsline {chapter}{DESCRIPCI\'ON DEL MODELO}{68}{chapter.4}
+\contentsline {chapter}{PRUEBAS EXPERIMENTALES}{69}{chapter.5}
+\contentsline {chapter}{RESULTADOS}{70}{chapter.6}
+\contentsline {chapter}{CONCLUSIONES}{71}{chapter.7}
+\contentsline {chapter}{RECOMENDACIONES}{72}{chapter.8}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{73}{appendix.Alph1}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{74}{appendix.Alph2}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{75}{appendix.Alph3}
+\contentsline {chapter}{REFERENCIAS}{76}{appendix*.43}
