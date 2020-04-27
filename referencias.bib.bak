@@ -66,10 +66,18 @@ title = {Development of WiFi Mesh Infrastructure for Internet of Things applicat
 journal = {Engineering Physics International Conference, EPIC 2016}
 }
 
-@article{MACen,
+@Misc{MACen,
 author = {Al-Husainy, Mohammed},
 year = {2013},
 month = {11},
 pages = {1},
 title = {MAC Address as a Key for Data Encryption}
+}
+
+@Misc{testAntena,
+author={Espressif Systems},
+title={ESP-WROOM-02PCB Design and Module Placement Guide},
+year={2016},
+month={06},
+note={[Internet; accedido el  27 de Abriil del 2020] Disponible en: \url{https://www.espressif.com/sites/default/files/documentation/esp-wroom-02_pcb_design_and_module_placement_guide_0.pdf}}
 }

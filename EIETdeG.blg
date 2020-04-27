@@ -1,68 +1,48 @@
 This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: EIETdeG.aux
-The style file: apacite.bst
-Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
-Reallocated global_strs (elt_size=20001) to 20 items from 10.
-Reallocated glb_str_end (elt_size=4) to 20 items from 10.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
+The style file: apalike.bst
 Database file #1: biblioteca.bib
 Database file #2: referencias.bib
 Database file #3: bibliografia.bib
-Repeated entry---line 33 of file bibliografia.bib
- : @misc{Online
- :             ,
-I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "inproceedings"
-Warning--I didn't find a database entry for "inproceedings40"
-Warning--I didn't find a database entry for "article40"
-Warning--I didn't find a database entry for "article41"
-apacite.bst [2013/07/21 v6.03 APA bibliography style]
-Warning--No journal in MACen
-You've used 9 entries,
-            6951 wiz_defined-function locations,
-            1328 strings with 12119 characters,
-and the built_in function-call counts, 16471 in all, are:
-= -- 2042
-> -- 131
-< -- 753
-+ -- 721
-- -- 18
-* -- 1007
-:= -- 3011
-add.period$ -- 40
-call.type$ -- 9
-change.case$ -- 169
-chr.to.int$ -- 0
-cite$ -- 19
-duplicate$ -- 385
-empty$ -- 681
-format.name$ -- 198
-if$ -- 3161
-int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 0
-newline$ -- 220
-num.names$ -- 72
-pop$ -- 315
+You've used 14 entries,
+            1935 wiz_defined-function locations,
+            548 strings with 5899 characters,
+and the built_in function-call counts, 4513 in all, are:
+= -- 442
+> -- 185
+< -- 12
++ -- 62
+- -- 60
+* -- 344
+:= -- 839
+add.period$ -- 36
+call.type$ -- 14
+change.case$ -- 100
+chr.to.int$ -- 14
+cite$ -- 14
+duplicate$ -- 174
+empty$ -- 285
+format.name$ -- 80
+if$ -- 860
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 6
+newline$ -- 67
+num.names$ -- 42
+pop$ -- 74
 preamble$ -- 1
-purify$ -- 52
+purify$ -- 100
 quote$ -- 0
-skip$ -- 1156
+skip$ -- 145
 stack$ -- 0
-substring$ -- 802
-swap$ -- 243
-text.length$ -- 45
+substring$ -- 256
+swap$ -- 16
+text.length$ -- 2
 text.prefix$ -- 0
-top$ -- 1
-type$ -- 848
-warning$ -- 1
-while$ -- 86
+top$ -- 0
+type$ -- 84
+warning$ -- 0
+while$ -- 34
 width$ -- 0
-write$ -- 257
-(There was 1 error message)
+write$ -- 164

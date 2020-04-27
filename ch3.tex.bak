@@ -4,7 +4,7 @@ En esta capitulo se describirá el diseño de la red y los detalles de software y 
 
 Tomando en cuenta la investigaciones realizadas se encontró que en el campo de las redes WiFi malladas no existe un protocolo de aplicación definido, en su lugar, las redes son ajustadas a las necesidades específicas del campo en cual se vaya a implementar, esto trae como consecuencia que las especificaciones se concentren en el máximo rendimiento en las áreas críticas del problema. 
 
-Dentro de los funcionamiento descritos anteriormente, se tiene que \\ref{primera} se concentra en el algoritmo de optimización de la topología de la red, sin tomar en consideración el hardware de implementación. Por otro lado \ref{segunda}, provee una aproximación más realista, proveyendo las especificaciones del hardware, sin embargo, no hay justificación para el enrutamiento usado y las medidas de rendimiento aplicadas no son de interés para el área industrial. Por último, se tiene que la ESP-MESH parecía  brindar extensibilidad y rápido desarrollo, no obstante, posee la desventaja de la necesidad de un enrutador WiFi  para la formación, que brinde las direcciones IP a la red mallada, lo que deriva en un centralización, pues si el router falla, la red perece. 
+Dentro de los funcionamiento descritos anteriormente, se tiene que\ref{primera} se concentra en el algoritmo de optimización de la topología de la red, sin tomar en consideración el hardware de implementación. Por otro lado \ref{segunda}, provee una aproximación más realista, proveyendo las especificaciones del hardware, sin embargo, no hay justificación para el enrutamiento usado y las medidas de rendimiento aplicadas no son de interés para el área industrial. Por último, se tiene que la ESP-MESH parecía  brindar extensibilidad y rápido desarrollo, no obstante, posee la desventaja de la necesidad de un enrutador WiFi  para la formación, que brinde las direcciones IP a la red mallada, lo que deriva en un centralización, pues si el router falla, la red perece. 
 
 Por lo tanto, es conveniente poseer una arquitectura especifica de la red mallada para el funcionamiento dentro de una red Modbus. Así se puede adaptar y configurar de manera más óptima y confiable para las funciones y características del protocolo Modbus.
 
@@ -214,11 +214,11 @@ Para la aplicación se usó el encapsulado  ESP-WROOM-32, debido a disponibilidad 
 \end{figure}
  
 \paragraph{Alimentación}
-La alimentación del microcontrolador es de 3,3 V y además los equipos Modbus especifican un rango de tensión de funcionamiento entre 5 V y 25 V. Por lo tanto se escogió el regulador conmutado LM2596S que brinda estas características y además existe una tarjeta pre-fabricada para rápida implementación. La figura \ref{dcdc.jpg} muestra la forma de dicha tarjeta. Además posee un LED testigo de su encendido, que es usado como señal de diagnóstico Modbus.
+La alimentación del microcontrolador es de 3,3 V y además los equipos Modbus especifican un rango de tensión de funcionamiento entre 5 V y 25 V. Por lo tanto se escogió el regulador conmutado LM2596S que brinda estas características y además existe una tarjeta pre-fabricada para rápida implementación. La figura \ref{dcdcF} muestra la forma de dicha tarjeta. Además posee un LED testigo de su encendido, que es usado como señal de diagnóstico Modbus.
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{dcdc.jpg}\label{dcdc}
+\includegraphics[scale=0.5]{dcdc.jpg}\label{dcdcF}
 \caption{Tarjeta con regulador lineal para alimentación}
 \end{figure}
  %Otras especifiaciones
@@ -500,7 +500,7 @@ Como se observa en el algoritmo \ref{Algo3: espnowsend}, se toma en cuenta si lo
 \subsubsection{Direcciones MAC}
 Como se dijo anteriormente, la libreria \espn usa las direcciones MAC para direccionar los datos. Ya que la tabla de enrutamiento considera solo identificadores referenciales, es necesaria la obtención de las MAC por otro método.
 
-Cuando se envía datos broadcast las MAC son registradas en todos los dos que alcance la señal, y dicho identificador se encuentre en la tabla de enrutamiento respectiva (Observe algoritmo \ref{Algo1}). Al mismo tiempo se guarda la dirección MAC respectiva en un arreglo de ($255\, x 6 \,$$) casillas, es decir, la cantidad de nodos por los campos que ocupa una dirección MAC.
+Cuando se envía datos broadcast las MAC son registradas en todos los dos que alcance la señal, y dicho identificador se encuentre en la tabla de enrutamiento respectiva (Observe algoritmo \ref{Algo1}). Al mismo tiempo se guarda la dirección MAC respectiva en un arreglo de ($255\, x \, 6$) casillas, es decir, la cantidad de nodos por los campos que ocupa una dirección MAC.
 
 Para acceder a las posiciones solo basta usar el identificador del nodo del que se desee obtener la dirección MAC, multiplicarla por seis y usar el número resultante como la posición a partir de la cual se tomarán seis campos.
 \subsection{Programa para el manejo del protocolo Modbus en el bus RS-485.}
@@ -708,14 +708,12 @@ Resultado & cargar datos de trama \emph{esp\_now} \\
 Cumple la función complementaría a la función \ref{prepare}, descompone los datos recibidos, comprueba el chequeo de error, etc. Se usa en la máquina de estado de recepción inalámbrica.
 \subsection{ Circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32.}
 
-El desarrollo del software de la red fue desarrollado de forma iterativa sobre las tarjetas de desarrollo, por lo que la red fue implementada mientras era desarrollada. 
-
-Aunque el desarrollo se realizó en las tarjetas de desarrollo, y la implementación con estas es totalmente válida para realizar pruebas se diseño un circuito más específico.
+El desarrollo del software de la red ser realizó de forma iterativa sobre las tarjetas de desarrollo, por lo que la red fue implementada mientras era desarrollada. 
 
 Se consideran las  especificaciones del diseño en la sección \ref{hardware} y las recomendaciones  \href{https://www.espressif.com/sites/default/files/documentation/esp-wroom-02_pcb_design_and_module_placement_guide_0.pdf}{recomendaciones}técnicas realizadas por \textit{Espressif} para el diseño de PCB con el ESP32.  
 
 \subsubsection{Posicionamiento del ESP32 en el PCB}
-El encapsulado  ESP-WROOM-32D está diseñada para ser soldado en una PCB huésped. La PCB de la antena usado en el ESP-WROOM-32D es una antena de F invertida (MIFA),  para la banda de WiFi 2,4 GHz,  con un ganancia de antena de 20dBi. La figura \ref{Fig  1: Antenna Placement} muestra las seis opciones de colocación que son comúnmente usadas. La opción uno es usada como referencia. Los resultados de las pruebas ejecutadas por \emph{Espressif} muestran que las opciones 2 y 3 tienen los mejores rendimientos, mientras el de las otras son sub-óptimos.%  xxx referencia 
+El encapsulado  ESP-WROOM-32 está diseñada para ser soldado en una PCB huésped. El ESP-WROOM-32 usa una antena de F invertida (MIFA),  para la banda de WiFi 2,4 GHz,  con un ganancia de 20dBi. La figura \ref{Fig  1: Antenna Placement} muestra las seis opciones de colocación que son comúnmente usadas (la opción uno es usada como referencia). Los resultados de las pruebas ejecutadas por \emph{Espressif} muestran que las opciones 2 y 3 tienen los mejores rendimientos, mientras el de las otras son sub-óptimos\cite{testAntena}.
 
 \begin{figure}[H]
 \centering
@@ -727,34 +725,34 @@ Los resultados del estudio de basan en las mediciones de potencia WiFi y parámet
 \begin{enumerate}
 \item Las opciones de colocación 1,2 y 3 básicamente no se muestran afectadas en el rendimiento de la antena siempre y cuando esta este enfrente de espacio abierto. Es recomendado proveer una espacio de al menos 5 mm alrededor de antena en cada dirección.
 
-\item Si el PCB de la antes tiene que ser colocado en una tarjeta huesped, es recomendada la opción 4, que no posee plano de cobre bajo la antena, así hayan algunas pérdidas del rendimiento RF.\label{recomendacion}
+\item Si el PCB de la antes tiene que ser colocado en una tarjeta huesped, es recomendada la opción 4, que no posee plano de cobre bajo la antena, así hayan algunas pérdidas del rendimiento.\label{recomendacion}
 
-\item La opción 6 posee el peor rendimiento tanto en la trasnmisión como la recpeción, pues se ve afectado por por la tarjeta huésped.
+\item La opción 6 posee el peor rendimiento tanto en la transmisión como la recepción, pues se ve afectado por por la tarjeta huésped.
 \end{enumerate}
 
 Por lo tanto se tomo la recomendación \ref{recomendacion} eligiendo la opción 4 para el diseño.
 
 \subsubsection{El chip MAX-485}
 
-\emph{Espressif} provee una ejemplo de conexión para el uso del chip MAX-3485, en cual se indica la topología para usar el UART como interfaz.  Se agrega, sin embargo, una resistencia de  \emph{pull-up} en el terminal asociado a TDX para evitar niveles indeterminados en dicho pin. 
+\emph{Espressif} provee una ejemplo de conexión para el uso del chip MAX-3485, en cual se indica la topología para usar el UART como interfaz.  Se agrega, sin embargo, una resistencia de  \emph{pull-up} en el terminal asociado a TDX para evitar niveles indeterminados en dicho pin, causados por el estado en alta impedancia durante recepción. 
 
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{maxim.png}\label{Fig  2: MAX y UART}
+\includegraphics[scale=0.5]{maxim.png}\label{Fig  2: MAX y UART}
 \caption{Ejemplo de conexión entre MAX-485 y UART}
 \end{figure}
 
 \subsubsection{Alimentación}%xxx agregar foto
-Como se mencionó anteriormente, se usó la fuente LM2596S debido a una potencial rápida implementación, bajo costo y flexibilidad.  Sin embargo, la tarjeta posee un tamaño comparable al del nodo, lo que fue determinante en la arquitectura del PCB.
+Como se mencionó anteriormente, se usó la fuente LM2596S debido que se ajusta a las especificaciones del diseño.  Sin embargo, la tarjeta posee un tamaño comparable al del nodo, lo que fue determinante en la arquitectura del PCB.
 
 \subsubsection{Arquitectura Circuito Impreso}
 
-Se considera una capa con elementos de superficie (resistencia y condensadores). La fuente se adaptada a través de pin headers en la parte posterior de la capa. Se agregan los bloques terminales para el acceso de la alimentación externa y el bus RS-485.  Así mismo, se agregaron 3 pin header para el acceso al UART 0 y dos pares de pin header adicionales para el accionamiento de las funciones de \emph{BOOT} y \emph{EN}, en el ingreso al modo de programación del microcontrolador.
+Se considera una capa con elementos de superficie (resistencia y condensadores). La fuente se adaptada a través de pin \textit{headers} en la parte posterior de la capa. Se agregan los bloques terminales para el acceso de la alimentación externa y el bus RS-485.  Así mismo, se agregaron 3 pin \textit{headers} para el acceso al UART 0 y dos pares de pin header adicionales para el accionamiento de las funciones de \emph{BOOT} y \emph{EN}, en el ingreso al modo de programación del microcontrolador. El detalle del esquemático de observa en la figura \ref{esquematico}.
 
-Los terminales se agregaron en la parte posterior de la capa del microcontrolador para evitar obstruir el espacio libre de la antena WiFi.  En la figuras %% xxx esta y esta se presentan el esquemático electrónico y el diseño del PCB. 
+Los terminales se agregaron en la parte posterior de la capa del microcontrolador para evitar obstruir el espacio libre de la antena WiFi. observe las figuras \ref{pcbB} y \ref{pcbF}. 
 
-Adicionalemente, se agregó un LED con el propósito de que sirva como testigo de comunicación en el encendido y durante la instalación. La tabla \ref{BOM} refleja la lista de materiales empleados  y sus características. 
+Adicionalemente, se agregó un LED (GPIO 19)con el propósito de que sirva como testigo de comunicación en el encendido y durante la instalación. La tabla \ref{BOM} refleja la lista de materiales empleados  y sus características. 
 \begin{table}[H]
 \begin{tabular}{ccc}
  \toprule
@@ -780,23 +778,23 @@ DCDC1 & Convertidor DC-DC LM2596 & pendiente xxx \\
 \end{table}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.7]{esquematico.eps}\label{esquematico}
+\includegraphics[scale=1]{esquematico.eps}\label{esquematico}
 \caption{Esquemático del nodo}
 \end{figure}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.7]{pcbF.eps}\label{pcbF}
+\includegraphics[scale=1]{pcbF.eps}\label{pcbF}
 \caption{Diagrama de circuito impreso capa superior}
 \end{figure}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.7]{pcbB.eps}\label{pcbB}
+\includegraphics[scale=1]{pcbB.eps}\label{pcbB}
 \caption{Diagrama de circuito impreso capa inferior}
 \end{figure}
 
 
 \subsection{Implementación  la red mallada diseñada}\label{implementacion}
-La red mallada se implementó usando como nodos tarjetas de desarrollo junto con tarjetas para conversión RS-485 a TTL, donde aplicaba. Cada tarjeta se programó y configuró de acuerdo a la tabla \ref{Configuracion}. Se usaron un total de cuatro nodos con la topología de la figura \ref{topo}.  En el bus RS-485 del maestro se conectó un maestro Modbus proveniente de un computador a través de un convertido USB a RS-485; para enviar las tramas Modbus generadas por el software. 
+La red mallada se implementó usando como nodos tarjetas de desarrollo junto con tarjetas para conversión RS-485 a TTL basadas en chip MAX-3485. Cada tarjeta se programó y configuró de acuerdo a la tabla \ref{Configuracion}. Se usaron un total de cuatro nodos con la topología de la figura \ref{topo} como base.  En el bus RS-485 del maestro se conectó un maestro Modbus proveniente de un computador a través de un convertido USB a RS-485 para generar las tramas. 
 \begin{table}[H]
 \centering
 \begin{tabular}{llr}
@@ -839,9 +837,7 @@ Protoboard  & cables protoboard  & Elego \\
 \end{table}
 \subsection{Análisis el rendimiento de la red de acuerdo a variaciones en los parámetros de transmisión de datos}
 
-Las características principales de funcionamiento de la red Modbus son: distancia entre nodos, topología, tasa de baudios de la interfaz serial, velocidad de muestreo Modbus, número de variables Modbus. Para la evaluación del rendimiento se variará un parámetro respecto al que tenga mejor desempeño del otro. Así se observa la degradación de la calidad de servicio sin caer en numerosas pruebas redundantes. 
-
-Se comenzó con la topología descrita en la figura \ref{topo}, y para variaciones en los parámetros Modbus: velocidad de muestreo, número de variables y tasa de baudios. 
+Las características principales de funcionamiento de la red Modbus son: distancia entre nodos, topología, tasa de baudios de la interfaz serial, velocidad de muestreo, número de variables Modbus y topología. Para la evaluación del rendimiento se variará un parámetro respecto al que tenga mejor desempeño del otro. Así se observa la degradación de la calidad de servicio sin caer en numerosas pruebas redundantes. Las variaciones toman los valores expresados en la tabla \ref{parametros}
 
 \begin{table}[H]
 \centering
@@ -857,10 +853,10 @@ Tasa serial [Baudios]&  Número de variables& velocidad de muestreo [s]\\
 115200 & - & 0,2 \\
 \bottomrule
 \end{tabular}
-\caption{Variación de parámetros en la pruebas de rendiemietno}\label{parámteros}
+\caption{Variación de parámetros en la pruebas de rendiemietno}\label{parametros}
 \end{table}
 
-Se estimará el error en función de la cantidad de excepciones Modbus que se obtengan en el maestro por cada esclavo, considerando la ecuacion \ref{Ecuacion1}
+Se estimará el error en función de la cantidad de excepciones Modbus que se obtengan en el maestro por cada esclavo, considerando la ecuación \ref{Ecuacion1}.
 \begin{equation}
 error = \dfrac{ cantidad \; de\; excepciones}{cantidad \;de \;solicitudes}  \cdot 100 \%\label{Ecuacion1}
 \end{equation}

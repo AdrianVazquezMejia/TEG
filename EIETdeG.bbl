@@ -1,237 +1,79 @@
 \begin{thebibliography}{}
 
-\bibitem [\protect \citeauthoryear {%
-Al-Husainy%
-}{%
-Al-Husainy%
-}{%
-{\protect \APACyear {2013}}%
-}]{%
-MACen}
-\APACinsertmetastar {%
-MACen}%
-\begin{APACrefauthors}%
-Al-Husainy, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2013}{11}{}.
-\newblock
-{\BBOQ}\APACrefatitle {MAC Address as a Key for Data Encryption} {Mac address
-  as a key for data encryption}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{}{}{}{1}.
-\PrintBackRefs{\CurrentBib}
+\bibitem[Al-Husainy, 2013]{MACen}
+Al-Husainy, M. (2013).
+\newblock Mac address as a key for data encryption.
 
-\bibitem [\protect \citeauthoryear {%
-Bahr%
-}{%
-Bahr%
-}{%
-{\protect \APACyear {2016}}%
-}]{%
-bahr}
-\APACinsertmetastar {%
-bahr}%
-\begin{APACrefauthors}%
-Bahr, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2016}{10}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Update on the Hybrid Wireless Mesh Protocol of IEEE
-  802.11s} {Update on the hybrid wireless mesh protocol of ieee
-  802.11s}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Siemens Corporate Technology, Information and
-  Communications}{}{}{1}.
-\PrintBackRefs{\CurrentBib}
+\bibitem[Bahr, 2016]{bahr}
+Bahr, M. (2016).
+\newblock Update on the hybrid wireless mesh protocol of ieee 802.11s.
+\newblock {\em Siemens Corporate Technology, Information and Communications},
+  page~1.
 
-\bibitem [\protect \citeauthoryear {%
-Cheng%
-, Yang%
-\BCBL {}\ \BBA {} Huachun%
-}{%
-Cheng%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2018}}%
-}]{%
-article3}
-\APACinsertmetastar {%
-article3}%
-\begin{APACrefauthors}%
-Cheng, Y.%
-, Yang, D.%
-\BCBL {}\ \BBA {} Huachun, Z.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2018}{02}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Det-LB: A Load Balancing Approach in 802.11 Wireless
-  Networks for Industrial Soft Real-Time Applications} {Det-lb: A load
-  balancing approach in 802.11 wireless networks for industrial soft real-time
-  applications}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{IEEE Access}{PP}{}{1-1}.
-\newblock
-\begin{APACrefDOI} \doi{10.1109/ACCESS.2018.2802541} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
+\bibitem[Cheng et~al., 2018]{article3}
+Cheng, Y., Yang, D., and Huachun, Z. (2018).
+\newblock Det-lb: A load balancing approach in 802.11 wireless networks for
+  industrial soft real-time applications.
+\newblock {\em IEEE Access}, PP:1--1.
 
-\bibitem [\protect \citeauthoryear {%
-Chew%
-}{%
-Chew%
-}{%
-{\protect \APACyear {2018}}%
-}]{%
-inbook}
-\APACinsertmetastar {%
-inbook}%
-\begin{APACrefauthors}%
-Chew, D.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2018}{10}{}.
-\newblock
-{\BBOQ}\APACrefatitle {MAC Layer} {Mac layer}.{\BBCQ}
-\newblock
-\BIn{} (\BPG~139-171).
-\newblock
-\begin{APACrefDOI} \doi{10.1002/9781119260608.ch5} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
+\bibitem[Chew, 2018]{inbook}
+Chew, D. (2018).
+\newblock Mac layer.
 
-\bibitem [\protect \citeauthoryear {%
-Hiertz%
-\ \protect \BOthers {.}}{%
-Hiertz%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2010}}%
-}]{%
-article1}
-\APACinsertmetastar {%
-article1}%
-\begin{APACrefauthors}%
-Hiertz, G.%
-, Denteneer, T.%
-, Max, S.%
-, Taori, R.%
-, Cardona, J.%
-, Berlemann, L.%
-\BCBL {}\ \BBA {} Walke, B.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2010}{03}{}.
-\newblock
-{\BBOQ}\APACrefatitle {IEEE 802.11s: the WLAN mesh standard} {Ieee 802.11s: the
-  wlan mesh standard}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Wireless Communications, IEEE}{17}{}{104 - 111}.
-\newblock
-\begin{APACrefDOI} \doi{10.1109/MWC.2010.5416357} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
+\bibitem[Hiertz et~al., 2010]{article1}
+Hiertz, G., Denteneer, T., Max, S., Taori, R., Cardona, J., Berlemann, L., and
+  Walke, B. (2010).
+\newblock Ieee 802.11s: the wlan mesh standard.
+\newblock {\em Wireless Communications, IEEE}, 17:104 -- 111.
 
-\bibitem [\protect \citeauthoryear {%
-Modbus~Organization%
-}{%
-Modbus~Organization%
-}{%
-{\protect \APACyear {2006}}%
-}]{%
-modbusMensaging}
-\APACinsertmetastar {%
-modbusMensaging}%
-\begin{APACrefauthors}%
-Modbus~Organization, I.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2006}{10}{}.
-\newblock
-{\BBOQ}\APACrefatitle {MODBUS Messaging on TCP/IP Implementation Guide V1.0b}
-  {Modbus messaging on tcp/ip implementation guide v1.0b}.{\BBCQ}
-\newblock
-\BIn{} (\BPG~2-32).
-\PrintBackRefs{\CurrentBib}
+\bibitem[Modbus~Organization, 2006]{modbusMensaging}
+Modbus~Organization, I. (2006).
+\newblock Modbus messaging on tcp/ip implementation guide v1.0b.
 
-\bibitem [\protect \citeauthoryear {%
-Modbus~Organization%
-}{%
-Modbus~Organization%
-}{%
-{\protect \APACyear {2017}}%
-}]{%
-online}
-\APACinsertmetastar {%
-online}%
-\begin{APACrefauthors}%
-Modbus~Organization, I.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2017}{Abril}{}.
-\newblock
-\APACrefbtitle {Modbus application protocol specification.} {Modbus application
-  protocol specification.}
-\newblock
-\APACrefnote{[Internet; accedido el 25 de Octubre del 2019] Disponible en:
-  \url{http://modbus.org/docs/Modbus_Application_Protocol_V1_1b3.pdf}}
-\PrintBackRefs{\CurrentBib}
+\bibitem[Modbus~Organization, 2017]{online}
+Modbus~Organization, I. (2017).
+\newblock Modbus application protocol specification.
+\newblock [Internet; accedido el 25 de Octubre del 2019] Disponible en:
+  \url{http://modbus.org/docs/Modbus_Application_Protocol_V1_1b3.pdf}.
 
-\bibitem [\protect \citeauthoryear {%
-Rifki~Muhendra%
-}{%
-Rifki~Muhendra%
-}{%
-{\protect \APACyear {2016}}%
-}]{%
-ScienceDirect}
-\APACinsertmetastar {%
-ScienceDirect}%
-\begin{APACrefauthors}%
-Rifki~Muhendra, M\BPBI B., Aditya~Rinaldi.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2016}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Development of WiFi Mesh Infrastructure for Internet of
-  Things applications} {Development of wifi mesh infrastructure for internet of
-  things applications}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Engineering Physics International Conference, EPIC
-  2016}{}{}{331}.
-\PrintBackRefs{\CurrentBib}
+\bibitem[Muhendra et~al., 2017]{article41}
+Muhendra, R., Rinaldi, A., Budiman, M., and Khairurrijal, K. (2017).
+\newblock Development of wifi mesh infrastructure for internet of things
+  applications.
+\newblock {\em Procedia Engineering}, 170:332--337.
 
-\bibitem [\protect \citeauthoryear {%
-Sharma%
-\ \BBA {} Singh%
-}{%
-Sharma%
-\ \BBA {} Singh%
-}{%
-{\protect \APACyear {2016}}%
-}]{%
-article2}
-\APACinsertmetastar {%
-article2}%
-\begin{APACrefauthors}%
-Sharma, P.%
-\BCBT {}\ \BBA {} Singh, G.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2016}{10}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Comparison of Wi-Fi IEEE 802.11 Standards Relating to
-  Media Access Control Protocols} {Comparison of wi-fi ieee 802.11 standards
-  relating to media access control protocols}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{International Journal of Computer Science and
-  Information Security,}{14}{}{856-862}.
-\PrintBackRefs{\CurrentBib}
+\bibitem[Porto et~al., 2009]{inproceedings}
+Porto, D., Cavalcanti, G., and Elias, G. (2009).
+\newblock A layered routing architecture for infrastructure wireless mesh
+  networks.
+
+\bibitem[Ridolfi and Velde, 2016]{inproceedings40}
+Ridolfi, M. and Velde, S. (2016).
+\newblock Wifi ad-hoc mesh network and mac protocol solution for uwb indoor
+  localization systems.
+
+\bibitem[Rifki~Muhendra, 2016]{ScienceDirect}
+Rifki~Muhendra, Aditya~Rinaldi, M.~B. (2016).
+\newblock Development of wifi mesh infrastructure for internet of things
+  applications.
+\newblock {\em Engineering Physics International Conference, EPIC 2016}, page
+  331.
+
+\bibitem[Sharma and Singh, 2016]{article2}
+Sharma, P. and Singh, G. (2016).
+\newblock Comparison of wi-fi ieee 802.11 standards relating to media access
+  control protocols.
+\newblock {\em International Journal of Computer Science and Information
+  Security,}, 14:856--862.
+
+\bibitem[Systems, 2016]{testAntena}
+Systems, E. (2016).
+\newblock Esp-wroom-02pcb design and module placement guide.
+\newblock [Internet; accedido el 27 de Abriil del 2020] Disponible en:
+  \url{https://www.espressif.com/sites/default/files/documentation/esp-wroom-02_pcb_design_and_module_placement_guide_0.pdf}.
+
+\bibitem[Yoppy and R, 2019]{article40}
+Yoppy and R, A. (2019).
+\newblock Performance evaluation of esp8266 mesh networks.
 
 \end{thebibliography}

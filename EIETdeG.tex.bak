@@ -38,9 +38,10 @@
 
 %========= Define el estilo de referencias APA ===============
 \usepackage[natbibapa]{apacite}%natbibapa
-%\usepackage[apaciteclassic]{apacite}%natbibapa
-\usepackage[compact]{titlesec} %modificar espaciado
-
+%\usepackage{apacite}%natbibapa
+%\usepackage[compact]{titlesec} %modificar espaciado
+%\usepackage{IEEEtran}
+%\usepackage{apacite}
 
 \usepackage{url}
 \usepackage{hyperref}
@@ -396,7 +397,7 @@ xvii, 144 pp.}
 % References here (outcomment the appropriate case)
 % CASE 1: BiBTeX used to constantly update the references (while the paper is being written).
 %\bibliographystyle{IEEEtranSN}%{IEEEtranS}%%% outcomment this and next line in Case 1 siam
-\bibliographystyle{apacite}%
+\bibliographystyle{apalike}%
 \renewcommand{\bibname}{REFERENCIAS}
 \let\oldbibsection\bibsection
 \bibliography{biblioteca,referencias,bibliografia} % if more than one, comma separated and without extension bib
