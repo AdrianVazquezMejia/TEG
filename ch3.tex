@@ -713,7 +713,7 @@ El desarrollo del software de la red ser realizó de forma iterativa sobre las ta
 Se consideran las  especificaciones del diseño en la sección \ref{hardware} y las recomendaciones  \href{https://www.espressif.com/sites/default/files/documentation/esp-wroom-02_pcb_design_and_module_placement_guide_0.pdf}{recomendaciones}técnicas realizadas por \textit{Espressif} para el diseño de PCB con el ESP32.  
 
 \subsubsection{Posicionamiento del ESP32 en el PCB}
-El encapsulado  ESP-WROOM-32 está diseñada para ser soldado en una PCB huésped. El ESP-WROOM-32 usa una antena de F invertida (MIFA),  para la banda de WiFi 2,4 GHz,  con un ganancia de 20dBi. La figura \ref{Fig  1: Antenna Placement} muestra las seis opciones de colocación que son comúnmente usadas (la opción uno es usada como referencia). Los resultados de las pruebas ejecutadas por \emph{Espressif} muestran que las opciones 2 y 3 tienen los mejores rendimientos, mientras el de las otras son sub-óptimos\cite{testAntena}.
+El encapsulado  ESP-WROOM-32 está diseñada para ser soldado en una PCB huésped. El ESP-WROOM-32 usa una antena de F invertida (MIFA),  para la banda de WiFi 2,4 GHz,  con un ganancia de 20dBi. La figura \ref{Fig  1: Antenna Placement} muestra las seis opciones de colocación que son comúnmente usadas (la opción uno es usada como referencia). Los resultados de las pruebas ejecutadas por \emph{Espressif} muestran que las opciones 2 y 3 tienen los mejores rendimientos, mientras el de las otras son sub-óptimos\citep{testAntena}.
 
 \begin{figure}[H]
 \centering
@@ -837,7 +837,7 @@ Protoboard  & cables protoboard  & Elego \\
 \end{table}
 \subsection{Análisis el rendimiento de la red de acuerdo a variaciones en los parámetros de transmisión de datos}
 
-Las características principales de funcionamiento de la red Modbus son: distancia entre nodos, topología, tasa de baudios de la interfaz serial, velocidad de muestreo, número de variables Modbus y topología. Para la evaluación del rendimiento se variará un parámetro respecto al que tenga mejor desempeño del otro. Así se observa la degradación de la calidad de servicio sin caer en numerosas pruebas redundantes. Las variaciones toman los valores expresados en la tabla \ref{parametros}
+Las características principales de funcionamiento de la red Modbus son: distancia entre nodos, topología, tasa de baudios  serial, velocidad de muestreo, número de variables Modbus y topología. Para la evaluación del rendimiento se variará un parámetro respecto al que tenga mejor desempeño del otro. Así se observa la degradación de la calidad de servicio sin caer en numerosas pruebas redundantes. Las variaciones toman los valores expresados en la tabla \ref{parametros}.s
 
 \begin{table}[H]
 \centering
@@ -849,7 +849,7 @@ Tasa serial [Baudios]&  Número de variables& velocidad de muestreo [s]\\
 4800 &  10 & 5,0 \\
 9600 & 150 & 2,0 \\
 19200 & 200 & 1,0 \\
-38400 & - & 0,5 \\
+38400 & 250 & 0,5 \\
 115200 & - & 0,2 \\
 \bottomrule
 \end{tabular}

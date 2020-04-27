@@ -2,7 +2,7 @@ En este capítulo se tratarán los fundamentos de las redes WiFi malladas, protoco
 
 \section{Fundamentos de las redes WiFi malladas}
 
-Las redes WiFi malladas(WMN) se pueden definir como una red que permite la comunicaion entre nodos a través de múltiples saltos en una topología mallada \cite{bahr}. Los nodos son los  intermediarios encargados de la formación de la red y la vinculación entre los dispositivos que la usan. Las WMN usualmente poseen clientes, enrutadores y puertas de enlace. Los clientes son dispositivos electrónicos, sistemas embebidos o sensores que pueden comunicarse con otros en la red. El enrutador en un dispositivo electrónicos que sirve como un intermediario entre dos o mas redes para transportar los datos de una red a otra.  Y las compuertas de enlace es un dispositivo electrónico que conecta la red con Internet. 
+Las redes WiFi malladas(WMN) se pueden definir como una red que permite la comunicaion entre nodos a través de múltiples saltos en una topología mallada \citep{bahr}. Los nodos son los  intermediarios encargados de la formación de la red y la vinculación entre los dispositivos que la usan. Las WMN usualmente poseen clientes, enrutadores y puertas de enlace. Los clientes son dispositivos electrónicos, sistemas embebidos o sensores que pueden comunicarse con otros en la red. El enrutador en un dispositivo electrónicos que sirve como un intermediario entre dos o mas redes para transportar los datos de una red a otra.  Y las compuertas de enlace es un dispositivo electrónico que conecta la red con Internet. 
 
 Cuando un nodo no puede operar, el resto de los nodos en la WMN aún pueden comunicarse con los otros, bien sea, directa o indirectamente a través de uno o más nodos intermediarios\citep{ScienceDirect}.
 
@@ -13,13 +13,13 @@ Cuando un nodo no puede operar, el resto de los nodos en la WMN aún pueden comun
 \end{figure}
 
  
-Una red WiFi mallada se establece en la banda para comunicación WiFi (sea 2,4 GHz o 5GHz), donde hay estaciones (nodos) que soportan comunicación de múltiples saltos (multi-hop) para transferir información en la red. Así mismo se tiene que, el enrutamiento y la capacidades de reenvios de datos residen en la capa de Control de Acceso al Medio (MAC) \cite{article1}.
+Una red WiFi mallada se establece en la banda para comunicación WiFi (sea 2,4 GHz o 5GHz), donde hay estaciones (nodos) que soportan comunicación de múltiples saltos (multi-hop) para transferir información en la red. Así mismo se tiene que, el enrutamiento y la capacidades de reenvios de datos residen en la capa de Control de Acceso al Medio (MAC) \citep{article1}.
 
 \subsection*{La capa de Control de Acceso al Medio (MAC)}
 
 La capa MAC administra el acceso a un medio compartido, proveyendo sincronización entre diferentes nodos para permitir la transmisión inalámbrica. Dicha sincronización es cada vez más esencial para la red en tanto el método de acceso es más complejo. Como un ejemplo, la sincronización  puede ser necesaria entre nodos de un sistema que emplee un espectro abierto. Otro ejemplo, nodos individuales pudiesen necesitar permiso de un controlador en una red inalámbrica para transmitir en un canal dado. La capa MAC administra las negociaciones con un nodo de control para el acceso al medio.
 
-Las funciones específicas que estan encapsuladas en la capa MAC, varian de un protocolo a otro. Estas funciones incluyen, pero no estan limitadas a, técnicas de acceso múltiple, sincronización un medio abierto  y correccción de errores \cite{inbook}.
+Las funciones específicas que estan encapsuladas en la capa MAC, varian de un protocolo a otro. Estas funciones incluyen, pero no estan limitadas a, técnicas de acceso múltiple, sincronización un medio abierto  y correccción de errores \citep{inbook}.
 
 \begin{figure}[H]
 \centering
@@ -37,7 +37,7 @@ Las direcciones MAC se componen de doce número hexadecimales (48  bits de longit
 MM:MM:MM:SS:SS:SS \quad o \quad MM-MM-MM-SS-SS-SS
 \end{equation}
 }
-La primera mitad de la dirección MAC contiene el número identificador del fabricante  del adaptador(i.e. 00:A0:C9:14:C8:29). Dichos identificadores están regulados por un estadar de Internet. La segunda parte de la dirección MAC representa el número de serial asignado al adaptador por el fabricante. La suplantación de MAC es equivalente a hacerce cargo de los controladores de interfaz de red (NIC). La unicidad de la dirección MAC es esencial en todas la fases de la comunicación de red porque mapea todos los identificadores de las capas superiores \cite{MACen}.
+La primera mitad de la dirección MAC contiene el número identificador del fabricante  del adaptador(i.e. 00:A0:C9:14:C8:29). Dichos identificadores están regulados por un estadar de Internet. La segunda parte de la dirección MAC representa el número de serial asignado al adaptador por el fabricante. La suplantación de MAC es equivalente a hacerce cargo de los controladores de interfaz de red (NIC). La unicidad de la dirección MAC es esencial en todas la fases de la comunicación de red porque mapea todos los identificadores de las capas superiores \citep{MACen}.
 
 \section{La Referencia del Modelo OSI}
 
@@ -67,7 +67,7 @@ Para entender las funcionalidades y la interrelación entres estas capas, es bene
 
 \subsection{La capa Física}
 
-A la capa capa física  le concierne la transmisión de los bits de data cruda sobre el canal de comunicación. Es responsable de la integridad de dichos bits, tanto por la entrega como por la interpretación. Los detalles específicos de cuantos Volts representan el "0" lógico y cuantos representan el "1", la duración de la señal, el mecanismo de conexión y desconexión, etc., son dependientes de los medios físicos y los dispositivos empleados.
+A la capa capa física  le concierne la transmisión de los bits de data cruda sobre el canal de comunicación. Es responsable de la integridad de dichos bits, tanto por la entrega como por la interpretación. Los detalles específicos de cuantos Volts representan el cero  lógico y cuantos representan el uno, la duración de la señal, el mecanismo de conexión y desconexión, etc., son dependientes de los medios físicos y los dispositivos empleados.
 
  \subsection{La capa de vínculo de datos}
  
@@ -179,7 +179,7 @@ Un algoritmos es el encargado de balancear la red, el cual está basado en revisi
 
 \section{Protocolo MODBUS}
 
-Modbus es un protocolo de mensajes de capa de aplicación, posicionada en el nivel 7 del modelo OSI, el cual provee comunicación cliente/servidor entre dispositivos conectados en diferentes tipos de buses o redes. \nocite{modbusMensaging}
+Modbus es un protocolo de mensajes de capa de aplicación, posicionada en el nivel 7 del modelo OSI, el cual provee comunicación cliente/servidor entre dispositivos conectados en diferentes tipos de buses o redes. \citep{modbusMensaging}
 
 El protocolo Modbus define la unidad de datos de protocolo (PDU) independiente de las capas inferiores de comunicación. El mapeo del protocolo MODBUS en  buses o redes específicas pueden introducir campos adiciones en la unidad de datos de aplicación (ADU).
 
@@ -359,7 +359,7 @@ Además es una solución integrada, ya que posee WiFi, Bluetooth, junto con alrede
 %\end{table}
 %
 %
-%Según \cite{Hvattum200931}
+%Según \citep{Hvattum200931}
 %
 %
 %\begin{table}

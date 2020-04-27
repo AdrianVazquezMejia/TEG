@@ -82,10 +82,12 @@
 \contentsline {subsection}{\numberline {3.2.9}An\'alisis el rendimiento de la red de acuerdo a variaciones en los par\'ametros de transmisi\'on de datos}{68}{subsection.3.2.9}
 \contentsline {chapter}{DESCRIPCI\'ON DEL MODELO}{70}{chapter.4}
 \contentsline {chapter}{PRUEBAS EXPERIMENTALES}{71}{chapter.5}
+\contentsline {section}{\numberline {5.1}Resultados y an\'alisis}{71}{section.5.1}
+\contentsline {subsubsection}{Rendimiento y tiempo de muestreo}{71}{section*.51}
 \contentsline {chapter}{RESULTADOS}{72}{chapter.6}
 \contentsline {chapter}{CONCLUSIONES}{73}{chapter.7}
 \contentsline {chapter}{RECOMENDACIONES}{74}{chapter.8}
 \contentsline {chapter}{T\'ITULO DEL ANEXO}{75}{appendix.Alph1}
 \contentsline {chapter}{T\'ITULO DEL ANEXO}{76}{appendix.Alph2}
 \contentsline {chapter}{T\'ITULO DEL ANEXO}{77}{appendix.Alph3}
-\contentsline {chapter}{REFERENCIAS}{78}{appendix*.51}
+\contentsline {chapter}{REFERENCIAS}{78}{appendix*.52}

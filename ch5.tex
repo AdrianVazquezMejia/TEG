@@ -1,0 +1,12 @@
+En este capítulo de detallan las pruebas de rendimiento de la red, basado en los parámetros \mb mas relevantes de una linea serial.
+
+\section{Resultados y análisis}
+
+Se toma como métrica de rendimiento  el porcentaje de respuesta Modbus, es decir, la relación entre el número de excepciones Modbus y el número total de solicitudes hechas por el maestro. Las excepciones de no respuesta (\textit{Timeout}) son las que se consideran para el estudio de rendimiento, pues otros tipos de excepciones pueden estar asociadas al mal funcionamiento de los esclavos, y no la red inalámbrica.
+
+
+
+ Se asume que los esclavos posee un porcentaje de error sobre linea  serial menor al 1\%  para entrega y menor a 2\% parra respuesta, según las especificaciones de equipos Modbus para linea serial. Se asume que las antenas son omnidireccionales dispuestas verticalmente.
+ 
+ \subsubsection{Rendimiento y tiempo de muestreo}
+

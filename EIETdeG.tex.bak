@@ -12,23 +12,17 @@
 \usepackage{amsmath}
 \usepackage{latexsym}
 \usepackage[letterpaper]{geometry}
-
 \usepackage{float}
 \usepackage{makeidx}
 \usepackage{color}
-
 \usepackage{tocbibind}
 \usepackage{acronym}
 \usepackage{epsfig}
 \usepackage{graphicx}
-%\usepackage{slashbox}
 \usepackage{setspace}
 \usepackage{multicol}
 \usepackage{longtable}
-%\usepackage{doublespace}
-
-\usepackage{fancyhdr}
-%\usepackage{fancyheadings}
+\usepackage{fancyhdr}s
 
 \usepackage{booktabs}
 
@@ -187,6 +181,7 @@
 \newcommand{\espn}{ESP-NOW }
 \newcommand{\mcu}{ESP-32 }
 \newcommand{\wf}{WiFi }
+\newcommand{\wf}{Modbus}
 
 %==================================================================
 
@@ -349,7 +344,7 @@ xvii, 144 pp.}
 %==================================================================
 \chapter{PRUEBAS EXPERIMENTALES}\label{CAP:exp}
 %\markboth{Tu Segundo Capítulo}{Tu Segundo Capítulo}%
-%\input{ch5.tex}
+\input{ch5.tex}
 
 %==================================================================
 \chapter{RESULTADOS}\label{CAP:resultados}
