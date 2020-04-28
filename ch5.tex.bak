@@ -6,5 +6,112 @@ Se toma como métrica de rendimiento  el porcentaje de respuesta Modbus, es decir
 
 
 
- Se asume que los esclavos posee un porcentaje de error sobre linea  serial menor al 1\%  para entrega y menor a 2\% parra respuesta, según las especificaciones de equipos Modbus para linea serial. Se asume que las antenas son onmidirecio
+ Se asume que los esclavos posee un porcentaje de error sobre linea  serial menor al 1\%  para entrega y menor a 2\% parra respuesta, según las especificaciones de equipos Modbus para linea serial. Se asume que las antenas son omnidireccionales dispuestas verticalmente.
+ 
+ \subsubsection{Rendimiento y tiempo de muestreo}
 
+La tabla \ref{Res: Scan} presenta los resultados de las mediciones para distintos tiempos de muestreo del maestro. 
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+ & \multicolumn{5}{c|}{\% de error por esclavos } &   \\ 
+\hline 
+Tiempo de Muestro [s] &  ID 1 &   ID 2 &  ID 150 & ID 151 & ID 153 & \textbf{Promedio} \% \\ 
+\hline 
+10 & 0,21 & 0,74 & 0,00 & 0,11 & 0,89 & \textbf{0,39} \\ 
+\hline 
+5 & 0,10 & 0,00 & 0,00 & 0,10 & 0,10 & \textbf{0,06} \\ 
+\hline 
+2 & 0,00 & 0,10 & 0,00 & 0,10 & 0,30 & \textbf{0,10} \\ 
+\hline 
+1 & 0,20 & 0,00 & 0,00 & 0,30 & 0,30 & \textbf{0,16 }\\ 
+\hline 
+\textbf{Promedio por ID}& \textbf{0,12} & \textbf{0,21 }& \textbf{0,00 }& \textbf{0,17} &\textbf{ 0,39 }&\textbf{ 0,18} \\ 
+\hline 
+\end{tabular} 
+\caption{Porcentajes de error para variaciones en el tiempo de muestro}\label{Res: Scan}
+\end{table}
+
+
+\subsubsection{Rendimiento y número de variables}
+
+La tabla \ref{Res: var} presenta los resultados de las mediciones para distintos números de variables. 
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+ & \multicolumn{5}{c|}{\% de error por esclavos } &   \\ 
+\hline 
+Número de variables [s] &  ID 1 &   ID 2 &  ID 150 & ID 151 & ID 153 & \textbf{Promedio} \% \\ 
+\hline 
+50 & 0,10 & 0,00 & 0,00 & 0,10 & 0,10 & \textbf{0,06} \\ 
+\hline 
+100 & 0,34 & 0,25 & 0,00 & 0,08 & 0,34 & \textbf{0,20} \\ 
+\hline 
+150 & 0,19 & 0,00 & 0,09 & 0,00 & 0,00 & \textbf{0,06} \\ 
+\hline 
+200 & 0,30 & 0,30 & 0,00 & 0,15 & 0,23 & \textbf{0,20 }\\ 
+\hline 
+250 & 0,20 & 0,29 & 0,00 & 0,10 & 0,59 & \textbf{0,23 }\\ 
+\hline 
+\textbf{Promedio por ID}& \textbf{0,23} & \textbf{0,17 }& \textbf{0,02 }& \textbf{0,09} &\textbf{ 0,25}&\textbf{ 0,15} \\ 
+\hline 
+\end{tabular} 
+\caption{Porcentajes de error para variaciones en el tiempo de muestro}\label{Res: var}
+\end{table}
+
+\subsubsection{Rendimiento y tasa de baudios}
+
+La tabla \ref{Res: bad} presenta los resultados de las mediciones para distintas tasa de baudios. 
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+ & \multicolumn{5}{c|}{\% de error por esclavos } &   \\ 
+\hline 
+Tasa de baudios [s] &  ID 1 &   ID 2 &  ID 150 & ID 151 & ID 153 & \textbf{Promedio} \% \\ 
+\hline 
+2400 & 0,86	 & 2,67 & 1,62 & 0,48& 4,29 & \textbf{1,98} \\ 
+\hline 
+4800 & 0,32& 0,24 & 0,49 & 0,41 & 1,78 & \textbf{0,65} \\ 
+\hline 
+9600 & 0,17 & 0,67 & 0,42 & 0,17 & 3,74 & \textbf{1,03} \\ 
+\hline 
+19200 & 0,19 & 4,38 & 0,37 & 0,19 & 4,29 & \textbf{1,88 }\\ 
+\hline 
+38400 & 0,29 & 0,46 & 0,09 & 0,19 & 0,56 & \textbf{0,30 }\\ 
+\hline 
+\textbf{Promedio por ID}& \textbf{0,34} & \textbf{1,68 }& \textbf{0,60 }& \textbf{0,28} &\textbf{ 2,93}&\textbf{ 1,17} \\ 
+\hline 
+\end{tabular} 
+\caption{Porcentajes de error para variaciones en la tasa de baudios}\label{Res: bad}
+\end{table}
+
+
+\subsubsection{Rendimiento y topología}
+
+La tabla \ref{Res: bad} presenta los resultados de las mediciones para distintas topologías. 
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+ & \multicolumn{5}{c|}{\% de error por esclavos } &   \\ 
+\hline 
+Topología [s] &  ID 1 &   ID 2 &  ID 150 & ID 151 & ID 153 & \textbf{Promedio} \% \\ 
+\hline 
+1 & 0,86	 & 2,67 & 1,62 & 0,48& 4,29 & \textbf{1,98} \\ 
+\hline 
+2 & 0,32& 0,24 & 0,49 & 0,41 & 1,78 & \textbf{0,65} \\ 
+\hline 
+3 & 0,17 & 0,67 & 0,42 & 0,17 & 3,74 & \textbf{1,03} \\ 
+\hline 
+19200 & 0,19 & 4,38 & 0,37 & 0,19 & 4,29 & \textbf{1,88 }\\ 
+\hline 
+38400 & 0,29 & 0,46 & 0,09 & 0,19 & 0,56 & \textbf{0,30 }\\ 
+\hline 
+\textbf{Promedio por ID}& \textbf{0,34} & \textbf{1,68 }& \textbf{0,60 }& \textbf{0,28} &\textbf{ 2,93}&\textbf{ 1,17} \\ 
+\hline 
+\end{tabular} 
+\caption{Porcentajes de error para variaciones en la tasa de baudios}\label{Res: bad}
+\end{table}

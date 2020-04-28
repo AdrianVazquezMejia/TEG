@@ -2,7 +2,7 @@
 
 %\documentclass[letterpaper,titlepage,12pt,twoside,openright,spanish,final]{report_eie}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[spanish]{babel}
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}  %Estilo de fuente time new roman
@@ -12,17 +12,23 @@
 \usepackage{amsmath}
 \usepackage{latexsym}
 \usepackage[letterpaper]{geometry}
+
 \usepackage{float}
 \usepackage{makeidx}
 \usepackage{color}
+
 \usepackage{tocbibind}
 \usepackage{acronym}
 \usepackage{epsfig}
 \usepackage{graphicx}
+%\usepackage{slashbox}
 \usepackage{setspace}
 \usepackage{multicol}
 \usepackage{longtable}
-\usepackage{fancyhdr}s
+%\usepackage{doublespace}
+
+\usepackage{fancyhdr}
+%\usepackage{fancyheadings}
 
 \usepackage{booktabs}
 
@@ -42,7 +48,7 @@
 %\usepackage[dvips,colorlinks=true,urlcolor=red,citecolor=black,anchorcolor=black,linkcolor=black]{hyperref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%            Definición del Documento PDF, (PDFLaTeX)            %
+%           https://github.com/MiKTeX/miktex/contribute Definición del Documento PDF, (PDFLaTeX)            %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \hypersetup{pdfauthor=Nombre}
@@ -181,7 +187,7 @@
 \newcommand{\espn}{ESP-NOW }
 \newcommand{\mcu}{ESP-32 }
 \newcommand{\wf}{WiFi }
-\newcommand{\wf}{Modbus}
+\newcommand{\mb}{Modbus }
 
 %==================================================================
 
@@ -392,7 +398,7 @@ xvii, 144 pp.}
 % References here (outcomment the appropriate case)
 % CASE 1: BiBTeX used to constantly update the references (while the paper is being written).
 %\bibliographystyle{IEEEtranSN}%{IEEEtranS}%%% outcomment this and next line in Case 1 siam
-\bibliographystyle{apalike}%
+\bibliographystyle{apacite}%
 \renewcommand{\bibname}{REFERENCIAS}
 \let\oldbibsection\bibsection
 \bibliography{biblioteca,referencias,bibliografia} % if more than one, comma separated and without extension bib
