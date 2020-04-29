@@ -8,7 +8,7 @@ Se toma como métrica de rendimiento  el porcentaje de respuesta Modbus, es decir
 
  Se asume que los esclavos posee un porcentaje de error sobre linea  serial menor al 1\%  para entrega y menor a 2\% parra respuesta, según las especificaciones de equipos Modbus para linea serial. Se asume que las antenas son omnidireccionales dispuestas verticalmente.
  
- \subsubsection{Rendimiento y tiempo de muestreo}
+ \subsection{Rendimiento y tiempo de muestreo}
 
 La tabla \ref{Res: Scan} presenta los resultados de las mediciones para distintos tiempos de muestreo del maestro. 
 \begin{table}[H]
@@ -33,8 +33,8 @@ Tiempo de Muestro [s] &  ID 1 &   ID 2 &  ID 150 & ID 151 & ID 153 & \textbf{Pro
 \caption{Porcentajes de error para variaciones en el tiempo de muestro}\label{Res: Scan}
 \end{table}
 
-
-\subsubsection{Rendimiento y número de variables}
+\begin{table}
+\subsection{Rendimiento y número de variables}
 
 La tabla \ref{Res: var} presenta los resultados de las mediciones para distintos números de variables. 
 \begin{table}[H]
@@ -61,7 +61,7 @@ Número de variables [s] &  ID 1 &   ID 2 &  ID 150 & ID 151 & ID 153 & \textbf{P
 \caption{Porcentajes de error para variaciones en el tiempo de muestro}\label{Res: var}
 \end{table}
 
-\subsubsection{Rendimiento y tasa de baudios}
+\subsection{Rendimiento y tasa de baudios}
 
 La tabla \ref{Res: bad} presenta los resultados de las mediciones para distintas tasa de baudios. 
 \begin{table}[H]
@@ -85,11 +85,11 @@ Tasa de baudios [s] &  ID 1 &   ID 2 &  ID 150 & ID 151 & ID 153 & \textbf{Prome
 \textbf{Promedio por ID}& \textbf{0,34} & \textbf{1,68 }& \textbf{0,60 }& \textbf{0,28} &\textbf{ 2,93}&\textbf{ 1,17} \\ 
 \hline 
 \end{tabular} 
-\caption{Porcentajes de error para variaciones en la tasa de baudios}\label{Res: bad}
+\caption{Porcentajes de error para variaciones en la tasa de baudios}\label{Res: top}
 \end{table}
 
 
-\subsubsection{Rendimiento y topología}
+\subsection{Rendimiento y topología}
 
 La tabla \ref{Res: bad} presenta los resultados de las mediciones para distintas topologías. 
 \begin{table}[H]
@@ -100,18 +100,22 @@ La tabla \ref{Res: bad} presenta los resultados de las mediciones para distintas
 \hline 
 Topología [s] &  ID 1 &   ID 2 &  ID 150 & ID 151 & ID 153 & \textbf{Promedio} \% \\ 
 \hline 
-1 & 0,86	 & 2,67 & 1,62 & 0,48& 4,29 & \textbf{1,98} \\ 
+1 & 12,20 & 2,60 & 0,25 & 0,25 & 2,60 & \textbf{3,58} \\ 
 \hline 
-2 & 0,32& 0,24 & 0,49 & 0,41 & 1,78 & \textbf{0,65} \\ 
+2 & 3,24& 0,16& 0,08 & 0,32& 11,35 & \textbf{3,03} \\ 
 \hline 
-3 & 0,17 & 0,67 & 0,42 & 0,17 & 3,74 & \textbf{1,03} \\ 
+3 & 0,07 & 0,14 & 0,00 & 0,14 & 0,00 & \textbf{0,07} \\ 
 \hline 
-19200 & 0,19 & 4,38 & 0,37 & 0,19 & 4,29 & \textbf{1,88 }\\ 
-\hline 
-38400 & 0,29 & 0,46 & 0,09 & 0,19 & 0,56 & \textbf{0,30 }\\ 
-\hline 
-\textbf{Promedio por ID}& \textbf{0,34} & \textbf{1,68 }& \textbf{0,60 }& \textbf{0,28} &\textbf{ 2,93}&\textbf{ 1,17} \\ 
+\textbf{Promedio por ID}& \textbf{5,17} & \textbf{0,97 }& \textbf{0,11 }& \textbf{0,24} &\textbf{4,65}&\textbf{ 2,23} \\ 
 \hline 
 \end{tabular} 
-\caption{Porcentajes de error para variaciones en la tasa de baudios}\label{Res: bad}
+\caption{Porcentajes de error para variaciones en la topolgía}\label{Res: top}
 \end{table}
+
+Para las topologías presentadas en las figuras \ref{topo1}, \ref{topo2} y\ref{topo3}.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{images/topo1.png}
+\caption{Topología 1 de prueba}\label{topo1}
+\end{figure}

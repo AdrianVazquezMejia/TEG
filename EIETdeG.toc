@@ -83,14 +83,14 @@
 \contentsline {chapter}{DESCRIPCI\'ON DEL MODELO}{70}{chapter.4}
 \contentsline {chapter}{PRUEBAS EXPERIMENTALES}{71}{chapter.5}
 \contentsline {section}{\numberline {5.1}Resultados y an\'alisis}{71}{section.5.1}
-\contentsline {subsubsection}{Rendimiento y tiempo de muestreo}{72}{section*.51}
-\contentsline {subsubsection}{Rendimiento y n\'umero de variables}{72}{section*.52}
-\contentsline {subsubsection}{Rendimiento y tasa de baudios}{72}{section*.53}
-\contentsline {subsubsection}{Rendimiento y topolog\IeC {\'\i }a}{73}{section*.54}
-\contentsline {chapter}{RESULTADOS}{74}{chapter.6}
-\contentsline {chapter}{CONCLUSIONES}{75}{chapter.7}
-\contentsline {chapter}{RECOMENDACIONES}{76}{chapter.8}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{77}{appendix.Alph1}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{78}{appendix.Alph2}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{79}{appendix.Alph3}
-\contentsline {chapter}{REFERENCIAS}{80}{appendix*.55}
+\contentsline {subsection}{\numberline {5.1.1}Rendimiento y tiempo de muestreo}{72}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Rendimiento y n\'umero de variables}{72}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Rendimiento y tasa de baudios}{72}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Rendimiento y topolog\IeC {\'\i }a}{73}{subsection.5.1.4}
+\contentsline {chapter}{RESULTADOS}{75}{chapter.6}
+\contentsline {chapter}{CONCLUSIONES}{76}{chapter.7}
+\contentsline {chapter}{RECOMENDACIONES}{77}{chapter.8}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{78}{appendix.Alph1}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{79}{appendix.Alph2}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{80}{appendix.Alph3}
+\contentsline {chapter}{REFERENCIAS}{81}{appendix*.51}
