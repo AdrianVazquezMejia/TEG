@@ -80,17 +80,17 @@
 \contentsline {subsubsection}{Arquitectura Circuito Impreso}{63}{section*.50}
 \contentsline {subsection}{\numberline {3.2.8}Implementaci\'on la red mallada dise\~nada}{66}{subsection.3.2.8}
 \contentsline {subsection}{\numberline {3.2.9}An\'alisis el rendimiento de la red de acuerdo a variaciones en los par\'ametros de transmisi\'on de datos}{68}{subsection.3.2.9}
-\contentsline {chapter}{DESCRIPCI\'ON DEL MODELO}{70}{chapter.4}
-\contentsline {chapter}{PRUEBAS EXPERIMENTALES}{71}{chapter.5}
-\contentsline {section}{\numberline {5.1}Resultados y an\'alisis}{71}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Rendimiento y tiempo de muestreo}{72}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Rendimiento y n\'umero de variables}{72}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Rendimiento y tasa de baudios}{73}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Rendimiento y topolog\IeC {\'\i }a}{73}{subsection.5.1.4}
-\contentsline {chapter}{RESULTADOS}{76}{chapter.6}
-\contentsline {chapter}{CONCLUSIONES}{77}{chapter.7}
-\contentsline {chapter}{RECOMENDACIONES}{78}{chapter.8}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{79}{appendix.Alph1}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{80}{appendix.Alph2}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{81}{appendix.Alph3}
-\contentsline {chapter}{REFERENCIAS}{82}{appendix*.51}
+\contentsline {chapter}{DESCRIPCI\'ON DEL MODELO}{71}{chapter.4}
+\contentsline {chapter}{PRUEBAS EXPERIMENTALES}{72}{chapter.5}
+\contentsline {section}{\numberline {5.1}Resultados y an\'alisis}{72}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Rendimiento y tiempo de muestreo}{73}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Rendimiento y n\'umero de variables}{73}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Rendimiento y tasa de baudios}{74}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Rendimiento y topolog\IeC {\'\i }a}{74}{subsection.5.1.4}
+\contentsline {chapter}{RESULTADOS}{77}{chapter.6}
+\contentsline {chapter}{CONCLUSIONES}{78}{chapter.7}
+\contentsline {chapter}{RECOMENDACIONES}{79}{chapter.8}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{80}{appendix.Alph1}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{81}{appendix.Alph2}
+\contentsline {chapter}{T\'ITULO DEL ANEXO}{82}{appendix.Alph3}
+\contentsline {chapter}{REFERENCIAS}{83}{appendix*.51}
