@@ -835,6 +835,22 @@ Protoboard  & cables protoboard  & Elego \\
 \end{tabular}
 \caption{Lista de materiales del circuito de implementación}\label{BOM 2}
 \end{table}
+\subsubsection{Ilustración de los nodos}
+
+ A continuación se presentan imágenes de los nodos donde se implementó la red.
+ 
+ \begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.2]{images/foto1.jpeg}\label{master Node}
+ \caption{Hardware del nodo maestro.}
+ \end{figure}
+ 
+  \begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.2]{images/foto2.jpeg}
+ \caption{Hardware de un nodo con un esclavo Modbus}\label{Slave Node}
+ 
+ \end{figure}
 \subsection{Análisis el rendimiento de la red de acuerdo a variaciones en los parámetros de transmisión de datos}
 
 Las características principales de funcionamiento de la red Modbus son: distancia entre nodos, topología, tasa de baudios  serial, velocidad de muestreo, número de variables Modbus y topología. Para la evaluación del rendimiento se varió un parámetro respecto a a la vez. Así se observa la degradación de la calidad de servicio sin caer en numerosas pruebas redundantes. Las variaciones toman los valores expresados en la tabla \ref{parametros}.
@@ -860,7 +876,7 @@ Se estimará el error en función de la cantidad de excepciones Modbus que se obte
 error = \dfrac{ cantidad \; de\; excepciones}{cantidad \;de \;solicitudes}  \cdot 100 \%\label{Ecuacion1}
 \end{equation}
 
-Se toma la topología \ref{topo} como base para todas las pruebas, excepto, por supuesto, la prueba de topología.  Se colocó el nodo 150 como el nodo que posee el maestro conectado,  el nodo 151 para ejecutar  reenvío de datos y los nodod 153 y 152 con  un esclavo Modbus conectados.
+Se toma la topología \ref{topo} como base para todas las pruebas, excepto, por supuesto, la prueba de variación de topología.  Se colocó el nodo 150 como el nodo que posee el maestro conectado,  el nodo 151 para ejecutar  reenvío de datos y los nodo 153 y 152 con  un esclavo Modbus conectados.
 
 Se conectaron los nodos con los nodos inalámbricos a una distancia menor a 10 cm. Se colocó el nodo 150 en la habitación del primer piso de una casa de paredes de concreto, el nodo 153 en otra habitación en la planta baja a una distancia recta del nodo maestro de aproximadamente 15 m, sin linea de vista. El  nodo 152 se dispuso en el primer piso a aproximadamente 8 m, con dos paredes intermedias. Y el nodo 151 en la misma habitación del maestro. 
 

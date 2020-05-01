@@ -59,6 +59,7 @@ Número de variables [s] &  ID 1 &   ID 2 &  ID 150 & ID 151 & ID 153 & \textbf{P
 \caption{Porcentajes de error para variaciones en el tiempo de muestro}\label{Res: var}
 \end{table}
 
+La máxima cantidad de registros en una solicitud es de 50, más allá del cual los bytes siguientes de pierden y el maestro arroja la excepción \textit{Byte missing error} ( Error de bytes faltantes). Esto se puede deber a que la trama inalámbrica se ve sobrecargada.  En el nodo maestro si se puede consultar la cantidad máxima permitida por Modbus de 250 registros, lo que sugiere que la limitación ocurre en la interfaz inalámbrica. 
 \subsection{Rendimiento y tasa de baudios}
 
 La tabla \ref{Res: bad} presenta los resultados de las mediciones para distintas tasa de baudios, donde se observan variaciones en la tasa error de casi dos puntos porcentuales en promedio entre algunas tasas de baudios, especialmente para la tasa de 2400 baudios y 19200 baudios. Sin embargo, no existe un patrón específico para atribuir el incremento a una causa específica. 

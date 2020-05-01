@@ -360,7 +360,7 @@ xvii, 144 pp.}
 %==================================================================
 \chapter{CONCLUSIONES}\label{CAP:conclu}
 %\markboth{Tu Segundo Capítulo}{Tu Segundo Capítulo}%
-%\input{conclusiones.tex}
+\input{src/conclusiones.tex}
 
 %==================================================================
 \chapter{RECOMENDACIONES}\label{CAP:recomendaciones}
