@@ -91,7 +91,7 @@
 \contentsline {chapter}{RESULTADOS}{78}{chapter.6}
 \contentsline {chapter}{CONCLUSIONES}{79}{chapter.7}
 \contentsline {chapter}{RECOMENDACIONES}{81}{chapter.8}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{82}{appendix.Alph1}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{83}{appendix.Alph2}
+\contentsline {chapter}{Datos recolectados}{82}{appendix.Alph1}
+\contentsline {chapter}{C\'odigo fuente}{83}{appendix.Alph2}
 \contentsline {chapter}{T\'ITULO DEL ANEXO}{84}{appendix.Alph3}
 \contentsline {chapter}{REFERENCIAS}{85}{appendix*.52}

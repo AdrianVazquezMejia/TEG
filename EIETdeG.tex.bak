@@ -365,21 +365,21 @@ xvii, 144 pp.}
 %==================================================================
 \chapter{RECOMENDACIONES}\label{CAP:recomendaciones}
 %\markboth{Tu Segundo Capítulo}{Tu Segundo Capítulo}%
-%\input{recomendaciones.tex}
+\input{src/recomendaciones.tex}
 
 \appendix
 
 \renewcommand \thechapter{\Roman{chapter}}
 %==================================================================
-\chapter{TÍTULO DEL ANEXO}\label{CAP:anexo0}
+\chapter{Datos recolectados}\label{CAP:anexo0}
 %\markboth{Tu anexo}{Tu anexo}%
 %\input{apendice0.tex}%
-
+xxx anexo datos  crudos
 %==================================================================
-\chapter{TÍTULO DEL ANEXO}\label{CAP:anexo1}
+\chapter{Código fuente}\label{CAP:anexo1}
 %\markboth{Tu anexo}{Tu anexo}%
 %\input{apendice1.tex}%
-
+xxx anexo 
 %\backmatter
 %==================================================================
 \chapter{TÍTULO DEL ANEXO}\label{CAP:anexo2}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.18)  1 MAY 2020 13:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.18)  1 MAY 2020 16:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4081,6 +4081,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 366.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 366.
+(./src/recomendaciones.tex)
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 374.
 Package babel Info: Redefining spanish shorthand >>
@@ -4105,7 +4106,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 374.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 374.
-[81
+ [81
 
 ]
 Ap\'endice I.
@@ -4308,7 +4309,7 @@ LaTeX Info: Redefining \% on input line 25.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 416.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 416.
 Package rerunfilecheck Info: File `EIETdeG.out' has not changed.
-(rerunfilecheck)             Checksum: 08B6C1C8C6C979C329DE46B180D99867;4731.
+(rerunfilecheck)             Checksum: FCDC943B24687D8E97D322F7C7F8882D;4727.
 
 
 LaTeX Warning: There were undefined references.
@@ -4316,9 +4317,9 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 416.
  ) 
 Here is how much of TeX's memory you used:
- 11474 strings out of 494820
- 163053 string characters out of 6177789
- 286209 words of memory out of 5000000
+ 11477 strings out of 494820
+ 163116 string characters out of 6177789
+ 286208 words of memory out of 5000000
  14190 multiletter control sequences out of 15000+600000
  17796 words of font info for 54 fonts, out of 8000000 for 9000
  89 hyphenation exceptions out of 8191
@@ -4339,7 +4340,7 @@ bx1440.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on EIETdeG.pdf (100 pages, 1479347 bytes).
+Output written on EIETdeG.pdf (100 pages, 1480448 bytes).
 PDF statistics:
  1612 PDF objects out of 1728 (max. 8388607)
  1073 compressed objects within 11 object streams
