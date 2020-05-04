@@ -15,44 +15,44 @@ Database file #1: biblioteca.bib
 Database file #2: referencias.bib
 Database file #3: bibliografia.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-You've used 14 entries,
+You've used 15 entries,
             6951 wiz_defined-function locations,
-            1359 strings with 13172 characters,
-and the built_in function-call counts, 25841 in all, are:
-= -- 3078
-> -- 226
-< -- 1295
-+ -- 1236
-- -- 28
-* -- 1654
-:= -- 4903
-add.period$ -- 56
-call.type$ -- 14
-change.case$ -- 264
+            1366 strings with 13295 characters,
+and the built_in function-call counts, 27847 in all, are:
+= -- 3357
+> -- 247
+< -- 1361
++ -- 1296
+- -- 30
+* -- 1750
+:= -- 5201
+add.period$ -- 62
+call.type$ -- 15
+change.case$ -- 283
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 641
-empty$ -- 1035
-format.name$ -- 376
-if$ -- 4845
+cite$ -- 30
+duplicate$ -- 689
+empty$ -- 1118
+format.name$ -- 400
+if$ -- 5273
 int.to.chr$ -- 0
-int.to.str$ -- 42
+int.to.str$ -- 45
 missing$ -- 0
-newline$ -- 350
-num.names$ -- 112
-pop$ -- 711
+newline$ -- 377
+num.names$ -- 120
+pop$ -- 772
 preamble$ -- 1
-purify$ -- 82
+purify$ -- 88
 quote$ -- 0
-skip$ -- 1408
+skip$ -- 1564
 stack$ -- 0
-substring$ -- 1325
-swap$ -- 362
-text.length$ -- 59
+substring$ -- 1410
+swap$ -- 391
+text.length$ -- 70
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 1120
+type$ -- 1264
 warning$ -- 0
-while$ -- 156
+while$ -- 166
 width$ -- 0
-write$ -- 433
+write$ -- 466

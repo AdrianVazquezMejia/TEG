@@ -131,6 +131,34 @@ Hiertz, G.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Lech%
+\ \BBA {} Wlodarski%
+}{%
+Lech%
+\ \BBA {} Wlodarski%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+IoTWMN}
+\APACinsertmetastar {%
+IoTWMN}%
+\begin{APACrefauthors}%
+Lech, P.%
+\BCBT {}\ \BBA {} Wlodarski, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{04}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Analysis of the IoT WiFi Mesh Network} {Analysis of the
+  iot wifi mesh network}.{\BBCQ}
+\newblock
+\BIn{} (\BPG~272-280).
+\newblock
+\begin{APACrefDOI} \doi{10.1007/978-3-319-57264-2_28} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Modbus~Organization%
 }{%
 Modbus~Organization%
