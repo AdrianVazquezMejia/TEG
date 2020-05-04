@@ -1,17 +1,17 @@
-En esta capitulo se describirá el diseño de la red y los detalles de software y hardware de los nodos.
+En esta capitulo se describirá el diseño de la red, detalles de software y hardware de los nodos.
 
 \section{DISEÑO DE LA RED MALLADA}
 
 Tomando en cuenta la investigaciones realizadas se encontró que en el campo de las redes WiFi malladas no existe un protocolo de aplicación definido, en su lugar, las redes son ajustadas a las necesidades específicas del campo en cual se vaya a implementar, esto trae como consecuencia que las especificaciones se concentren en el máximo rendimiento en las áreas críticas del problema. 
 
-Dentro de los funcionamiento descritos anteriormente, se tiene que\ref{primera} se concentra en el algoritmo de optimización de la topología de la red, sin tomar en consideración el hardware de implementación. Por otro lado \ref{segunda}, provee una aproximación más realista, proveyendo las especificaciones del hardware, sin embargo, no hay justificación para el enrutamiento usado y las medidas de rendimiento aplicadas no son de interés para el área industrial. Por último, se tiene que la ESP-MESH parecía  brindar extensibilidad y rápido desarrollo, no obstante, posee la desventaja de la necesidad de un enrutador WiFi  para la formación, que brinde las direcciones IP a la red mallada, lo que deriva en un centralización, pues si el router falla, la red perece. 
+Dentro de los funcionamiento descritos anteriormente, se tiene que el funcionamiento descrito en la sección \ref{primera} se concentra en el algoritmo de optimización de la topología de la red, sin tomar en consideración el hardware de implementación. Por otro lado en la sección  \ref{segunda}, se provee una aproximación más realista, donde existen  especificaciones del hardware, sin embargo, no hay justificación para el enrutamiento usado y las medidas de rendimiento aplicadas no son de interés para el área industrial. Por último, se tiene que la ESP-MESH parecía  brindar extensibilidad y rápido desarrollo, no obstante, posee la desventaja de la necesidad de un enrutador WiFi  para la formación, que brinde las direcciones IP a la red mallada, lo que deriva en un centralización, pues si el router falla, la red perece. 
 
-Por lo tanto, es conveniente poseer una arquitectura especifica de la red mallada para el funcionamiento dentro de una red Modbus. Así se puede adaptar y configurar de manera más óptima y confiable para las funciones y características del protocolo Modbus.
+Por lo tanto, es conveniente poseer una arquitectura especifica de la red mallada para el funcionamiento dentro de una red \mb. Así se puede adaptar y configurar de manera más óptima y confiable para las funciones y características del protocolo  \mb.
 
-Para la creación de red inalámbricas WiFi usando el microcontrolador ESP-32, \emph{Espressif} a través del \emph{ESP-IDF} (Espacio de trabajo para desarrollo de Internet de las cosas) provee de dos librerías: la ya mencionada ESP-IDF y ESP-NOW.  La librería ESP-NOW fue ideada para comunicaciones punto a punto en esquemas maestro/esclavo, no para creaciones de redes multi-salto, sin embargo, posee la expansibilidad de manipular el direccionamiento de los datos, brindado la potencialidad de crear redes de diversas arquitectura.
+Para la creación de red inalámbricas WiFi usando el microcontrolador \mcu, \emph{Espressif Systems} a través del \emph{ESP-IDF} (Espacio de trabajo para desarrollo de Internet de las cosas) provee de dos librerías: la ya mencionada ESP-IDF y ESP-NOW.  La librería ESP-NOW fue ideada para comunicaciones punto a punto en esquemas maestro/esclavo, no para creaciones de redes multi-salto, sin embargo, posee la expansibilidad de manipular el direccionamiento de los datos, brindado la potencialidad de crear redes de diversas arquitecturas.
 
 \subsection{ESP-NOW}
-\espn  es un tipo de protocolo de comunicación WiFi definido por \emph{Espressif Systems}. En la comunicación \espn los datos de aplicación son encapsulados en una trama específica por el proveedor y es transmitida de un dispositivo \wf a otro. Para proteger la trama de acción por seguridad se usa CTR con el protocolo CBC-MAC (CCMP). \espn es ampliamente usada en luces inteligente, control remoto y sensores.
+\espn  es un tipo de protocolo de comunicación WiFi definido por \emph{Espressif Systems} donde los datos de aplicación son encapsulados en una trama específica por el proveedor y es transmitida de un dispositivo \wf a otro. Para proteger la trama de acción por seguridad se usa el protocolo CCMP (Protocolo de código de autenticación de mensaje de encadenamiento de bloque de cifrado en modo contador). \espn es ampliamente usada en luces inteligente, control remoto y sensores.
 
 \espn permite desarrollar redes según la arquitectura definida en la capa de aplicación, por lo que es ideal para la implementación de nuevas topologías y procesos de red. Además, debido a que la comunicación es punto a punto, la red no se centraliza. Así mismo, posee una capacidad de carga aceptable para la transmisión de tramas Modbus, por lo que fue la librería utilizada para el diseño e implementación de la red.
 
@@ -23,13 +23,13 @@ Para la creación de red inalámbricas WiFi usando el microcontrolador ESP-32, \em
 
 
 \subsection{Diseño Básico de la red}
- Un nodo es una estación de comunicación con una dirección MAC bajo el estándar 802.11 y  una implementación de capa física (En este caso el \mcu) para la comunicación bajo este protocolo, además, constituye la entidad básica de la red.  La red más elemental, llamada  conjunto de servicios básicos (BSS), puede  ser formada por dos nodos. Para que otros nodos se unan, los integrantes del BSS provee de servicios a través de un sistema de distribución (DS) que permiten la comunicación con con dispositivos fuera del BSS para su integración.  Los enlaces se forman a partir del nodo que genere la trama (salto inicial) e indique el nodo siguiente (nodos intermedios) hasta llegar al nodo final (salto final). En este proceso de formación los nodos involucrados en el proceso forman una BSS que permanece establecido. 
+ Un nodo es una estación de comunicación con una dirección MAC bajo el estándar 802.11 y  una implementación de capa física (En este caso el \mcu) para la comunicación bajo este protocolo, además, constituye la entidad básica de la red.  La red más elemental, llamada  conjunto de servicios básicos (BSS), puede  ser formada por dos nodos. Para que otros nodos se unan, los integrantes del BSS provee de servicios a través de un sistema de distribución (DS) que permiten la comunicación con con dispositivos fuera del BSS para su integración.  Los enlaces se forman a partir del nodo que genere la trama (salto inicial) e indique el nodo siguiente (nodos intermedios) hasta llegar al nodo final (salto final). En este proceso de formación los nodos involucrados en el proceso forman un BSS que permanece establecido. 
  
 \subsubsection{Estructura de la trama}
 
 Actualmente, el estándar 802.11 clasifica las tramas como tramas datos, tramas de control, o tramas gestión. La trama de datos transmite la información en las capas más altas. Las tramas de control son usadas para agradecimientos y reservaciones. Finalmente, los dispositivos usan las tramas de gestión para configurar, organizar y mantener el enlace local.
 
-\espn usa una trama de acción específica de proveedor para transmitir datos. La tasa de transmisión por defecto es de 1 Mbps y formato de la trama es como se muestra en la tabla \ref{Tabla: espn}.
+\espn usa una trama de acción (Trama de control) específica de proveedor para transmitir datos. La tasa de transmisión por defecto es de 1 Mbps y formato de la trama es como se muestra en la tabla \ref{Tabla: espn}.
 \begin{table}[H]
 \resizebox{15cm}{!}{
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -48,7 +48,7 @@ Dirección MAC & Código de categoría & Identificador de organización & Valores al
 \item Identificador de organización:  contiene un identificador único (0x18fe34), los cuales son las primeros tres bytes de la MAC aplicada por \emph{Espressif}.
 \item Valores aleatorios: son usador para prevenir ataques de retransmisión.
 \item Contenido de proveedor: Contenido de específico de proveedor, contiene datos adicionales.
-\item FCS: Chequeo de errores.
+\item FCS: Trama de chequeo de errores.
 \end{enumerate}
  
 \begin{table}[H]
@@ -77,7 +77,7 @@ Los campos de gestión que indican las direcciones MAC son usados para mantener l
 
 Los campos de cuerpo de la trama también son usados para manejar la comunicación en la red mallada en la capa de aplicación, cada nodo posee una lógica dependiente de la tramas recibidas. La estructura de datos del cuerpo toma la forma definida en la tabla \ref{Estructura}.
 
-\begin{table}{H}
+\begin{table}[H]
 \centering
 \begin{tabular}{|c|c|}
 \hline 
@@ -103,9 +103,9 @@ data\_len & Longitud de los datos \\
 
 \subsubsection{Gestión y formación mallada}
 
-Una señal broadcast proveniente de un nodo se usa para detectar la red y obtener información sobre sus configuración. Los nodos se detectan entre sí en un escaneo activo. La trama de escaneo se identifica debido a que es generada mediante broadcast. La información recibida posee tres campos claves: información del identificador del nodo, si se ha recibido o no información broadcast antes del nodo por el que se está buscando y un campo adicional Modbus. El escaneo se realiza cuando un nodo no posee la dirección MAC de otro nodo en su tabla de enrutamiento y se requiere enviar datos a este. La fuente de datos posee el esclavo Modbus destino, lo que es usado para registrar solo aquellos nodos que tengan relación con el esclavo particular.  Una vez los nodos se han registrado unos a otros la relación permanece, incluso si algún nodo es apagado, una vez sea se reinicie la red permite una rápida reconexión.
+Una señal broadcast proveniente de un nodo se usa para detectar la red y obtener información sobre su configuración. Los nodos se detectan entre sí en un escaneo activo. La trama de escaneo se identifica debido a que es generada mediante broadcast. La información recibida posee tres campos claves: información del identificador del nodo, si se ha recibido o no información broadcast antes del nodo por el que se está buscando y un campo adicional \mb. El escaneo se realiza cuando un nodo no posee la dirección MAC de otro nodo en su tabla de enrutamiento y se requiere enviar datos a este. La fuente de datos posee el esclavo Modbus destino, lo que es usado para registrar solo aquellos nodos que tengan relación con el esclavo particular.  Una vez los nodos se han registrado unos a otros la relación permanece, incluso si algún nodo es apagado, una vez sea se reinicie la red permite una rápida reconexión.
 
-Los nodos solo usan un transceptor simple, por lo tanto, la red mallada opera en un solo canal de frecuencia WiFi. Esto indica que se puede colocar una red en cada canal WiFi en un mismo espacio físico, sin llegar a tener conflictos de canal. 
+Los nodos solo usan un transceptor simple, por lo tanto, la red mallada opera en un solo canal de frecuencia WiFi. Esto indica que se puede colocar una red en cada canal WiFi en un mismo espacio físico, sin llegar a tener conflictos de este tipo. 
 
 \subsubsection{Seguridad}
 Cada nodo \espn usa el método CCMP, el cual está descrito en el estándar 802.11- 2012, para proteger la trama de acción específica del proveedor. Esto junto con un algoritmo de cifrado mutuo, los nodos emparejados usan una llave maestra primaria (PMK) que es usada para cifrar las  llaves de cifrado locales (LMK) con el algoritmo AES-128. Este método de permite la autenticación entre dos nodos emparejados. Debido a que es un cifrado por emparejamiento, cada vínculo es independientemente asegurado, como consecuencia, \espn no provee cifrado fin-a-fin. 
@@ -115,7 +115,7 @@ El cifrado para comunicación broadcast no esta soportado. Las llaves locales(LMK
 
 \subsubsection{Selección de rutas}
 
-Las rutas no son determinadas por la red, si no por el usuario que la implemente. Además, son estáticas y no se reasignan automáticamente, estas rutas son asignadas a una tabla unidimensional, con los identificadores de los nodos destinos. El enrutamiento está estrechamente relacionado con los esclavo Modbus, y están representados por las posiciones en la tabla de enrutamiento.
+Las rutas no son determinadas por la red, si no por el usuario que la implemente. Además, son estáticas y no se reasignan automáticamente, estas rutas permanecen en una tabla unidimensional, con los identificadores de los nodos destinos. El enrutamiento está estrechamente relacionado con los esclavo Modbus, y están representados por las posiciones en la tabla de enrutamiento.
 
 La red no propaga información de las rutas, por lo que cada nodo solo conoce la ruta para una salto en cualquier sentido. Sin embargo, es posible solicitar y configurar las rutas de los nodos inalabricamente.
 
@@ -134,21 +134,21 @@ Existe otra tabla de enrutamiento para las respuestas, de manera tal que las rut
  
  \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{UML2.eps}\label{Fig 1: ULM enrutamiento}
-\caption{Diagrama de flujo del funcionamiento general de un nodo de la red recibiendo información WiFi}
+\includegraphics[scale=0.4]{UML2.eps}
+\caption{Diagrama de flujo del funcionamiento general de un nodo de la red recibiendo información WiFi}\label{Fig 1: ULM enrutamiento}
 \end{figure}
 
  \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{UMLSerial.eps}\label{Fig 1: ULM serial}
-\caption{Diagrama de flujo del funcionamiento general de un nodo de la red recibiendo información serial}
+\includegraphics[scale=0.4]{UMLSerial.eps}
+\caption{Diagrama de flujo del funcionamiento general de un nodo de la red recibiendo información serial}\label{Fig 1: ULM serial}
 \end{figure}
 
 \subsubsection{Características Modbus de los nodos}
  
 Los nodos de la red son esclavos adicionales de la red Modbus, con direcciones reservadas para ellos desde el identificador(101). El modo de operación Modbus en los nodos permite que se puedan obtener  y configurar parámetros de la red, como la tabla de enrutamiento de los nodos. Además el proceso es realizado mediante un protocolo estandarizado y que esta relacionado con la red.
 
-El funcionamiento como esclavo Modbus de los nodos es permanente, incluso cuando ya se ha implementado la red con esclavos Modbus seriales, permitiendo actualización de parámetro de la red en cualquier momento. 
+El funcionamiento como esclavo Modbus en los nodos es permanente, incluso cuando ya se ha implementado la red con equipos Modbus seriales externos, permitiendo actualización de parámetro de la red en cualquier momento. 
 
 Los nodos poseen un diagnóstico visual que indica cuando se ha recibido o enviado correctamente una trama  serial o inalambricamente. Dicho diagnóstico de basa en un LED que emite un pulso. Además, otro diagnóstico visual para indicar que se ha encendido el equipo, del mismo tipo se encuentra en la tarjeta de alimentación. No hay diagnostico visual para errores de comunicación.%observe hardaware para mas detalle.
 
@@ -218,8 +218,8 @@ La alimentación del microcontrolador es de 3,3 V y además los equipos Modbus esp
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{dcdc.jpg}\label{dcdcF}
-\caption{Tarjeta con regulador lineal para alimentación}
+\includegraphics[scale=1]{dcdc.jpg}\label{dcdcF}
+\caption{Tarjeta con regulador DC-DC para alimentación}
 \end{figure}
  %Otras especifiaciones
  
@@ -250,7 +250,7 @@ Modbus en sus clases básica dicta que los equipos Modbus  seriales tienen que po
 
 El chip MAX3485 de \emph{Maxim Integrated} provee de las características antes descritas y admite tensión de alimentación de 3,3 V, lo cual hace que se posea un solo nivel de tensión para la alimentación del nodo.
 
-Este chip soporta hasta 32 dispositivos, pero teniendo en cuenta que el uso de nodos distribuye la carga de los esclavos, la utilización de repetidores se vería disminuida.
+Este chip soporta hasta 32 dispositivos, pero teniendo en cuenta que el uso de nodos distribuye la carga de los esclavos, la utilización de repetidores se vería disminuida, y se soportarían 32 dispositivos por cada nodo.
 
 La topología RS-485 Modbus sin repetidor posee cables truncados en un par trenzado, sobre los cuales los dispositivos están conectados bien sea directamente o a través de cables de derivación. Los cables truncados también llamado bus, cuya longitud depende de la tasa de baudios, los parámetros del cable y  la carga de dispositivos, para 9600 baudios y un cable calibre de 26 AWG, la máxima longitud es de 1000 m. 
 
@@ -292,11 +292,12 @@ Los detalles de la instalación de cada uno de estas herramientas se llevo a cabo
 
 \subsubsection{El sistema operativo en tiempo real}
 
-El microcontrolador ESP32 está diseñado para correr un sistema operativo en tiempo real(RTOS) basado en el  \textit{FreeRTOS} desarrollado por \textit{Amazon}.Un sistema operativo de tiempo real es una herramienta eficiente para dispositivos con poca capacidad de procesamiento. Es decir, aquellos dispositivos que no cuentan con una variedad de núcleos o kernels. RTOS trata de implementar en estos microsistemas una similitud de comportamiento de múltiples unidades de procesamiento aún estando contenidas en un solo núcleo. Lo cuál es una ventaja importante para la implementación de sistemas de mayor complejidad de código.La lógica funcional del método de programación RTOS es mediante establecimiento de tareas e interrupciones controladas por órden de prioridad y por el temporizador principal del sistema. 
+El microcontrolador ESP32 está diseñado para correr un sistema operativo en tiempo real(RTOS) basado en el  \textit{FreeRTOS} desarrollado por \textit{Amazon}..La lógica funcional del método de programación RTOS es mediante establecimiento de tareas e interrupciones controladas por orden de prioridad y por el temporizador principal del sistema. 
 
 Dicho sistema operativo permite que se creen y desarrollen programas en lenguaje ANSI C, implementado las librerías para el manejo del microcontrolador proveídas por ESP-IDF de \textit{espressif}. Por lo tanto, el desarrollo del programa se basó en la creación de tareas y la comunicación entre ellas basada en colas. Se crearon tareas dos tareas para el manejo de los datos inalámbricos, una para la recepción de datos mediante el UART  y otras tareas con funciones de monitorización.
 
 \subsection{ Programa de la red diseñada que soporte la transmisión del protocolo Modbus}
+
 El rol de cada nodo en la red es determinado por la secuencia de estados durante operación, por lo que el programa es idéntico para todos los microcontroladores, incluido el que posee conectado el maestro. Cualquier nodo puede enviar datos, incluso aquellos que posee esclavos Modbus en su interfaz serial.
   
   
@@ -374,7 +375,7 @@ Se crearon ciertas estructuras usando el lenguaje C, para manejar los datos con 
 \item \emph{espnow\_event\_t} : es la estrutura usada para manejar los estados nodo. Permite que posea información relacionada con los datos trasmitidos, la dirección y el estado. 
 
 
-\item \emph{esp\_uart\_data\_t}: Esta estructura de datos se creó para comunicar las tareas del uart y las de ESP-NOW, no solo posee los datos recibidos si no también el sentido en la red de estos. 
+\item \emph{esp\_uart\_data\_t}: Esta estructura de datos se creó para comunicar las tareas del UART y las de ESP-NOW, no solo posee los datos recibidos si no también el sentido en la red de estos. 
 \end{enumerate}
 
 
@@ -383,7 +384,7 @@ Se crearon ciertas estructuras usando el lenguaje C, para manejar los datos con 
 
 Es la tarea principal del sistema de comunicación inalámbrica, y es administrada por la cola \emph{espnow\_queue}. Cabe mencionar que las colas permiten que la tarea se ejecute solo si se recibió un dato en ella, lo cual ayuda mantener la eficiencia del procesador.
 
-En esta tarea se verifica si se estaba enviando o recibiendo datos. Y exiten ciertos procesos que se ejecutan en cada caso, considerando si es broadcast o unicast.
+En esta tarea se verifica si se estaba enviando o recibiendo datos. Y existen ciertos procesos que se ejecutan en cada caso, considerando si es broadcast o unicast.
 
 La cola se habilita por las funciones de \emph{callback} y por la tarea del UART.
 
@@ -468,7 +469,7 @@ A continuación se presenta pseudocódigo de la ejecución de la tarea.\\
 
 El \emph{offset} en la tabla de enrutamiento representa a la posición a partir de la cual las rutas hacia atrás son automáticamente llenadas, para que la ruta de información sea la misma hacia adelante que hacia atrás.
 
-Cuando se envía información se entra a la primera \emph{SEND\_CB}, si es unicast se envia cinco veces o hasta sea recibida la trama por el nodo destino. Solo cuando se inicializa en nodo se envían tramas broadcast para indicar a los nodos vecinos su presencia.
+Cuando se envía información se entra a la primera \emph{SEND\_CB}, si es unicast se realizan cinco intentos de envío o hasta sea recibida la trama por el nodo destino. Solo cuando se inicializa en nodo se envían tramas broadcast para indicar a los nodos vecinos su presencia.
 
 En la sección de recepción tenemos que cuando se recibe broadcast se registra el nodo si no esta registrado y responde con un broadcast. Si se recibe unicast entonces se pasa a una máquina de estados que determina el destino de la información.
 
@@ -721,7 +722,7 @@ El encapsulado  ESP-WROOM-32 está diseñada para ser soldado en una PCB huésped. 
 \caption{Opciones para colocación en PCB}
 \end{figure}
 
-Los resultados del estudio de basan en las mediciones de potencia WiFi y parámetros EVM para varios canales de 802.11 OFDM (MCS1-7) para verificar el rendimiento del la antenas en diferentes posiciones. Los resultados fueron los siguientes:
+Los resultados del estudio de basan en las mediciones de potencia WiFi y parámetros EVM (magnitud del vector de error)para varios canales para verificar el rendimiento del la antenas en diferentes posiciones. Los resultados fueron los siguientes:
 \begin{enumerate}
 \item Las opciones de colocación 1,2 y 3 básicamente no se muestran afectadas en el rendimiento de la antena siempre y cuando esta este enfrente de espacio abierto. Es recomendado proveer una espacio de al menos 5 mm alrededor de antena en cada dirección.
 

@@ -1,4 +1,4 @@
-BSS: Arreglo de servicios básicos.
+BSS: Conjunto de servicios básicos.
 
 MAC: Control de acceso al medio.
 
@@ -16,3 +16,14 @@ ADU: Unidad de datos de aplicación.
 
 PDU: Unidad de datos de protocolo.
 
+CCMP: Protocolo de código de autenticación de mensaje de encadenamiento de bloque de cifrado en modo contador.
+
+DS: Sistema de distribución.
+
+FCS:Trama de chequeo de errores.
+
+PMK: Llave maestra primaria.
+
+LMK: Llave maestra local.
+
+MIFA: Antena F invertida.
