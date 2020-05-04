@@ -1,34 +1,34 @@
 \babel@toc {spanish}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Topolog\IeC {\'\i }a Mallada}}{8}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces El prop\'osito de la capa MAC es administrar el espectro}}{9}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Topolog\IeC {\'\i }a usada por Lech y Wlodarski}}{16}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Topolog\IeC {\'\i }a usada por Yujun Cheng, Dong Yang y Huachun Zhou}}{18}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Topolog\IeC {\'\i }a de \'arbol de ESP-IDF}}{19}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Trama general de procolo MODBUS}}{21}{figure.2.6}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Diagrama funcional del ESP-32}}{25}{figure.2.7}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Topolog\IeC {\'\i }a Mallada}}{9}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces El prop\'osito de la capa MAC es administrar el espectro}}{10}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Topolog\IeC {\'\i }a usada por Lech y Wlodarski}}{17}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Topolog\IeC {\'\i }a usada por Yujun Cheng, Dong Yang y Huachun Zhou}}{19}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Topolog\IeC {\'\i }a de \'arbol de ESP-IDF}}{20}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Trama general de procolo MODBUS}}{22}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Diagrama funcional del ESP-32}}{26}{figure.2.7}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Ilustraci\'on de la estructuras de la tabla de enrutamiento}}{36}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Diagrama de flujo del funcionamiento general de un nodo de la red recibiendo informaci\'on WiFi}}{37}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagrama de flujo del funcionamiento general de un nodo de la red recibiendo informaci\'on serial}}{37}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagrama de bloques para el hardware del nodo}}{39}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Encapsulado ESP-WROOM-32 del ESP32}}{40}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Tarjeta con regulador lineal para alimentaci\'on}}{41}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Ilustraci\'on del paquete para el desarrollo de aplicaciones en el ESP32 }}{44}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Opciones para colocaci\'on en PCB}}{61}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Ejemplo de conexi\'on entre MAX-485 y UART}}{63}{figure.3.9}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Esquem\'atico del nodo}}{65}{figure.3.10}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Diagrama de circuito impreso capa superior}}{65}{figure.3.11}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Diagrama de circuito impreso capa inferior}}{66}{figure.3.12}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Topolog\IeC {\'\i }a de implementaci\'on}}{67}{figure.3.13}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Hardware del nodo maestro.}}{68}{figure.3.14}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Hardware de un nodo con un esclavo Modbus}}{69}{figure.3.15}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Ilustraci\'on de la estructuras de la tabla de enrutamiento}}{37}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Diagrama de flujo del funcionamiento general de un nodo de la red recibiendo informaci\'on WiFi}}{38}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagrama de flujo del funcionamiento general de un nodo de la red recibiendo informaci\'on serial}}{38}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagrama de bloques para el hardware del nodo}}{40}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Encapsulado ESP-WROOM-32 del ESP32}}{41}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Tarjeta con regulador lineal para alimentaci\'on}}{42}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Ilustraci\'on del paquete para el desarrollo de aplicaciones en el ESP32 }}{45}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Opciones para colocaci\'on en PCB}}{62}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Ejemplo de conexi\'on entre MAX-485 y UART}}{64}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Esquem\'atico del nodo}}{66}{figure.3.10}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Diagrama de circuito impreso capa superior}}{66}{figure.3.11}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Diagrama de circuito impreso capa inferior}}{67}{figure.3.12}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Topolog\IeC {\'\i }a de implementaci\'on}}{68}{figure.3.13}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Hardware del nodo maestro.}}{69}{figure.3.14}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Hardware de un nodo con un esclavo Modbus}}{70}{figure.3.15}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Topolog\IeC {\'\i }a 1 de prueba}}{76}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Topolog\IeC {\'\i }a 2 de prueba}}{77}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Topolog\IeC {\'\i }a 3 de prueba}}{77}{figure.5.3}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Topolog\IeC {\'\i }a 1 de prueba}}{77}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Topolog\IeC {\'\i }a 2 de prueba}}{78}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Topolog\IeC {\'\i }a 3 de prueba}}{78}{figure.5.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
