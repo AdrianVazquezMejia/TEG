@@ -27,3 +27,7 @@ PMK: Llave maestra primaria.
 LMK: Llave maestra local.
 
 MIFA: Antena F invertida.
+
+EVM: Magnitud del vector de error.
+
+UART: Transmisor-receptor asíncrono universal.

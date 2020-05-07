@@ -1,6 +1,6 @@
 Las redes WiFi malladas se presentan como una buena opción para la implementación de nuevos sistemas de automatización, control y/o monitoreo debido a su rápida instalación, bajos costos y una confiabilidad cada vez mayor. 
 
-El \mcu presenta una amplia cantidad de librerías y periféricos, así como potencia de procesamiento para el desarrollo de aplicaciones que requieran una alto rendimiento, rapidez de procesamiento y multitarea. Además de un precio accesible comparado con otros que posee funcionalidades parecidas. El desarrollo de programas es fluido, con un paradigma de programación basado en el sistema operativo en tiempo real. El fabricante brinda  una amplia cantidad de ejemplos para una primera aproximación. 
+El \mcu posee una amplia cantidad de librerías y periféricos, así como potencia de procesamiento para el desarrollo de aplicaciones que requieran una alto rendimiento, rapidez de procesamiento y multitarea. Además de un precio accesible comparado con otros que posee funcionalidades parecidas. El desarrollo de programas es estructurado, con un paradigma de programación basado en el sistema operativo en tiempo real. El fabricante brinda  una amplia cantidad de ejemplos para una primera aproximación. 
 
 La capacidades WiFi del ESP-32 poseen características similares a los adaptadores de red convencionales en área de silicio muy pequeña. Lo que le da a este microcontrolador beneficios adicionales en conectividad e interoperatividad, en el auge de las redes WiFi y el IoT.
 

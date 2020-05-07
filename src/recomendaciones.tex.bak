@@ -1,4 +1,4 @@
-Se recomienda implementar un enrutamiento dinámico en la red, para observar los beneficios respecto a el enrutmiento estático. 
+Se recomienda implementar un enrutamiento dinámico en la red, para observar los beneficios respecto a el enrutamiento estático. 
 
 Se propone aplicar una rutina de búsqueda de esclavos en cada nodo, así cada nodo detectaría los esclavos que posee conectados, para disminuir el tiempo de configuración de la red.
 

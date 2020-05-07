@@ -8,7 +8,7 @@ Dentro de los funcionamiento descritos anteriormente, se tiene que el funcionami
 
 Por lo tanto, es conveniente poseer una arquitectura especifica de la red mallada para el funcionamiento dentro de una red \mb. Así se puede adaptar y configurar de manera más óptima y confiable para las funciones y características del protocolo  \mb.
 
-Para la creación de red inalámbricas WiFi usando el microcontrolador \mcu, \emph{Espressif Systems} a través del \emph{ESP-IDF} (Espacio de trabajo para desarrollo de Internet de las cosas) provee de dos librerías: la ya mencionada ESP-IDF y ESP-NOW.  La librería ESP-NOW fue ideada para comunicaciones punto a punto en esquemas maestro/esclavo, no para creaciones de redes multi-salto, sin embargo, posee la expansibilidad de manipular el direccionamiento de los datos, brindado la potencialidad de crear redes de diversas arquitecturas.
+Para la creación de red inalámbricas WiFi usando el microcontrolador \mcu, \emph{Espressif Systems} a través del \emph{ESP-IDF} (Espacio de trabajo para desarrollo de Internet de las cosas) provee de dos librerías: la ya mencionada ESP-MESH y ESP-NOW.  La librería ESP-NOW fue ideada para comunicaciones punto a punto en esquemas maestro/esclavo, no para creaciones de redes multi-salto, sin embargo, posee la expansibilidad de manipular el direccionamiento de los datos, brindado la potencialidad de crear redes de diversas arquitecturas.
 
 \subsection{ESP-NOW}
 \espn  es un tipo de protocolo de comunicación WiFi definido por \emph{Espressif Systems} donde los datos de aplicación son encapsulados en una trama específica por el proveedor y es transmitida de un dispositivo \wf a otro. Para proteger la trama de acción por seguridad se usa el protocolo CCMP (Protocolo de código de autenticación de mensaje de encadenamiento de bloque de cifrado en modo contador). \espn es ampliamente usada en luces inteligente, control remoto y sensores.
@@ -23,7 +23,7 @@ Para la creación de red inalámbricas WiFi usando el microcontrolador \mcu, \emph
 
 
 \subsection{Diseño Básico de la red}
- Un nodo es una estación de comunicación con una dirección MAC bajo el estándar 802.11 y  una implementación de capa física (En este caso el \mcu) para la comunicación bajo este protocolo, además, constituye la entidad básica de la red.  La red más elemental, llamada  conjunto de servicios básicos (BSS), puede  ser formada por dos nodos. Para que otros nodos se unan, los integrantes del BSS provee de servicios a través de un sistema de distribución (DS) que permiten la comunicación con con dispositivos fuera del BSS para su integración.  Los enlaces se forman a partir del nodo que genere la trama (salto inicial) e indique el nodo siguiente (nodos intermedios) hasta llegar al nodo final (salto final). En este proceso de formación los nodos involucrados en el proceso forman un BSS que permanece establecido. 
+ Un nodo es una estación de comunicación con una dirección MAC bajo el estándar 802.11 y  una implementación de capa física (En este caso el \mcu) para la comunicación bajo este protocolo, además, constituye la entidad básica de la red.  La red más elemental, llamada  conjunto de servicios básicos (BSS), puede  ser formada por dos nodos. Para que otros nodos se unan, los integrantes del BSS provee de servicios a través de un sistema de distribución (DS) que permiten la comunicación con con dispositivos fuera del BSS para su integración.  Los enlaces se forman a partir del nodo que genere la trama (salto inicial) e indique el nodo siguiente (nodos intermedios) hasta llegar al nodo final (salto final).Los nodos involucrados en el proceso forman un BSS que permanece establecido. 
  
 \subsubsection{Estructura de la trama}
 
@@ -119,7 +119,7 @@ Las rutas no son determinadas por la red, si no por el usuario que la implemente
 
 La red no propaga información de las rutas, por lo que cada nodo solo conoce la ruta para una salto en cualquier sentido. Sin embargo, es posible solicitar y configurar las rutas de los nodos inalabricamente.
 
-La tabla de enrutamiento posee 256 casillas (una para cada esclavo Modbus), donde la posición está asociada al esclavo Modbus y el valor en la casilla se relaciona con la ubicación de dicho esclavo. Cabe resaltar que el identificador al que se refiere la tabla de enrutamiento como destino no es la localización del esclavo en la red. En la figura En la figura \ref{Fig  2: Tabla de enrutamiento} se ilustra el la arquitectura e interpretación de la tabla de enrutamiento asociada al nodo 255.
+La tabla de enrutamiento posee 256 casillas (una para cada esclavo Modbus), donde la posición está asociada al esclavo Modbus y el valor en la casilla se relaciona con la ubicación de dicho esclavo. Cabe resaltar que el identificador al que se refiere la tabla de enrutamiento como destino no es la localización del esclavo en la red. En la figura \ref{Fig  2: Tabla de enrutamiento} se ilustra el la arquitectura e interpretación de la tabla de enrutamiento asociada al nodo 255.
  
 
 \begin{figure}[H]
@@ -128,7 +128,7 @@ La tabla de enrutamiento posee 256 casillas (una para cada esclavo Modbus), dond
 \caption{Ilustración de la estructuras de la tabla de enrutamiento}
 \end{figure}
 
-Existe otra tabla de enrutamiento para las respuestas, de manera tal que las rutas sean bidireccionales y únicas. La tabla de respuesta es configurada y mantenida automaticamente por cada nodo. Cuando se reciben solicitudes Modbus, se guarda el identificador del nodo del cual provino dicha información, y dicho identificador se usa para enrutar la trama respuesta.
+Existe otra tabla de enrutamiento para las respuestas, de manera tal que las rutas sean bidireccionales y únicas. La tabla de respuesta es configurada y mantenida automáticamente por cada nodo. Cuando se reciben solicitudes Modbus, se guarda el identificador del nodo del cual provino dicha información, y dicho identificador se usa para enrutar la trama respuesta.
 
  Un esquema del funcionamiento se puede apreciar en las figuras \ref{Fig 1: ULM enrutamiento} y \ref{Fig 1: ULM serial} .
  
@@ -150,7 +150,7 @@ Los nodos de la red son esclavos adicionales de la red Modbus, con direcciones r
 
 El funcionamiento como esclavo Modbus en los nodos es permanente, incluso cuando ya se ha implementado la red con equipos Modbus seriales externos, permitiendo actualización de parámetro de la red en cualquier momento. 
 
-Los nodos poseen un diagnóstico visual que indica cuando se ha recibido o enviado correctamente una trama  serial o inalambricamente. Dicho diagnóstico de basa en un LED que emite un pulso. Además, otro diagnóstico visual para indicar que se ha encendido el equipo, del mismo tipo se encuentra en la tarjeta de alimentación. No hay diagnostico visual para errores de comunicación.%observe hardaware para mas detalle.
+Los nodos poseen un diagnóstico visual que indica cuando se ha recibido o enviado correctamente una trama  serial o inalambricamente. Dicho diagnóstico de basa en un LED que emite un pulso. Otro diagnóstico visual para indicar que se ha encendido el equipo, del mismo tipo se encuentra en la tarjeta de alimentación. No hay diagnostico visual para errores de comunicación.%observe hardaware para mas detalle.
 
 Los registros disponibles para acceso son los registros de retención desde la dirección cero hasta la 512, y también las diez primeras bobinas. Para las bobinas solo es soportada la función de escribir una bobina simple. La tabla \ref{Tabla 1: Espec HR} describe la asignación de los registros.
 
@@ -250,7 +250,7 @@ Modbus en sus clases básica dicta que los equipos Modbus  seriales tienen que po
 
 El chip MAX3485 de \emph{Maxim Integrated} provee de las características antes descritas y admite tensión de alimentación de 3,3 V, lo cual hace que se posea un solo nivel de tensión para la alimentación del nodo.
 
-Este chip soporta hasta 32 dispositivos, pero teniendo en cuenta que el uso de nodos distribuye la carga de los esclavos, la utilización de repetidores se vería disminuida, y se soportarían 32 dispositivos por cada nodo.
+Este chip soporta hasta 32 dispositivos,sin embargo, el uso de nodos distribuye la carga de los esclavos y  la utilización de repetidores se vería disminuida, y se soportarían 32 dispositivos por cada nodo.
 
 La topología RS-485 Modbus sin repetidor posee cables truncados en un par trenzado, sobre los cuales los dispositivos están conectados bien sea directamente o a través de cables de derivación. Los cables truncados también llamado bus, cuya longitud depende de la tasa de baudios, los parámetros del cable y  la carga de dispositivos, para 9600 baudios y un cable calibre de 26 AWG, la máxima longitud es de 1000 m. 
 
@@ -258,7 +258,7 @@ Las derivaciones no deben estar a más de 20 m. En caso del uso de una derivación
 
 El circuito común de cada bus debe estar conectado a tierra, preferiblemente a un solo punto para todo el bus.  Esto no aplica para la red, pues evidentemente la comunicación inalámbrica brinda aislamiento galvánico.
 
-Para minimizar las reflexiones del final del cable RS-485 se requiere colocar un terminador de linea cerca del final de cada punto del bus (Resistencia de 150 $\Omega$ y 0,5 W). No se deben colocar más de dos terminadores de linea en el bus, ni colocar terminadores de linea en los cable de derivación.
+Para minimizar las reflexiones del final del cable RS-485, se requiere colocar un terminador de linea cerca del final de cada punto del bus (Resistencia de 150 $\Omega$ y 0,5 W). No se deben colocar más de dos terminadores de linea en el bus, ni colocar terminadores de linea en los cable de derivación.
 
 Si el sistema requiere polarización esta de debe implementar en cada bus serial del sistema, los nodos inalámbricos no requieren polarización.
 
@@ -902,6 +902,6 @@ Prueba & Baudarate [Baudios] & Variables[n] & Tiempo de muestreo[s] \\
 4 & 9600 & 50 & 5 \\ 
 \hline 
 \end{tabular} 
-\caption{Condiciones para las pruebas de rendimiento, la prueba cuatro se asocia a la variación de las topologías.}
+\caption{Condiciones para las pruebas de rendimiento, la prueba cuatro se asocia a la variación de las topologías.}\label{Condiciones}
 \end{table}
 

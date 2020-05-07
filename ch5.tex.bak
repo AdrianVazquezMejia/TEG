@@ -34,7 +34,7 @@ Tiempo de Muestro [s] &  ID 1 &   ID 2 &  ID 150 & ID 151 & ID 153 & \textbf{Pro
 \end{table}
 
 \subsection{Rendimiento y número de variables}
-En un segundo escenario se tiene que la red es sometida a variaciones en el número de variables solicitadas por cada solicitud (ver \ref{Res: var}), aumentado gradualmente el tamaño de la trama serial e inalámbrica.  En ese caso al igual que el anterior, no hubo una degradamiento notable con las variaciones tomadas.
+En un segundo escenario se tiene que la red es sometida a variaciones en el número de variables solicitadas (ver \ref{Res: var}), aumentado gradualmente el tamaño de la trama serial e inalámbrica.  En ese caso al igual que el anterior, no hubo una degradamiento notable con las variaciones tomadas.
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
