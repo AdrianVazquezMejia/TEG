@@ -75,3 +75,13 @@ volume = {170},
 journal = {Procedia Engineering},
 doi = {10.1016/j.proeng.2017.03.045}
 }
+@inbook{range,
+author = {Singh, Madhusudan},
+year = {2019},
+month = {01},
+pages = {11-14},
+title = {Wireless Mesh Networks Architecture},
+isbn = {978-981-13-0673-0},
+journal = {SpringerBriefs in Applied Sciences and Technology},
+doi = {10.1007/978-981-13-0674-7_2}
+}

@@ -1,7 +1,7 @@
 
 \section*{Planteamiento del problema}
 
-La creciente popularidad de las redes inalámbricas en casi todos los sectores ha hecho que las infraestructuras asociadas, dispositivos y protocolos se vean en la necesidad de mejorar constantemente para manejar la creciente cantidad de usuarios de manera segura y eficiente. Así mismo, las redes WiFi centralizadas están limitadas por la capacidad del punto de acceso, en el ámbito de cobertura y  cantidad de clientes, restricciones que se pudiesen superar con las redes WiFi malladas.
+La creciente popularidad de las redes inalámbricas en casi todos los sectores ha hecho que las infraestructuras asociadas, dispositivos y protocolos se vean en la necesidad de mejorar constantemente para manejar la creciente cantidad de usuarios de manera segura y eficiente. Así mismo, las redes WiFi centralizadas están limitadas por la capacidad del punto de acceso, en el ámbito de cobertura y  cantidad de clientes\citep{range} , restricciones que se pudiesen superar con las redes WiFi malladas.
 
 Actualmente  la redes malladas están en una etapa de desarrollo, por lo que no existe un estándar sólido para la implementación de toda la red, lo que causa reservas en las industrias, especialmente debido a la vulnerabilidad de los datos, la confiabilidad en ambientes electromagnéticamente ruidosos y el rendimiento \citep{planteam}. Es por eso que una  red mallada WiFi con comunicación basada en el protocolo Modbus  podría representar una solución a este problema.
 

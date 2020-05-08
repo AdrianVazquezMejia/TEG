@@ -259,6 +259,53 @@ Rifki~Muhendra, M\BPBI B., Aditya~Rinaldi.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Services%
+}{%
+Services%
+}{%
+{\protect \APACyear {2020}}%
+{\protect \APACexlab {{\protect \BCnt {1}}}}}]{%
+freertos1}
+\APACinsertmetastar {%
+freertos1}%
+\begin{APACrefauthors}%
+Services, A\BPBI W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020{\protect \BCnt {1}}}{05}{}.
+\newblock
+\APACrefbtitle {What is a General Purpose Operating System?} {What is a general
+  purpose operating system?}
+\newblock
+\APACrefnote{[Internet; accedido el 08 de Mayo del 2020] Disponible en:
+  \url{https://www.freertos.org/about-RTOS.html}}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Services%
+}{%
+Services%
+}{%
+{\protect \APACyear {2020}}%
+{\protect \APACexlab {{\protect \BCnt {2}}}}}]{%
+freertos2}
+\APACinsertmetastar {%
+freertos2}%
+\begin{APACrefauthors}%
+Services, A\BPBI W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020{\protect \BCnt {2}}}{05}{}.
+\newblock
+\APACrefbtitle {What is FreeRTOS?} {What is freertos?}
+\newblock
+\APACrefnote{[Internet; accedido el 08 de Mayo del 2020] Disponible en:
+  \url{https://www.freertos.org/about-RTOS.html}}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Sharma%
 \ \BBA {} Singh%
 }{%

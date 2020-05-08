@@ -335,4 +335,19 @@ Este microcontrolador posee dos núcleos CPU que pueden ser individualemente cont
 \end{itemize}
 \end{itemize}
 
+\section{Sistema Operativo en Tiempo Real}
 
+Un sistema operativo es un programa de comptadora que soporta las funciones básicas de la misma, y provee servicios a otros programas o aplicaciones  que corren en la computadora. Las aplicaciones ejecutan las funcionalidades que el usuario quiere o necesita.  Los servicios del sistema operativo hace el desarrollo de aplicaciones rápido, simple, y mantenible. 
+
+La mayoría de los sistemas operativos permiten que se ejecuten múltiples programas al mismo tiempo. Es es llamado multi-tarea. Aunque, en realidad, cada procesador solo puede correr una tarea. Una parte del sistema operativo es llamado planificador,y es responsable de la decisión cual programa correr y cuando, así da la ilusión de la ejecución simultanea de tareas mientras conmuta rápidamente entre cada programa \citep{freertos1}.
+
+\subsection{El FreeRTOS}
+
+FreeRTOS es una clase de RTOS que está diseñado para ser lo sufientemente liviano para correr en un microcontrolador.  Este provee planificador en tiempo real, comunicación entre tareas, temporizadores y sincronización.  Esto significa que es descrito más exactamente como un kernel en tiempo real. El planificador usado en el FreeRTOS, logra determinismo, proporcionando a los usuarios asignar prioridad a cada tarea de ejecución \citep{freertos2}. Cabe resaltar algunos elementos resaltantes:
+\begin{itemize}
+\item \textbf{ Tareas: }Las tareas se implementan como funciones.Cada tarea es un pequeño programa en sí mismo. Tiene un punto de entrada, se ejecuta normalmente de forma continua en un bucle infinito y no se cierra. 
+
+\item \textbf{ Colas: } Las colas proporcionan mecanismo de comunicación de una a otra tarea, de una tarea a una interrupción
+y de una interrupción a una tarea.
+
+\end{itemize}
