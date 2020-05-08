@@ -159,6 +159,36 @@ Lech, P.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Milic%
+, Brack%
+\BCBL {}\ \BBA {} Naumann%
+}{%
+Milic%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+planteam}
+\APACinsertmetastar {%
+planteam}%
+\begin{APACrefauthors}%
+Milic, B.%
+, Brack, S.%
+\BCBL {}\ \BBA {} Naumann, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{05}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Hierarchical configuration system for wireless mesh
+  networks in manufacturing industry} {Hierarchical configuration system for
+  wireless mesh networks in manufacturing industry}.{\BBCQ}
+\newblock
+\BIn{} (\BPG~1-8).
+\newblock
+\begin{APACrefDOI} \doi{10.1109/WMNC.2014.6878867} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Modbus~Organization%
 }{%
 Modbus~Organization%
@@ -201,96 +231,6 @@ Modbus~Organization, I.%
 \newblock
 \APACrefnote{[Internet; accedido el 25 de Octubre del 2019] Disponible en:
   \url{http://modbus.org/docs/Modbus_Application_Protocol_V1_1b3.pdf}}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Muhendra%
-, Rinaldi%
-, Budiman%
-\BCBL {}\ \BBA {} Khairurrijal%
-}{%
-Muhendra%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2017}}%
-}]{%
-article41}
-\APACinsertmetastar {%
-article41}%
-\begin{APACrefauthors}%
-Muhendra, R.%
-, Rinaldi, A.%
-, Budiman, M.%
-\BCBL {}\ \BBA {} Khairurrijal, K.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2017}{12}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Development of WiFi Mesh Infrastructure for Internet of
-  Things Applications} {Development of wifi mesh infrastructure for internet of
-  things applications}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Procedia Engineering}{170}{}{332-337}.
-\newblock
-\begin{APACrefDOI} \doi{10.1016/j.proeng.2017.03.045} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Porto%
-, Cavalcanti%
-\BCBL {}\ \BBA {} Elias%
-}{%
-Porto%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2009}}%
-}]{%
-inproceedings}
-\APACinsertmetastar {%
-inproceedings}%
-\begin{APACrefauthors}%
-Porto, D.%
-, Cavalcanti, G.%
-\BCBL {}\ \BBA {} Elias, G.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2009}{05}{}.
-\newblock
-\APACrefbtitle {A Layered Routing Architecture for Infrastructure Wireless Mesh
-  Networks.} {A layered routing architecture for infrastructure wireless mesh
-  networks.}
-\newblock
-\begin{APACrefDOI} \doi{10.1109/ICNS.2009.91} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Ridolfi%
-, Velde%
-, Steendam%
-\BCBL {}\ \BBA {} De~Poorter%
-}{%
-Ridolfi%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2016}}%
-}]{%
-inproceedings40}
-\APACinsertmetastar {%
-inproceedings40}%
-\begin{APACrefauthors}%
-Ridolfi, M.%
-, Velde, S.%
-, Steendam, H.%
-\BCBL {}\ \BBA {} De~Poorter, E.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2016}{11}{}.
-\newblock
-\APACrefbtitle {WiFi ad-hoc mesh network and MAC protocol solution for UWB
-  indoor localization systems.} {Wifi ad-hoc mesh network and mac protocol
-  solution for uwb indoor localization systems.}
-\newblock
-\begin{APACrefDOI} \doi{10.1109/SCVT.2016.7797661} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -347,12 +287,61 @@ Sharma, P.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Singh%
+}{%
+Singh%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+range}
+\APACinsertmetastar {%
+range}%
+\begin{APACrefauthors}%
+Singh, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{01}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Wireless Mesh Networks Architecture} {Wireless mesh
+  networks architecture}.{\BBCQ}
+\newblock
+\BIn{} (\BPG~11-14).
+\newblock
+\begin{APACrefDOI} \doi{10.1007/978-981-13-0674-7_2} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Systems%
 }{%
 Systems%
 }{%
 {\protect \APACyear {2016}}%
-}]{%
+{\protect \APACexlab {{\protect \BCnt {1}}}}}]{%
+MESHIDF}
+\APACinsertmetastar {%
+MESHIDF}%
+\begin{APACrefauthors}%
+Systems, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016{\protect \BCnt {1}}}{06}{}.
+\newblock
+\APACrefbtitle {ESP-WROOM-02PCB Design and Module Placement Guide.}
+  {Esp-wroom-02pcb design and module placement guide.}
+\newblock
+\APACrefnote{[Internet; accedido el 27 de Abril del 2020] Disponible en:
+  \url{https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/mesh.html}}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Systems%
+}{%
+Systems%
+}{%
+{\protect \APACyear {2016}}%
+{\protect \APACexlab {{\protect \BCnt {2}}}}}]{%
 testAntena}
 \APACinsertmetastar {%
 testAntena}%
@@ -361,44 +350,13 @@ Systems, E.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2016}{06}{}.
+\APACrefYearMonthDay{2016{\protect \BCnt {2}}}{06}{}.
 \newblock
 \APACrefbtitle {ESP-WROOM-02PCB Design and Module Placement Guide.}
   {Esp-wroom-02pcb design and module placement guide.}
 \newblock
-\APACrefnote{[Internet; accedido el 27 de Abriil del 2020] Disponible en:
+\APACrefnote{[Internet; accedido el 27 de Abril del 2020] Disponible en:
   \url{https://www.espressif.com/sites/default/files/documentation/esp-wroom-02_pcb_design_and_module_placement_guide_0.pdf}}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Yoppy%
-, Arjadi%
-, Setyaningsih%
-, Wibowo%
-\BCBL {}\ \BBA {} Sudrajat%
-}{%
-Yoppy%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2019}}%
-}]{%
-article40}
-\APACinsertmetastar {%
-article40}%
-\begin{APACrefauthors}%
-Yoppy, U.%
-, Arjadi, R.%
-, Setyaningsih, E.%
-, Wibowo, P.%
-\BCBL {}\ \BBA {} Sudrajat, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2019}{07}{}.
-\newblock
-\APACrefbtitle {Performance Evaluation of ESP8266 Mesh Networks} {Performance
-  evaluation of esp8266 mesh networks}\ (\BVOL\ 1230).
-\newblock
-\begin{APACrefDOI} \doi{10.1088/1742-6596/1230/1/012023} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}

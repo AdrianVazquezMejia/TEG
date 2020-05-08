@@ -5,6 +5,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[spanish]{babel}
 \usepackage[latin1]{inputenc}
+
 \usepackage[T1]{fontenc}  %Estilo de fuente time new roman
 \usepackage[ruled,vlined]{algorithm2e}
 \usepackage{amssymb}
@@ -401,7 +402,7 @@ xxx anexo
 \bibliographystyle{apacite}%
 \renewcommand{\bibname}{REFERENCIAS}
 \let\oldbibsection\bibsection
-\bibliography{biblioteca,referencias,bibliografia} % if more than one, comma separated and without extension bib
+\bibliography{referencias,bibliografia} % if more than one, comma separated and without extension bib
 
 
 % CASE 2: BiBTeX used to generate EIETdeG.bbl (to be further fine tuned)
