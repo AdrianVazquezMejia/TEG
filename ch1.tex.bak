@@ -348,6 +348,5 @@ FreeRTOS es una clase de RTOS que está diseñado para ser lo sufientemente livian
 \item \textbf{ Tareas: }Las tareas se implementan como funciones.Cada tarea es un pequeño programa en sí mismo. Tiene un punto de entrada, se ejecuta normalmente de forma continua en un bucle infinito y no se cierra. 
 
 \item \textbf{ Colas: } Las colas proporcionan mecanismo de comunicación de una a otra tarea, de una tarea a una interrupción
-y de una interrupción a una tarea.
-
+y de una interrupción a una tarea. La comunicación se basa en la transferencia en un dato ubicado en la cola.
 \end{itemize}
