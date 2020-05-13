@@ -1,7 +1,7 @@
 % Agregar antecedentes
-En el área de la ingeniería eléctrica, las comunicaciones se pueden clasificar en dos grupos: las alámbricas y las inalámbricas. En el primer caso el medio es tangible estando, generalmente, compuesto por varios conductores metálicos o fibra  óptica y en el segundo no hay medio físico. Las comunicaciones inalámbricas se clasifican básicamente según la banda de frecuencia o el estándar que satisface, así las tecnologías IEEE 802.15.1 (bluetooth), IEEE 802.11 (WiFi) y GSM (telefonía celular).
+Las  telecomunicaciones se pueden clasificar en dos grupos: las alámbricas y las inalámbricas. En el primer caso el medio es tangible estando, generalmente, compuesto por varios conductores metálicos o fibra  óptica y en el segundo no hay medio físico. En las  comunicaciones inalámbricas existen diversos estándares que señalan su comportamiento y permiten la interoperabilidad de equipos que usen la misma tecnología, algunos de ellos son:  IEEE 802.15.1 (Bluetooth), IEEE 802.11 (WiFi) y GSM (telefonía celular).
 
-Las tecnologías basadas en el estandar IEEE 802.11, también conocidas como WiFi, han ganado popularidad en el mundo de las comunicaciones proveyendo interconectividad entre clientes (PC, laptops, smartphones) y puntos de acceso. Las redes que usan dicha tecnología se clasifican (según la topología) en centralizadas o descentralizadas dependiendo si la conectividad entre clientes posee como intermediario o no un punto de acceso \citep{article2}.
+Las tecnologías  WiFi han ganado popularidad actualmente en el mundo de las comunicaciones, usando para la interconectividad entre clientes (PC, laptops, smartphones) y puntos de acceso. Las redes que usan dicha tecnología se pueden clasificar en centralizadas o descentralizadas, dependiendo si la conectividad entre clientes depende o no de un punto de acceso \citep{article2}.
 
 Dentro de las redes descentralizadas tenemos a las redes de topología mallada, donde los clientes están en capacidad de ser, simultáneamente, puntos de acceso brindando servicio a otros clientes y servir de puente a otros nodos. Además, las redes WiFi malladas difieren de las convencionales en que no es obligatorio que todos los nodos estén conectados al nodo central, en su lugar, cada nodo se puede conectar a el nodo vecino. Esto abre la posibilidad de ampliar la cobertura manteniendo la interconectividad de la red.
 %ver el autor
@@ -16,7 +16,14 @@ Modbus es el protocolo de comunicación industrial estándar de facto desde 1979 \
 
 En el ámbito industrial la reducción de costos es siempre una meta y las redes inalámbricas podrían ser una alternativa frente a las alámbricas, en las que las grandes distancias cubiertas por conductores representan un costo relativamente elevado \citep{article3}. Así mismo, los conductores instalados son vulnerables a hurtos, lo que se traduce en pérdidas económicas para las industrias.
 
-Tomando en cuenta lo anterior, se propone el diseño de una red inalámbrica WiFi mallada con una comunicación basada en el protocolo Modbus orientada a la implentación en un entorno industrial, cuyos nodos estarán constituidos por microcontroladores ESP32. Este trabajo tiene por finalidad presentar la metodología para el diseño e implementación de la red , además se presentan los detalles del planteamiento del problema y la factibilidad de proyecto así como los resultados de la implementación de la red y las conclusiones asociadas. 
+Tomando en cuenta lo anterior, se propone el diseño de una red inalámbrica WiFi mallada con una comunicación basada en el protocolo Modbus orientada a la implentación en un entorno industrial, cuyos nodos estarán constituidos por microcontroladores ESP32.
+
+En el capítulo I se expone el problema se da la justificación y alcance del trabajo. Los objetivos también de presentan en este capítulo. Más adelante en el capítulo II, se desarrollan las bases teóricas de sirven como apoyo para explicar los conceptos de las redes WiFi malladas, el protocolo Modbus y el microcontrolador ESP32.
+
+El capítulo III se encarga de la descripción de las metodologías empleadas para alcanzar los objetivos del trabajo, profundizando en las etapas del diseño  e implementación de hardware y software.
+
+El capítulo IV  se presentan los resultados y análisis de las pruebas de rendimiento efectuadas a la red. Finalmente, se exponen las conclusiones obtenidas mediante los estudios realizados en el trabajo y se efectuan recomendaciones para futuros estudios relacionados.
+ 
 \newpage
 \section*{Objetivos}
 \subsection*{Objetivo General}

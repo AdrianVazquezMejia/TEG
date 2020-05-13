@@ -1,7 +1,5 @@
 \documentclass[letterpaper,titlepage,12pt,oneside,spanish,final]{report_eie}
 
-%\documentclass[letterpaper,titlepage,12pt,twoside,openright,spanish,final]{report_eie}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[spanish]{babel}
 \usepackage[latin1]{inputenc}
@@ -277,7 +275,7 @@ A quien desees dedicar este trabajo
 
 \begin{large}
 \textbf{Diseño e implementación de una red WiFi mallada \\
-que soporte protocolo MODBUS para \\
+que soporte protocolo Modbus para \\
 equipos de control industrial. \\}
 \end{large}
 \end{center}
@@ -285,8 +283,7 @@ equipos de control industrial. \\}
 \noindent%
 \textbf{Tutor Académico: José Alonso. Tesis.
 Caracas, Universidad Central de Venezuela. Facultad de Ingeniería.
-Escuela de Ingeniería Eléctrica. Mención Electrónica. Año 2020,
-xvii, 144 pp.}
+Escuela de Ingeniería Eléctrica.Opción Electrónica. Año 2020.}
 
 \noindent
 \textbf{Palabras Claves:} Palabras clave. \\[1ex]
