@@ -2,7 +2,7 @@ En este capítulo se tratarán los fundamentos de las redes WiFi malladas, protoco
 
 \section{Fundamentos de las redes WiFi malladas}
 
-Las redes WiFi malladas(WMN) se pueden definir como una red que permite la comunicaion entre nodos a través de múltiples saltos en una topología mallada \citep{bahr}. Los nodos son los  intermediarios encargados de la formación de la red y la vinculación entre los dispositivos que la usan. Las WMN usualmente poseen clientes, enrutadores y puertas de enlace. Los clientes son dispositivos electrónicos, sistemas embebidos o sensores que pueden comunicarse con otros en la red. El enrutador es un dispositivo electrónicos que sirve como un intermediario entre dos o mas redes para transportar los datos de una red a otra.  Y las compuertas de enlace es un dispositivo electrónico que conecta la red con Internet. 
+Una red WiFi mallada (WMN) se puede definir como  una red que permite la comunicación entre nodos a través de múltiples saltos en una topología mallada \citep{bahr}. Los nodos son los  intermediarios encargados de la formación de la red y la vinculación entre los dispositivos que la usan. Una WMN usualmente poseen clientes, enrutadores y puertas de enlace. Los clientes son dispositivos electrónicos, sistemas embebidos o sensores que pueden comunicarse con otros en la red. El enrutador es un dispositivo electrónicos que sirve como un intermediario entre dos o mas redes para transportar los datos de una red a otra.  Y las compuertas de enlace son dispositivo electrónico que conecta la red con Internet. 
 
 Cuando un nodo no puede operar, el resto de los nodos en la WMN aún pueden comunicarse con los otros, bien sea, directa o indirectamente a través de uno o más nodos intermediarios\citep{ScienceDirect}.
 

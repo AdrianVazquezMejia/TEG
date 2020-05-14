@@ -1,35 +1,35 @@
 \babel@toc {spanish}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Tablas primarias de los modelos de datos Modbus}}{23}{table.2.1}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Tablas primarias de los modelos de datos Modbus}}{22}{table.2.1}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Trama de acci\'on ESP-NOW }}{34}{table.3.1}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Contenido de espec\IeC {\'\i }fico de proveedor}}{34}{table.3.2}
-\contentsline {table}{\numberline {3.3}{\ignorespaces Estructura de datos envidada en el cuerpo de la trama ESP-NOW }}{35}{table.3.3}
-\contentsline {table}{\numberline {3.4}{\ignorespaces Tablas primarias de los modelos de datos Modbus}}{40}{table.3.4}
-\contentsline {table}{\numberline {3.5}{\ignorespaces Par\'amtros Modbus}}{41}{table.3.5}
-\contentsline {table}{\numberline {3.6}{\ignorespaces Especificaciones de la fuente de alimentaci\'on}}{43}{table.3.6}
-\contentsline {table}{\numberline {3.7}{\ignorespaces Tablas primarias de los modelos de datos Modbus}}{50}{table.3.7}
-\contentsline {table}{\numberline {3.8}{\ignorespaces Descripci\'on de la funci\'on \emph {vNotiLEDinit} }}{57}{table.3.8}
-\contentsline {table}{\numberline {3.9}{\ignorespaces Descripci\'on de la funci\'on \emph {FormatFactory} }}{57}{table.3.9}
-\contentsline {table}{\numberline {3.10}{\ignorespaces Descripci\'on de la funci\'on \emph {vConfigLoad} }}{58}{table.3.10}
-\contentsline {table}{\numberline {3.11}{\ignorespaces Descripci\'on de la funci\'on \emph {vConfigGetNVS} }}{58}{table.3.11}
-\contentsline {table}{\numberline {3.12}{\ignorespaces Descripci\'on de la funci\'on \emph {vConfigGetNVS} }}{59}{table.3.12}
-\contentsline {table}{\numberline {3.13}{\ignorespaces Descripci\'on de la funci\'on \emph {vConfigGetNVS} }}{59}{table.3.13}
-\contentsline {table}{\numberline {3.14}{\ignorespaces Descripci\'on de la funci\'on \emph {uComGetTransData} }}{60}{table.3.14}
-\contentsline {table}{\numberline {3.15}{\ignorespaces Descripci\'on de la funci\'on \emph {vEspnowGetOldPeers} }}{60}{table.3.15}
-\contentsline {table}{\numberline {3.16}{\ignorespaces Descripci\'on de la funci\'on \emph {espnow\_data\_prepare } }}{60}{table.3.16}
-\contentsline {table}{\numberline {3.17}{\ignorespaces Descripci\'on de la funci\'on \emph {espnow\_data\_parse} }}{61}{table.3.17}
-\contentsline {table}{\numberline {3.18}{\ignorespaces Lista de materiales del circuito}}{66}{table.3.18}
-\contentsline {table}{\numberline {3.19}{\ignorespaces Configuraci\'on de los esclavos para la implementaci\'on}}{68}{table.3.19}
-\contentsline {table}{\numberline {3.20}{\ignorespaces Lista de materiales del circuito de implementaci\'on}}{70}{table.3.20}
-\contentsline {table}{\numberline {3.21}{\ignorespaces Variaci\'on de par\'ametros en la pruebas de rendiemietno}}{71}{table.3.21}
-\contentsline {table}{\numberline {3.22}{\ignorespaces Condiciones para las pruebas de rendimiento, la prueba cuatro se asocia a la variaci\'on de las topolog\IeC {\'\i }as.}}{73}{table.3.22}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Trama de acci\'on ESP-NOW }}{33}{table.3.1}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Contenido de espec\IeC {\'\i }fico de proveedor}}{33}{table.3.2}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Estructura de datos envidada en el cuerpo de la trama ESP-NOW }}{34}{table.3.3}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Tablas primarias de los modelos de datos Modbus}}{39}{table.3.4}
+\contentsline {table}{\numberline {3.5}{\ignorespaces Par\'amtros Modbus}}{40}{table.3.5}
+\contentsline {table}{\numberline {3.6}{\ignorespaces Especificaciones de la fuente de alimentaci\'on}}{42}{table.3.6}
+\contentsline {table}{\numberline {3.7}{\ignorespaces Tablas primarias de los modelos de datos Modbus}}{49}{table.3.7}
+\contentsline {table}{\numberline {3.8}{\ignorespaces Descripci\'on de la funci\'on \emph {vNotiLEDinit} }}{56}{table.3.8}
+\contentsline {table}{\numberline {3.9}{\ignorespaces Descripci\'on de la funci\'on \emph {FormatFactory} }}{56}{table.3.9}
+\contentsline {table}{\numberline {3.10}{\ignorespaces Descripci\'on de la funci\'on \emph {vConfigLoad} }}{57}{table.3.10}
+\contentsline {table}{\numberline {3.11}{\ignorespaces Descripci\'on de la funci\'on \emph {vConfigGetNVS} }}{57}{table.3.11}
+\contentsline {table}{\numberline {3.12}{\ignorespaces Descripci\'on de la funci\'on \emph {vConfigGetNVS} }}{58}{table.3.12}
+\contentsline {table}{\numberline {3.13}{\ignorespaces Descripci\'on de la funci\'on \emph {vConfigGetNVS} }}{58}{table.3.13}
+\contentsline {table}{\numberline {3.14}{\ignorespaces Descripci\'on de la funci\'on \emph {uComGetTransData} }}{59}{table.3.14}
+\contentsline {table}{\numberline {3.15}{\ignorespaces Descripci\'on de la funci\'on \emph {vEspnowGetOldPeers} }}{59}{table.3.15}
+\contentsline {table}{\numberline {3.16}{\ignorespaces Descripci\'on de la funci\'on \emph {espnow\_data\_prepare } }}{59}{table.3.16}
+\contentsline {table}{\numberline {3.17}{\ignorespaces Descripci\'on de la funci\'on \emph {espnow\_data\_parse} }}{60}{table.3.17}
+\contentsline {table}{\numberline {3.18}{\ignorespaces Lista de materiales del circuito}}{65}{table.3.18}
+\contentsline {table}{\numberline {3.19}{\ignorespaces Configuraci\'on de los esclavos para la implementaci\'on}}{67}{table.3.19}
+\contentsline {table}{\numberline {3.20}{\ignorespaces Lista de materiales del circuito de implementaci\'on}}{69}{table.3.20}
+\contentsline {table}{\numberline {3.21}{\ignorespaces Variaci\'on de par\'ametros en la pruebas de rendiemietno}}{70}{table.3.21}
+\contentsline {table}{\numberline {3.22}{\ignorespaces Condiciones para las pruebas de rendimiento, la prueba cuatro se asocia a la variaci\'on de las topolog\IeC {\'\i }as.}}{72}{table.3.22}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Porcentajes de error para variaciones en el tiempo de muestro}}{75}{table.4.1}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Porcentajes de error para variaciones en el tiempo de muestro}}{75}{table.4.2}
-\contentsline {table}{\numberline {4.3}{\ignorespaces Porcentajes de error para variaciones en la tasa de baudios}}{76}{table.4.3}
-\contentsline {table}{\numberline {4.4}{\ignorespaces Porcentajes de error para variaciones en la topolg\IeC {\'\i }a}}{78}{table.4.4}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Porcentajes de error para variaciones en el tiempo de muestro}}{74}{table.4.1}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Porcentajes de error para variaciones en el tiempo de muestro}}{74}{table.4.2}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Porcentajes de error para variaciones en la tasa de baudios}}{75}{table.4.3}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Porcentajes de error para variaciones en la topolg\IeC {\'\i }a}}{77}{table.4.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

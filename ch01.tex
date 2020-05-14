@@ -16,3 +16,26 @@ La constitución de la red mallada se elaborará basados en comunicación WiFi a tr
 La red se compondrá de al menos cuatro nodos, donde cada nodo tendrá conexión con al menos otro nodo usando red WiFi y  estarán constituidos por microcontroladores ESP32  con módulo WiFi integrado y el programa asociado a la red. Los nodos deben estar apropiadamente alimentados, cuyo diseño no forma parte del proyecto.
 
 El programa se diseñará para que se logre transportar la información bajo el protocolo Modbus  por la red inalámbrica, considerando que solo en un nodo está conectado el maestro. Así mismo, algunos de los nodos restantes poseerán esclavos. Cabe resaltar que las unidades que generan los datos del protocolo Modbus (maestro y esclavos) no forman parte de la red a diseñar, ya que se asume que se recibe información en los  nodos sin tener en cuenta mayor detalle de su origen.
+\section{Objetivos}
+\subsection{Objetivo General}
+Diseñar e implementar una red WiFi mallada que soporte protocolo Modbus usando microcontroladores ESP32 para equipos de control industrial.
+
+\subsection{Objetivos específicos}
+
+\begin{enumerate}
+\item Documentar el funcionamiento de las redes WiFi malladas.
+
+\item Diseñar una red mallada basada en el microcontrolador ESP32.
+
+
+\item Implementar el módulo del programa para el manejo del protocolo Modbus en el bus RS-485.
+
+\item Implementar el programa de la red diseñada que soporte la transmisión del protocolo Modbus.
+
+\item Diseñar el circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32.
+
+\item Implementar la red mallada diseñada.
+
+\item Analizar el rendimiento de la red de acuerdo a variaciones en los parámetros de transmisión de datos. 
+
+\end{enumerate}

@@ -22,15 +22,7 @@ En el capítulo I se expone el problema se da la justificación y alcance del trab
 
 El capítulo III se encarga de la descripción de las metodologías empleadas para alcanzar los objetivos del trabajo, profundizando en las etapas del diseño  e implementación de hardware y software.
 
-serán de interés para realizar la implementación del prototipo.
-En el capítulo IV, 'Diseño del sistema de acceso remoto', se seleccionarán los
-dispositivos que serán de utilidad para los requerimientos de la realización de esta
-mejora al brazo manipulador.
-En el capítulo V, 'Sistema de acceso remoto', se describirá el diseño de la
-interfaz de usuario web y la aplicación Android. Así como también se mencionarán
-las herramientas de software utilizadas para cada proceso.
-Finalmente, se exponen las conclusiones sobre el alcance de este proyecto y
-las recomendaciones generadas para mejoras del prototipo.
+El capítulo IV  se presentan los resultados y análisis de las pruebas de rendimiento efectuadas a la red. Finalmente, se exponen las conclusiones obtenidas mediante los estudios realizados en el trabajo y se efectuan recomendaciones para futuros estudios relacionados.
  
 \newpage
 \section*{Objetivos}
