@@ -115,9 +115,9 @@ El uso de microcontroladores avanzados incrementa altamente el costo  de la cons
 
 A continuación se describe el funcionamiento de algunas de redes WiFi malladas, es de observar que existe una amplia gama de funcionamientos, cada una caracterizada por su aplicación, se expondrán algunas relacionadas con el objetivo del trabajo. 
 
-\subsection{Pior Lech and Przemyslaw Wlodarski}\label{primera}
+\subsection{Red mallada para Internet de las cosas (IoT)}\label{primera}
 
-En su artículo \textit{Analysis of the IoT WiFi Mesh Network} (Análisis de las redes WiFi malladas IoT)\citep{IoTWMN}, llevan a cabo un análisis estadístico de rendimiento sobre una red WiFi mallada. Para lograrlo usan la versión de desarrollo del módulo de comunicación NodeMCU ESP8266. La operación básica de cada nodo en la red es el modo AP+STA(Punto de acceso y estación). La estrategia de entre los nodos esta basada en la transmisión de un único mensaje a los nodos con número mayor de el asociado a la estación receptora. Todos los nodos posee un número fijo asignado que crece desde la fuente (RPi 1) en la dirección de la estación destino (RPi 2).
+Pior Lech and Przemyslaw Wlodarski en su artículo \textit{Analysis of the IoT WiFi Mesh Network} (Análisis de las redes WiFi malladas IoT) \citep{IoTWMN}, llevan a cabo un análisis estadístico de rendimiento sobre una red WiFi mallada. Para lograrlo usan la versión de desarrollo del módulo de comunicación NodeMCU ESP8266. La operación básica de cada nodo en la red es el modo AP+STA (Punto de acceso y estación),todos los nodos posee un número fijo asignado que crece desde la fuente (RPi 1) en la dirección de la estación destino (RPi 2). La estrategia de entre los nodos está basada en la transmisión del mensaje a los nodos con un número mayor al asociado a la estación transmisora. 
 
 De acuerdo a la figura  \ref{Fig3: Esquema WMN 1} se pueden seleccionar las siguientes rutas: 1-2-5, 1-2-3-5, 1-2-4-5, 1-3-5 y 1-4-5. El número asignado esta estrechamente relacionado con las direcciones IP. Los mensajes son enviados a través del protocolo UTP.  La fuente de los mensajes es la microcomputadora Raspberry Pi v.2 (Rpi 1) la cual envía mensajes a el nodo 1. Los módulos NodeMCU duplican el mensaje y lo reenvían acorde a la estrategia antes mencionada. Todo el tráfico de datos termina en el segundo Raspberry Pi (RPi 2) a través del nodo 5. Los nodos que llevan a cabo la duplicación del mensaje, envían estos en un ciclo, del menor al mayor número asociado con el nodo. 
 
@@ -126,12 +126,12 @@ De acuerdo a la figura  \ref{Fig3: Esquema WMN 1} se pueden seleccionar las sigu
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{wmn-ex_1.png}
-\caption{Topología usada por Lech y Wlodarski}\label{Fig3: Esquema WMN 1}
+\caption{Topología usada por Lech y Wlodarski \citep{IoTWMN}}\label{Fig3: Esquema WMN 1}
 \end{figure}
 
-\subsection{Yujun Cheng, Dong Yang y Huachun Zhou}\label{segunda}
+\subsection{}\label{segunda}
 
-Yujun Cheng, Dong Yang y Huachun Zhou en su artículo \textit{A Load Balancing Approach in 802.11 Wireless Networks for Industrial Soft Real-Time Applications} \citep{article3} (Un Enfoque de Carga Equilibrada  en Redes Inalámbricas 802.11 para  Aplicaciones  Industriales Ligeras en Tiempo Real) propone un arquitectura basada en el que distribución de los nodos esta directamente relacionada con la cantidad de enlaces que posee cada uno, de manera de distribuirlos equitativamente.
+Yujun Cheng, Dong Yang y Huachun Zhou en su artículo \textit{A Load Balancing Approach in 802.11 Wireless Networks for Industrial Soft Real-Time Applications} \citep{article3} (Un Enfoque de Carga Equilibrada  en Redes Inalámbricas 802.11 para  Aplicaciones  Industriales Ligeras en Tiempo Real) propone una arquitectura basada en el que distribución de los nodos esta directamente relacionada con la cantidad de enlaces que posee cada uno, de manera de distribuirlos equitativamente.
 
 El estándar 802.11 no define ningún mecanismo para el balanceamiento de carga. Casi todos los adaptadores 802.11 se asocian con el punto de acceso que posea la mayor intensidad de señal, por que las redes son propensas a  una distribución desigual de recursos, lo que significa que algunas AP exceden o se acercan a la capacidad de carga máxima, mientras que la de otras permanecen relativamente baja. En este enfoque, el proceso de asociación de las estaciones  no está simplemente relacionado con la intensidad de señal, sino que también está basado en la carga que posee cada AP.  El algoritmo provee una compensación entre la intensidad de señal y la carga, cambiando las estaciones de  los punto de acceso  sobrecargados con una intensidad de señal alta,  a un punto de acceso vecino menos cargado y la intensidad de señal que pudiese ser más débil.
 
