@@ -24,7 +24,7 @@ Las funciones específicas que están encapsuladas en la capa MAC, varían de un pr
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{mac.png}\label{Fig2: Esquema Mac}
-\caption{El propósito de la capa MAC es administrar el espectro}
+\caption{Localización de la MAC sobre la interfaz física}
 \end{figure}
 
 \subsection*{Dirección MAC}
@@ -37,7 +37,7 @@ Las direcciones MAC se componen de doce número hexadecimales (48  bits de longit
 MM:MM:MM:SS:SS:SS \quad o \quad MM-MM-MM-SS-SS-SS
 \end{equation}
 }
-La primera mitad de la dirección MAC contiene el número identificador del fabricante  del adaptador(i.e. 00:A0:C9:14:C8:29). Dichos identificadores están regulados por un estadar de Internet. La segunda parte de la dirección MAC representa el número de serial asignado al adaptador por el fabricante. La suplantación de MAC es equivalente a hacerce cargo de los controladores de interfaz de red (NIC). La unicidad de la dirección MAC es esencial en todas la fases de la comunicación de red porque mapea todos los identificadores de las capas superiores \citep{MACen}.
+La primera mitad de la dirección MAC contiene el número identificador del fabricante  del adaptador(i.e. 00:A0:C9:14:C8:29). Dichos identificadores están regulados por un estándar de Internet. La segunda parte de la dirección MAC representa el número de serial asignado al adaptador por el fabricante. La suplantación de MAC es equivalente a hacerce cargo de los controladores de interfaz de red (NIC). La unicidad de la dirección MAC es esencial en todas la fases de la comunicación de red porque mapea todos los identificadores de las capas superiores \citep{MACen}.
 
 \section{La Referencia del Modelo OSI}
 
@@ -80,16 +80,16 @@ Otra característica en esta capa es la inclusión del control de flujo y los agra
 
 \subsection{La capa de red}
 
-La capa de red en la responsable por controlar la operación de la subred. La carga de la trama de datos, en esta capa, es llamada paquete. Esta capa determina cómo mover el paquete desde la fuente al destino usando las rutas apropiadas. La determinación de dichas rutas puede puede ser estático o dinámico. La capa de red también maneja la congestión de la red. 
+Esta capa es la responsable por controlar la operación de la subred. La carga de la trama de datos, en esta capa, es llamada paquete y  determina cómo moverlo  desde la fuente al destino usando las rutas apropiadas, la determinación de dichas rutas puede puede ser estática o dinámica. Esta capa también maneja la congestión de la red. 
 
-La capa de red tiene que lidiar con problemas relacionados con las diferentes arquitecturas de red, diferentes direccionamientos, y diferentes condiciones de operación y restricciones, tanto en los sistemas de origen como en los de destino. La heterogeneidad de red es tomada en cuenta en esta capa.
+La capa de red tiene que lidiar con problemas relacionados con las diferentes arquitecturas de red, diferentes direccionamientos, y diferentes condiciones de operación y restricciones, tanto en los sistemas de origen como en los de destino. La heterogeneidad de red es tomada en cuenta a este nivel.
 
 \subsection{La capa de transporte}
- La función básica de la capa de transporte es aceptar datos de un capa más alta, descomponerla en unidades más pequeñas, si es  necesario, para pasarlas a la capa de red, y asegurarse que estas piezas llegar correctamente al destino. Para propósitos de eficiencia, la capa de transporte puede multiplexar varias conexiones de transporte.
+ La función básica de la capa de transporte es aceptar datos de un capa más alta, descomponerla en unidades más pequeñas, si es  necesario y asegurarse que estas piezas llegar correctamente al destino. Para propósitos de eficiencia, se puede multiplexar varias conexiones de transporte.
  
- La capa de transporte es la primera capa fin-a-fin  de la pila. En las capas más bajas, la interacción real no necesitaba estar entre los sistemas de de fuente y destino. Enrutadores o sistemas intermedios podían ser parte de la transacción. La interacción en esta capa, sin embargo, es siempre entre puntos finales.
+ Es la primera capa fin-a-fin  de la pila. En las capas más bajas, la interacción real no necesitaba estar entre los sistemas de de fuente y destino. Enrutadores o sistemas intermedios podían ser parte de la transacción. La interacción en este nivel, sin embargo, es siempre entre puntos finales.
  
- El control de flujo juega un rol importante en la capa de transporte (Así como en las otras capas). 
+ El control de flujo juega un rol importante en esta abstracción. 
 
 
 \subsection{Capa de sesión}
@@ -109,11 +109,11 @@ Protocolos de comando-respuesta y basados en texto, forman parte de esta capa.
 
 \section{Funcionamiento de las redes WiFi malladas}
 
-La implementación de la topología mallada ha encontrado problemas con la necesidad de procedimientos adicionales relacionados con el enrutamiento. Hay algunos protocolos que soportan el servicio de red mallada sobre la red IP, por ejemplo: B.A.T.M.A.N. (Better Approach To MobiLle Adhoc Networking), Babel (Un protocolo de distancia de vector para IPv6 y IPv4 con propiedades de convergencia rápida), HWMP (Protocolo Híbrido Inalámbrico Mallado).  El uso de estos protocolos requiere la completa implementación de la pila TCP/IP y una poder de computación significativo, lo cual limita sus implementaciones. Sin embargo, no todos los equipos (para comunicaciones WiFi) soportan un protocolo particular\citep{IoTWMN}. 
+La implementación de la topología mallada ha encontrado problemas con la necesidad de procedimientos adicionales relacionados con el enrutamiento. Hay algunos protocolos que soportan el servicio de red mallada sobre la red IP, por ejemplo: B.A.T.M.A.N. (Better Approach To MobiLle Adhoc Networking), Babel (Protocolo de distancia de vector para IPv6 y IPv4 con propiedades de convergencia rápida), HWMP (Protocolo Híbrido Inalámbrico Mallado).  El uso de estos protocolos requiere la completa implementación de la pila TCP/IP y un poder de computación significativo, lo cual limita sus implementaciones. Sin embargo, no todos los equipos (para comunicaciones WiFi) soportan un protocolo particular\citep{IoTWMN}. 
 
 El uso de microcontroladores avanzados incrementa altamente el costo  de la construcción de la red, que muchas veces no son necesarios para aplicaciones donde se necesita obtener información sobre los procesos lentos a través de mediciones periódicas.  Un amplio rango de módulos simples WiFi hechos como Sistemas en un Chip (SoC), que además de manejar estándares de comunicación, pueden adquirir datos a través de entradas y salidas de propósito general. Estos abren la posibilidad para la construcción de sensores de red de bajo costo en la ampliamente usada WMN. Sin embargo, cuando muy poco poder de procesamiento no permite la implementación de algoritmos avanzados que soporten el enrutamiento IP en la topología mallada, es posible crear una red simplificada mientras se mantienen las características principales de las redes malladas. 
 
-A continuación se describe el funcionamiento de algunas de redes WiFi malladas, es de observar que existe una amplia gama de funcionamientos, cada una caracterizada por su aplicación, se resaltan las más relacionadas con el objetivo del trabajo. 
+A continuación se describe el funcionamiento de algunas de redes WiFi malladas, es de observar que existe una amplia gama de funcionamientos, cada una caracterizada por su aplicación, se expondrán algunas relacionadas con el objetivo del trabajo. 
 
 \subsection{Pior Lech and Przemyslaw Wlodarski}\label{primera}
 

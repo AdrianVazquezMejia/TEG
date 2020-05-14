@@ -2,9 +2,9 @@ En este capítulo se tratarán los fundamentos de las redes WiFi malladas, protoco
 
 \section{Fundamentos de las redes WiFi malladas}
 
-Una red WiFi mallada (WMN) se puede definir como  una red que permite la comunicación entre nodos a través de múltiples saltos en una topología mallada \citep{bahr}. Los nodos son los  intermediarios encargados de la formación de la red y la vinculación entre los dispositivos que la usan. Una WMN usualmente poseen clientes, enrutadores y puertas de enlace. Los clientes son dispositivos electrónicos, sistemas embebidos o sensores que pueden comunicarse con otros en la red. El enrutador es un dispositivo electrónicos que sirve como un intermediario entre dos o mas redes para transportar los datos de una red a otra.  Y las compuertas de enlace son dispositivo electrónico que conecta la red con Internet. 
+Una red WiFi mallada (WMN) se puede definir como  una red que permite la comunicación entre nodos a través de múltiples saltos en una topología mallada \citep{bahr}. Los nodos son los  intermediarios encargados de la formación de la red y la vinculación entre los dispositivos que la usan. Una WMN usualmente poseen clientes, enrutadores y puertas de enlace. Los clientes son dispositivos electrónicos, sistemas embebidos o sensores que pueden comunicarse con otros en la red. El enrutador es un dispositivo electrónico que sirve como un intermediario entre dos o mas redes para transportar los datos de una red a otra.  Y las compuertas de enlace son dispositivos electrónicos que conectan la red con Internet. 
 
-Cuando un nodo no puede operar, el resto de los nodos en la WMN aún pueden comunicarse con los otros, bien sea, directa o indirectamente a través de uno o más nodos intermediarios\citep{ScienceDirect}.
+Cuando un nodo no puede operar, el resto de los nodos en la WMN aún pueden comunicarse con los otros, bien sea, directa o indirectamente a través de uno o más nodos intermediarios \citep{ScienceDirect}.
 
 \begin{figure}[H]
 \centering
@@ -24,7 +24,7 @@ Las funciones específicas que están encapsuladas en la capa MAC, varían de un pr
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{mac.png}\label{Fig2: Esquema Mac}
-\caption{El propósito de la capa MAC es administrar el espectro}
+\caption{Localización de la MAC sobre la interfaz física}
 \end{figure}
 
 \subsection*{Dirección MAC}
@@ -37,7 +37,7 @@ Las direcciones MAC se componen de doce número hexadecimales (48  bits de longit
 MM:MM:MM:SS:SS:SS \quad o \quad MM-MM-MM-SS-SS-SS
 \end{equation}
 }
-La primera mitad de la dirección MAC contiene el número identificador del fabricante  del adaptador(i.e. 00:A0:C9:14:C8:29). Dichos identificadores están regulados por un estadar de Internet. La segunda parte de la dirección MAC representa el número de serial asignado al adaptador por el fabricante. La suplantación de MAC es equivalente a hacerce cargo de los controladores de interfaz de red (NIC). La unicidad de la dirección MAC es esencial en todas la fases de la comunicación de red porque mapea todos los identificadores de las capas superiores \citep{MACen}.
+La primera mitad de la dirección MAC contiene el número identificador del fabricante  del adaptador(i.e. 00:A0:C9:14:C8:29). Dichos identificadores están regulados por un estándar de Internet. La segunda parte de la dirección MAC representa el número de serial asignado al adaptador por el fabricante. La suplantación de MAC es equivalente a hacerce cargo de los controladores de interfaz de red (NIC). La unicidad de la dirección MAC es esencial en todas la fases de la comunicación de red porque mapea todos los identificadores de las capas superiores \citep{MACen}.
 
 \section{La Referencia del Modelo OSI}
 
@@ -80,16 +80,16 @@ Otra característica en esta capa es la inclusión del control de flujo y los agra
 
 \subsection{La capa de red}
 
-La capa de red en la responsable por controlar la operación de la subred. La carga de la trama de datos, en esta capa, es llamada paquete. Esta capa determina cómo mover el paquete desde la fuente al destino usando las rutas apropiadas. La determinación de dichas rutas puede puede ser estático o dinámico. La capa de red también maneja la congestión de la red. 
+Esta capa es la responsable por controlar la operación de la subred. La carga de la trama de datos, en esta capa, es llamada paquete y  determina cómo moverlo  desde la fuente al destino usando las rutas apropiadas, la determinación de dichas rutas puede puede ser estática o dinámica. Esta capa también maneja la congestión de la red. 
 
-La capa de red tiene que lidiar con problemas relacionados con las diferentes arquitecturas de red, diferentes direccionamientos, y diferentes condiciones de operación y restricciones, tanto en los sistemas de origen como en los de destino. La heterogeneidad de red es tomada en cuenta en esta capa.
+La capa de red tiene que lidiar con problemas relacionados con las diferentes arquitecturas de red, diferentes direccionamientos, y diferentes condiciones de operación y restricciones, tanto en los sistemas de origen como en los de destino. La heterogeneidad de red es tomada en cuenta a este nivel.
 
 \subsection{La capa de transporte}
- La función básica de la capa de transporte es aceptar datos de un capa más alta, descomponerla en unidades más pequeñas, si es  necesario, para pasarlas a la capa de red, y asegurarse que estas piezas llegar correctamente al destino. Para propósitos de eficiencia, la capa de transporte puede multiplexar varias conexiones de transporte.
+ La función básica de la capa de transporte es aceptar datos de un capa más alta, descomponerla en unidades más pequeñas, si es  necesario y asegurarse que estas piezas llegar correctamente al destino. Para propósitos de eficiencia, se puede multiplexar varias conexiones de transporte.
  
- La capa de transporte es la primera capa fin-a-fin  de la pila. En las capas más bajas, la interacción real no necesitaba estar entre los sistemas de de fuente y destino. Enrutadores o sistemas intermedios podían ser parte de la transacción. La interacción en esta capa, sin embargo, es siempre entre puntos finales.
+ Es la primera capa fin-a-fin  de la pila. En las capas más bajas, la interacción real no necesitaba estar entre los sistemas de de fuente y destino. Enrutadores o sistemas intermedios podían ser parte de la transacción. La interacción en este nivel, sin embargo, es siempre entre puntos finales.
  
- El control de flujo juega un rol importante en la capa de transporte (Así como en las otras capas). 
+ El control de flujo juega un rol importante en esta abstracción. 
 
 
 \subsection{Capa de sesión}
