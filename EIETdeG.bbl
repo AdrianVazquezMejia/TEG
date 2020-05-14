@@ -406,4 +406,27 @@ Systems, E.%
   \url{https://www.espressif.com/sites/default/files/documentation/esp-wroom-02_pcb_design_and_module_placement_guide_0.pdf}}
 \PrintBackRefs{\CurrentBib}
 
+\bibitem [\protect \citeauthoryear {%
+Systems%
+}{%
+Systems%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+esp32}
+\APACinsertmetastar {%
+esp32}%
+\begin{APACrefauthors}%
+Systems, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{05}{}.
+\newblock
+\APACrefbtitle {ESP32-WROOM-32 Datasheet.} {Esp32-wroom-32 datasheet.}
+\newblock
+\APACrefnote{[Internet; accedido el 14 de Mayo del 2020] Disponible en:
+  \url{https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf}}
+\PrintBackRefs{\CurrentBib}
+
 \end{thebibliography}

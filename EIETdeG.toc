@@ -21,16 +21,16 @@
 \contentsline {subsection}{\numberline {2.2.7}La capa de aplicaci\'on}{13}{subsection.2.2.7}
 \contentsline {section}{\numberline {2.3}Funcionamiento de las redes WiFi malladas}{14}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Red mallada para Internet de las cosas (IoT)}{15}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}}{16}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}El protocolo ESP-MESH de Espressif}{18}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.2}Red mallada y el balaceo de carga}{16}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}El protocolo ESP-MESH de Espressif \citep {MESHIDF}}{18}{subsection.2.3.3}
 \contentsline {subsubsection}{Tramas de faro y l\IeC {\'\i }mite de RSSI}{19}{section*.12}
 \contentsline {subsubsection}{La selecci\'on del nodo padre}{19}{section*.13}
 \contentsline {subsubsection}{Las tablas de enrutamiento}{20}{section*.14}
 \contentsline {section}{\numberline {2.4}Protocolo MODBUS}{20}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Modelo de datos MODBUS}{22}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Protocolo Modbus sobre linea serial}{23}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.1}Modelo de datos Modbus}{22}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Protocolo Modbus sobre l\IeC {\'\i }nea serial}{23}{subsection.2.4.2}
 \contentsline {subsubsection}{Modos de transmisi\'on serial}{23}{section*.15}
-\contentsline {section}{\numberline {2.5}Microcontrolador ESP32}{24}{section.2.5}
+\contentsline {section}{\numberline {2.5}Microcontrolador ESP32 \citep {esp32}}{24}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}Caracter\IeC {\'\i }sticas principales del WiFi}{25}{subsection.2.5.1}
 \contentsline {subsection}{\numberline {2.5.2}Caracter\IeC {\'\i }sticas principales de CPU y memoria}{26}{subsection.2.5.2}
 \contentsline {subsection}{\numberline {2.5.3}Relojes y Temporizadores}{26}{subsection.2.5.3}
