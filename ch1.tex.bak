@@ -251,18 +251,18 @@ El bit de paridad es requerido, para asegurar la máxima compatibilidad.  Es reco
 
 Toda la trama Modbus debe ser enviada de forma continua sin superar silencios de un tiempo equivalente de 1,5 caracter entre dos caracteres, de otra manera se originaria un error de trama.  El espaciado entre tramas es marcado por silencios mayores entre 3,5 caracteres. 
 
-\section{Microcontrolador ESP32}
+\section{Microcontrolador ESP32 \citep{esp32}}
 
-El \mcu es un chip con integración WiFi y Bluetooth diseñado con la tecnología de ultra bajo consumo de 40 nm. Este microcontrolador esta diseñado para aplicaciones móviles, electrónicos personales, y de Internet de las cosas (IoT). Posee características de bajo consumo, incluyendo reloj de alta precisión, múltiples estados de energía, y escalamiento de consumo dinámico. 
+El \mcu es un chip con integración WiFi y Bluetooth diseñado con la tecnología de ultra bajo consumo de 40 nm. Este microcontrolador esta diseñado para aplicaciones móviles, electrónicos personales, y de Internet de las cosas (IoT). Posee características de bajo consumo, incluyendo reloj de alta precisión, múltiples estados de energía, y escalamiento de consumo dinámico\citep{esp32}. 
 
 Además es una solución integrada, que ya posee WiFi, Bluetooth, junto con alrededor de 20 componentes externos. El chip incluye una interruptor de antena, acoplador de radio-frecuencia, amplificador de potencia, amplificador de recepción de bajo ruido, filtros, y módulos de administración de consumo. 
 
-Este microcontrolador posee dos núcleos CPU que pueden ser individualemente controlados, con un reloj ajustable entre 80 MHz y 120 MHz. Además, usa el sistema operativo en tiempo real freeRTOS y tensión de alimentación nominal de 3,3 V.
+Este microcontrolador posee dos núcleos CPU que pueden ser individualmente controlados, con un reloj ajustable entre 80 MHz y 120 MHz. Además, usa el sistema operativo en tiempo real freeRTOS y tensión de alimentación nominal de 3,3 V.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{block-diagram.png}\label{Fig7: Diagrama ESP32}
-\caption{Diagrama funcional del ESP-32}
+\caption{Diagrama funcional del ESP-32\citep{esp32}}
 \end{figure}
 
 \subsection{Características principales del WiFi}

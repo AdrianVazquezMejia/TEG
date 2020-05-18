@@ -1,14 +1,14 @@
-En esta capitulo se describirá el diseño de la red, detalles de software y hardware de los nodos.
+En este capítulo se describirá el diseño de la red, detalles de software y hardware de los nodos.
 
 \section{DISEÑO DE LA RED MALLADA}
 
 Tomando en cuenta la investigaciones realizadas se encontró que en el campo de las redes WiFi malladas no existe un protocolo de aplicación definido, en su lugar, las redes son ajustadas a las necesidades específicas del campo en cual se vaya a implementar, esto trae como consecuencia que las especificaciones se concentren en el máximo rendimiento en las áreas críticas del problema. 
 
-Dentro de los funcionamiento descritos anteriormente, se tiene que el funcionamiento descrito en la sección \ref{primera} se concentra en el algoritmo de optimización de la topología de la red, sin tomar en consideración el hardware de implementación. Por otro lado en la sección  \ref{segunda}, se provee una aproximación más realista, donde existen  especificaciones del hardware, sin embargo, no hay justificación para el enrutamiento usado y las medidas de rendimiento aplicadas no son de interés para el área industrial. Por último, se tiene que la ESP-MESH parecía  brindar extensibilidad y rápido desarrollo, no obstante, posee la desventaja de la necesidad de un enrutador WiFi  para la formación, que brinde las direcciones IP a la red mallada, lo que deriva en un centralización, pues si el router falla, la red perece. 
+Dentro de los funcionamientos descritos anteriormente, se tiene que el  descrito en la sección \ref{primera} se concentra en el algoritmo de optimización de la topología de la red, sin tomar en consideración el hardware de implementación. Por otro lado, en la sección  \ref{segunda}, se provee una aproximación más realista, donde existen  especificaciones del hardware, sin embargo, no hay justificación para el enrutamiento usado y las medidas de rendimiento aplicadas no son de interés para el área industrial. Por último, se tiene que la ESP-MESH parecía  brindar extensibilidad y rápido desarrollo, no obstante, posee la desventaja de la necesidad de un enrutador WiFi  para la formación, que brinde las direcciones IP a la red mallada, lo que deriva en un centralización, pues si el router falla, la red perece. 
 
 Por lo tanto, es conveniente poseer una arquitectura especifica de la red mallada para el funcionamiento dentro de una red \mb. Así se puede adaptar y configurar de manera más óptima y confiable para las funciones y características del protocolo  \mb.
 
-Para la creación de red inalámbricas WiFi usando el microcontrolador \mcu, \emph{Espressif Systems} a través del \emph{ESP-IDF} (Espacio de trabajo para desarrollo de Internet de las cosas) provee de dos librerías: la ya mencionada ESP-MESH y ESP-NOW.  La librería ESP-NOW fue ideada para comunicaciones punto a punto en esquemas maestro/esclavo, no para creaciones de redes multi-salto, sin embargo, posee la expansibilidad de manipular el direccionamiento de los datos, brindado la potencialidad de crear redes de diversas arquitecturas.
+Para la creación de redes inalámbricas WiFi usando el microcontrolador ESP-32,\emph{Espressif Systems} a través del \emph{ESP-IDF} (Espacio de trabajo para desarrollo de Internet de las cosas) provee dos librerías: la ya mencionada ESP-MESH y ESP-NOW.  La librería ESP-NOW fue ideada para comunicaciones punto a punto en esquemas maestro/esclavo, no para creaciones de redes multi-salto, sin embargo, posee la expansibilidad de manipular el direccionamiento de los datos, brindado la potencialidad de crear redes de diversas arquitecturas.
 
 \subsection{ESP-NOW}
 \espn  es un tipo de protocolo de comunicación WiFi definido por \emph{Espressif Systems} donde los datos de aplicación son encapsulados en una trama específica por el proveedor y es transmitida de un dispositivo \wf a otro. Para proteger la trama de acción por seguridad se usa el protocolo CCMP (Protocolo de código de autenticación de mensaje de encadenamiento de bloque de cifrado en modo contador). \espn es ampliamente usada en luces inteligente, control remoto y sensores.
@@ -27,7 +27,7 @@ Para la creación de red inalámbricas WiFi usando el microcontrolador \mcu, \emph
  
 \subsubsection{Estructura de la trama}
 
-Actualmente, el estándar 802.11 clasifica las tramas como tramas datos, tramas de control, o tramas gestión. La trama de datos transmite la información en las capas más altas. Las tramas de control son usadas para agradecimientos y reservaciones. Finalmente, los dispositivos usan las tramas de gestión para configurar, organizar y mantener el enlace local.
+Actualmente, el estándar 802.11 clasifica las tramas como de datos, de control, o de gestión. La trama de datos transmite la información en las capas más altas. Las tramas de control son usadas para agradecimientos y reservaciones. Finalmente, los dispositivos usan las tramas de gestión para configurar, organizar y mantener el enlace local.
 
 \espn usa una trama de acción (Trama de control) específica de proveedor para transmitir datos. La tasa de transmisión por defecto es de 1 Mbps y formato de la trama es como se muestra en la tabla \ref{Tabla: espn}.
 \begin{table}[H]
@@ -38,9 +38,9 @@ Dirección MAC & Código de categoría & Identificador de organización & Valores al
 \hline 
 24 bytes & 1 byte & 3 bytes & 4 bytes & 7-255 bytes & 4 bytes \\ 
 \hline 
-\end{tabular}\label{Tabla: espn}
+\end{tabular}
 }
-\caption{Trama de acción  \espn}
+\caption{Trama de acción  \espn}\label{Tabla: espn}
 \end{table}
 
 \begin{enumerate}
@@ -103,21 +103,21 @@ data\_len & Longitud de los datos \\
 
 \subsubsection{Gestión y formación mallada}
 
-Una señal broadcast proveniente de un nodo se usa para detectar la red y obtener información sobre su configuración. Los nodos se detectan entre sí en un escaneo activo. La trama de escaneo se identifica debido a que es generada mediante broadcast. La información recibida posee tres campos claves: información del identificador del nodo, si se ha recibido o no información broadcast antes del nodo por el que se está buscando y un campo adicional \mb. El escaneo se realiza cuando un nodo no posee la dirección MAC de otro nodo en su tabla de enrutamiento y se requiere enviar datos a este. La fuente de datos posee el esclavo Modbus destino, lo que es usado para registrar solo aquellos nodos que tengan relación con el esclavo particular.  Una vez los nodos se han registrado unos a otros la relación permanece, incluso si algún nodo es apagado, una vez sea se reinicie la red permite una rápida reconexión.
+Una señal broadcast proveniente de un nodo se usa para detectar la red y obtener información sobre su configuración. Los nodos se detectan entre sí en un escaneo activo. La trama de escaneo se identifica debido a que es generada mediante broadcast. La información recibida posee tres campos claves: información del identificador del nodo, si se ha recibido o no información broadcast antes del nodo por el que se está buscando y un campo adicional Modbus. El escaneo se realiza cuando un nodo no posee la dirección MAC de otro nodo en su tabla de enrutamiento y se requiere enviar datos a este. La fuente de datos posee el esclavo Modbus destino, lo que es usado para registrar solo aquellos nodos que tengan relación con el esclavo particular.  Una vez los nodos se han registrado unos a otros la relación permanece, incluso si algún nodo es apagado, una vez sea se reinicie la red permite una rápida reconexión.
 
 Los nodos solo usan un transceptor simple, por lo tanto, la red mallada opera en un solo canal de frecuencia WiFi. Esto indica que se puede colocar una red en cada canal WiFi en un mismo espacio físico, sin llegar a tener conflictos de este tipo. 
 
 \subsubsection{Seguridad}
 Cada nodo \espn usa el método CCMP, el cual está descrito en el estándar 802.11- 2012, para proteger la trama de acción específica del proveedor. Esto junto con un algoritmo de cifrado mutuo, los nodos emparejados usan una llave maestra primaria (PMK) que es usada para cifrar las  llaves de cifrado locales (LMK) con el algoritmo AES-128. Este método de permite la autenticación entre dos nodos emparejados. Debido a que es un cifrado por emparejamiento, cada vínculo es independientemente asegurado, como consecuencia, \espn no provee cifrado fin-a-fin. 
 
-El cifrado para comunicación broadcast no esta soportado. Las llaves locales(LMK) son usadas por el método CCMP y cada nodo puede contener hasta seis llaves diferentes, si la llave local no se establece la trama de acción permanece sin cifrado. 
+El cifrado para comunicación broadcast no esta soportado. Las llaves locales son usadas por el método CCMP y cada nodo puede contener hasta seis llaves diferentes, si la llave local no se establece la trama de acción permanece sin cifrado. 
 %agregar esquema 
 
 \subsubsection{Selección de rutas}
 
-Las rutas no son determinadas por la red, si no por el usuario que la implemente. Además, son estáticas y no se reasignan automáticamente, estas rutas permanecen en una tabla unidimensional, con los identificadores de los nodos destinos. El enrutamiento está estrechamente relacionado con los esclavo Modbus, y están representados por las posiciones en la tabla de enrutamiento.
+Las rutas no son determinadas por la red, si no por el usuario que la implemente. Además, son estáticas y no se reasignan automáticamente, estas rutas permanecen en una tabla unidimensional, con los identificadores de los nodos destinos. El enrutamiento está estrechamente relacionado con los esclavos Modbus, y están representados por las posiciones en la tabla de enrutamiento.
 
-La red no propaga información de las rutas, por lo que cada nodo solo conoce la ruta para una salto en cualquier sentido. Sin embargo, es posible solicitar y configurar las rutas de los nodos inalabricamente.
+La red no propaga información de las rutas, por lo que cada nodo solo conoce la ruta para una salto en cualquier sentido. Sin embargo, es posible solicitar y configurar las rutas de los nodos inalanbricamente.
 
 La tabla de enrutamiento posee 256 casillas (una para cada esclavo Modbus), donde la posición está asociada al esclavo Modbus y el valor en la casilla se relaciona con la ubicación de dicho esclavo. Cabe resaltar que el identificador al que se refiere la tabla de enrutamiento como destino no es la localización del esclavo en la red. En la figura \ref{Fig  2: Tabla de enrutamiento} se ilustra el la arquitectura e interpretación de la tabla de enrutamiento asociada al nodo 255.
  
@@ -146,7 +146,7 @@ Existe otra tabla de enrutamiento para las respuestas, de manera tal que las rut
 
 \subsubsection{Características Modbus de los nodos}
  
-Los nodos de la red son esclavos adicionales de la red Modbus, con direcciones reservadas para ellos desde el identificador(101). El modo de operación Modbus en los nodos permite que se puedan obtener  y configurar parámetros de la red, como la tabla de enrutamiento de los nodos. Además el proceso es realizado mediante un protocolo estandarizado y que esta relacionado con la red.
+Los nodos de la red son esclavos adicionales de la red Modbus, con direcciones reservadas para ellos desde el identificador (101). El modo de operación Modbus en los nodos permite que se puedan obtener  y configurar parámetros de la red, como la tabla de enrutamiento de los nodos. Además el proceso es realizado mediante un protocolo estandarizado y que esta relacionado con la red.
 
 El funcionamiento como esclavo Modbus en los nodos es permanente, incluso cuando ya se ha implementado la red con equipos Modbus seriales externos, permitiendo actualización de parámetro de la red en cualquier momento. 
 
@@ -195,7 +195,7 @@ Cabe resaltar que estos nodos pueden ser interrogados tanto serial como inalambr
 
 \subsubsection{El hardware}\label{hardware}
 
-El hardware del nodo se puede dividir en tres bloques: el microcontrolador, la alimentación y la interfaz serial. Esto de puede ilustrar en el esquema de la figura \ref{Fig  4: Diagrama de bloques}.
+El hardware del nodo se puede dividir en tres bloques: el microcontrolador, la alimentación y la interfaz serial. Esto se puede ilustrar en el esquema de la figura \ref{Fig  4: Diagrama de bloques}.
  \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{diagrama.eps}\label{Fig  4: Diagrama de bloques}
@@ -203,9 +203,9 @@ El hardware del nodo se puede dividir en tres bloques: el microcontrolador, la a
 \end{figure}
 
 
-\paragraph{Microcontrolador}
+\textbf{Microcontrolador}
 
-Para la aplicación se usó el encapsulado  ESP-WROOM-32, debido a disponibilidad y encapsulado con escudo WiFi . Se debe tener en cuenta que se dejaron disponibles los pines del UART cero para la descarga del software, además de dos pines adicionales para inducir el estado de programación, los cuales son el pin \textit{EN} y el pin de propósito general cero.
+Para la aplicación se usó el encapsulado  ESP-WROOM-32, debido a disponibilidad y encapsulado con escudo WiFi . Se debe tener en cuenta que se dejaron disponibles los pines del UART 0 para la descarga del software, además de dos pines adicionales para inducir el estado de programación, los cuales son el pin \textit{EN} y el pin de propósito general cero.
 
 \begin{figure}[H]
 \centering
@@ -213,7 +213,7 @@ Para la aplicación se usó el encapsulado  ESP-WROOM-32, debido a disponibilidad 
 \caption{Encapsulado ESP-WROOM-32 del ESP32}
 \end{figure}
  
-\paragraph{Alimentación}
+\paragraph{Alimentación}\\
 La alimentación del microcontrolador es de 3,3 V y además los equipos Modbus especifican un rango de tensión de funcionamiento entre 5 V y 25 V. Por lo tanto se escogió el regulador conmutado LM2596S que brinda estas características y además existe una tarjeta pre-fabricada para rápida implementación. La figura \ref{dcdcF} muestra la forma de dicha tarjeta. Además posee un LED testigo de su encendido, que es usado como señal de diagnóstico Modbus.
 
 \begin{figure}[H]
@@ -711,7 +711,7 @@ Cumple la función complementaría a la función \ref{prepare}, descompone los dato
 
 El desarrollo del software de la red ser realizó de forma iterativa sobre las tarjetas de desarrollo, por lo que la red fue implementada mientras era desarrollada. 
 
-Se consideran las  especificaciones del diseño en la sección \ref{hardware} y las recomendaciones  \href{https://www.espressif.com/sites/default/files/documentation/esp-wroom-02_pcb_design_and_module_placement_guide_0.pdf}{recomendaciones}técnicas realizadas por \textit{Espressif} para el diseño de PCB con el ESP32.  
+Se consideran las  especificaciones del diseño en la sección \ref{hardware} y las   \href{https://www.espressif.com/sites/default/files/documentation/esp-wroom-02_pcb_design_and_module_placement_guide_0.pdf}{recomendaciones} técnicas realizadas por \textit{Espressif} para el diseño de PCB con el ESP32.  
 
 \subsubsection{Posicionamiento del ESP32 en el PCB}
 El encapsulado  ESP-WROOM-32 está diseñada para ser soldado en una PCB huésped. El ESP-WROOM-32 usa una antena de F invertida (MIFA),  para la banda de WiFi 2,4 GHz,  con un ganancia de 20dBi. La figura \ref{Fig  1: Antenna Placement} muestra las seis opciones de colocación que son comúnmente usadas (la opción uno es usada como referencia). Los resultados de las pruebas ejecutadas por \emph{Espressif} muestran que las opciones 2 y 3 tienen los mejores rendimientos, mientras el de las otras son sub-óptimos\citep{testAntena}.
@@ -749,7 +749,7 @@ Como se mencionó anteriormente, se usó la fuente LM2596S debido que se ajusta a 
 
 \subsubsection{Arquitectura Circuito Impreso}
 
-Se considera una capa con elementos de superficie (resistencia y condensadores). La fuente se adaptada a través de pin \textit{headers} en la parte posterior de la capa. Se agregan los bloques terminales para el acceso de la alimentación externa y el bus RS-485.  Así mismo, se agregaron 3 pin \textit{headers} para el acceso al UART 0 y dos pares de pin header adicionales para el accionamiento de las funciones de \emph{BOOT} y \emph{EN}, en el ingreso al modo de programación del microcontrolador. El detalle del esquemático de observa en la figura \ref{esquematico}.
+Se considera una capa con elementos de superficie (resistencia y condensadores). La fuente se adapta a través de pin \textit{headers} en la parte posterior de la capa. Se agregan los bloques terminales para el acceso de la alimentación externa y el bus RS-485.  Así mismo, se agregaron 3 pin \textit{headers} para el acceso al UART 0 y dos pares de pin header adicionales para el accionamiento de las funciones de \emph{BOOT} y \emph{EN}, en el ingreso al modo de programación del microcontrolador. El detalle del esquemático de observa en la figura \ref{esquematico}.
 
 Los terminales se agregaron en la parte posterior de la capa del microcontrolador para evitar obstruir el espacio libre de la antena WiFi. observe las figuras \ref{pcbB} y \ref{pcbF}. 
 
@@ -838,7 +838,7 @@ Protoboard  & cables protoboard  & Elego \\
 \end{table}
 \subsubsection{Ilustración de los nodos}
 
- A continuación se presentan imágenes de los nodos donde se implementó la red.
+ A continuación se presentan imágenes (figuras \label{master Node} y \label{Slave Node}) de los nodos donde se implementó la red.
  
  \begin{figure}[H]
  \centering
@@ -877,7 +877,7 @@ Se estimará el error en función de la cantidad de excepciones Modbus que se obte
 error = \dfrac{ cantidad \; de\; excepciones}{cantidad \;de \;solicitudes}  \cdot 100 \%\label{Ecuacion1}
 \end{equation}
 
-Se toma la topología \ref{topo} como base para todas las pruebas, excepto, por supuesto, la prueba de variación de topología.  Se colocó el nodo 150 como el nodo que posee el maestro conectado,  el nodo 151 para ejecutar  reenvío de datos y los nodo 153 y 152 con  un esclavo Modbus conectados.
+Se toma la topología de la figura \ref{topo} como base para todas las pruebas, excepto, por supuesto, la prueba de variación de topología.  Se colocó el nodo 150 como el nodo que posee el maestro conectado,  el nodo 151 para ejecutar  reenvío de datos y los nodo 153 y 152 con  un esclavo Modbus conectados.
 
 Se conectaron los nodos con los nodos inalámbricos a una distancia menor a 10 cm. Se colocó el nodo 150 en la habitación del primer piso de una casa de paredes de concreto, el nodo 153 en otra habitación en la planta baja a una distancia recta del nodo maestro de aproximadamente 15 m, sin linea de vista. El  nodo 152 se dispuso en el primer piso a aproximadamente 8 m, con dos paredes intermedias. Y el nodo 151 en la misma habitación del maestro. 
 

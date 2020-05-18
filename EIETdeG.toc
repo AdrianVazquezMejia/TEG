@@ -47,44 +47,41 @@
 \contentsline {subsubsection}{Gesti\'on y formaci\'on mallada}{34}{section*.17}
 \contentsline {subsubsection}{Seguridad}{35}{section*.18}
 \contentsline {subsubsection}{Selecci\'on de rutas}{36}{section*.19}
-\contentsline {subsubsection}{Caracter\IeC {\'\i }sticas Modbus de los nodos}{39}{section*.20}
+\contentsline {subsubsection}{Caracter\IeC {\'\i }sticas Modbus de los nodos}{38}{section*.20}
 \contentsline {subsubsection}{El hardware}{40}{section*.21}
-\contentsline {paragraph}{Microcontrolador}{40}{section*.22}
-\contentsline {paragraph}{Alimentaci\'on}{41}{section*.23}
-\contentsline {paragraph}{Interfaz serial}{42}{section*.24}
 \contentsline {section}{\numberline {3.2}Detalle del Dise\~no}{44}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Programaci\'on del ESP-32}{44}{subsection.3.2.1}
-\contentsline {subsubsection}{El sistema operativo en tiempo real}{45}{section*.25}
+\contentsline {subsubsection}{El sistema operativo en tiempo real}{45}{section*.22}
 \contentsline {subsection}{\numberline {3.2.2} Programa de la red dise\~nada que soporte la transmisi\'on del protocolo Modbus}{46}{subsection.3.2.2}
-\contentsline {subsubsection}{Librer\IeC {\'\i }as}{46}{section*.26}
-\contentsline {subsubsection}{Inicializaci\'on}{47}{section*.27}
-\contentsline {subsubsection}{Creaci\'on de colas (\emph {Queue})}{47}{section*.28}
-\contentsline {subsubsection}{Las funciones de callback}{48}{section*.29}
-\contentsline {subsubsection}{Registro de puntos}{48}{section*.30}
-\contentsline {subsubsection}{Estructuras de datos relevantes}{49}{section*.31}
+\contentsline {subsubsection}{Librer\IeC {\'\i }as}{46}{section*.23}
+\contentsline {subsubsection}{Inicializaci\'on}{47}{section*.24}
+\contentsline {subsubsection}{Creaci\'on de colas (\emph {Queue})}{47}{section*.25}
+\contentsline {subsubsection}{Las funciones de callback}{48}{section*.26}
+\contentsline {subsubsection}{Registro de puntos}{48}{section*.27}
+\contentsline {subsubsection}{Estructuras de datos relevantes}{49}{section*.28}
 \contentsline {subsection}{\numberline {3.2.3}Tarea esp\_now\_manage\_task}{50}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Tarea espnow\_send}{53}{subsection.3.2.4}
-\contentsline {subsubsection}{Direcciones MAC}{54}{section*.32}
+\contentsline {subsubsection}{Direcciones MAC}{54}{section*.29}
 \contentsline {subsection}{\numberline {3.2.5}Programa para el manejo del protocolo Modbus en el bus RS-485.}{54}{subsection.3.2.5}
-\contentsline {subsubsection}{Librer\IeC {\'\i }as}{56}{section*.33}
+\contentsline {subsubsection}{Librer\IeC {\'\i }as}{56}{section*.30}
 \contentsline {subsection}{\numberline {3.2.6}Funciones auxiliares}{56}{subsection.3.2.6}
-\contentsline {subsubsection}{Funci\'on \emph {vNotiLEDinit}}{56}{section*.34}
-\contentsline {subsubsection}{Funci\'on \emph {FormatFactory}}{56}{section*.35}
-\contentsline {subsubsection}{Funci\'on \emph {vConfigLoad}}{57}{section*.36}
-\contentsline {subsubsection}{Funci\'on \emph {vConfigGetNVS}}{57}{section*.37}
-\contentsline {subsubsection}{Funci\'on \emph {vConfigSetNode}}{58}{section*.38}
-\contentsline {subsubsection}{Funci\'on \emph {uComDirection}}{58}{section*.39}
-\contentsline {subsubsection}{Funci\'on \emph {uComGetTransData}}{59}{section*.40}
-\contentsline {subsubsection}{Funci\'on \emph {vEspnowGetOldPeers}}{59}{section*.41}
-\contentsline {subsubsection}{Funci\'on \emph {espnow\_data\_prepare}}{59}{section*.42}
-\contentsline {subsubsection}{Funci\'on \emph {espnow\_data\_parse}}{60}{section*.43}
+\contentsline {subsubsection}{Funci\'on \emph {vNotiLEDinit}}{56}{section*.31}
+\contentsline {subsubsection}{Funci\'on \emph {FormatFactory}}{56}{section*.32}
+\contentsline {subsubsection}{Funci\'on \emph {vConfigLoad}}{57}{section*.33}
+\contentsline {subsubsection}{Funci\'on \emph {vConfigGetNVS}}{57}{section*.34}
+\contentsline {subsubsection}{Funci\'on \emph {vConfigSetNode}}{58}{section*.35}
+\contentsline {subsubsection}{Funci\'on \emph {uComDirection}}{58}{section*.36}
+\contentsline {subsubsection}{Funci\'on \emph {uComGetTransData}}{59}{section*.37}
+\contentsline {subsubsection}{Funci\'on \emph {vEspnowGetOldPeers}}{59}{section*.38}
+\contentsline {subsubsection}{Funci\'on \emph {espnow\_data\_prepare}}{59}{section*.39}
+\contentsline {subsubsection}{Funci\'on \emph {espnow\_data\_parse}}{60}{section*.40}
 \contentsline {subsection}{\numberline {3.2.7} Circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32.}{60}{subsection.3.2.7}
-\contentsline {subsubsection}{Posicionamiento del ESP32 en el PCB}{60}{section*.44}
-\contentsline {subsubsection}{El chip MAX-485}{63}{section*.45}
-\contentsline {subsubsection}{Alimentaci\'on}{64}{section*.46}
-\contentsline {subsubsection}{Arquitectura Circuito Impreso}{64}{section*.47}
+\contentsline {subsubsection}{Posicionamiento del ESP32 en el PCB}{60}{section*.41}
+\contentsline {subsubsection}{El chip MAX-485}{63}{section*.42}
+\contentsline {subsubsection}{Alimentaci\'on}{64}{section*.43}
+\contentsline {subsubsection}{Arquitectura Circuito Impreso}{64}{section*.44}
 \contentsline {subsection}{\numberline {3.2.8}Implementaci\'on la red mallada dise\~nada}{67}{subsection.3.2.8}
-\contentsline {subsubsection}{Ilustraci\'on de los nodos}{69}{section*.48}
+\contentsline {subsubsection}{Ilustraci\'on de los nodos}{69}{section*.45}
 \contentsline {subsection}{\numberline {3.2.9}An\'alisis el rendimiento de la red de acuerdo a variaciones en los par\'ametros de transmisi\'on de datos}{70}{subsection.3.2.9}
 \contentsline {chapter}{PRUEBAS EXPERIMENTALES}{73}{chapter.4}
 \contentsline {section}{\numberline {4.1}Resultados y an\'alisis}{73}{section.4.1}
@@ -97,4 +94,4 @@
 \contentsline {chapter}{Datos recolectados}{81}{appendix.Alph1}
 \contentsline {chapter}{C\'odigo fuente}{82}{appendix.Alph2}
 \contentsline {chapter}{T\'ITULO DEL ANEXO}{83}{appendix.Alph3}
-\contentsline {chapter}{REFERENCIAS}{84}{appendix*.49}
+\contentsline {chapter}{REFERENCIAS}{84}{appendix*.46}
