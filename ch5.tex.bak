@@ -1,4 +1,4 @@
-En este capítulo de detallan las pruebas de rendimiento de la red, basado en los parámetros \mb mas relevantes de una linea serial y la topología mallada.
+En este capítulo de detallan las pruebas de rendimiento de la red, basado en los parámetros más relevantes de \mb sobre línea serial y la topología mallada.
 
 \section{Resultados y análisis}
 
@@ -6,7 +6,7 @@ Se toma como métrica de rendimiento  el porcentaje de respuesta Modbus, es decir
 
 
 
- Se asume que los esclavos posee un porcentaje de error sobre linea  serial menor al 1\%  para entrega y menor a 2\% parra respuesta, según las especificaciones de equipos Modbus para linea serial. Además, se asume que las antenas son omnidireccionales dispuestas verticalmente.
+ Se asume que los esclavos cumplen las especificaciones de equipos Modbus para línea serial  con un porcentaje de  menor al 1\%  para entrega y menor a 2\% para respuesta. Además, se asume que las antenas son omnidireccionales dispuestas verticalmente.
  
  \subsection{Rendimiento y tiempo de muestreo}
 En un primer escenario se tiene una red donde se toman variaciones para el tiempo de interrogación Modbus de los esclavos, incluidos los nodos de la red. Se observa que no existe un patrón de degradamiento de rendimiento producto del aumento en la frecuencia de tráfico en la red mallada, quedándose con una tasa de error promedio  por debajo de del 1\%. 
@@ -59,7 +59,7 @@ Número de variables [s] &  ID 1 &   ID 2 &  ID 150 & ID 151 & ID 153 & \textbf{P
 \caption{Porcentajes de error para variaciones en el tiempo de muestro}\label{Res: var}
 \end{table}
 
-La máxima cantidad de registros en una solicitud es de 50, más allá del cual los bytes siguientes de pierden y el maestro arroja la excepción \textit{Byte missing error} ( Error de bytes faltantes). Esto se puede deber a que la trama inalámbrica se ve sobrecargada.  En el nodo maestro si se puede consultar la cantidad máxima permitida por Modbus de 250 registros, lo que sugiere que la limitación ocurre en la interfaz inalámbrica. 
+La máxima cantidad de registros en una solicitud es de 50, más allá del cual los bytes siguientes de pierden y el maestro arroja la excepción \textit{Byte missing error} (Error de bytes faltantes). Esto debe a que la trama inalámbrica se sobrecarga. En el nodo maestro si se puede consultar la cantidad máxima permitida por Modbus de 250 registros, lo que sugiere que la limitación ocurre en la interfaz inalámbrica. 
 \subsection{Rendimiento y tasa de baudios}
 
 La tabla \ref{Res: bad} presenta los resultados de las mediciones para distintas tasa de baudios, donde se observan variaciones en la tasa error de casi dos puntos porcentuales en promedio entre algunas tasas de baudios, especialmente para la tasa de 2400 baudios y 19200 baudios. Sin embargo, no existe un patrón específico para atribuir el incremento a una causa específica. 
@@ -89,7 +89,7 @@ Tasa de baudios [s] &  ID 1 &   ID 2 &  ID 150 & ID 151 & ID 153 & \textbf{Prome
 %%
 %%
 \subsection{Rendimiento y topología}
-Para las topologías presentadas en las figuras \ref{topo1}, \ref{topo2} y\ref{topo3}. Se presentan los resultados de la tabla \ref{Res: top}, donde puede observar que las topologías 1 y 2, posee la mayor tasa de error promedio. En la topología 1, el error se concentra en el esclavo 1, esto podría deberse a que es el esclavo más lejano del maestro y al poseer un mayor número de saltos, la probabilidad de que ocurra perdida de trama se acumula con cada reenvió.  En la topología 2 el error es mayor en el esclavo 153, lo cual puede ser producto de su distanciamiento físico del maestro. Ya que las solicitudes de todos los esclavos son realizadas en un periodo corto de tiempo, la última respuesta en llegar seria las provenientes del nodo 153. Considerando que el canal este congestionado por la tramas que llegaron primero, se podría producir un pérdidas de paquetes. 
+Para las topologías presentadas en las figuras \ref{topo1}, \ref{topo2} y\ref{topo3}. Se presentan los resultados de la tabla \ref{Res: top}, donde se observan que las topologías 1 y 2, poseen la mayor tasa de error promedio. En la topología 1, el error se concentra en el esclavo 1, esto  deberse a que es el esclavo más lejano del maestro y al poseer un mayor número de saltos, la probabilidad de que ocurra perdida de trama se acumula con cada reenvió.  En la topología 2 el error es mayor en el esclavo 153, lo cual puede ser producto de su distanciamiento físico del maestro. Ya que las solicitudes de todos los esclavos son realizadas en un periodo corto de tiempo, la última respuesta en llegar seria las provenientes del nodo 153. Considerando que el canal este congestionado por la tramas que llegaron primero, se podría producir un pérdidas de paquetes. 
 
 La topología 3 posee la menor tasa de error promedio, podría ser causado a que posee una distribución más balanceada a las otras topologías, manteniendo una relación equitativa entre el número de enlaces y cantidad de saltos. Ya que la topologías 1,  carga los nodos con numerosos reenvíos. Por otro lado, la topología 2 carga el nodo 150 con numerosos enlaces.  
 %

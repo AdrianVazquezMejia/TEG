@@ -205,7 +205,7 @@ El hardware del nodo se puede dividir en tres bloques: el microcontrolador, la a
 
 \textbf{Microcontrolador}
 
-Para la aplicación se usó el encapsulado  ESP-WROOM-32, debido a disponibilidad y encapsulado con escudo WiFi . Se debe tener en cuenta que se dejaron disponibles los pines del UART 0 para la descarga del software, además de dos pines adicionales para inducir el estado de programación, los cuales son el pin \textit{EN} y el pin de propósito general cero.
+Para la aplicación se usó el encapsulado  ESP-WROOM-32, debido a disponibilidad y encapsulado con escudo WiFi.  Se debe tener en cuenta que se dejaron disponibles los pines del UART 0 para la descarga del software, además de dos pines adicionales para inducir el estado de programación, los cuales son el pin \textit{EN} y el pin de propósito general cero.
 
 \begin{figure}[H]
 \centering
@@ -213,7 +213,7 @@ Para la aplicación se usó el encapsulado  ESP-WROOM-32, debido a disponibilidad 
 \caption{Encapsulado ESP-WROOM-32 del ESP32}
 \end{figure}
  
-\paragraph{Alimentación}\\
+\textbf{Alimentación}
 La alimentación del microcontrolador es de 3,3 V y además los equipos Modbus especifican un rango de tensión de funcionamiento entre 5 V y 25 V. Por lo tanto se escogió el regulador conmutado LM2596S que brinda estas características y además existe una tarjeta pre-fabricada para rápida implementación. La figura \ref{dcdcF} muestra la forma de dicha tarjeta. Además posee un LED testigo de su encendido, que es usado como señal de diagnóstico Modbus.
 
 \begin{figure}[H]
@@ -244,7 +244,7 @@ La alimentación del microcontrolador es de 3,3 V y además los equipos Modbus esp
  \caption{Especificaciones de la fuente de alimentación}\label{Espec dcdc}
  \end{table}
 
-\paragraph{Interfaz serial}
+\textbf{Interfaz serial}
 
 Modbus en sus clases básica dicta que los equipos Modbus  seriales tienen que poseer la interfaz eléctrica RS-485 de dos cables de acuerdo con el estándar EIA/TIA-485. Por esto se seleccionó para la implementación en el nodo, asegurando la máxima compatibilidad. 
 
