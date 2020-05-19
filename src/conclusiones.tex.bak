@@ -7,4 +7,4 @@ El enrutamiento estático determinado por el usuario permite crear topologías que
 El diseño del hardware y la disposición física de los chips es altamente dependiente de forma física del contenedor en el que se colocará el circuito impreso, la forma de los chips, los pines de entrada/salida utilizables y las recomendaciones de espaciado entre elementos.
 
 
-La red \espn y el protocolo \mb se acoplan satisfactoriamente, debido a la bajas tasas de transmisión,  tramas ajustadas a la capacidad de red y tiempo entre solicitudes. Por otro lado, el principal inconveniente es la ausencia de  control de congestión, y si un nodo posee numerosos enlaces la tasa de pérdida de paquetes puede incrementarse significativamente. 
+La red \espn y el protocolo \mb se acoplan satisfactoriamente, debido a la bajas tasas de transmisión,  tramas ajustadas a la capacidad de red y tiempo entre solicitudes. Por otro lado, el principal inconveniente es la ausencia de  control de congestión, y si un nodo posee numerosos enlaces la tasa de pérdida de paquetes se incrementa significativamente. 

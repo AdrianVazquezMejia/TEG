@@ -1,13 +1,10 @@
-Se recomienda implementar un enrutamiento dinámico en la red, para observar los beneficios respecto a el enrutamiento estático. 
+Implementar un modo de compuerta en TCP/IP en los nodos para abrir la posibilidad de acceder a otras redes.
 
-Se propone aplicar una rutina de búsqueda de esclavos en cada nodo, así cada nodo detectaría los esclavos que posee conectados, para disminuir el tiempo de configuración de la red.
+Implementar un control centralizado de gestión de datos para disminuir la perdida de paquetes en nodos congestionados.
 
-Diseñar una interfaz gráfica para configurar la red,  para así disminuir el tiempo y los errores  de establecimiento de la red.
+Crear un software con interfaz gráfica que permita aplicar configuraciones a los nodos y la de manera rápida, usando lenguajes como Java, Python, etc.
 
-Se propone implementar la configuración de canal \wf  y la llaves locales mediante \mb, para poseer mayor extensibilidad de red.
+En cuanto al enrutamiento se recomienda realizar estudios para la implementación de un gestor de rutas de red que use algoritmos del camino corto, de acuerto a las conexiones establecidas por el usuario, tomando como base el algoritmo de Dijsktra o el algoritmo de Prim.
 
-Es recomendable  extender la configuración para el soporte de más opciones de \mb serial, como el modo ANSII.
+También pueden hacerse estudios de rendimiento la propagación de las tramas broadcast usando algoritmos heurísticos constructivos, observado este proceso como el problema del vendedor viajero (TPS). Esto para la aplicación de actualizaciones de configuraciones comunes en los  nodos que componen la red o los equipos Modbus involucrados.
 
-En el hardware del nodo, se debería agregar la interfaz mecánica de RJ-45 muy popular en la industria. Así como puertos de entrada salida para otras posibles funciones de monitoreo.
-
-Implementar el modo de maestro \mb en los nodos para que exista la posibilidad de que el nodo maestro funcione como puerta de enlace a otras redes, por ejemplo \mb TCP/IP.
