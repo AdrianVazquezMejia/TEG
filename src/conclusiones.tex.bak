@@ -1,5 +1,10 @@
 El ESP32 permite implementar topologías de red inalámbricas  con  distintas arquitecturas, debido a que posee una librería de funciones brindadas por el fabricante que aguilizan el desarrollo de aplicaciones.Además, el uso del sistema operativo en tiempo real permite que se implementen programas en un esquema sencillo y organizado.  
 
+Existe gran cantidad de documentación actual respecto a las redes WiFi Malladas y a su implementación en distintas áreas y sobre distintos hardware, sin embargo, cada una ajusta su funcionamiento al área de aplicación. La mayor cantidad de información relacionada se encuentra en Internet, debido a que son artículos recientes.
+
+El enrutamiento estático determinado por el usuario permite crear topologías que se determinen convenientes para la aplicación, evitando dejar la formación de enlaces a un algoritmo que podría producir enlaces débiles o dejar algunos nodos desconectados. Además el enrutamiento estático permite monitorizar los nodos funcionales y detectar fallas de manera sistemática.
+
+El diseño del hardware y la disposición física de los chips es altamente dependiente de forma física del contenedor en el que se colocará el circuito impreso, la forma de los chips, los pines de entrada/salida utilizables y las recomendaciones de espaciado entre elementos.
 
 
 La red \espn y el protocolo \mb se acoplan satisfactoriamente, debido a la bajas tasas de transmisión,  tramas ajustadas a la capacidad de red y tiempo entre solicitudes. Por otro lado, el principal inconveniente es la ausencia de  control de congestión, y si un nodo posee numerosos enlaces la tasa de pérdida de paquetes puede incrementarse significativamente. 
