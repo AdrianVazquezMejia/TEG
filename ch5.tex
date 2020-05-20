@@ -12,6 +12,7 @@ Se toma como métrica de rendimiento  el porcentaje de respuesta Modbus, es decir
 En un primer escenario se tiene una red donde se toman variaciones para el tiempo de interrogación Modbus de los esclavos, incluidos los nodos de la red. Se observa que no existe un patrón de degradamiento de rendimiento producto del aumento en la frecuencia de tráfico en la red mallada, quedándose con una tasa de error promedio  por debajo de del 1\%. 
 La tabla \ref{Res: Scan} presenta los resultados de las mediciones para distintos tiempos de muestreo del maestro. 
 \begin{table}[H]
+\caption{Porcentajes de error para variaciones en el tiempo de muestro}\label{Res: Scan}
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline 
@@ -30,12 +31,12 @@ Tiempo de Muestro [s] &  ID 1 &   ID 2 &  ID 150 & ID 151 & ID 153 & \textbf{Pro
 \textbf{Promedio por ID}& \textbf{0,12} & \textbf{0,21 }& \textbf{0,00 }& \textbf{0,17} &\textbf{ 0,39 }&\textbf{ 0,18} \\ 
 \hline 
 \end{tabular} 
-\caption{Porcentajes de error para variaciones en el tiempo de muestro}\label{Res: Scan}
 \end{table}
 
 \subsection{Rendimiento y número de variables}
 En un segundo escenario se tiene que la red es sometida a variaciones en el número de variables solicitadas (ver \ref{Res: var}), aumentado gradualmente el tamaño de la trama serial e inalámbrica.  En ese caso al igual que el anterior, no hubo una degradamiento notable con las variaciones tomadas.
 \begin{table}[H]
+\caption{Porcentajes de error para variaciones en el tiempo de muestro}\label{Res: var}
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline 
@@ -56,7 +57,6 @@ Número de variables [s] &  ID 1 &   ID 2 &  ID 150 & ID 151 & ID 153 & \textbf{P
 \textbf{Promedio por ID}& \textbf{0,23} & \textbf{0,17 }& \textbf{0,02 }& \textbf{0,09} &\textbf{ 0,25}&\textbf{ 0,15} \\ 
 \hline 
 \end{tabular} 
-\caption{Porcentajes de error para variaciones en el tiempo de muestro}\label{Res: var}
 \end{table}
 
 La máxima cantidad de registros en una solicitud es de 50, más allá del cual los bytes siguientes de pierden y el maestro arroja la excepción \textit{Byte missing error} (Error de bytes faltantes). Esto debe a que la trama inalámbrica se sobrecarga. En el nodo maestro si se puede consultar la cantidad máxima permitida por Modbus de 250 registros, lo que sugiere que la limitación ocurre en la interfaz inalámbrica. 
@@ -64,6 +64,7 @@ La máxima cantidad de registros en una solicitud es de 50, más allá del cual los
 
 La tabla \ref{Res: bad} presenta los resultados de las mediciones para distintas tasa de baudios, donde se observan variaciones en la tasa error de casi dos puntos porcentuales en promedio entre algunas tasas de baudios, especialmente para la tasa de 2400 baudios y 19200 baudios. Sin embargo, no existe un patrón específico para atribuir el incremento a una causa específica. 
 \begin{table}[H]
+\caption{Porcentajes de error para variaciones en la tasa de baudios}\label{Res: bad}
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline 
@@ -84,7 +85,6 @@ Tasa de baudios [s] &  ID 1 &   ID 2 &  ID 150 & ID 151 & ID 153 & \textbf{Prome
 \textbf{Promedio por ID}& \textbf{0,34} & \textbf{1,68 }& \textbf{0,60 }& \textbf{0,28} &\textbf{ 2,93}&\textbf{ 1,17} \\ 
 \hline 
 \end{tabular} 
-\caption{Porcentajes de error para variaciones en la tasa de baudios}\label{Res: bad}
 \end{table}
 %%
 %%
@@ -114,6 +114,7 @@ La topología 3 posee la menor tasa de error promedio, podría ser causado a que p
 \end{figure}
 La tabla \ref{Res: top} presenta los resultados de las mediciones para distintas topologías. 
 \begin{table}[H]
+\caption{Porcentajes de error para variaciones en la topolgía}\label{Res: top}
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline 
@@ -130,6 +131,5 @@ Topología [s] &  ID 1 &   ID 2 &  ID 150 & ID 151 & ID 153 & \textbf{Promedio} \
 \textbf{Promedio por ID}& \textbf{5,17} & \textbf{0,97 }& \textbf{0,11 }& \textbf{0,24} &\textbf{4,65}&\textbf{ 2,23} \\ 
 \hline 
 \end{tabular} 
-\caption{Porcentajes de error para variaciones en la topolgía}\label{Res: top}
 \end{table}
 %
