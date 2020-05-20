@@ -29,8 +29,9 @@ Para la creación de redes inalámbricas WiFi usando el microcontrolador ESP-32,\e
 
 Actualmente, el estándar 802.11 clasifica las tramas como de datos, de control, o de gestión. La trama de datos transmite la información en las capas más altas. Las tramas de control son usadas para agradecimientos y reservaciones. Finalmente, los dispositivos usan las tramas de gestión para configurar, organizar y mantener el enlace local.
 
-\espn usa una trama de acción (Trama de control) específica de proveedor para transmitir datos. La tasa de transmisión por defecto es de 1 Mbps y formato de la trama es como se muestra en la tabla \ref{Tabla: espn}.
+\espn usa una trama de acción (Trama de control) específica de proveedor para transmitir datos. La tasa de transmisión por defecto es de 1 Mbps y formato de la trama es como se muestra en las tablas \ref{Tabla: espn} y \ref{Tabla: body}.
 \begin{table}[H]
+\caption{Trama de acción  \espn}\label{Tabla: espn}
 \resizebox{15cm}{!}{
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline 
@@ -40,7 +41,6 @@ Dirección MAC & Código de categoría & Identificador de organización & Valores al
 \hline 
 \end{tabular}
 }
-\caption{Trama de acción  \espn}\label{Tabla: espn}
 \end{table}
 
 \begin{enumerate}
@@ -52,6 +52,7 @@ Dirección MAC & Código de categoría & Identificador de organización & Valores al
 \end{enumerate}
  
 \begin{table}[H]
+\caption{Contenido de específico de proveedor}\label{Tabla: body}
 \resizebox{15cm}{!}{
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline 
@@ -61,7 +62,6 @@ ID de elemento& Longitud & ID de organización & Tipo & Versión & Cuerpo\\
 \hline 
 \end{tabular} 
 }
-\caption{Contenido de específico de proveedor}\label{Tabla: body}
 \end{table}
 \begin{enumerate}
 \item  ID de elemento: Es establecido en 221, para indicar elemento de específico de proveedor.
@@ -78,6 +78,7 @@ Los campos de gestión que indican las direcciones MAC son usados para mantener l
 Los campos de cuerpo de la trama también son usados para manejar la comunicación en la red mallada en la capa de aplicación, cada nodo posee una lógica dependiente de la tramas recibidas. La estructura de datos del cuerpo toma la forma definida en la tabla \ref{Estructura}.
 
 \begin{table}[H]
+\caption{Estructura de datos envidada en el cuerpo de la trama \espn}\label{Estructura}
 \centering
 \begin{tabular}{|c|c|}
 \hline 
@@ -98,7 +99,6 @@ payload & Carga  \\
 data\_len & Longitud de los datos \\ 
 \hline 
 \end{tabular}
-\caption{Estructura de datos envidada en el cuerpo de la trama \espn}\label{Estructura}
 \end{table}
 
 \subsubsection{Gestión y formación mallada}
@@ -124,13 +124,13 @@ La tabla de enrutamiento posee 256 casillas (una para cada esclavo Modbus), dond
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{rt.eps}\label{Fig  2: Tabla de enrutamiento}
-\caption{Ilustración de la estructuras de la tabla de enrutamiento}
+\includegraphics[scale=0.4]{rt.eps}
+\caption{Ilustración de la estructuras de la tabla de enrutamiento}\label{Fig  2: Tabla de enrutamiento}
 \end{figure}
 
 Existe otra tabla de enrutamiento para las respuestas, de manera tal que las rutas sean bidireccionales y únicas. La tabla de respuesta es configurada y mantenida automáticamente por cada nodo. Cuando se reciben solicitudes Modbus, se guarda el identificador del nodo del cual provino dicha información, y dicho identificador se usa para enrutar la trama respuesta.
 
- Un esquema del funcionamiento se puede apreciar en las figuras \ref{Fig 1: ULM enrutamiento} y \ref{Fig 1: ULM serial} .
+ Un esquema del funcionamiento se puede apreciar en las figuras \ref{Fig 1: ULM enrutamiento} y \ref{Fig 1: ULM serial}.
  
  \begin{figure}[H]
 \centering
@@ -157,6 +157,7 @@ Los registros disponibles para acceso son los registros de retención desde la di
 
  
 \begin{table}[H]
+\caption{Tablas primarias de los modelos de datos Modbus}\label{Tabla 1: Espec HR}
 \centering
 \begin{tabular}{llr}
  \toprule
@@ -170,11 +171,11 @@ Dirección & Tipo de registro & Descripción  \\
 2 & Bobina &Guardar valores Modbus en  la memoria Flash\\
 \bottomrule
 \end{tabular}
-\caption{Tablas primarias de los modelos de datos Modbus}\label{Tabla 1: Espec HR}
 \end{table}
 
 La tabla \ref{Tabla 1: Espec Modbus} posee una descripción de la parámetros Modbus.
- \begin{table}[H]
+\begin{table}[H]
+\caption{Parámtros Modbus}\label{Tabla 1: Espec Modbus}
 \centering
 \begin{tabular}{llr}
  \toprule
@@ -188,7 +189,6 @@ Paridad & Ninguna & Ninguna \\
 Bits de parada & 1 & Ninguna \\
 \bottomrule
 \end{tabular}
-\caption{Parámtros Modbus}\label{Tabla 1: Espec Modbus}
 \end{table}
 
 Cabe resaltar que estos nodos pueden ser interrogados tanto serial como inalambricamente, es decir, con la red ya instalada. Las funciones no usadas proveerán la excepción Modbus "Función ilegal". 
@@ -196,10 +196,10 @@ Cabe resaltar que estos nodos pueden ser interrogados tanto serial como inalambr
 \subsubsection{El hardware}\label{hardware}
 
 El hardware del nodo se puede dividir en tres bloques: el microcontrolador, la alimentación y la interfaz serial. Esto se puede ilustrar en el esquema de la figura \ref{Fig  4: Diagrama de bloques}.
- \begin{figure}[H]
+\begin{figure}[H]
+\caption{Diagrama de bloques para el hardware del nodo}
 \centering
 \includegraphics[scale=0.5]{diagrama.eps}\label{Fig  4: Diagrama de bloques}
-\caption{Diagrama de bloques para el hardware del nodo}
 \end{figure}
 
 
@@ -208,9 +208,9 @@ El hardware del nodo se puede dividir en tres bloques: el microcontrolador, la a
 Para la aplicación se usó el encapsulado  ESP-WROOM-32, debido a disponibilidad y encapsulado con escudo WiFi.  Se debe tener en cuenta que se dejaron disponibles los pines del UART 0 para la descarga del software, además de dos pines adicionales para inducir el estado de programación, los cuales son el pin \textit{EN} y el pin de propósito general cero.
 
 \begin{figure}[H]
+\caption{Encapsulado ESP-WROOM-32 del ESP32}
 \centering
 \includegraphics[scale=0.5]{ESP-WROOM-32.jpg}\label{Fig  x: ESP-WROOM-32}
-\caption{Encapsulado ESP-WROOM-32 del ESP32}
 \end{figure}
  
 \textbf{Alimentación}
@@ -225,6 +225,7 @@ La alimentación del microcontrolador es de 3,3 V y además los equipos Modbus esp
  
  Las características eléctricas son presentadas en la tabla \ref{Espec dcdc}
  \begin{table}
+ \caption{Especificaciones de la fuente de alimentación}\label{Espec dcdc}
  \centering
  \begin{tabular}{|c|c|}
  \hline 
@@ -241,7 +242,6 @@ La alimentación del microcontrolador es de 3,3 V y además los equipos Modbus esp
  Ripple de salida &  30 mA (Máximo) \\ 
  \hline 
  \end{tabular} 
- \caption{Especificaciones de la fuente de alimentación}\label{Espec dcdc}
  \end{table}
 
 \textbf{Interfaz serial}
@@ -348,6 +348,7 @@ Luego tenemos la función  \emph{espnow\_init()} que prepara las variables inicia
  Los campos de cada puntos son los descritos en la tabla \ref{Tabla 2: información de peers}
  
 \begin{table}[H]
+\caption{Tablas primarias de los modelos de datos Modbus}\label{Tabla 2: información de peers}
 \centering
 \begin{tabular}{lr}
  \toprule
@@ -361,7 +362,6 @@ encrypt & Habilitador de cifrado \\
 *priv & Datos privados de la librería  \\
 \bottomrule
 \end{tabular}
-\caption{Tablas primarias de los modelos de datos Modbus}\label{Tabla 2: información de peers}
 \end{table}
 
 La información de los puntos es guardada mediante la función \emph{esp\_now\_add\_peer()}.
@@ -553,6 +553,7 @@ La función \emph{UARTinit()} se encarga de incializar el uart con la configuraci
 \subsection{Funciones auxiliares}
 \subsubsection{Función \emph{vNotiLEDinit}}
 \begin{table}[H]
+\caption{Descripción de la función \emph{vNotiLEDinit}}\label{Tabla f:vNotiLED}
 \centering
 \begin{tabular}{lr}
  \toprule
@@ -562,12 +563,12 @@ Parámetro &  Vacío \\
 Resultado & Crea que en un pin 3 parpadeo de 1s\\
 \bottomrule
 \end{tabular}
-\caption{Descripción de la función \emph{vNotiLEDinit} }\label{Tabla f:vNotiLED}
 \end{table}
 
 Ejecuta un parpadeo en el GPIO 2 del microcotrolador al que se le conectó un LED para indicar el que el nodo se ha encendido correctamente. 
 \subsubsection{Función \emph{FormatFactory}}
 \begin{table}[H]
+\caption{Descripción de la función \emph{FormatFactory} }\label{Tabla f:FormatFactory}
 \centering
 \begin{tabular}{lr}
  \toprule
@@ -577,13 +578,13 @@ Parámetro &  Vacío \\
 Resultado & Limpia la configuración del nodo\\
 \bottomrule
 \end{tabular}
-\caption{Descripción de la función \emph{FormatFactory} }\label{Tabla f:FormatFactory}
 \end{table}
 
 Esta tarea recibe una activación mediante un semáforo binario proveniente de una interrupción por hardware en el GPIO 0, también usado como \emph{BOOT}; en caso de que se desee formatear el nodo a sus parámetros por defecto.  Se debe mantener presionado por al menos cinco segundos.
 
 \subsubsection{Función \emph{vConfigLoad}}
 \begin{table}[H]
+\caption{Descripción de la función \emph{vConfigLoad} }\label{Tabla f:vConfigLoad}
 \centering
 \begin{tabular}{lr}
  \toprule
@@ -593,13 +594,13 @@ Parámetro &  Vacío \\
 Resultado & Carga datos desde la flash a la RAM\\
 \bottomrule
 \end{tabular}
-\caption{Descripción de la función \emph{vConfigLoad} }\label{Tabla f:vConfigLoad}
 \end{table}
 
 Esta función carga los parámetros de funcionamiento e identificación del nodo, como lo son las tablas de enrutamiento, las direcciones MAC, el identificador del nodo y la configuración del UART. Se ejecuta al energizar el nodo.
 
 \subsubsection{Función \emph{vConfigGetNVS}}
 \begin{table}[H]
+\caption{Descripción de la función \emph{vConfigGetNVS} }\label{Tabla f:vConfigGetNVS}
 \centering
 \begin{tabular}{lr}
  \toprule
@@ -609,7 +610,6 @@ Parámetros &  Arreglo, String \\
 Resultado & Carga información asociada al String en el Arreglo\\
 \bottomrule
 \end{tabular}
-\caption{Descripción de la función \emph{vConfigGetNVS} }\label{Tabla f:vConfigGetNVS}
 \end{table}
 
 Se usa para obtener la configuración desde flash, y solo funciona para los registros de retención, tabla de MAC's y tabla de enrutamiento. Esta información de carga el parámetro del arreglo. 
@@ -617,6 +617,7 @@ Se usa para obtener la configuración desde flash, y solo funciona para los regis
 Análogamente con la función \emph{vConfigSetNVS} que en ese caso carga información en la flash desde la RAM. 
 \subsubsection{Función \emph{vConfigSetNode}}
 \begin{table}[H]
+\caption{Descripción de la función \emph{vConfigGetNVS} }\label{Tabla f:vConfigSetNode}
 \centering
 \begin{tabular}{lr}
  \toprule
@@ -626,13 +627,13 @@ Parámetros &  Trama Modbus, origen (serial o inalambrico) \\
 Resultado & Respuesta Modbus\\
 \bottomrule
 \end{tabular}
-\caption{Descripción de la función \emph{vConfigGetNVS} }\label{Tabla f:vConfigSetNode}
 \end{table}
 
 Es la función asociada al Modbus de cada nodo, puede ejecutar las funciones de lectura y escritura de los registros de retención y escritura de la bobinas. Posee la capacidad de generar la respuesta inalambricamente si la solicitud fue inalámbrica o serial si la solicitud fue serial.
 
 \subsubsection{Función \emph{uComDirection}}\label{FuncuComDir}
 \begin{table}[H]
+\caption{Descripción de la función \emph{vConfigGetNVS} }\label{uComDirection}
 \centering
 \begin{tabular}{lr}
  \toprule
@@ -642,13 +643,13 @@ Parámetros &  Esclavo \\
 Resultado & Nodo externo o Nodo en cuestión\\
 \bottomrule
 \end{tabular}
-\caption{Descripción de la función \emph{vConfigGetNVS} }\label{uComDirection}
 \end{table}
 
 Se usa en la tarea del UART para dirigir la información Modbus que se recibe, comparando el esclavo recibido con el identificador del nodo que recibió la trama. Posee una salida binaria:  va o no la trama dirigida el nodo en cuestión.
 
 \subsubsection{Función \emph{uComGetTransData}}
 \begin{table}[H]
+\caption{Descripción de la función \emph{uComGetTransData} }\label{Tabla f:uComGetTransData}
 \centering
 \begin{tabular}{lr}
  \toprule
@@ -658,12 +659,12 @@ Parámetros &  Esclavo \\
 Resultado & Serial, Reenvío o configuración \\
 \bottomrule
 \end{tabular}
-\caption{Descripción de la función \emph{uComGetTransData} }\label{Tabla f:uComGetTransData}
 \end{table}
 
 Es una función similar a la descrita en la sección \ref{uComDirection}, sin embargo, esta arroja tres posibilidades. Determina si la trama recibida debe ser enviada seriamente, reenviarse a otro nodo o simplemente configurarse a sí mismo. 
 \subsubsection{Función \emph{vEspnowGetOldPeers}}
 \begin{table}[H]
+\caption{Descripción de la función \emph{vEspnowGetOldPeers} }\label{vEspnowGetOldPeers}
 \centering
 \begin{tabular}{lr}
  \toprule
@@ -673,12 +674,12 @@ Parámetros &  Vacío\\
 Resultado & Serial, Reenvío o configuración \\
 \bottomrule
 \end{tabular}
-\caption{Descripción de la función \emph{vEspnowGetOldPeers} }\label{vEspnowGetOldPeers}
 \end{table}
 
 Junto con la función \emph{RegisterPeer} registra MAC de los nodos al energizar el nodo. Pues el registro se hace en la memoria volátil.
 \subsubsection{Función \emph{espnow\_data\_prepare}}\label{prepare}
 \begin{table}[H]
+\caption{Descripción de la función \emph{espnow\_data\_prepare } }\label{espnowprepare }
 \centering
 \begin{tabular}{lr}
  \toprule
@@ -688,12 +689,12 @@ Parámetros &  variable \emph{send\_param}\\
 Resultado & cargar datos de trama \emph{espnow}\\
 \bottomrule
 \end{tabular}
-\caption{Descripción de la función \emph{espnow\_data\_prepare } }\label{espnowprepare }
 \end{table}
 
 Esta función prepara los trama inalámbrica, que contiene el chequeo de error, el identificador de nodo, si es unicast o broadcast, la dirección, etc. 
 \subsubsection{Función \emph{espnow\_data\_parse}}
 \begin{table}[H]
+\caption{Descripción de la función \emph{espnow\_data\_parse} }\label{espnowparse }
 \centering
 \begin{tabular}{lr}
  \toprule
@@ -703,7 +704,6 @@ Parámetros &  datos, longitud de datos, estado\\
 Resultado & cargar datos de trama \emph{esp\_now} \\
 \bottomrule
 \end{tabular}
-\caption{Descripción de la función \emph{espnow\_data\_parse} }\label{espnowparse }
 \end{table}
 
 Cumple la función complementaría a la función \ref{prepare}, descompone los datos recibidos, comprueba el chequeo de error, etc. Se usa en la máquina de estado de recepción inalámbrica.
@@ -718,15 +718,15 @@ El encapsulado  ESP-WROOM-32 está diseñada para ser soldado en una PCB huésped. 
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.7]{opcionesPCB.png}\label{Fig  1: Antenna Placement}
-\caption{Opciones para colocación en PCB}
+\includegraphics[scale=0.7]{opcionesPCB.png}
+\caption{Opciones para colocación en PCB}\label{Fig  1: Antenna Placement}
 \end{figure}
 
 Los resultados del estudio de basan en las mediciones de potencia WiFi y parámetros EVM (magnitud del vector de error)para varios canales para verificar el rendimiento del la antenas en diferentes posiciones. Los resultados fueron los siguientes:
 \begin{enumerate}
 \item Las opciones de colocación 1,2 y 3 básicamente no se muestran afectadas en el rendimiento de la antena siempre y cuando esta este enfrente de espacio abierto. Es recomendado proveer una espacio de al menos 5 mm alrededor de antena en cada dirección.
 
-\item Si el PCB de la antes tiene que ser colocado en una tarjeta huesped, es recomendada la opción 4, que no posee plano de cobre bajo la antena, así hayan algunas pérdidas del rendimiento.\label{recomendacion}
+\item Si el PCB de la antes tiene que ser colocado en una tarjeta huesped, es recomendada la opción 4, que no posee plano de cobre bajo la antena, así hayan algunas pérdidas del rendimiento.
 
 \item La opción 6 posee el peor rendimiento tanto en la transmisión como la recepción, pues se ve afectado por por la tarjeta huésped.
 \end{enumerate}
@@ -740,8 +740,8 @@ Por lo tanto se tomo la recomendación \ref{recomendacion} eligiendo la opción 4 
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{maxim.png}\label{Fig  2: MAX y UART}
-\caption{Ejemplo de conexión entre MAX-485 y UART}
+\includegraphics[scale=0.5]{maxim.png}
+\caption{Ejemplo de conexión entre MAX-485 y UART}\label{Fig  2: MAX y UART}
 \end{figure}
 
 \subsubsection{Alimentación}%xxx agregar foto
@@ -755,6 +755,8 @@ Los terminales se agregaron en la parte posterior de la capa del microcontrolado
 
 Adicionalemente, se agregó un LED (GPIO 19)con el propósito de que sirva como testigo de comunicación en el encendido y durante la instalación. La tabla \ref{BOM} refleja la lista de materiales empleados  y sus características. 
 \begin{table}[H]
+\caption{Lista de materiales del circuito}\label{BOM}
+\centering
 \begin{tabular}{ccc}
  \toprule
 Nombre  & Descripción & Encapsulado  \\
@@ -775,22 +777,21 @@ U2 & Covertidor RS-485 TTL (MAX485E)& SOIC-8 \\
 DCDC1 & Convertidor DC-DC LM2596 & pendiente xxx \\
 \bottomrule
 \end{tabular}
-\caption{Lista de materiales del circuito}\label{BOM}
 \end{table}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{esquematico.eps}\label{esquematico}
-\caption{Esquemático del nodo}
+\includegraphics[scale=1]{esquematico.eps}
+\caption{Esquemático del nodo}\label{esquematico}
 \end{figure}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{pcbF.eps}\label{pcbF}
-\caption{Diagrama de circuito impreso capa superior}
+\includegraphics[scale=1]{pcbF.eps}
+\caption{Diagrama de circuito impreso capa superior}\label{pcbF}
 \end{figure}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{pcbB.eps}\label{pcbB}
-\caption{Diagrama de circuito impreso capa inferior}
+\includegraphics[scale=1]{pcbB.eps}
+\caption{Diagrama de circuito impreso capa inferior}\label{pcbB}
 \end{figure}
 
 
@@ -813,14 +814,15 @@ Nodo &  Descripción & Tasa de baudios serial\\
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.7]{topo.eps}\label{topo}
-\caption{Topología de implementación}
+\includegraphics[scale=0.7]{topo.eps}
+\caption{Topología de implementación}\label{topo}
 \end{figure}
 Por otro lado, en el bus serial de los esclavos se conectaron unas unidades terminales remotas con capacidad de comunicación Modbus. En este caso se conectaron solo una remota por nodo. 
 
 Las características de los equipos Modbus usados fueron los descritos en la tabla (Falta agregar). Adicionalmente la lista de materiales usada para la implementación de la red usando la tarjeta de desarrollo se presenta en la tabla \ref{BOM 2}.
 
 \begin{table}[H]
+\caption{Lista de materiales del circuito de implementación}\label{BOM 2}
 \begin{tabular}{ccc}
  \toprule
 Nombre  & Descripción & Detalle  \\
@@ -834,16 +836,15 @@ Cables  & cables protoboard  &  Cantidad 14, macho-macho\\
 Protoboard  & cables protoboard  & Elego \\
 \bottomrule
 \end{tabular}
-\caption{Lista de materiales del circuito de implementación}\label{BOM 2}
 \end{table}
 \subsubsection{Ilustración de los nodos}
 
- A continuación se presentan imágenes (figuras \label{master Node} y \label{Slave Node}) de los nodos donde se implementó la red.
+ A continuación se presentan imágenes (figuras \ref{master Node} y \ref{Slave Node}) de los nodos donde se implementó la red.
  
  \begin{figure}[H]
  \centering
- \includegraphics[scale=0.2]{images/foto1.jpeg}\label{master Node}
- \caption{Hardware del nodo maestro.}
+ \includegraphics[scale=0.2]{images/foto1.jpeg}
+ \caption{Hardware del nodo maestro.}\label{master Node}
  \end{figure}
  
   \begin{figure}[H]
@@ -857,6 +858,7 @@ Protoboard  & cables protoboard  & Elego \\
 Las características principales de funcionamiento de la red Modbus son: distancia entre nodos, topología, tasa de baudios  serial, velocidad de muestreo, número de variables Modbus y topología. Para la evaluación del rendimiento se varió un parámetro respecto a a la vez. Así se observa la degradación de la calidad de servicio sin caer en numerosas pruebas redundantes. Las variaciones toman los valores expresados en la tabla \ref{parametros}.
 
 \begin{table}[H]
+\caption{Variación de parámetros en la pruebas de rendiemietno}\label{parametros}
 \centering
 \begin{tabular}{|c|c|c|}
  \toprule
@@ -869,7 +871,6 @@ Tasa serial [Baudios]&  Número de variables& velocidad de muestreo [s]\\
 38400 & 250 & -\\
 \bottomrule
 \end{tabular}
-\caption{Variación de parámetros en la pruebas de rendiemietno}\label{parametros}
 \end{table}
 
 Se estimará el error en función de la cantidad de excepciones Modbus que se obtengan en el maestro por cada esclavo, considerando la ecuación \ref{Ecuacion1}.
@@ -888,6 +889,7 @@ Para las variaciones en la tasa de baudios, estás se cambiaron en todas las inte
 En la tabla \ref{Condiciones} se presentan las condiciones bajo las cuales se hicieron cada una de las pruebas.
 
 \begin{table}[H]
+\caption{Condiciones para las pruebas de rendimiento, la prueba cuatro se asocia a la variación de las topologías.}\label{Condiciones}
 \centering
 \begin{tabular}{|c|c|c|c|}
 \hline 
@@ -902,6 +904,5 @@ Prueba & Baudarate [Baudios] & Variables[n] & Tiempo de muestreo[s] \\
 4 & 9600 & 50 & 5 \\ 
 \hline 
 \end{tabular} 
-\caption{Condiciones para las pruebas de rendimiento, la prueba cuatro se asocia a la variación de las topologías.}\label{Condiciones}
 \end{table}
 

@@ -10,7 +10,7 @@
 \contentsline {table}{\numberline {3.5}{\ignorespaces Par\'amtros Modbus}}{39}{table.3.5}
 \contentsline {table}{\numberline {3.6}{\ignorespaces Especificaciones de la fuente de alimentaci\'on}}{42}{table.3.6}
 \contentsline {table}{\numberline {3.7}{\ignorespaces Tablas primarias de los modelos de datos Modbus}}{49}{table.3.7}
-\contentsline {table}{\numberline {3.8}{\ignorespaces Descripci\'on de la funci\'on \emph {vNotiLEDinit} }}{56}{table.3.8}
+\contentsline {table}{\numberline {3.8}{\ignorespaces Descripci\'on de la funci\'on \emph {vNotiLEDinit}}}{56}{table.3.8}
 \contentsline {table}{\numberline {3.9}{\ignorespaces Descripci\'on de la funci\'on \emph {FormatFactory} }}{56}{table.3.9}
 \contentsline {table}{\numberline {3.10}{\ignorespaces Descripci\'on de la funci\'on \emph {vConfigLoad} }}{57}{table.3.10}
 \contentsline {table}{\numberline {3.11}{\ignorespaces Descripci\'on de la funci\'on \emph {vConfigGetNVS} }}{57}{table.3.11}
