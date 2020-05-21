@@ -79,7 +79,7 @@
 \contentsline {subsubsection}{Posicionamiento del ESP32 en el PCB}{60}{section*.41}
 \contentsline {subsubsection}{El chip MAX-485}{63}{section*.42}
 \contentsline {subsubsection}{Alimentaci\'on}{64}{section*.43}
-\contentsline {subsubsection}{Arquitectura Circuito Impreso}{64}{section*.44}
+\contentsline {subsubsection}{Estructura del Circuito Impreso}{64}{section*.44}
 \contentsline {subsection}{\numberline {3.2.8}Implementaci\'on la red mallada dise\~nada}{67}{subsection.3.2.8}
 \contentsline {subsubsection}{Ilustraci\'on de los nodos}{69}{section*.45}
 \contentsline {subsection}{\numberline {3.2.9}An\'alisis el rendimiento de la red de acuerdo a variaciones en los par\'ametros de transmisi\'on de datos}{70}{subsection.3.2.9}

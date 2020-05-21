@@ -1,6 +1,6 @@
-Implementar un modo de compuerta en TCP/IP en los nodos para abrir la posibilidad de acceder a otras redes.
+Se recomienda ampliar la capacidades de comunicación  la red implementando un modo de compuerta en TCP/IP en en el nodo maestro, para abrir la posibilidad de acceder remotamente a esta, incluso Internet, creando una característica relacionada al Internet de la cosas en el área Industrial (IIoT).
 
-Implementar un control centralizado de gestión de datos para disminuir la perdida de paquetes en nodos congestionados.
+Dada la relevancia de la topología en el rendimiento de la red, debido a la congestión de información en los nodos con múltiples conexiones, se pro Implementar un control centralizado de gestión de datos para disminuir la perdida de paquetes en nodos congestionados.
 
 Crear un software con interfaz gráfica que permita aplicar configuraciones a los nodos y la de manera rápida, usando lenguajes como Java, Python, etc.
 
