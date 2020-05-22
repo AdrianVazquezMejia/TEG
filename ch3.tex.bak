@@ -10,11 +10,11 @@ Por lo tanto, es conveniente poseer una arquitectura especifica de la red mallad
 
 Para la creación de redes inalámbricas WiFi usando el microcontrolador ESP-32,\emph{Espressif Systems} a través del \emph{ESP-IDF} (Espacio de trabajo para desarrollo de Internet de las cosas) provee dos librerías: la ya mencionada ESP-MESH y ESP-NOW.  La librería ESP-NOW fue ideada para comunicaciones punto a punto en esquemas maestro/esclavo, no para creaciones de redes multi-salto, sin embargo, posee la expansibilidad de manipular el direccionamiento de los datos, brindado la potencialidad de crear redes de diversas arquitecturas.
 
-En la figura \ref{esperada} se muestra la ilutración de la red esperada, donde se contempla que el maestro Modbus (MA)  emita una solicitud a un eslavo mediante linea serial, los 
+En la figura \ref{esperada} se muestra la ilustración de la red esperada, donde se contempla que el maestro Modbus (MA)  emita una solicitud a un eslavo mediante linea serial, los  nodos de la red toman esta información y la transmiten por la red adecuadamente para que llegue al esclavo que requiere ser interrogado. Luego la red, toma la respuesta de dicho esclavo y la entrega al maestro.  Los esclavos pueden estar a más de un salto de distancia del maestro, como es el caso del esclavo 2 (ES 2). 
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.2]{images/topo3.eps}
+\includegraphics[scale=0.7]{images/topo3.eps}
 \caption{Estrutura de la red esperada}\label{esperada}
 \end{figure}
 
