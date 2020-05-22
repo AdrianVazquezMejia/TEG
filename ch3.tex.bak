@@ -10,6 +10,14 @@ Por lo tanto, es conveniente poseer una arquitectura especifica de la red mallad
 
 Para la creación de redes inalámbricas WiFi usando el microcontrolador ESP-32,\emph{Espressif Systems} a través del \emph{ESP-IDF} (Espacio de trabajo para desarrollo de Internet de las cosas) provee dos librerías: la ya mencionada ESP-MESH y ESP-NOW.  La librería ESP-NOW fue ideada para comunicaciones punto a punto en esquemas maestro/esclavo, no para creaciones de redes multi-salto, sin embargo, posee la expansibilidad de manipular el direccionamiento de los datos, brindado la potencialidad de crear redes de diversas arquitecturas.
 
+En la figura \ref{esperada} se muestra la ilutración de la red esperada, donde se contempla que el maestro Modbus (MA)  emita una solicitud a un eslavo mediante linea serial, los 
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{images/topo3.eps}
+\caption{Estrutura de la red esperada}\label{esperada}
+\end{figure}
+
 \subsection{ESP-NOW}
 \espn  es un tipo de protocolo de comunicación WiFi definido por \emph{Espressif Systems} donde los datos de aplicación son encapsulados en una trama específica por el proveedor y es transmitida de un dispositivo \wf a otro. Para proteger la trama de acción por seguridad se usa el protocolo CCMP (Protocolo de código de autenticación de mensaje de encadenamiento de bloque de cifrado en modo contador). \espn es ampliamente usada en luces inteligente, control remoto y sensores.
 
@@ -847,12 +855,11 @@ Protoboard  & cables protoboard  & Elego \\
  \caption{Hardware del nodo maestro.}\label{master Node}
  \end{figure}
  
-  \begin{figure}[H]
- \centering
- \includegraphics[scale=0.2]{images/foto2.jpeg}
- \caption{Hardware de un nodo con un esclavo Modbus}\label{Slave Node}
- 
- \end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{images/foto2.jpeg}
+\caption{Hardware de un nodo con un esclavo Modbus}\label{Slave Node}
+\end{figure}
 \subsection{Análisis el rendimiento de la red de acuerdo a variaciones en los parámetros de transmisión de datos}
 
 Las características principales de funcionamiento de la red Modbus son: distancia entre nodos, topología, tasa de baudios  serial, velocidad de muestreo, número de variables Modbus y topología. Para la evaluación del rendimiento se varió un parámetro respecto a a la vez. Así se observa la degradación de la calidad de servicio sin caer en numerosas pruebas redundantes. Las variaciones toman los valores expresados en la tabla \ref{parametros}.
