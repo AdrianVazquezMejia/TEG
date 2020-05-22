@@ -20,13 +20,13 @@ La tabla \ref{Res: Scan} presenta los resultados de las mediciones para distinto
 \hline 
 Tiempo de Muestro [s] &  ID 1 &   ID 2 &  ID 150 & ID 151 & ID 153 & \textbf{Promedio} \% \\ 
 \hline 
-10 & 0,21 & 0,74 & 0,00 & 0,11 & 0,89 & \textbf{0,39} \\ 
+1 & 0,21 & 0,74 & 0,00 & 0,11 & 0,89 & \textbf{0,39} \\ 
 \hline 
-5 & 0,10 & 0,00 & 0,00 & 0,10 & 0,10 & \textbf{0,06} \\ 
+2 & 0,10 & 0,00 & 0,00 & 0,10 & 0,10 & \textbf{0,06} \\ 
 \hline 
-2 & 0,00 & 0,10 & 0,00 & 0,10 & 0,30 & \textbf{0,10} \\ 
+5 & 0,00 & 0,10 & 0,00 & 0,10 & 0,30 & \textbf{0,10} \\ 
 \hline 
-1 & 0,20 & 0,00 & 0,00 & 0,30 & 0,30 & \textbf{0,16 }\\ 
+10 & 0,20 & 0,00 & 0,00 & 0,30 & 0,30 & \textbf{0,16 }\\ 
 \hline 
 \textbf{Promedio por ID}& \textbf{0,12} & \textbf{0,21 }& \textbf{0,00 }& \textbf{0,17} &\textbf{ 0,39 }&\textbf{ 0,18} \\ 
 \hline 
