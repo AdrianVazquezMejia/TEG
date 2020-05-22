@@ -8,55 +8,56 @@
 \BOOKMARK [1][-]{section.1.1}{1.1 Objetivos}{chapter.1}% 8
 \BOOKMARK [2][-]{subsection.1.1.1}{1.1.1 Objetivo General}{section.1.1}% 9
 \BOOKMARK [2][-]{subsection.1.1.2}{1.1.2 Objetivos espec\355ficos}{section.1.1}% 10
-\BOOKMARK [0][-]{chapter.2}{MARCO TE\323RICO}{}% 11
-\BOOKMARK [1][-]{section.2.1}{2.1 Fundamentos de las redes WiFi malladas}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.2}{2.2 La Referencia del Modelo OSI}{chapter.2}% 13
-\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 La capa F\355sica}{section.2.2}% 14
-\BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 La capa de v\355nculo de datos}{section.2.2}% 15
-\BOOKMARK [2][-]{subsection.2.2.3}{2.2.3 La capa de red}{section.2.2}% 16
-\BOOKMARK [2][-]{subsection.2.2.4}{2.2.4 La capa de transporte}{section.2.2}% 17
-\BOOKMARK [2][-]{subsection.2.2.5}{2.2.5 Capa de sesi\363n}{section.2.2}% 18
-\BOOKMARK [2][-]{subsection.2.2.6}{2.2.6 La capa de presentaci\363n}{section.2.2}% 19
-\BOOKMARK [2][-]{subsection.2.2.7}{2.2.7 La capa de aplicaci\363n}{section.2.2}% 20
-\BOOKMARK [1][-]{section.2.3}{2.3 Funcionamiento de las redes WiFi malladas}{chapter.2}% 21
-\BOOKMARK [2][-]{subsection.2.3.1}{2.3.1 Red mallada para Internet de las cosas \(IoT\)}{section.2.3}% 22
-\BOOKMARK [2][-]{subsection.2.3.2}{2.3.2 Red mallada y el balaceo de carga}{section.2.3}% 23
-\BOOKMARK [2][-]{subsection.2.3.3}{2.3.3 El protocolo ESP-MESH de Espressif MESHIDF}{section.2.3}% 24
-\BOOKMARK [1][-]{section.2.4}{2.4 Protocolo MODBUS}{chapter.2}% 25
-\BOOKMARK [2][-]{subsection.2.4.1}{2.4.1 Modelo de datos Modbus}{section.2.4}% 26
-\BOOKMARK [2][-]{subsection.2.4.2}{2.4.2 Protocolo Modbus sobre l\355nea serial}{section.2.4}% 27
-\BOOKMARK [1][-]{section.2.5}{2.5 Microcontrolador ESP32 esp32}{chapter.2}% 28
-\BOOKMARK [2][-]{subsection.2.5.1}{2.5.1 Caracter\355sticas principales del WiFi}{section.2.5}% 29
-\BOOKMARK [2][-]{subsection.2.5.2}{2.5.2 Caracter\355sticas principales de CPU y memoria}{section.2.5}% 30
-\BOOKMARK [2][-]{subsection.2.5.3}{2.5.3 Relojes y Temporizadores}{section.2.5}% 31
-\BOOKMARK [2][-]{subsection.2.5.4}{2.5.4 Intefaces de perif\351ricos avanzadas}{section.2.5}% 32
-\BOOKMARK [2][-]{subsection.2.5.5}{2.5.5 Seguridad}{section.2.5}% 33
-\BOOKMARK [1][-]{section.2.6}{2.6 Sistema Operativo en Tiempo Real}{chapter.2}% 34
-\BOOKMARK [2][-]{subsection.2.6.1}{2.6.1 El FreeRTOS}{section.2.6}% 35
-\BOOKMARK [0][-]{chapter.3}{MARCO METODOL\323GICO}{}% 36
-\BOOKMARK [1][-]{section.3.1}{3.1 DISE\321O DE LA RED MALLADA}{chapter.3}% 37
-\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 ESP-NOW}{section.3.1}% 38
-\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Requerimientos de dise\361o}{section.3.1}% 39
-\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 Dise\361o B\341sico de la red}{section.3.1}% 40
-\BOOKMARK [1][-]{section.3.2}{3.2 Detalle del Dise\361o}{chapter.3}% 41
-\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Programaci\363n del ESP-32}{section.3.2}% 42
-\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 \040Programa de la red dise\361ada que soporte la transmisi\363n del protocolo Modbus}{section.3.2}% 43
-\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Tarea esp\137now\137manage\137task}{section.3.2}% 44
-\BOOKMARK [2][-]{subsection.3.2.4}{3.2.4 Tarea espnow\137send}{section.3.2}% 45
-\BOOKMARK [2][-]{subsection.3.2.5}{3.2.5 Programa para el manejo del protocolo Modbus en el bus RS-485.}{section.3.2}% 46
-\BOOKMARK [2][-]{subsection.3.2.6}{3.2.6 Funciones auxiliares}{section.3.2}% 47
-\BOOKMARK [2][-]{subsection.3.2.7}{3.2.7 \040Circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32.}{section.3.2}% 48
-\BOOKMARK [2][-]{subsection.3.2.8}{3.2.8 Implementaci\363n la red mallada dise\361ada}{section.3.2}% 49
-\BOOKMARK [2][-]{subsection.3.2.9}{3.2.9 An\341lisis el rendimiento de la red de acuerdo a variaciones en los par\341metros de transmisi\363n de datos}{section.3.2}% 50
-\BOOKMARK [0][-]{chapter.4}{PRUEBAS EXPERIMENTALES}{}% 51
-\BOOKMARK [1][-]{section.4.1}{4.1 Resultados y an\341lisis}{chapter.4}% 52
-\BOOKMARK [2][-]{subsection.4.1.1}{4.1.1 Rendimiento y tiempo de muestreo}{section.4.1}% 53
-\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 Rendimiento y n\372mero de variables}{section.4.1}% 54
-\BOOKMARK [2][-]{subsection.4.1.3}{4.1.3 Rendimiento y tasa de baudios}{section.4.1}% 55
-\BOOKMARK [2][-]{subsection.4.1.4}{4.1.4 Rendimiento y topolog\355a}{section.4.1}% 56
-\BOOKMARK [0][-]{chapter.5}{CONCLUSIONES}{}% 57
-\BOOKMARK [0][-]{chapter.6}{RECOMENDACIONES}{}% 58
-\BOOKMARK [0][-]{appendix.Alph1}{Datos recolectados}{}% 59
-\BOOKMARK [0][-]{appendix.Alph2}{C\363digo fuente}{}% 60
-\BOOKMARK [0][-]{appendix.Alph3}{T\315TULO DEL ANEXO}{}% 61
-\BOOKMARK [0][-]{appendix*.46}{REFERENCIAS}{}% 62
+\BOOKMARK [1][-]{section.1.2}{1.2 Antecedentes}{chapter.1}% 11
+\BOOKMARK [0][-]{chapter.2}{MARCO TE\323RICO}{}% 12
+\BOOKMARK [1][-]{section.2.1}{2.1 Fundamentos de las redes WiFi malladas}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.2}{2.2 La Referencia del Modelo OSI}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 La capa F\355sica}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 La capa de v\355nculo de datos}{section.2.2}% 16
+\BOOKMARK [2][-]{subsection.2.2.3}{2.2.3 La capa de red}{section.2.2}% 17
+\BOOKMARK [2][-]{subsection.2.2.4}{2.2.4 La capa de transporte}{section.2.2}% 18
+\BOOKMARK [2][-]{subsection.2.2.5}{2.2.5 Capa de sesi\363n}{section.2.2}% 19
+\BOOKMARK [2][-]{subsection.2.2.6}{2.2.6 La capa de presentaci\363n}{section.2.2}% 20
+\BOOKMARK [2][-]{subsection.2.2.7}{2.2.7 La capa de aplicaci\363n}{section.2.2}% 21
+\BOOKMARK [1][-]{section.2.3}{2.3 Funcionamiento de las redes WiFi malladas}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.3.1}{2.3.1 Red mallada para Internet de las cosas \(IoT\)}{section.2.3}% 23
+\BOOKMARK [2][-]{subsection.2.3.2}{2.3.2 Red mallada y el balaceo de carga}{section.2.3}% 24
+\BOOKMARK [2][-]{subsection.2.3.3}{2.3.3 El protocolo ESP-MESH de Espressif MESHIDF}{section.2.3}% 25
+\BOOKMARK [1][-]{section.2.4}{2.4 Protocolo MODBUS}{chapter.2}% 26
+\BOOKMARK [2][-]{subsection.2.4.1}{2.4.1 Modelo de datos Modbus}{section.2.4}% 27
+\BOOKMARK [2][-]{subsection.2.4.2}{2.4.2 Protocolo Modbus sobre l\355nea serial}{section.2.4}% 28
+\BOOKMARK [1][-]{section.2.5}{2.5 Microcontrolador ESP32 esp32}{chapter.2}% 29
+\BOOKMARK [2][-]{subsection.2.5.1}{2.5.1 Caracter\355sticas principales del WiFi}{section.2.5}% 30
+\BOOKMARK [2][-]{subsection.2.5.2}{2.5.2 Caracter\355sticas principales de CPU y memoria}{section.2.5}% 31
+\BOOKMARK [2][-]{subsection.2.5.3}{2.5.3 Relojes y Temporizadores}{section.2.5}% 32
+\BOOKMARK [2][-]{subsection.2.5.4}{2.5.4 Intefaces de perif\351ricos avanzadas}{section.2.5}% 33
+\BOOKMARK [2][-]{subsection.2.5.5}{2.5.5 Seguridad}{section.2.5}% 34
+\BOOKMARK [1][-]{section.2.6}{2.6 Sistema Operativo en Tiempo Real}{chapter.2}% 35
+\BOOKMARK [2][-]{subsection.2.6.1}{2.6.1 El FreeRTOS}{section.2.6}% 36
+\BOOKMARK [0][-]{chapter.3}{MARCO METODOL\323GICO}{}% 37
+\BOOKMARK [1][-]{section.3.1}{3.1 DISE\321O DE LA RED MALLADA}{chapter.3}% 38
+\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 ESP-NOW}{section.3.1}% 39
+\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Requerimientos de dise\361o}{section.3.1}% 40
+\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 Dise\361o B\341sico de la red}{section.3.1}% 41
+\BOOKMARK [1][-]{section.3.2}{3.2 Detalle del Dise\361o}{chapter.3}% 42
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Programaci\363n del ESP-32}{section.3.2}% 43
+\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 \040Programa de la red dise\361ada que soporte la transmisi\363n del protocolo Modbus}{section.3.2}% 44
+\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Tarea esp\137now\137manage\137task}{section.3.2}% 45
+\BOOKMARK [2][-]{subsection.3.2.4}{3.2.4 Tarea espnow\137send}{section.3.2}% 46
+\BOOKMARK [2][-]{subsection.3.2.5}{3.2.5 Programa para el manejo del protocolo Modbus en el bus RS-485.}{section.3.2}% 47
+\BOOKMARK [2][-]{subsection.3.2.6}{3.2.6 Funciones auxiliares}{section.3.2}% 48
+\BOOKMARK [2][-]{subsection.3.2.7}{3.2.7 \040Circuito de un nodo para una red WiFi mallada basada en el microcontrolador ESP32.}{section.3.2}% 49
+\BOOKMARK [2][-]{subsection.3.2.8}{3.2.8 Implementaci\363n la red mallada dise\361ada}{section.3.2}% 50
+\BOOKMARK [2][-]{subsection.3.2.9}{3.2.9 An\341lisis el rendimiento de la red de acuerdo a variaciones en los par\341metros de transmisi\363n de datos}{section.3.2}% 51
+\BOOKMARK [0][-]{chapter.4}{PRUEBAS EXPERIMENTALES}{}% 52
+\BOOKMARK [1][-]{section.4.1}{4.1 Resultados y an\341lisis}{chapter.4}% 53
+\BOOKMARK [2][-]{subsection.4.1.1}{4.1.1 Rendimiento y tiempo de muestreo}{section.4.1}% 54
+\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 Rendimiento y n\372mero de variables}{section.4.1}% 55
+\BOOKMARK [2][-]{subsection.4.1.3}{4.1.3 Rendimiento y tasa de baudios}{section.4.1}% 56
+\BOOKMARK [2][-]{subsection.4.1.4}{4.1.4 Rendimiento y topolog\355a}{section.4.1}% 57
+\BOOKMARK [0][-]{chapter.5}{CONCLUSIONES}{}% 58
+\BOOKMARK [0][-]{chapter.6}{RECOMENDACIONES}{}% 59
+\BOOKMARK [0][-]{appendix.Alph1}{Datos recolectados}{}% 60
+\BOOKMARK [0][-]{appendix.Alph2}{C\363digo fuente}{}% 61
+\BOOKMARK [0][-]{appendix.Alph3}{T\315TULO DEL ANEXO}{}% 62
+\BOOKMARK [0][-]{appendix*.46}{REFERENCIAS}{}% 63

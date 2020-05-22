@@ -27,7 +27,6 @@ Diseñar e implementar una red WiFi mallada que soporte protocolo Modbus usando m
 
 \item Diseñar una red mallada basada en el microcontrolador ESP32.
 
-
 \item Implementar el módulo del programa para el manejo del protocolo Modbus en el bus RS-485.
 
 \item Implementar el programa de la red diseñada que soporte la transmisión del protocolo Modbus.
@@ -39,3 +38,8 @@ Diseñar e implementar una red WiFi mallada que soporte protocolo Modbus usando m
 \item Analizar el rendimiento de la red de acuerdo a variaciones en los parámetros de transmisión de datos. 
 
 \end{enumerate}
+\section{Antecedentes}
+
+Se tiene el trabajo de grado realizado por por Alejandro J. Temprano G., titulado \textit{Diseño de una Red Industrial Modbus RTU }inalámbrica, en cuyo trabajo diseño e implementó una red usando la banda de radiofrecuencia de 433MHz basándose en el transceptor RFM69HW \citep{Temprano}.
+
+Este trabajo contemplo la transmisión inalámbrica del protocolo Modbus, sin embargo, la realizó en una topología radial, donde todas las compuertas de enlace con esclavos están al alcance de las señales provenientes del maestro.  Por lo que no existe la posibilidad de múltiples saltos. No obstante, provee observaciones en relación a la comunicación con equipos Modbus que fueron tomadas en cuenta para el diseño de la red que contempla este trabajo. 

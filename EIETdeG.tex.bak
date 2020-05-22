@@ -283,12 +283,12 @@ equipos de control industrial. \\}
 \noindent%
 \textbf{Tutor Académico: José Alonso. Tesis.
 Caracas, Universidad Central de Venezuela. Facultad de Ingeniería.
-Escuela de Ingeniería Eléctrica.Opción Electrónica. Año 2020.}
+Escuela de Ingeniería Eléctrica.Opción Electrónica, Computación y Control. Año 2020. Pág. 82 + anexos.}
 
 \noindent
-\textbf{Palabras Claves:} Palabras clave. \\[1ex]
+\textbf{Palabras Claves:} WiFi, Modbus, mallada, inalámbrica, nodo, enrutamiento, microcontrolador, ESP32, interfaz serial, RS-485. \\[1ex]
 
-\noindent \textbf{Resumen.-} Escribe acá tu resumen
+\noindent \textbf{Resumen.}  Este trabajo presenta la implementación y el diseño de una red mallada inalámbrica WiFi para la transmisión del protocolo Modbus a modo de sustitución del bus RS-485 entre el maestro y los esclavos. Se documentan los tipos de red malladas mas comunes que usen microcontroladores o estén orientadas al área industrial, se hace una comparación. Posteriormete se diseña una estructura de red mallada con enrutamiento estático que soporte la transmisión del protocolo Modbus entre los nodos de la red. Luego, se diseña el hardware que con el chip de acople serial RS-485, el microcontrolador ESP32 y un regulador lineal. Finalmente se ejecutan pruebas de rendimiento contando con cuatro nodos, variando la tasa de baudios, la topología, el número de variables Modbus y el tiempo de muestreo. Se logró implementar satisfactoriamente la red con compatibilidad con equipos Modbus RTU serial con interfaz serial RS-485 y presentar análisis de respecto a los parámetros que afectar su eficacia. 
 
 \end{spacing}
 

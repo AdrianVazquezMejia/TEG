@@ -120,3 +120,11 @@ year={2019},
 month={05},
 note={[Internet; accedido el  14 de Mayo del 2020] Disponible en: \url{https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf}}
 }
+
+@Misc{Temprano,
+author={ Temprano G. , Alejandro J.},
+title={Dise\~no de una Red Industrial Modbus RTU Inal\'ambrica},
+year={2017},
+month={11},
+pages={24-28}
+}

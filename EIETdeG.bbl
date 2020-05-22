@@ -429,4 +429,25 @@ Systems, E.%
   \url{https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf}}
 \PrintBackRefs{\CurrentBib}
 
+\bibitem [\protect \citeauthoryear {%
+Temprano~G.%
+}{%
+Temprano~G.%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+Temprano}
+\APACinsertmetastar {%
+Temprano}%
+\begin{APACrefauthors}%
+Temprano~G., A\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{11}{}.
+\newblock
+\APACrefbtitle {Dise\~no de una Red Industrial Modbus RTU Inal\'ambrica.}
+  {Dise\~no de una red industrial modbus rtu inal\'ambrica.}
+\PrintBackRefs{\CurrentBib}
+
 \end{thebibliography}
