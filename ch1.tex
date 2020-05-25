@@ -2,9 +2,9 @@ En este capítulo se tratarán los fundamentos de las redes WiFi malladas, protoco
 
 \section{Fundamentos de las redes WiFi malladas}
 
-Una red WiFi mallada (WMN) se puede definir como  una red que permite la comunicación entre nodos a través de múltiples saltos en una topología mallada \citep{bahr}. Los nodos son los  intermediarios encargados de la formación de la red y la vinculación entre los dispositivos que la usan. Una WMN usualmente poseen clientes, enrutadores y puertas de enlace. Los clientes son dispositivos electrónicos, sistemas embebidos o sensores que pueden comunicarse con otros en la red. El enrutador es un dispositivo electrónico que sirve como un intermediario entre dos o más redes para transportar los datos de una red a otra.  Y las compuertas de enlace son dispositivos electrónicos que conectan la red con Internet. 
+Una red WiFi mallada (WMN) se puede definir como  una red que permite la comunicación entre nodos a través de múltiples saltos en una topología mallada \cite{bahr}. Los nodos son los  intermediarios encargados de la formación de la red y la vinculación entre los dispositivos que la usan. Una WMN usualmente poseen clientes, enrutadores y puertas de enlace. Los clientes son dispositivos electrónicos, sistemas embebidos o sensores que pueden comunicarse con otros en la red. El enrutador es un dispositivo electrónico que sirve como un intermediario entre dos o más redes para transportar los datos de una red a otra.  Y las compuertas de enlace son dispositivos electrónicos que conectan la red con Internet. 
 
-Cuando un nodo no puede operar, el resto de los nodos en la WMN aún pueden comunicarse con los otros, bien sea, directa o indirectamente a través de uno o más nodos intermediarios \citep{ScienceDirect}.
+Cuando un nodo no puede operar, el resto de los nodos en la WMN aún pueden comunicarse con los otros, bien sea, directa o indirectamente a través de uno o más nodos intermediarios \cite{ScienceDirect}.
 
 \begin{figure}[H]
 \centering
@@ -13,13 +13,13 @@ Cuando un nodo no puede operar, el resto de los nodos en la WMN aún pueden comun
 \end{figure}
 
  
-Una red WiFi mallada se establece en la banda para comunicación WiFi (sea 2,4 GHz o 5GHz), donde hay estaciones (nodos) que soportan comunicación de múltiples saltos (multi-hop) para transferir información en la red. Así mismo se tiene que, el enrutamiento y la capacidades de reenvios de datos residen en la capa de Control de Acceso al Medio (MAC) \citep{article1}.
+Una red WiFi mallada se establece en la banda para comunicación WiFi (sea 2,4 GHz o 5GHz), donde hay estaciones (nodos) que soportan comunicación de múltiples saltos (multi-hop) para transferir información en la red. Así mismo se tiene que, el enrutamiento y la capacidades de reenvios de datos residen en la capa de Control de Acceso al Medio (MAC) \cite{article1}.
 
 \subsection*{La capa de Control de Acceso al Medio (MAC)}
 
 La capa MAC administra el acceso a un medio compartido, proveyendo sincronización entre diferentes nodos para permitir la transmisión inalámbrica. Dicha sincronización es cada vez más esencial para la red en tanto el método de acceso es más complejo. Como un ejemplo, la sincronización  puede ser necesaria entre nodos de un sistema que emplee un espectro abierto. Otro ejemplo, nodos individuales pudiesen necesitar permiso de un controlador en una red inalámbrica para transmitir en un canal dado. La capa MAC administra las negociaciones con un nodo de control para el acceso al medio.
 
-Las funciones específicas que están encapsuladas en la capa MAC, varían de un protocolo a otro. Incluyen, pero no están limitadas a, técnicas de acceso múltiple, sincronización un medio abierto  y corrección de errores \citep{inbook}.
+Las funciones específicas que están encapsuladas en la capa MAC, varían de un protocolo a otro. Incluyen, pero no están limitadas a, técnicas de acceso múltiple, sincronización un medio abierto  y corrección de errores \cite{inbook}.
 
 \begin{figure}[H]
 \centering
@@ -37,7 +37,7 @@ Las direcciones MAC se componen de doce número hexadecimales (48  bits de longit
 MM:MM:MM:SS:SS:SS \quad o \quad MM-MM-MM-SS-SS-SS
 \end{equation}
 }
-La primera mitad de la dirección MAC contiene el número identificador del fabricante  del adaptador(i.e. 00:A0:C9:14:C8:29). Dichos identificadores están regulados por un estándar de Internet. La segunda parte de la dirección MAC representa el número de serial asignado al adaptador por el fabricante. La suplantación de MAC es equivalente a hacerce cargo de los controladores de interfaz de red (NIC). La unicidad de la dirección MAC es esencial en todas la fases de la comunicación de red porque mapea todos los identificadores de las capas superiores \citep{MACen}.
+La primera mitad de la dirección MAC contiene el número identificador del fabricante  del adaptador(i.e. 00:A0:C9:14:C8:29). Dichos identificadores están regulados por un estándar de Internet. La segunda parte de la dirección MAC representa el número de serial asignado al adaptador por el fabricante. La suplantación de MAC es equivalente a hacerce cargo de los controladores de interfaz de red (NIC). La unicidad de la dirección MAC es esencial en todas la fases de la comunicación de red porque mapea todos los identificadores de las capas superiores \cite{MACen}.
 
 \section{La Referencia del Modelo OSI}
 
@@ -109,7 +109,7 @@ Protocolos de comando-respuesta y basados en texto, forman parte de esta capa.
 
 \section{Funcionamiento de las redes WiFi malladas}
 
-La implementación de la topología mallada ha encontrado problemas con la necesidad de procedimientos adicionales relacionados con el enrutamiento. Hay algunos protocolos que soportan el servicio de red mallada sobre la red IP, por ejemplo: B.A.T.M.A.N. (Better Approach To MobiLle Adhoc Networking), Babel (Protocolo de distancia de vector para IPv6 y IPv4 con propiedades de convergencia rápida), HWMP (Protocolo Híbrido Inalámbrico Mallado).  El uso de estos protocolos requiere la completa implementación de la pila TCP/IP y un poder de computación significativo, lo cual limita sus implementaciones. Sin embargo, no todos los equipos (para comunicaciones WiFi) soportan un protocolo particular\citep{IoTWMN}. 
+La implementación de la topología mallada ha encontrado problemas con la necesidad de procedimientos adicionales relacionados con el enrutamiento. Hay algunos protocolos que soportan el servicio de red mallada sobre la red IP, por ejemplo: B.A.T.M.A.N. (Better Approach To MobiLle Adhoc Networking), Babel (Protocolo de distancia de vector para IPv6 y IPv4 con propiedades de convergencia rápida), HWMP (Protocolo Híbrido Inalámbrico Mallado).  El uso de estos protocolos requiere la completa implementación de la pila TCP/IP y un poder de computación significativo, lo cual limita sus implementaciones. Sin embargo, no todos los equipos (para comunicaciones WiFi) soportan un protocolo particular\cite{IoTWMN}. 
 
 El uso de microcontroladores avanzados incrementa altamente el costo  de la construcción de la red, que muchas veces no son necesarios para aplicaciones donde se necesita obtener información sobre los procesos lentos a través de mediciones periódicas.  Un amplio rango de módulos simples WiFi hechos como Sistemas en un Chip (SoC), que además de manejar estándares de comunicación, pueden adquirir datos a través de entradas y salidas de propósito general. Estos abren la posibilidad para la construcción de sensores de red de bajo costo en la ampliamente usada WMN. Sin embargo, cuando muy poco poder de procesamiento no permite la implementación de algoritmos avanzados que soporten el enrutamiento IP en la topología mallada, es posible crear una red simplificada mientras se mantienen las características principales de las redes malladas. 
 
@@ -117,7 +117,7 @@ A continuación se describe el funcionamiento de algunas de redes WiFi malladas, 
 
 \subsection{Red mallada para Internet de las cosas (IoT)}\label{primera}
 
-Pior Lech and Przemyslaw Wlodarski en su artículo \textit{Analysis of the IoT WiFi Mesh Network} (Análisis de las redes WiFi malladas IoT) \citep{IoTWMN}, llevan a cabo un análisis estadístico de rendimiento sobre una red WiFi mallada. Para lograrlo usan la versión de desarrollo del módulo de comunicación NodeMCU ESP8266. La operación básica de cada nodo en la red es el modo AP+STA (Punto de acceso y estación),todos los nodos posee un número fijo asignado que crece desde la fuente (RPi 1) en la dirección de la estación destino (RPi 2). La estrategia de entre los nodos está basada en la transmisión del mensaje a los nodos con un número mayor al asociado a la estación transmisora. 
+Pior Lech and Przemyslaw Wlodarski en su artículo \textit{Analysis of the IoT WiFi Mesh Network} (Análisis de las redes WiFi malladas IoT) \cite{IoTWMN}, llevan a cabo un análisis estadístico de rendimiento sobre una red WiFi mallada. Para lograrlo usan la versión de desarrollo del módulo de comunicación NodeMCU ESP8266. La operación básica de cada nodo en la red es el modo AP+STA (Punto de acceso y estación),todos los nodos posee un número fijo asignado que crece desde la fuente (RPi 1) en la dirección de la estación destino (RPi 2). La estrategia de entre los nodos está basada en la transmisión del mensaje a los nodos con un número mayor al asociado a la estación transmisora. 
 
 De acuerdo a la figura  \ref{Fig3: Esquema WMN 1} se pueden seleccionar las siguientes rutas: 1-2-5, 1-2-3-5, 1-2-4-5, 1-3-5 y 1-4-5. El número asignado esta estrechamente relacionado con las direcciones IP. Los mensajes son enviados a través del protocolo UTP.  La fuente de los mensajes es la microcomputadora Raspberry Pi v.2 (Rpi 1) la cual envía mensajes a el nodo 1. Los módulos NodeMCU duplican el mensaje y lo reenvían acorde a la estrategia antes mencionada. Todo el tráfico de datos termina en el segundo Raspberry Pi (RPi 2) a través del nodo 5. Los nodos que llevan a cabo la duplicación del mensaje, envían estos en un ciclo, del menor al mayor número asociado con el nodo. 
 
@@ -126,12 +126,12 @@ De acuerdo a la figura  \ref{Fig3: Esquema WMN 1} se pueden seleccionar las sigu
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{wmn-ex_1.png}
-\caption{Topología usada por Lech y Wlodarski \citep{IoTWMN}}\label{Fig3: Esquema WMN 1}
+\caption{Topología usada por Lech y Wlodarski \cite{IoTWMN}}\label{Fig3: Esquema WMN 1}
 \end{figure}
 
 \subsection{Red mallada y el balaceo de carga}\label{segunda}
 
-Yujun Cheng, Dong Yang y Huachun Zhou en su artículo \textit{A Load Balancing Approach in 802.11 Wireless Networks for Industrial Soft Real-Time Applications} \citep{article3} (Un Enfoque de Carga Equilibrada  en Redes Inalámbricas 802.11 para  Aplicaciones  Industriales Ligeras en Tiempo Real) propone una arquitectura basada en el que distribución de los nodos esta directamente relacionada con la cantidad de enlaces que posee cada uno, de manera de distribuirlos equitativamente.
+Yujun Cheng, Dong Yang y Huachun Zhou en su artículo \textit{A Load Balancing Approach in 802.11 Wireless Networks for Industrial Soft Real-Time Applications} \cite{article3} (Un Enfoque de Carga Equilibrada  en Redes Inalámbricas 802.11 para  Aplicaciones  Industriales Ligeras en Tiempo Real) propone una arquitectura basada en el que distribución de los nodos esta directamente relacionada con la cantidad de enlaces que posee cada uno, de manera de distribuirlos equitativamente.
 
 El estándar 802.11 no define ningún mecanismo para el balanceo de carga. Casi todos los adaptadores 802.11 se asocian con el punto de acceso que posea la mayor intensidad de señal, por que las redes son propensas a  una distribución desigual de recursos, lo que significa que algunas AP exceden o se acercan a la capacidad de carga máxima, mientras que la de otras permanecen relativamente baja. En este enfoque, el proceso de asociación de las estaciones  no está simplemente relacionado con la intensidad de señal, sino que también está basado en la carga que posee cada AP.  El algoritmo provee una compensación entre la intensidad de señal y la carga, cambiando las estaciones de  los punto de acceso  sobrecargados con una intensidad de señal alta,  a un punto de acceso vecino menos cargado y la intensidad de señal que pudiese ser más débil.
 
@@ -143,20 +143,20 @@ Un algoritmos es el encargado de balancear la red, el cual está basado en revisi
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{wmn-ex_2.png}
-\caption{Topología usada por Yujun Cheng, Dong Yang y Huachun Zhou \citep{article3}}\label{Fig4: Esquema WMN 2}
+\caption{Topología usada por Yujun Cheng, Dong Yang y Huachun Zhou \cite{article3}}\label{Fig4: Esquema WMN 2}
 \end{figure}
  
  
- \subsection{El protocolo ESP-MESH de Espressif \citep{MESHIDF}}\label{tercera}
+ \subsection{El protocolo ESP-MESH de Espressif \cite{MESHIDF}}\label{tercera}
  
- ESP-MESH es un protocolo de red construido sobre del protocolo WiFi.  Dicho protocolo permite que numerosos dispositivos(Nodos) posicionados sobre un área física estén interconectados bajo única Red de Área Local Inalámbrica (WLAN). Las redes ESP-MESH son auto-organizadas y auto-reparables, es decir, que la red pueden ser construidas y mantenidas de manera autónoma \citep{MESHIDF}.
+ ESP-MESH es un protocolo de red construido sobre del protocolo WiFi.  Dicho protocolo permite que numerosos dispositivos(Nodos) posicionados sobre un área física estén interconectados bajo única Red de Área Local Inalámbrica (WLAN). Las redes ESP-MESH son auto-organizadas y auto-reparables, es decir, que la red pueden ser construidas y mantenidas de manera autónoma \cite{MESHIDF}.
  
  ESP-MESH permite que los nodos actúen simultáneamente como estación y como punto de acceso (AP). Por lo tanto un nodo puede poseer múltiples conexiones de estaciones a su punto de acceso, mientras que  su estación posee una única conexión a un punto de acceso de una capa superior. Lo que naturalmente resulta en una topología de árbol  de múltiples capas con una jerarquía de padre-hijo(Observe Figura \ref{Fig5: Topologia ESP-MESH}).
  
  \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{wmn-ex_3.png}
-\caption{Topología de árbol de ESP-IDF \citep{MESHIDF}}\label{Fig5: Topologia ESP-MESH}
+\caption{Topología de árbol de ESP-IDF \cite{MESHIDF}}\label{Fig5: Topologia ESP-MESH}
 \end{figure}
  
  \subsubsection{Tramas de faro y límite de RSSI}
@@ -181,7 +181,7 @@ Un algoritmos es el encargado de balancear la red, el cual está basado en revisi
 
 \section{Protocolo MODBUS}
 
-Modbus es un protocolo de mensajes de capa de aplicación, posicionada en el nivel 7 del modelo OSI, el cual provee comunicación cliente/servidor entre dispositivos conectados en diferentes tipos de buses o redes. \citep{modbusMensaging}
+Modbus es un protocolo de mensajes de capa de aplicación, posicionada en el nivel 7 del modelo OSI, el cual provee comunicación cliente/servidor entre dispositivos conectados en diferentes tipos de buses o redes. \cite{modbusMensaging}
 
 El protocolo Modbus define la unidad de datos de protocolo (PDU) independiente de las capas inferiores de comunicación. El mapeo del protocolo MODBUS en  buses o redes específicas pueden introducir campos adiciones en la unidad de datos de aplicación (ADU).
 
@@ -251,9 +251,9 @@ El bit de paridad es requerido, para asegurar la máxima compatibilidad.  Es reco
 
 Toda la trama Modbus debe ser enviada de forma continua sin superar silencios de un tiempo equivalente de 1,5 caracter entre dos caracteres, de otra manera se originaria un error de trama.  El espaciado entre tramas es marcado por silencios mayores entre 3,5 caracteres. 
 
-\section{Microcontrolador ESP32 \citep{esp32}}
+\section{Microcontrolador ESP32 \cite{esp32}}
 
-El \mcu es un chip con integración WiFi y Bluetooth diseñado con la tecnología de ultra bajo consumo de 40 nm. Este microcontrolador esta diseñado para aplicaciones móviles, electrónicos personales, y de Internet de las cosas (IoT). Posee características de bajo consumo, incluyendo reloj de alta precisión, múltiples estados de energía, y escalamiento de consumo dinámico\citep{esp32}. 
+El \mcu es un chip con integración WiFi y Bluetooth diseñado con la tecnología de ultra bajo consumo de 40 nm. Este microcontrolador esta diseñado para aplicaciones móviles, electrónicos personales, y de Internet de las cosas (IoT). Posee características de bajo consumo, incluyendo reloj de alta precisión, múltiples estados de energía, y escalamiento de consumo dinámico\cite{esp32}. 
 
 Además es una solución integrada, que ya posee WiFi, Bluetooth, junto con alrededor de 20 componentes externos. El chip incluye una interruptor de antena, acoplador de radio-frecuencia, amplificador de potencia, amplificador de recepción de bajo ruido, filtros, y módulos de administración de consumo. 
 
@@ -262,7 +262,7 @@ Este microcontrolador posee dos núcleos CPU que pueden ser individualmente contr
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{block-diagram.png}\label{Fig7: Diagrama ESP32}
-\caption{Diagrama funcional del ESP-32\citep{esp32}}
+\caption{Diagrama funcional del ESP-32\cite{esp32}}
 \end{figure}
 
 \subsection{Características principales del WiFi}
@@ -339,11 +339,11 @@ Este microcontrolador posee dos núcleos CPU que pueden ser individualmente contr
 
 Un sistema operativo es un programa de comptadora que soporta las funciones básicas de la misma, y provee servicios a otros programas o aplicaciones  que corren en la computadora. Las aplicaciones ejecutan las funcionalidades que el usuario quiere o necesita.  Los servicios del sistema operativo hace el desarrollo de aplicaciones rápido, simple, y mantenible. 
 
-La mayoría de los sistemas operativos permiten que se ejecuten múltiples programas al mismo tiempo. Es es llamado multi-tarea. Aunque, en realidad, cada procesador solo puede correr una tarea. Una parte del sistema operativo es llamado planificador,y es responsable de la decisión cual programa correr y cuando, así da la ilusión de la ejecución simultanea de tareas mientras conmuta rápidamente entre cada programa \citep{freertos1}.
+La mayoría de los sistemas operativos permiten que se ejecuten múltiples programas al mismo tiempo. Es es llamado multi-tarea. Aunque, en realidad, cada procesador solo puede correr una tarea. Una parte del sistema operativo es llamado planificador,y es responsable de la decisión cual programa correr y cuando, así da la ilusión de la ejecución simultanea de tareas mientras conmuta rápidamente entre cada programa \cite{freertos1}.
 
 \subsection{El FreeRTOS}
 
-FreeRTOS es una clase de RTOS que está diseñado para ser lo sufientemente liviano para correr en un microcontrolador.  Este provee planificador en tiempo real, comunicación entre tareas, temporizadores y sincronización.  Esto significa que es descrito más exactamente como un kernel en tiempo real. El planificador usado en el FreeRTOS, logra determinismo, proporcionando a los usuarios asignar prioridad a cada tarea de ejecución \citep{freertos2}. Cabe resaltar algunos elementos resaltantes:
+FreeRTOS es una clase de RTOS que está diseñado para ser lo sufientemente liviano para correr en un microcontrolador.  Este provee planificador en tiempo real, comunicación entre tareas, temporizadores y sincronización.  Esto significa que es descrito más exactamente como un kernel en tiempo real. El planificador usado en el FreeRTOS, logra determinismo, proporcionando a los usuarios asignar prioridad a cada tarea de ejecución \cite{freertos2}. Cabe resaltar algunos elementos resaltantes:
 \begin{itemize}
 \item \textbf{ Tareas: }Las tareas se implementan como funciones.Cada tarea es un pequeño programa en sí mismo. Tiene un punto de entrada, se ejecuta normalmente de forma continua en un bucle infinito y no se cierra. 
 

@@ -23,7 +23,7 @@
 \contentsline {section}{\numberline {2.3}Funcionamiento de las redes WiFi malladas}{15}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Red mallada para Internet de las cosas (IoT)}{16}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Red mallada y el balaceo de carga}{17}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}El protocolo ESP-MESH de Espressif \citep {MESHIDF}}{19}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.3}El protocolo ESP-MESH de Espressif \cite {MESHIDF}}{19}{subsection.2.3.3}
 \contentsline {subsubsection}{Tramas de faro y l\IeC {\'\i }mite de RSSI}{20}{section*.12}
 \contentsline {subsubsection}{La selecci\'on del nodo padre}{20}{section*.13}
 \contentsline {subsubsection}{Las tablas de enrutamiento}{21}{section*.14}
@@ -31,7 +31,7 @@
 \contentsline {subsection}{\numberline {2.4.1}Modelo de datos Modbus}{23}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Protocolo Modbus sobre l\IeC {\'\i }nea serial}{24}{subsection.2.4.2}
 \contentsline {subsubsection}{Modos de transmisi\'on serial}{24}{section*.15}
-\contentsline {section}{\numberline {2.5}Microcontrolador ESP32 \citep {esp32}}{25}{section.2.5}
+\contentsline {section}{\numberline {2.5}Microcontrolador ESP32 \cite {esp32}}{25}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}Caracter\IeC {\'\i }sticas principales del WiFi}{26}{subsection.2.5.1}
 \contentsline {subsection}{\numberline {2.5.2}Caracter\IeC {\'\i }sticas principales de CPU y memoria}{27}{subsection.2.5.2}
 \contentsline {subsection}{\numberline {2.5.3}Relojes y Temporizadores}{27}{subsection.2.5.3}

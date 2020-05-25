@@ -719,10 +719,10 @@ Cumple la función complementaría a la función \ref{prepare}, descompone los dato
 
 El desarrollo del software de la red ser realizó de forma iterativa sobre las tarjetas de desarrollo, por lo que la red fue implementada mientras era desarrollada. 
 
-Se consideran las  especificaciones del diseño en la sección \ref{hardware} y las   \href{https://www.espressif.com/sites/default/files/documentation/esp-wroom-02_pcb_design_and_module_placement_guide_0.pdf}{recomendaciones} técnicas realizadas por \textit{Espressif} para el diseño de PCB con el ESP32.  
+Se consideran las  especificaciones del diseño en la sección \ref{hardware} y las recomendaciones técnicas realizadas por \textit{Espressif} \cite{testAntena} para el diseño de PCB con el ESP32.  
 
 \subsubsection{Posicionamiento del ESP32 en el PCB}
-El encapsulado  ESP-WROOM-32 está diseñada para ser soldado en una PCB huésped. El ESP-WROOM-32 usa una antena de F invertida (MIFA),  para la banda de WiFi 2,4 GHz,  con un ganancia de 20dBi. La figura \ref{Fig  1: Antenna Placement} muestra las seis opciones de colocación que son comúnmente usadas (la opción uno es usada como referencia). Los resultados de las pruebas ejecutadas por \emph{Espressif} muestran que las opciones 2 y 3 tienen los mejores rendimientos, mientras el de las otras son sub-óptimos\citep{testAntena}.
+El encapsulado  ESP-WROOM-32 está diseñada para ser soldado en una PCB huésped. El ESP-WROOM-32 usa una antena de F invertida (MIFA),  para la banda de WiFi 2,4 GHz,  con un ganancia de 20dBi. La figura \ref{Fig  1: Antenna Placement} muestra las seis opciones de colocación que son comúnmente usadas (la opción uno es usada como referencia). Los resultados de las pruebas ejecutadas por \emph{Espressif} muestran que las opciones 2 y 3 tienen los mejores rendimientos, mientras el de las otras son sub-óptimos\cite{testAntena}.
 
 \begin{figure}[H]
 \centering
@@ -734,12 +734,12 @@ Los resultados del estudio de basan en las mediciones de potencia WiFi y parámet
 \begin{enumerate}
 \item Las opciones de colocación 1,2 y 3 básicamente no se muestran afectadas en el rendimiento de la antena siempre y cuando esta este enfrente de espacio abierto. Es recomendado proveer una espacio de al menos 5 mm alrededor de antena en cada dirección.
 
-\item Si el PCB de la antes tiene que ser colocado en una tarjeta huesped, es recomendada la opción 4, que no posee plano de cobre bajo la antena, así hayan algunas pérdidas del rendimiento.
+\item Si el PCB de la antes tiene que ser colocado en una tarjeta huésped, es recomendada la opción 4, que no posee plano de cobre bajo la antena, así hayan algunas pérdidas del rendimiento.
 
 \item La opción 6 posee el peor rendimiento tanto en la transmisión como la recepción, pues se ve afectado por por la tarjeta huésped.
 \end{enumerate}
 
-Por lo tanto se tomo la recomendación \ref{recomendacion} eligiendo la opción 4 para el diseño.
+Se eligió la opción 4, debido a que permite que la antena posea un soporte adicional sobre la PCB, considerando que no se coloca plano de tierra en ninguna capa. 
 
 \subsubsection{El chip MAX-485}
 
