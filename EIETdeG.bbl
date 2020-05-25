@@ -76,6 +76,11 @@ M.~B. Rifki~Muhendra, Aditya~Rinaldi, ``Development of wifi mesh infrastructure
   for internet of things applications,'' \emph{Engineering Physics
   International Conference, EPIC 2016}, p. 331, 2016.
 
+\bibitem{imTopo}
+Foobaz, ``Networktopology-mesh.svg,'' 06 2014, [Internet; accedido el 25 de
+  Mayo del 2020] Disponible en:
+  \url{https://en.wikipedia.org/wiki/File:NetworkTopology-Mesh.svg}.
+
 \bibitem{inbook}
 D.~Chew, ``Mac layer,'' pp. 139--171, 10 2018.
 
@@ -95,9 +100,30 @@ A.~W. Services, ``What is a general purpose operating system?'' 05 2020,
 ------, ``What is freertos?'' 05 2020, [Internet; accedido el 08 de Mayo del
   2020] Disponible en: \url{https://www.freertos.org/about-RTOS.html}.
 
+\bibitem{imEncap}
+Ubahnverleih, ``Esp32 espressif esp-wroom-32 shielded.svg,'' 11 2018,
+  [Internet; accedido el 25 de Mayo del 2020] Disponible en:
+  \url{https://commons.wikimedia.org/wiki/File:ESP32_Espressif_ESP-WROOM-32_Shielded.jpg}.
+
+\bibitem{imEncapDC}
+Itead.cc, ``Lm2596 dc-dc buck converter step-down power module output
+  1.25v-35v,'' 06 2017, [Internet; accedido el 25 de Mayo del 2020] Disponible
+  en:
+  \url{https://www.itead.cc/lm2596-dc-dc-buck-converter-step-down-power-module-output-1-25v-35v.html}.
+
+\bibitem{imTool}
+E.~Systems, ``Development of applications for esp32,'' 05 2020, [Internet;
+  accedido el 25 de Mayo del 2020] Disponible en:
+  \url{https://docs.espressif.com/projects/esp-idf/en/latest/esp32/_images/what-you-need1.png}.
+
 \bibitem{testAntena}
-E.~Systems, ``Esp-wroom-02pcb design and module placement guide,'' 06 2016,
+------, ``Esp-wroom-02pcb design and module placement guide,'' 06 2016,
   [Internet; accedido el 27 de Abril del 2020] Disponible en:
   \url{https://www.espressif.com/sites/default/files/documentation/esp-wroom-02_pcb_design_and_module_placement_guide_0.pdf}.
+
+\bibitem{imRS}
+------, ``Esp-idf uart examples,'' 05 2020, [Internet; accedido el 25 de Mayo
+  del 2020] Disponible en:
+  \url{https://github.com/espressif/esp-idf/tree/master/examples/peripherals/uart/uart_echo_rs485}.
 
 \end{thebibliography}

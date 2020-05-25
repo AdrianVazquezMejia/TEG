@@ -216,9 +216,9 @@ El hardware del nodo se puede dividir en tres bloques: el microcontrolador, la a
 Para la aplicación se usó el encapsulado  ESP-WROOM-32, debido a disponibilidad y encapsulado con escudo WiFi.  Se debe tener en cuenta que se dejaron disponibles los pines del UART 0 para la descarga del software, además de dos pines adicionales para inducir el estado de programación, los cuales son el pin \textit{EN} y el pin de propósito general cero.
 
 \begin{figure}[H]
-\caption{Encapsulado ESP-WROOM-32 del ESP32}
 \centering
-\includegraphics[scale=0.5]{ESP-WROOM-32.jpg}\label{Fig  x: ESP-WROOM-32}
+\includegraphics[scale=0.5]{ESP-WROOM-32.jpg}
+\captionsource{Encapsulado ESP-WROOM-32 del ESP32}{Adaptada de \cite{imEncap}}\label{Fig  x: ESP-WROOM-32}
 \end{figure}
  
 \textbf{Alimentación}
@@ -226,8 +226,8 @@ La alimentación del microcontrolador es de 3,3 V y además los equipos Modbus esp
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{dcdc.jpg}\label{dcdcF}
-\caption{Tarjeta con regulador DC-DC para alimentación}
+\includegraphics[scale=1]{dcdc.jpg}
+\captionsource{Tarjeta con regulador DC-DC para alimentación}{Adaptada de \citep{imEncapDC}}\label{dcdcF}
 \end{figure}
  %Otras especifiaciones
  
@@ -291,8 +291,8 @@ En cuanto al software se puede representar por capas:
 
  \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{toolchain.png}\label{Fig  3: Desarrollo de aplicaciones}
-\caption{Ilustración del paquete para el desarrollo de aplicaciones en el ESP32 }
+\includegraphics[scale=0.5]{toolchain.png}
+\caption{Ilustración del paquete para el desarrollo de aplicaciones en el ESP32 }{Adaptada de \cite{imTool} }\label{Fig  3: Desarrollo de aplicaciones}
 \end{figure}
 
 Los detalles de la instalación de cada uno de estas herramientas se llevo a cabo siguiendo la metodología propuesta por \textit{Espressif } en el su pagina web \url{https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html}.
@@ -722,12 +722,12 @@ El desarrollo del software de la red ser realizó de forma iterativa sobre las ta
 Se consideran las  especificaciones del diseño en la sección \ref{hardware} y las recomendaciones técnicas realizadas por \textit{Espressif} \cite{testAntena} para el diseño de PCB con el ESP32.  
 
 \subsubsection{Posicionamiento del ESP32 en el PCB}
-El encapsulado  ESP-WROOM-32 está diseñada para ser soldado en una PCB huésped. El ESP-WROOM-32 usa una antena de F invertida (MIFA),  para la banda de WiFi 2,4 GHz,  con un ganancia de 20dBi. La figura \ref{Fig  1: Antenna Placement} muestra las seis opciones de colocación que son comúnmente usadas (la opción uno es usada como referencia). Los resultados de las pruebas ejecutadas por \emph{Espressif} muestran que las opciones 2 y 3 tienen los mejores rendimientos, mientras el de las otras son sub-óptimos\cite{testAntena}.
+El encapsulado  ESP-WROOM-32 está diseñada para ser soldado en una PCB huésped. El ESP-WROOM-32 usa una antena de F invertida (MIFA),  para la banda de WiFi 2,4 GHz,  con un ganancia de 20dBi. La figura \ref{Fig  1: Antenna Placement} muestra las seis opciones de colocación que son comúnmente usadas (la opción uno es usada como referencia). Los resultados de las pruebas ejecutadas por \emph{Espressif} muestran que las opciones 2 y 3 tienen los mejores rendimientos, mientras el de las otras son sub-óptimos \cite{testAntena}.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{opcionesPCB.png}
-\caption{Opciones para colocación en PCB}\label{Fig  1: Antenna Placement}
+\captionsource{Opciones para colocación en PCB}{Adaptada de \cite{testAntena}}\label{Fig  1: Antenna Placement}
 \end{figure}
 
 Los resultados del estudio de basan en las mediciones de potencia WiFi y parámetros EVM (magnitud del vector de error)para varios canales para verificar el rendimiento del la antenas en diferentes posiciones. Los resultados fueron los siguientes:
@@ -749,7 +749,7 @@ Se eligió la opción 4, debido a que permite que la antena posea un soporte adici
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{maxim.png}
-\caption{Ejemplo de conexión entre MAX-485 y UART}\label{Fig  2: MAX y UART}
+\caption{Ejemplo de conexión entre MAX-485 y UART}{Adaptada de \cite{imRS}}\label{Fig  2: MAX y UART}
 \end{figure}
 
 \subsubsection{Alimentación}%xxx agregar foto

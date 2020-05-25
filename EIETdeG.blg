@@ -9,6 +9,7 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: referencias.bib
 Database file #2: bibliografia.bib
+Database file #3: fuentes.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -17,45 +18,45 @@ Warning--missing publisher in range
 Warning--empty booktitle in planteam
 
 Done.
-You've used 18 entries,
+You've used 23 entries,
             4087 wiz_defined-function locations,
-            918 strings with 9996 characters,
-and the built_in function-call counts, 10287 in all, are:
-= -- 807
-> -- 175
+            942 strings with 11017 characters,
+and the built_in function-call counts, 12167 in all, are:
+= -- 957
+> -- 195
 < -- 65
-+ -- 99
-- -- 30
-* -- 427
-:= -- 1597
-add.period$ -- 35
-call.type$ -- 18
-change.case$ -- 23
++ -- 109
+- -- 35
+* -- 487
+:= -- 1925
+add.period$ -- 45
+call.type$ -- 23
+change.case$ -- 33
 chr.to.int$ -- 150
-cite$ -- 21
-duplicate$ -- 801
-empty$ -- 906
-format.name$ -- 35
-if$ -- 2388
+cite$ -- 26
+duplicate$ -- 971
+empty$ -- 1096
+format.name$ -- 40
+if$ -- 2810
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 148
-newline$ -- 77
-num.names$ -- 18
-pop$ -- 375
+int.to.str$ -- 23
+missing$ -- 188
+newline$ -- 92
+num.names$ -- 23
+pop$ -- 480
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 792
+skip$ -- 937
 stack$ -- 0
-substring$ -- 388
-swap$ -- 608
+substring$ -- 403
+swap$ -- 713
 text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 18
+type$ -- 23
 warning$ -- 3
-while$ -- 48
-width$ -- 20
-write$ -- 174
+while$ -- 53
+width$ -- 25
+write$ -- 214
 (There were 3 warnings)

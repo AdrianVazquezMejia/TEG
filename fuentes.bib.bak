@@ -1,0 +1,31 @@
+@Misc{imTopo,
+author={Foobaz},
+title={NetworkTopology-Mesh.svg},
+year={2014},
+month={06},
+note={[Internet; accedido el  25 de Mayo del 2020] Disponible en: \url{https://en.wikipedia.org/wiki/File:NetworkTopology-Mesh.svg}}
+}
+
+@Misc{imEncap,
+author={Ubahnverleih},
+title={ESP32 Espressif ESP-WROOM-32 Shielded.svg},
+year={2018},
+month={11},
+note={[Internet; accedido el  25 de Mayo del 2020] Disponible en: \url{https://commons.wikimedia.org/wiki/File:ESP32_Espressif_ESP-WROOM-32_Shielded.jpg}}
+}
+
+@Misc{imEncapDC,
+author={Itead.cc},
+title={LM2596 DC-DC BUCK CONVERTER STEP-DOWN POWER MODULE OUTPUT 1.25V-35V},
+year={2017},
+month={06},
+note={[Internet; accedido el  25 de Mayo del 2020] Disponible en: \url{https://www.itead.cc/lm2596-dc-dc-buck-converter-step-down-power-module-output-1-25v-35v.html}}
+}
+
+@Misc{imTool,
+author={Espressif Systems},
+title={Development of applications for ESP32},
+year={2020},
+month={05},
+note={[Internet; accedido el  25 de Mayo del 2020] Disponible en: \url{https://docs.espressif.com/projects/esp-idf/en/latest/esp32/_images/what-you-need1.png}}
+}

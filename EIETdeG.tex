@@ -11,6 +11,7 @@
 \usepackage{amsmath}
 \usepackage{latexsym}
 \usepackage[letterpaper]{geometry}
+\usepackage[justification=centering]{caption}
 
 \usepackage{float}
 \usepackage{makeidx}
@@ -199,7 +200,15 @@
 
 \makeindex
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Source in images
+\newcommand*{\captionsource}[2]{%
+  \caption[{#1}]{%
+    #1%
+    \\%
+    \textbf{Fuente:} #2%
+  }%
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -255,7 +264,7 @@
 {\cleardoublepage \thispagestyle{empty} \vspace*{\stretch{1}}%
 \begin{center} \em} {\end{center} \vspace*{\stretch{3}} }%
 \begin{dedication}%
-A quien desees dedicar este trabajo
+A mi gato, sin mi desahogo con él seguro habría perdido la cabeza a mitad de la carrera.
 \end{dedication}%
 
 %==================================================================
@@ -400,7 +409,7 @@ Codigo fuente en el archivo adjunto CodigoFuenteTEGVazquezA.pdf
 %\bibliographystyle{apacite}%
 \renewcommand{\bibname}{REFERENCIAS}
 \let\oldbibsection\bibsection
-\bibliography{referencias,bibliografia} % if more than one, comma separated and without extension bib
+\bibliography{referencias,bibliografia,fuentes} % if more than one, comma separated and without extension bib
 
 
 % CASE 2: BiBTeX used to generate EIETdeG.bbl (to be further fine tuned)
