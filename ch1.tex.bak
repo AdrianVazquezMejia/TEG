@@ -143,7 +143,7 @@ Un algoritmos es el encargado de balancear la red, el cual está basado en revisi
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{wmn-ex_2.png}
-\captionsource{Topología usada por Yujun Cheng, Dong Yang y Huachun Zhou \cite{article3}}{Adaptada de \cite{article3}}\label{Fig4: Esquema WMN 2}
+\captionsource{Topología usada por Yujun Cheng, Dong Yang y Huachun Zhou}{Adaptada de \cite{article3}}\label{Fig4: Esquema WMN 2}
 \end{figure}
  
  

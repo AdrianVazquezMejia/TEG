@@ -31,15 +31,6 @@ E.~Systems, ``Esp-wroom-02pcb design and module placement guide,'' 06 2016,
   Mayo del 2020] Disponible en:
   \url{https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf}.
 
-\bibitem{IoTWMN}
-P.~Lech and P.~Wlodarski, ``Analysis of the iot wifi mesh network,'' 04 2017,
-  pp. 272--280.
-
-\bibitem{article3}
-Y.~Cheng, D.~Yang, and Z.~Huachun, ``Det-lb: A load balancing approach in
-  802.11 wireless networks for industrial soft real-time applications,''
-  \emph{IEEE Access}, vol.~PP, pp. 1--1, 02 2018.
-
 \bibitem{article2}
 P.~Sharma and G.~Singh, ``Comparison of wi-fi ieee 802.11 standards relating to
   media access control protocols,'' \emph{International Journal of Computer
@@ -49,6 +40,11 @@ P.~Sharma and G.~Singh, ``Comparison of wi-fi ieee 802.11 standards relating to
 G.~Hiertz, T.~Denteneer, S.~Max, R.~Taori, J.~Cardona, L.~Berlemann, and
   B.~Walke, ``Ieee 802.11s: the wlan mesh standard,'' \emph{Wireless
   Communications, IEEE}, vol.~17, pp. 104 -- 111, 03 2010.
+
+\bibitem{article3}
+Y.~Cheng, D.~Yang, and Z.~Huachun, ``Det-lb: A load balancing approach in
+  802.11 wireless networks for industrial soft real-time applications,''
+  \emph{IEEE Access}, vol.~PP, pp. 1--1, 02 2018.
 
 \bibitem{online}
 I.~Modbus~Organization, ``Modbus application protocol specification,'' Abril
@@ -86,6 +82,10 @@ D.~Chew, ``Mac layer,'' pp. 139--171, 10 2018.
 
 \bibitem{MACen}
 M.~Al-Husainy, ``Mac address as a key for data encryption,'' p.~1, 11 2013.
+
+\bibitem{IoTWMN}
+P.~Lech and P.~Wlodarski, ``Analysis of the iot wifi mesh network,'' 04 2017,
+  pp. 272--280.
 
 \bibitem{modbusMensaging}
 I.~Modbus~Organization, ``Modbus messaging on tcp/ip implementation guide

@@ -392,9 +392,9 @@ Se crearon ciertas estructuras usando el lenguaje C, para manejar los datos con 
 
 Es la tarea principal del sistema de comunicación inalámbrica, y es administrada por la cola \emph{espnow\_queue}. Cabe mencionar que las colas permiten que la tarea se ejecute solo si se recibió un dato en ella, lo cual ayuda mantener la eficiencia del procesador.
 
-En esta tarea se verifica si se estaba enviando o recibiendo datos. Y existen ciertos procesos que se ejecutan en cada caso, considerando si es broadcast o unicast.
+En esta tarea se verifica si se estaba enviando o recibiendo datos y ejecuta los  procesos respectivos en cada caso, considerando si es broadcast o unicast.
 
-La cola se habilita por las funciones de \emph{callback} y por la tarea del UART.
+La cola se habilita por las funciones de \emph{callback}, por la tarea del UART y la función Modbus.
 
 A continuación se presenta pseudocódigo de la ejecución de la tarea.\\
 %%%Pseudo codigo goes here.
@@ -402,9 +402,9 @@ A continuación se presenta pseudocódigo de la ejecución de la tarea.\\
  \KwData{ADU MODBUS, EVENT\_DATA}
  \KwResult{ADU MODBUS ADMINISTRADA }
  Inicialización\;
- \While{Se recibe algo en la cola}{
- 	\Switch{Event ID}{
-		\Case{Desde enviar}{ 
+ \While{Se recibe \emph{Evento ID} en la cola}{
+ 	\Switch{Evento ID}{
+		\Case{Enviar}{ 
 			\Switch{Origen}{
 				\Case{De la función de Callback}{
 					\eIf{desMAC == broadMAC}{
@@ -418,7 +418,7 @@ A continuación se presenta pseudocódigo de la ejecución de la tarea.\\
 					}						
 					}
 				}
-				\Case {De la tarea UART}{
+				\Case {Primer intento de envió}{
 					Enviar a la cola espnow\_Squeue;\\
 				}			
 				
@@ -440,6 +440,8 @@ A continuación se presenta pseudocódigo de la ejecución de la tarea.\\
 
  \caption{Algoritmo tarea esp\_now\_manage\_task}\label{Algo1}
 \end{algorithm}[H]
+
+
 \begin{algorithm}
  \KwData{ADU MODBUS, EVENT\_DATA}
  \KwResult{ADU MODBUS Direcionada }
@@ -472,7 +474,7 @@ A continuación se presenta pseudocódigo de la ejecución de la tarea.\\
 		}
 	}	
  }
- \caption{Algoritmo para datos recibidos unicast}\label{Algo2}
+ \caption{Algoritmo para datos recibidos unicast (\textit{UnicastAlgo()})}\label{Algo2}
 \end{algorithm}
 
 El \emph{offset} en la tabla de enrutamiento representa a la posición a partir de la cual las rutas hacia atrás son automáticamente llenadas, para que la ruta de información sea la misma hacia adelante que hacia atrás.

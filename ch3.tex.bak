@@ -392,9 +392,9 @@ Se crearon ciertas estructuras usando el lenguaje C, para manejar los datos con 
 
 Es la tarea principal del sistema de comunicación inalámbrica, y es administrada por la cola \emph{espnow\_queue}. Cabe mencionar que las colas permiten que la tarea se ejecute solo si se recibió un dato en ella, lo cual ayuda mantener la eficiencia del procesador.
 
-En esta tarea se verifica si se estaba enviando o recibiendo datos. Y existen ciertos procesos que se ejecutan en cada caso, considerando si es broadcast o unicast.
+En esta tarea se verifica si se estaba enviando o recibiendo datos y ejecuta los  procesos respectivos en cada caso, considerando si es broadcast o unicast.
 
-La cola se habilita por las funciones de \emph{callback} y por la tarea del UART.
+La cola se habilita por las funciones de \emph{callback}, por la tarea del UART y la función Modbus.
 
 A continuación se presenta pseudocódigo de la ejecución de la tarea.\\
 %%%Pseudo codigo goes here.
@@ -722,12 +722,12 @@ El desarrollo del software de la red ser realizó de forma iterativa sobre las ta
 Se consideran las  especificaciones del diseño en la sección \ref{hardware} y las recomendaciones técnicas realizadas por \textit{Espressif} \cite{testAntena} para el diseño de PCB con el ESP32.  
 
 \subsubsection{Posicionamiento del ESP32 en el PCB}
-El encapsulado  ESP-WROOM-32 está diseñada para ser soldado en una PCB huésped. El ESP-WROOM-32 usa una antena de F invertida (MIFA),  para la banda de WiFi 2,4 GHz,  con un ganancia de 20dBi. La figura \ref{Fig  1: Antenna Placement} muestra las seis opciones de colocación que son comúnmente usadas (la opción uno es usada como referencia). Los resultados de las pruebas ejecutadas por \emph{Espressif} muestran que las opciones 2 y 3 tienen los mejores rendimientos, mientras el de las otras son sub-óptimos\cite{testAntena}.
+El encapsulado  ESP-WROOM-32 está diseñada para ser soldado en una PCB huésped. El ESP-WROOM-32 usa una antena de F invertida (MIFA),  para la banda de WiFi 2,4 GHz,  con un ganancia de 20dBi. La figura \ref{Fig  1: Antenna Placement} muestra las seis opciones de colocación que son comúnmente usadas (la opción uno es usada como referencia). Los resultados de las pruebas ejecutadas por \emph{Espressif} muestran que las opciones 2 y 3 tienen los mejores rendimientos, mientras el de las otras son sub-óptimos \cite{testAntena}.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{opcionesPCB.png}
-\caption{Opciones para colocación en PCB}\label{Fig  1: Antenna Placement}
+\captionsource{Opciones para colocación en PCB}{Adaptada de \cite{testAntena}}\label{Fig  1: Antenna Placement}
 \end{figure}
 
 Los resultados del estudio de basan en las mediciones de potencia WiFi y parámetros EVM (magnitud del vector de error)para varios canales para verificar el rendimiento del la antenas en diferentes posiciones. Los resultados fueron los siguientes:
@@ -749,7 +749,7 @@ Se eligió la opción 4, debido a que permite que la antena posea un soporte adici
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{maxim.png}
-\caption{Ejemplo de conexión entre MAX-485 y UART}\label{Fig  2: MAX y UART}
+\caption{Ejemplo de conexión entre MAX-485 y UART}{Adaptada de \cite{imRS}}\label{Fig  2: MAX y UART}
 \end{figure}
 
 \subsubsection{Alimentación}%xxx agregar foto
