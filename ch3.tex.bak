@@ -167,17 +167,22 @@ Los registros disponibles para acceso son los registros de retención desde la di
 \begin{table}[H]
 \caption{Tablas primarias de los modelos de datos Modbus}\label{Tabla 1: Espec HR}
 \centering
-\begin{tabular}{llr}
- \toprule
+\begin{tabular}{|c|c|c|}
+\hline
 Dirección & Tipo de registro & Descripción  \\
-\midrule
+\hline
 01 & Registros de retención & Identificador \\
+\hline
 02 & Registros de retención    &  Tasa de baudios  \\
+\hline
 256-512 & Registros de retención  & Tabla de enrutamiento\\
+\hline
 0 & Bobina &Reinicio \\
+\hline
 1 & Bobina &Guardar valores Modbus para ejecución\\
+\hline
 2 & Bobina &Guardar valores Modbus en  la memoria Flash\\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 
@@ -185,17 +190,22 @@ La tabla \ref{Tabla 1: Espec Modbus} posee una descripción de la parámetros Modb
 \begin{table}[H]
 \caption{Parámtros Modbus}\label{Tabla 1: Espec Modbus}
 \centering
-\begin{tabular}{llr}
- \toprule
+\begin{tabular}{|c|c|c|}
+ \hline
 Dirección & Por defecto & Opciones \\
-\midrule
+\hline
 ID Modbus & 255 & 101 a 255 \\
+\hline
 Tasa de baudios serial & 19200   &  300 a 115200 \\
+\hline
 Tabla enrutamiento & Nula &Valores válidos de ID Modbus \\
+\hline
 Modo & RTU & Ninguna \\
+\hline
 Paridad & Ninguna & Ninguna \\
+\hline
 Bits de parada & 1 & Ninguna \\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 
@@ -402,9 +412,9 @@ A continuación se presenta pseudocódigo de la ejecución de la tarea.\\
  \KwData{ADU MODBUS, EVENT\_DATA}
  \KwResult{ADU MODBUS ADMINISTRADA }
  Inicialización\;
- \While{Se recibe algo en la cola}{
- 	\Switch{Event ID}{
-		\Case{Desde enviar}{ 
+ \While{Se recibe \emph{Evento ID} en la cola}{
+ 	\Switch{Evento ID}{
+		\Case{Enviar}{ 
 			\Switch{Origen}{
 				\Case{De la función de Callback}{
 					\eIf{desMAC == broadMAC}{
@@ -418,7 +428,7 @@ A continuación se presenta pseudocódigo de la ejecución de la tarea.\\
 					}						
 					}
 				}
-				\Case {De la tarea UART}{
+				\Case {Primer intento de envió}{
 					Enviar a la cola espnow\_Squeue;\\
 				}			
 				
@@ -440,6 +450,8 @@ A continuación se presenta pseudocódigo de la ejecución de la tarea.\\
 
  \caption{Algoritmo tarea esp\_now\_manage\_task}\label{Algo1}
 \end{algorithm}[H]
+
+
 \begin{algorithm}
  \KwData{ADU MODBUS, EVENT\_DATA}
  \KwResult{ADU MODBUS Direcionada }
@@ -472,7 +484,7 @@ A continuación se presenta pseudocódigo de la ejecución de la tarea.\\
 		}
 	}	
  }
- \caption{Algoritmo para datos recibidos unicast}\label{Algo2}
+ \caption{Algoritmo para datos recibidos unicast (\textit{UnicastAlgo()})}\label{Algo2}
 \end{algorithm}
 
 El \emph{offset} en la tabla de enrutamiento representa a la posición a partir de la cual las rutas hacia atrás son automáticamente llenadas, para que la ruta de información sea la misma hacia adelante que hacia atrás.
@@ -563,13 +575,16 @@ La función \emph{UARTinit()} se encarga de incializar el uart con la configuraci
 \begin{table}[H]
 \caption{Descripción de la función \emph{vNotiLEDinit}}\label{Tabla f:vNotiLED}
 \centering
-\begin{tabular}{lr}
- \toprule
+\begin{tabular}{|c|c|}
+\hline
 Nombre  & vNotiLEDinit \\
+\hline
 Descripción & Parpadeo de encendido\\
+\hline
 Parámetro &  Vacío \\
+\hline
 Resultado & Crea que en un pin 3 parpadeo de 1s\\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 
@@ -578,13 +593,16 @@ Ejecuta un parpadeo en el GPIO 2 del microcotrolador al que se le conectó un LED
 \begin{table}[H]
 \caption{Descripción de la función \emph{FormatFactory} }\label{Tabla f:FormatFactory}
 \centering
-\begin{tabular}{lr}
- \toprule
+\begin{tabular}{|c|c|}
+\hline
 Nombre  & FormatFactory \\
+\hline
 Descripción & Función de la tarea de reseteo de fábrica\\
+\hline
 Parámetro &  Vacío \\
+\hline
 Resultado & Limpia la configuración del nodo\\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 
@@ -594,13 +612,16 @@ Esta tarea recibe una activación mediante un semáforo binario proveniente de una
 \begin{table}[H]
 \caption{Descripción de la función \emph{vConfigLoad} }\label{Tabla f:vConfigLoad}
 \centering
-\begin{tabular}{lr}
- \toprule
+\begin{tabular}{|c|c|}
+\hline
 Nombre  & vConfigLoad \\
+\hline
 Descripción & Función para cargar la configuración al nodo\\
+\hline
 Parámetro &  Vacío \\
+\hline
 Resultado & Carga datos desde la flash a la RAM\\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 
@@ -610,13 +631,16 @@ Esta función carga los parámetros de funcionamiento e identificación del nodo, c
 \begin{table}[H]
 \caption{Descripción de la función \emph{vConfigGetNVS} }\label{Tabla f:vConfigGetNVS}
 \centering
-\begin{tabular}{lr}
- \toprule
+\begin{tabular}{|c|c|}
+\hline
 Nombre  & vConfigGetNVS \\
+\hline
 Descripción & Función para obtener datos en la flash\\
+\hline
 Parámetros &  Arreglo, String \\
+\hline
 Resultado & Carga información asociada al String en el Arreglo\\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 
@@ -627,13 +651,16 @@ Análogamente con la función \emph{vConfigSetNVS} que en ese caso carga informaci
 \begin{table}[H]
 \caption{Descripción de la función \emph{vConfigGetNVS} }\label{Tabla f:vConfigSetNode}
 \centering
-\begin{tabular}{lr}
- \toprule
+\begin{tabular}{|c|c|}
+\hline
 Nombre  & vConfigSetNode \\
+\hline
 Descripción & Función para procesar tramas Modbus\\
+\hline
 Parámetros &  Trama Modbus, origen (serial o inalambrico) \\
+\hline
 Resultado & Respuesta Modbus\\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 
@@ -643,13 +670,16 @@ Es la función asociada al Modbus de cada nodo, puede ejecutar las funciones de l
 \begin{table}[H]
 \caption{Descripción de la función \emph{vConfigGetNVS} }\label{uComDirection}
 \centering
-\begin{tabular}{lr}
- \toprule
+\begin{tabular}{|c|c|}
+\hline
 Nombre  & uComDirection \\
+\hline
 Descripción & Comparar el esclavo de la trama con el identificador del nodo\\
+\hline
 Parámetros &  Esclavo \\
+\hline
 Resultado & Nodo externo o Nodo en cuestión\\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 
@@ -659,13 +689,16 @@ Se usa en la tarea del UART para dirigir la información Modbus que se recibe, co
 \begin{table}[H]
 \caption{Descripción de la función \emph{uComGetTransData} }\label{Tabla f:uComGetTransData}
 \centering
-\begin{tabular}{lr}
- \toprule
+\begin{tabular}{|c|c|}
+\hline
 Nombre  & uComGetTransData \\
+\hline
 Descripción & Máquina de estados para determinar destino de la trama\\
+\hline
 Parámetros &  Esclavo \\
+\hline
 Resultado & Serial, Reenvío o configuración \\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 
@@ -674,13 +707,16 @@ Es una función similar a la descrita en la sección \ref{uComDirection}, sin emba
 \begin{table}[H]
 \caption{Descripción de la función \emph{vEspnowGetOldPeers} }\label{vEspnowGetOldPeers}
 \centering
-\begin{tabular}{lr}
- \toprule
+\begin{tabular}{|c|c|}
+\hline
 Nombre  & vEspnowGetOldPeers \\
+\hline
 Descripción & Registrar los nodos al iniciar\\
+\hline
 Parámetros &  Vacío\\
+\hline
 Resultado & Serial, Reenvío o configuración \\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 
@@ -689,13 +725,16 @@ Junto con la función \emph{RegisterPeer} registra MAC de los nodos al energizar 
 \begin{table}[H]
 \caption{Descripción de la función \emph{espnow\_data\_prepare } }\label{espnowprepare }
 \centering
-\begin{tabular}{lr}
- \toprule
+\begin{tabular}{|c|c|}
+\hline
 Nombre  & espnow\_data\_prepare \\
+\hline
 Descripción & Preparar los datos a enviar\\
+\hline
 Parámetros &  variable \emph{send\_param}\\
+\hline
 Resultado & cargar datos de trama \emph{espnow}\\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 
@@ -704,13 +743,16 @@ Esta función prepara los trama inalámbrica, que contiene el chequeo de error, el
 \begin{table}[H]
 \caption{Descripción de la función \emph{espnow\_data\_parse} }\label{espnowparse }
 \centering
-\begin{tabular}{lr}
- \toprule
+\begin{tabular}{|c|c|}
+\hline
 Nombre  & espnow\_data\_parse \\
+\hline
 Descripción & Descompone los datos recibidos\\
+\hline
 Parámetros &  datos, longitud de datos, estado\\
+\hline
 Resultado & cargar datos de trama \emph{esp\_now} \\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 
@@ -765,25 +807,38 @@ Adicionalemente, se agregó un LED (GPIO 19)con el propósito de que sirva como te
 \begin{table}[H]
 \caption{Lista de materiales del circuito}\label{BOM}
 \centering
-\begin{tabular}{ccc}
- \toprule
+\begin{tabular}{|c|c|c|}
+\hline
 Nombre  & Descripción & Encapsulado  \\
-\midrule
+\hline
 D2 & Diodo  emisor de luz enviar& 1206  \\
+\hline
 R1 &  Resistencia 10k $\Omega$  & 1206 \\
+\hline
 R2 &  Resistencia 10k $\Omega$  & 1206 \\
+\hline
 R3 &  Resistencia 1k $\Omega$ & 01 x 03 de 2,54 mm \\
+\hline
 R5 &  Resistencia 10k $\Omega$ & 1206 \\
+\hline
 C2 &  Condensador no polarizado, 100 uF  & 1206 \\
+\hline
 C4 &  Condensador no polarizado, 0,1 uF  & 1206 \\
+\hline
 J1 &  Pin header & 01 x 03 de 2,54 mm \\
+\hline
 J2 &  Bloque terminal & 01 x 04 de 5.00 mm ,Altech AK300  \\
+\hline
 J4 &  Pin header & 01 x 02 de 2,54 mm \\
+\hline
 J5 &  Pin header & 01 x 02 de 2,54 mm \\
+\hline
 U1 & Microcontrolador &ESP32-WROOM-32 \\
+\hline
 U2 & Covertidor RS-485 TTL (MAX485E)& SOIC-8 \\
+\hline
 DCDC1 & Convertidor DC-DC LM2596 & 43,00 mm x 20.80 mm \\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 \begin{figure}[H]
@@ -852,13 +907,13 @@ Protoboard  & cables protoboard  & Elego \\
  \begin{figure}[H]
  \centering
  \includegraphics[scale=0.2]{images/foto1.jpeg}
- \caption{Hardware del nodo maestro.}\label{master Node}
+ \caption{Hardware del nodo maestro (Foto  no definitiva).}\label{master Node}
  \end{figure}
  
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.2]{images/foto2.jpeg}
-\caption{Hardware de un nodo con un esclavo Modbus}\label{Slave Node}
+\caption{Hardware de un nodo con un esclavo Modbus (Foto no definitiva)}\label{Slave Node}
 \end{figure}
 \subsection{Análisis el rendimiento de la red de acuerdo a variaciones en los parámetros de transmisión de datos}
 

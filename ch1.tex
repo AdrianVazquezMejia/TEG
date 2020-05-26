@@ -212,15 +212,18 @@ Modbus basa su modelo de datos en una serie de tablas que tienen una característ
 %
 \begin{table}[H]
   \centering
-\begin{tabular}{llr}
- \toprule
+\begin{tabular}{|c|c|c|}
+\hline
 Tablas Primarias & Tipo de objeto & Definición  \\
-\midrule
+\hline
 Entradas discretas & Único bit & Solo leer \\
+\hline
 Bobinas &  Único bit    &  Leer y escribir \\
+\hline
 Registros de entrada & Word de 16-bits  & Solo leer\\
+\hline
 Registros de retención & Word de 16-bits & Leer y escribir \\
-\bottomrule
+\hline
 \end{tabular}
 \caption{Tablas primarias de los modelos de datos Modbus}\label{Tab1: Registros MODBUS}
 \end{table}
