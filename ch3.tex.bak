@@ -4,7 +4,7 @@ En este capítulo se describirá el diseño de la red, detalles de software y hardw
 
 Tomando en cuenta la investigaciones realizadas se encontró que en el campo de las redes WiFi malladas no existe un protocolo de aplicación definido, en su lugar, las redes son ajustadas a las necesidades específicas del campo en cual se vaya a implementar, esto trae como consecuencia que las especificaciones se concentren en el máximo rendimiento en las áreas críticas del problema. 
 
-Dentro de los funcionamientos descritos en la sección \ref{primera} se concentra en el algoritmo de optimización de la topología de la red, sin tomar en consideración el hardware de implementación. Por otro lado, en la sección  \ref{segunda}, se provee una aproximación más realista, donde existen  especificaciones del hardware, sin embargo, no hay justificación para el enrutamiento usado y las medidas de rendimiento aplicadas no son de interés para el área industrial. Por último, se tiene que la ESP-MESH parecía  brindar extensibilidad y rápido desarrollo, no obstante, posee la desventaja de la necesidad de un enrutador WiFi  para la formación, que brinde las direcciones IP a la red mallada, lo que deriva en un centralización, pues si el router falla, la red perece. 
+ El funcionamiento descrito en la sección \ref{primera} se concentra en el algoritmo de optimización de la topología de la red, sin tomar en consideración el hardware de implementación. Por otro lado, en la sección  \ref{segunda}, se provee una aproximación más realista, donde existen  especificaciones del hardware, sin embargo, no hay justificación para el enrutamiento usado y las medidas de rendimiento aplicadas no son de interés para el área industrial. Por último, se tiene que la ESP-MESH parecía  brindar extensibilidad y rápido desarrollo, no obstante, posee la desventaja de la necesidad de un enrutador WiFi  para la formación, que brinde las direcciones IP a la red mallada, lo que deriva en un centralización, pues si el router falla, la red perece. 
 
 Por lo tanto, es conveniente poseer una arquitectura especifica de la red mallada para el funcionamiento dentro de una red \mb. Así se puede adaptar y configurar de manera más óptima y confiable para las funciones y características del protocolo  \mb.
 
@@ -125,9 +125,9 @@ El cifrado para comunicación broadcast no esta soportado. Las llaves locales son
 
 Las rutas no son determinadas por la red, si no por el usuario que la implemente. Además, son estáticas y no se reasignan automáticamente, estas rutas permanecen en una tabla unidimensional, con los identificadores de los nodos destinos. El enrutamiento está estrechamente relacionado con los esclavos Modbus, y están representados por las posiciones en la tabla de enrutamiento.
 
-La red no propaga información de las rutas, por lo que cada nodo solo conoce la ruta para una salto en cualquier sentido. Sin embargo, es posible solicitar y configurar las rutas de los nodos inalanbricamente.
+La red no propaga información de las rutas, por lo que cada nodo solo conoce la ruta para una salto en cualquier sentido. Sin embargo, es posible solicitar y configurar las rutas de los nodos inalambricamente.
 
-La tabla de enrutamiento posee 256 casillas (una para cada esclavo Modbus), donde la posición está asociada al esclavo Modbus y el valor en la casilla se relaciona con la ubicación de dicho esclavo. Cabe resaltar que el identificador al que se refiere la tabla de enrutamiento como destino no es la localización del esclavo en la red. En la figura \ref{Fig  2: Tabla de enrutamiento} se ilustra el la arquitectura e interpretación de la tabla de enrutamiento asociada al nodo 255.
+La tabla de enrutamiento posee 256 casillas (una para cada esclavo Modbus), donde la posición está asociada al esclavo Modbus y el valor en la casilla se relaciona con la ubicación de dicho esclavo. Cabe resaltar que el identificador al que se refiere la tabla de enrutamiento como destino no es la localización del esclavo en la red. En la figura \ref{Fig  2: Tabla de enrutamiento} se ilustra en la arquitectura e interpretación de la tabla de enrutamiento asociada al nodo 255.
  
 
 \begin{figure}[H]
@@ -215,9 +215,10 @@ Cabe resaltar que estos nodos pueden ser interrogados tanto serial como inalambr
 
 El hardware del nodo se puede dividir en tres bloques: el microcontrolador, la alimentación y la interfaz serial. Esto se puede ilustrar en el esquema de la figura \ref{Fig  4: Diagrama de bloques}.
 \begin{figure}[H]
-\caption{Diagrama de bloques para el hardware del nodo}
+
 \centering
-\includegraphics[scale=0.5]{diagrama.eps}\label{Fig  4: Diagrama de bloques}
+\includegraphics[scale=0.5]{diagrama.eps}
+\caption{Diagrama de bloques para el hardware del nodo}\label{Fig  4: Diagrama de bloques}
 \end{figure}
 
 
