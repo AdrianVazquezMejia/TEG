@@ -78,17 +78,17 @@ Foobaz, ``Networktopology-mesh.svg,'' 06 2014, [Internet; accedido el 25 de
   \url{https://en.wikipedia.org/wiki/File:NetworkTopology-Mesh.svg}.
 
 \bibitem{inbook}
-D.~Chew, ``Mac layer,'' pp. 139--171, 10 2018.
+D.~Chew, ``{MAC} layer,'' pp. 139--171, 10 2018.
 
 \bibitem{MACen}
-M.~Al-Husainy, ``Mac address as a key for data encryption,'' p.~1, 11 2013.
+M.~Al-Husainy, ``{MAC} address as a key for data encryption,'' p.~1, 11 2013.
 
 \bibitem{IoTWMN}
-P.~Lech and P.~Wlodarski, ``Analysis of the iot wifi mesh network,'' 04 2017,
-  pp. 272--280.
+P.~Lech and P.~Wlodarski, ``Analysis of the {IoT} {WiFi} mesh network,'' 04
+  2017, pp. 272--280.
 
 \bibitem{modbusMensaging}
-I.~Modbus~Organization, ``Modbus messaging on tcp/ip implementation guide
+I.~Modbus~Organization, ``Modbus messaging on {TCP/IP} implementation guide
   v1.0b,'' pp. 2--32, 10 2006.
 
 \bibitem{freertos1}
@@ -97,7 +97,7 @@ A.~Web~Services, ``What is a general purpose operating system?'' 05 2020,
   \url{https://www.freertos.org/about-RTOS.html}.
 
 \bibitem{freertos2}
-------, ``What is freertos?'' 05 2020, [Internet; accedido el 08 de Mayo del
+------, ``What is {FreeRTOS}?'' 05 2020, [Internet; accedido el 08 de Mayo del
   2020] Disponible en: \url{https://www.freertos.org/about-RTOS.html}.
 
 \bibitem{imEncap}
