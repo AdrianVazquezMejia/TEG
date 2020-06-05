@@ -23,14 +23,14 @@ note={[Internet; accedido el  25 de Mayo del 2020] Disponible en: \url{https://w
 }
 
 @Misc{imTool,
-author={Espressif Systems},
+author={Systems, Espressif},
 title={Development of applications for ESP32},
 year={2020},
 month={05},
 note={[Internet; accedido el  25 de Mayo del 2020] Disponible en: \url{https://docs.espressif.com/projects/esp-idf/en/latest/esp32/_images/what-you-need1.png}}
 }
 @Misc{imRS,
-author={Espressif Systems},
+author={Systems, Espressif },
 title={Esp-idf uart examples},
 year={2020},
 month={05},

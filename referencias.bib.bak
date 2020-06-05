@@ -36,7 +36,7 @@ author = {Mesquita, Joao and Guimaraes, Diana and Pereira, Carlos and Santos, Fr
 year = {2018},
 month = {09},
 pages = {},
-title = {Assessing the ESP8266 {WiFi} module for the Internet of Things},
+title = {Assessing the {ESP8266} {WiFi} module for the Internet of Things},
 doi = {10.1109/ETFA.2018.8502562}
 }
 
@@ -71,7 +71,7 @@ author = {Al-Husainy, Mohammed},
 year = {2013},
 month = {11},
 pages = {1},
-title = {MAC Address as a Key for Data Encryption}
+title = {{MAC} Address as a Key for Data Encryption}
 }
 
 @Misc{testAntena,
@@ -83,7 +83,7 @@ note={[Internet; accedido el  27 de Abril del 2020] Disponible en: \url{https://
 }
 @Misc{MESHIDF,
 author={ Systems, Espressif},
-title={ESP-WROOM-02PCB Design and Module Placement Guide},
+title={ESP-MESH},
 year={2016},
 month={06},
 note={[Internet; accedido el  27 de Abril del 2020] Disponible en: \url{https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/mesh.html}}
@@ -107,7 +107,7 @@ note={[Internet; accedido el  08 de Mayo del 2020] Disponible en: \url{https://w
 }
 @Misc{freertos2,
 author={Web Services,Amazon },
-title={What is FreeRTOS? },
+title={What is {FreeRTOS}? },
 year={2020},
 month={05},
 note={[Internet; accedido el  08 de Mayo del 2020] Disponible en: \url{https://www.freertos.org/about-RTOS.html}}
