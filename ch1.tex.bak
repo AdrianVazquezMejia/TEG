@@ -2,7 +2,7 @@ En este capítulo se tratarán los fundamentos de las redes WiFi malladas, protoco
 
 \section{Fundamentos de las redes WiFi malladas}
 
-Una red WiFi mallada (WMN) se puede definir como  una red que permite la comunicación entre nodos a través de múltiples saltos en una topología mallada \cite{bahr}. Los nodos son los  intermediarios encargados de la formación de la red y la vinculación entre los dispositivos que la usan. Una WMN usualmente poseen clientes, enrutadores y puertas de enlace. Los clientes son dispositivos electrónicos, sistemas embebidos o sensores que pueden comunicarse con otros en la red. El enrutador es un dispositivo electrónico que sirve como un intermediario entre dos o más redes para transportar los datos de una red a otra.  Y las compuertas de enlace son dispositivos electrónicos que conectan la red con Internet. 
+Una red WiFi mallada (WMN) se puede definir como  una red que permite la comunicación entre nodos a través de múltiples saltos en una topología mallada \cite{bahr}. Los nodos son los  intermediarios encargados de la formación de la red y la vinculación entre los dispositivos que la usan. Una WMN usualmente posee clientes, enrutadores y puertas de enlace. Los clientes son dispositivos electrónicos, sistemas embebidos o sensores que pueden comunicarse con otros en la red. El enrutador es un dispositivo electrónico que sirve como un intermediario entre dos o más redes para transportar los datos de una red a otra.  Y las compuertas de enlace son dispositivos electrónicos que conectan la red con Internet. 
 
 Cuando un nodo no puede operar, el resto de los nodos en la WMN aún pueden comunicarse con los otros, bien sea, directa o indirectamente a través de uno o más nodos intermediarios \cite{ScienceDirect}.
 
@@ -212,15 +212,18 @@ Modbus basa su modelo de datos en una serie de tablas que tienen una característ
 %
 \begin{table}[H]
   \centering
-\begin{tabular}{llr}
- \toprule
+\begin{tabular}{|c|c|c|}
+\hline
 Tablas Primarias & Tipo de objeto & Definición  \\
-\midrule
+\hline
 Entradas discretas & Único bit & Solo leer \\
+\hline
 Bobinas &  Único bit    &  Leer y escribir \\
+\hline
 Registros de entrada & Word de 16-bits  & Solo leer\\
+\hline
 Registros de retención & Word de 16-bits & Leer y escribir \\
-\bottomrule
+\hline
 \end{tabular}
 \caption{Tablas primarias de los modelos de datos Modbus}\label{Tab1: Registros MODBUS}
 \end{table}

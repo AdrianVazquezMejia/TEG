@@ -2,7 +2,7 @@ En este capítulo se tratarán los fundamentos de las redes WiFi malladas, protoco
 
 \section{Fundamentos de las redes WiFi malladas}
 
-Una red WiFi mallada (WMN) se puede definir como  una red que permite la comunicación entre nodos a través de múltiples saltos en una topología mallada \cite{bahr}. Los nodos son los  intermediarios encargados de la formación de la red y la vinculación entre los dispositivos que la usan. Una WMN usualmente poseen clientes, enrutadores y puertas de enlace. Los clientes son dispositivos electrónicos, sistemas embebidos o sensores que pueden comunicarse con otros en la red. El enrutador es un dispositivo electrónico que sirve como un intermediario entre dos o más redes para transportar los datos de una red a otra.  Y las compuertas de enlace son dispositivos electrónicos que conectan la red con Internet. 
+Una red WiFi mallada (WMN) se puede definir como  una red que permite la comunicación entre nodos a través de múltiples saltos en una topología mallada \cite{bahr}. Los nodos son los  intermediarios encargados de la formación de la red y la vinculación entre los dispositivos que la usan. Una WMN usualmente posee clientes, enrutadores y puertas de enlace. Los clientes son dispositivos electrónicos, sistemas embebidos o sensores que pueden comunicarse con otros en la red. El enrutador es un dispositivo electrónico que sirve como un intermediario entre dos o más redes para transportar los datos de una red a otra.  Y las compuertas de enlace son dispositivos electrónicos que conectan la red con Internet. 
 
 Cuando un nodo no puede operar, el resto de los nodos en la WMN aún pueden comunicarse con los otros, bien sea, directa o indirectamente a través de uno o más nodos intermediarios \cite{ScienceDirect}.
 
@@ -85,7 +85,7 @@ Esta capa es la responsable por controlar la operación de la subred. La carga de
 La capa de red tiene que lidiar con problemas relacionados con las diferentes arquitecturas de red, diferentes direccionamientos, y diferentes condiciones de operación y restricciones, tanto en los sistemas de origen como en los de destino. La heterogeneidad de red es tomada en cuenta a este nivel.
 
 \subsection{La capa de transporte}
- La función básica de la capa de transporte es aceptar datos de un capa más alta, descomponerla en unidades más pequeñas, si es  necesario y asegurarse que estas piezas llegar correctamente al destino. Para propósitos de eficiencia, se puede multiplexar varias conexiones de transporte.
+ La función básica de la capa de transporte es aceptar datos de una capa más alta, descomponerla en unidades más pequeñas, si es  necesario y asegurarse que estas piezas llegar correctamente al destino. Para propósitos de eficiencia, se puede multiplexar varias conexiones de transporte.
  
  Es la primera capa fin-a-fin  de la pila. En las capas más bajas, la interacción real no necesitaba estar entre los sistemas de de fuente y destino. Enrutadores o sistemas intermedios podían ser parte de la transacción. La interacción en este nivel, sin embargo, es siempre entre puntos finales.
  
@@ -151,7 +151,7 @@ Un algoritmos es el encargado de balancear la red, el cual está basado en revisi
  
  ESP-MESH es un protocolo de red construido sobre del protocolo WiFi.  Dicho protocolo permite que numerosos dispositivos(Nodos) posicionados sobre un área física estén interconectados bajo única Red de Área Local Inalámbrica (WLAN). Las redes ESP-MESH son auto-organizadas y auto-reparables, es decir, que la red pueden ser construidas y mantenidas de manera autónoma \cite{MESHIDF}.
  
- ESP-MESH permite que los nodos actúen simultáneamente como estación y como punto de acceso (AP). Por lo tanto un nodo puede poseer múltiples conexiones de estaciones a su punto de acceso, mientras que  su estación posee una única conexión a un punto de acceso de una capa superior. Lo que naturalmente resulta en una topología de árbol  de múltiples capas con una jerarquía de padre-hijo(Observe Figura \ref{Fig5: Topologia ESP-MESH}).
+ ESP-MESH permite que los nodos actúen simultáneamente como estación y como punto de acceso (AP). Por lo tanto un nodo puede poseer múltiples conexiones de estaciones a su punto de acceso, mientras que  su estación posee una única conexión a un punto de acceso de una capa superior. Lo que naturalmente resulta en una topología de árbol  de múltiples capas con una jerarquía de padre-hijo (Observe Figura \ref{Fig5: Topologia ESP-MESH}).
  
  \begin{figure}[H]
 \centering

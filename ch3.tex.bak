@@ -4,7 +4,7 @@ En este capítulo se describirá el diseño de la red, detalles de software y hardw
 
 Tomando en cuenta la investigaciones realizadas se encontró que en el campo de las redes WiFi malladas no existe un protocolo de aplicación definido, en su lugar, las redes son ajustadas a las necesidades específicas del campo en cual se vaya a implementar, esto trae como consecuencia que las especificaciones se concentren en el máximo rendimiento en las áreas críticas del problema. 
 
-Dentro de los funcionamientos descritos anteriormente, se tiene que el  descrito en la sección \ref{primera} se concentra en el algoritmo de optimización de la topología de la red, sin tomar en consideración el hardware de implementación. Por otro lado, en la sección  \ref{segunda}, se provee una aproximación más realista, donde existen  especificaciones del hardware, sin embargo, no hay justificación para el enrutamiento usado y las medidas de rendimiento aplicadas no son de interés para el área industrial. Por último, se tiene que la ESP-MESH parecía  brindar extensibilidad y rápido desarrollo, no obstante, posee la desventaja de la necesidad de un enrutador WiFi  para la formación, que brinde las direcciones IP a la red mallada, lo que deriva en un centralización, pues si el router falla, la red perece. 
+Dentro de los funcionamientos descritos en la sección \ref{primera} se concentra en el algoritmo de optimización de la topología de la red, sin tomar en consideración el hardware de implementación. Por otro lado, en la sección  \ref{segunda}, se provee una aproximación más realista, donde existen  especificaciones del hardware, sin embargo, no hay justificación para el enrutamiento usado y las medidas de rendimiento aplicadas no son de interés para el área industrial. Por último, se tiene que la ESP-MESH parecía  brindar extensibilidad y rápido desarrollo, no obstante, posee la desventaja de la necesidad de un enrutador WiFi  para la formación, que brinde las direcciones IP a la red mallada, lo que deriva en un centralización, pues si el router falla, la red perece. 
 
 Por lo tanto, es conveniente poseer una arquitectura especifica de la red mallada para el funcionamiento dentro de una red \mb. Así se puede adaptar y configurar de manera más óptima y confiable para las funciones y características del protocolo  \mb.
 
@@ -862,15 +862,18 @@ DCDC1 & Convertidor DC-DC LM2596 & 43,00 mm x 20.80 mm \\
 La red mallada se implementó usando como nodos tarjetas de desarrollo junto con tarjetas para conversión RS-485 a TTL basadas en chip MAX-3485. Cada tarjeta se programó y configuró de acuerdo a la tabla \ref{Configuracion}. Se usaron un total de cuatro nodos con la topología de la figura \ref{topo} como base.  En el bus RS-485 del maestro se conectó un maestro Modbus proveniente de un computador a través de un convertido USB a RS-485 para generar las tramas. 
 \begin{table}[H]
 \centering
-\begin{tabular}{llr}
- \toprule
+\begin{tabular}{|c|c|c|}
+\hline
 Nodo &  Descripción & Tasa de baudios serial\\
-\midrule
+\hline
 150 & Maestro conectado & Variable\\
+\hline
 151 &  Esclavos conectados  & 9600\\
+\hline
 152 & Modo de salto & No aplica\\
+\hline
 153 & Esclavos conectados & 9600\\
-\bottomrule
+\hline
 \end{tabular}
 \caption{Configuración de los esclavos para la implementación}\label{Configuracion}
 \end{table}
@@ -886,18 +889,24 @@ Las características de los equipos Modbus usados fueron los descritos en la tabl
 
 \begin{table}[H]
 \caption{Lista de materiales del circuito de implementación}\label{BOM 2}
-\begin{tabular}{ccc}
- \toprule
+\begin{tabular}{|c|c|c|}
+\hline
 Nombre  & Descripción & Detalle  \\
-\midrule
+\hline
 D2 & Diodo  emisor de luz enviar& TH 5mm \\
+\hline
 R3 &  Resistencia 1k $\Omega$ & TH \\
+\hline
 U1 & Tarjeta de desarrollo & ESP32-DevKit-V1 \\
+\hline
 U2 & Covertidor RS-485 TTL (MAX485E)& SOIC-8 \\
+\hline
 Alimentación & Cable USB  y AC/DC 120VAC/5VDC& -\\
+\hline
 Cables  & cables protoboard  &  Cantidad 14, macho-macho\\
+\hline
 Protoboard  & cables protoboard  & Elego \\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 \subsubsection{Ilustración de los nodos}
@@ -923,15 +932,19 @@ Las características principales de funcionamiento de la red Modbus son: distanci
 \caption{Variación de parámetros en la pruebas de rendiemietno}\label{parametros}
 \centering
 \begin{tabular}{|c|c|c|}
- \toprule
+\hline
 Tasa serial [Baudios]&  Número de variables& velocidad de muestreo [s]\\
-\midrule
+\hline
 2400& 50 & 10,0 \\
+\hline
 4800 &  10 & 5,0 \\
+\hline
 9600 & 150 & 2,0 \\
+\hline
 19200 & 200 & 1,0 \\
+\hline
 38400 & 250 & -\\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 
