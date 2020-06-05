@@ -1,7 +1,7 @@
-Mediante las revisiones bibliográficas se observó que  existe gran cantidad de documentación actual respecto a las redes WiFi malladas, a su implementación en distintas áreas y sobre distintos hardware, sin embargo, se identificó como aspecto resaltante  que cada una ajusta su funcionamiento al área de aplicación, lo que fue de ayuda para restringir el alcance de la red diseñada.
+Una exhaustiva revisión bibliográfica demostró que  existe gran cantidad de documentación actual respecto a las redes WiFi malladas, a su implementación en distintas áreas y sobre distintos hardware, sin embargo, se identificó como aspecto resaltante  que cada una ajusta su funcionamiento al área de aplicación, lo que fue de ayuda para restringir el alcance de la red diseñada.
 
 
- Se logró implementar una red mallada usando el microcontrolador ESP32, haciendo uso librería de  funciones brindadas por el fabricante que agilizan el desarrollo de aplicaciones. Además, el uso del sistema operativo en tiempo real permitió que se implementaran programas en un esquema sencillo y organizado.  
+ Se logró implementar una red mallada usando el microcontrolador ESP32, haciendo uso de las librerías de  funciones brindadas por el fabricante que agilizan el desarrollo de aplicaciones. Además, el uso del sistema operativo en tiempo real permitió que se implementaran programas en un esquema sencillo y organizado.  
 
 Con el uso del chip3485 y el programa de manejo de UART en el microcontrolador ESP32, se logró establecer una comunicación serial entre el microcontrolador y un equipo Modbus. Dicha comunicación estuvo soportada sobre una interfaz RS485 half-duplex de dos conductores. 
 

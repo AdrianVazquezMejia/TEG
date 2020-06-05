@@ -22,8 +22,8 @@
 \BIBdecl
 
 \bibitem{MESHIDF}
-E.~Systems, ``Esp-wroom-02pcb design and module placement guide,'' 06 2016,
-  [Internet; accedido el 27 de Abril del 2020] Disponible en:
+E.~Systems, ``Esp-mesh,'' 06 2016, [Internet; accedido el 27 de Abril del 2020]
+  Disponible en:
   \url{https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/mesh.html}.
 
 \bibitem{esp32}
@@ -32,13 +32,13 @@ E.~Systems, ``Esp-wroom-02pcb design and module placement guide,'' 06 2016,
   \url{https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf}.
 
 \bibitem{article2}
-P.~Sharma and G.~Singh, ``Comparison of wi-fi ieee 802.11 standards relating to
-  media access control protocols,'' \emph{International Journal of Computer
-  Science and Information Security,}, vol.~14, pp. 856--862, 10 2016.
+P.~Sharma and G.~Singh, ``Comparison of {Wi-Fi} {IEEE} 802.11 standards
+  relating to media access control protocols,'' \emph{International Journal of
+  Computer Science and Information Security,}, vol.~14, pp. 856--862, 10 2016.
 
 \bibitem{article1}
 G.~Hiertz, T.~Denteneer, S.~Max, R.~Taori, J.~Cardona, L.~Berlemann, and
-  B.~Walke, ``Ieee 802.11s: the wlan mesh standard,'' \emph{Wireless
+  B.~Walke, ``{IEEE} 802.11s: the {WLAN} mesh standard,'' \emph{Wireless
   Communications, IEEE}, vol.~17, pp. 104 -- 111, 03 2010.
 
 \bibitem{article3}
@@ -59,18 +59,18 @@ B.~Milic, S.~Brack, and R.~Naumann, ``Hierarchical configuration system for
   wireless mesh networks in manufacturing industry,'' 05 2014, pp. 1--8.
 
 \bibitem{Temprano}
-A.~J. Temprano~G., ``Dise\~no de una red industrial modbus rtu inal\'ambrica,''
-  pp. 24--28, 11 2017.
+A.~J. Temprano~G., ``Dise\~no de una red industrial modbus {RTU}
+  inal\'ambrica,'' pp. 24--28, 11 2017.
 
 \bibitem{bahr}
-M.~Bahr, ``Update on the hybrid wireless mesh protocol of ieee 802.11s,''
+M.~Bahr, ``Update on the hybrid wireless mesh protocol of {IEEE} 802.11s,''
   \emph{Siemens Corporate Technology, Information and Communications}, p.~1, 10
   2016.
 
 \bibitem{ScienceDirect}
-M.~B. Rifki~Muhendra, Aditya~Rinaldi, ``Development of wifi mesh infrastructure
-  for internet of things applications,'' \emph{Engineering Physics
-  International Conference, EPIC 2016}, p. 331, 2016.
+M.~B. Rifki~Muhendra, Aditya~Rinaldi, ``Development of {WiFi} mesh
+  infrastructure for internet of things applications,'' \emph{Engineering
+  Physics International Conference, EPIC 2016}, p. 331, 2016.
 
 \bibitem{imTopo}
 Foobaz, ``Networktopology-mesh.svg,'' 06 2014, [Internet; accedido el 25 de
@@ -92,7 +92,7 @@ I.~Modbus~Organization, ``Modbus messaging on tcp/ip implementation guide
   v1.0b,'' pp. 2--32, 10 2006.
 
 \bibitem{freertos1}
-A.~W. Services, ``What is a general purpose operating system?'' 05 2020,
+A.~Web~Services, ``What is a general purpose operating system?'' 05 2020,
   [Internet; accedido el 08 de Mayo del 2020] Disponible en:
   \url{https://www.freertos.org/about-RTOS.html}.
 

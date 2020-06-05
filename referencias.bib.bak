@@ -4,7 +4,7 @@ author = {Hiertz, Guido and Denteneer, T. and Max, Sebastian and Taori, Rakesh a
 year = {2010},
 month = {03},
 pages = {104 - 111},
-title = {IEEE 802.11s: the WLAN mesh standard},
+title = {{IEEE} 802.11s: the {WLAN} mesh standard},
 volume = {17},
 journal = {Wireless Communications, IEEE},
 doi = {10.1109/MWC.2010.5416357}
@@ -15,7 +15,7 @@ author = {Sharma, Priya and Singh, Gurpreet},
 year = {2016},
 month = {10},
 pages = {856-862},
-title = {Comparison of Wi-Fi IEEE 802.11 Standards Relating to Media Access Control Protocols},
+title = {Comparison of {Wi-Fi} {IEEE} 802.11 Standards Relating to Media Access Control Protocols},
 volume = {14},
 journal = {International Journal of Computer Science and Information Security,}
 }
@@ -36,7 +36,7 @@ author = {Mesquita, Joao and Guimaraes, Diana and Pereira, Carlos and Santos, Fr
 year = {2018},
 month = {09},
 pages = {},
-title = {Assessing the ESP8266 WiFi module for the Internet of Things},
+title = {Assessing the ESP8266 {WiFi} module for the Internet of Things},
 doi = {10.1109/ETFA.2018.8502562}
 }
 
@@ -50,11 +50,11 @@ note={[Internet; accedido el  25 de Octubre del 2019] Disponible en: \url{http:/
 
 
 @article{bahr,
-author = {Michael Bahr},
+author = { Bahr, Michael},
 year = {2016},
 month = {10},
 pages = {1},
-title = {Update on the Hybrid Wireless Mesh Protocol of IEEE 802.11s},
+title = {Update on the Hybrid Wireless Mesh Protocol of {IEEE} 802.11s},
 journal = {Siemens Corporate Technology, Information and Communications}
 }
 %falta el DOI
@@ -62,7 +62,7 @@ journal = {Siemens Corporate Technology, Information and Communications}
 author = {Rifki Muhendra, Aditya Rinaldi, Maman Budiman},
 year = {2016},
 pages = {331},
-title = {Development of WiFi Mesh Infrastructure for Internet of Things applications},
+title = {Development of {WiFi} Mesh Infrastructure for Internet of Things applications},
 journal = {Engineering Physics International Conference, EPIC 2016}
 }
 
@@ -75,14 +75,14 @@ title = {MAC Address as a Key for Data Encryption}
 }
 
 @Misc{testAntena,
-author={Espressif Systems},
+author={ Systems, Espressif},
 title={ESP-WROOM-02PCB Design and Module Placement Guide},
 year={2016},
 month={06},
 note={[Internet; accedido el  27 de Abril del 2020] Disponible en: \url{https://www.espressif.com/sites/default/files/documentation/esp-wroom-02_pcb_design_and_module_placement_guide_0.pdf}}
 }
 @Misc{MESHIDF,
-author={Espressif Systems},
+author={ Systems, Espressif},
 title={ESP-WROOM-02PCB Design and Module Placement Guide},
 year={2016},
 month={06},
@@ -99,14 +99,14 @@ journal = {2014 7th IFIP Wireless and Mobile Networking Conference, WMNC 2014},
 doi = {10.1109/WMNC.2014.6878867}
 }
 @Misc{freertos1,
-author={Amazon Web Services},
+author={Web Services,Amazon},
 title={What is a General Purpose Operating System? },
 year={2020},
 month={05},
 note={[Internet; accedido el  08 de Mayo del 2020] Disponible en: \url{https://www.freertos.org/about-RTOS.html}}
 }
 @Misc{freertos2,
-author={Amazon Web Services},
+author={Web Services,Amazon },
 title={What is FreeRTOS? },
 year={2020},
 month={05},
@@ -114,7 +114,7 @@ note={[Internet; accedido el  08 de Mayo del 2020] Disponible en: \url{https://w
 }
 
 @Misc{esp32,
-author={Espressif Systems},
+author={ Systems, Espressif},
 title={ESP32-WROOM-32 Datasheet},
 year={2019},
 month={05},
@@ -123,7 +123,7 @@ note={[Internet; accedido el  14 de Mayo del 2020] Disponible en: \url{https://w
 
 @Misc{Temprano,
 author={ Temprano G. , Alejandro J.},
-title={Dise\~no de una Red Industrial Modbus RTU Inal\'ambrica},
+title={Dise\~no de una Red Industrial Modbus {RTU} Inal\'ambrica},
 year={2017},
 month={11},
 pages={24-28}

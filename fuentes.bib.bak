@@ -29,3 +29,10 @@ year={2020},
 month={05},
 note={[Internet; accedido el  25 de Mayo del 2020] Disponible en: \url{https://docs.espressif.com/projects/esp-idf/en/latest/esp32/_images/what-you-need1.png}}
 }
+@Misc{imRS,
+author={Espressif Systems},
+title={Esp-idf uart examples},
+year={2020},
+month={05},
+note={[Internet; accedido el  25 de Mayo del 2020] Disponible en: \url{https://github.com/espressif/esp-idf/tree/master/examples/peripherals/uart/uart_echo_rs485}}
+}

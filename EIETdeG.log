@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.18)  5 JUN 2020 12:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.18)  5 JUN 2020 13:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4442,6 +4442,18 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 2.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 2.
+
+Underfull \hbox (badness 2027) in paragraph at lines 35--38
+\T1/cmr/m/n/12 re-la-ting to me-dia ac-cess con-trol pro-to-cols,'' \T1/cmr/m/i
+t/12 In-ter-na-tio-nal Jour-nal of
+ []
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 40--43
+\T1/cmr/m/n/12 and B. Wal-ke, ``IEEE 802.11s: the WLAN mesh stan-dard,'' \T1/cm
+r/m/it/12 Wi-re-less
+ []
+
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 64.
 Package babel Info: Redefining spanish shorthand >>
@@ -4466,12 +4478,12 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 64.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 64.
- [88
+[88
 
 ]
-Underfull \hbox (badness 2269) in paragraph at lines 71--74
+Underfull \hbox (badness 1342) in paragraph at lines 71--74
 []\T1/cmr/m/n/12 M. B. Rif-ki Muhen-dra, Adit-ya Ri-nal-di, ``De-ve-lop-ment of
- wi-fi mesh
+ Wi-Fi mesh
  []
 
 
@@ -4632,7 +4644,7 @@ bx1440.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on EIETdeG.pdf (104 pages, 1643875 bytes).
+Output written on EIETdeG.pdf (104 pages, 1643873 bytes).
 PDF statistics:
  1728 PDF objects out of 1728 (max. 8388607)
  1164 compressed objects within 12 object streams

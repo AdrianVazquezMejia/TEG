@@ -367,8 +367,8 @@ Escuela de Ingeniería Eléctrica.Opción Electrónica, Computación y Control. Año 2
 %\input{resultados.tex}
 
 %==================================================================
-\chapter{CONCLUSIONES}\label{CAP:conclu}
-%\markboth{Tu Segundo Capítulo}{Tu Segundo Capítulo}%
+\chapter*{CONCLUSIONES}\label{CAP:conclu}
+%\markboth{Tu Segundo Capítulo}{Tu Segundo Capítulo}%¨+*
 \input{src/conclusiones.tex}
 
 %==================================================================
