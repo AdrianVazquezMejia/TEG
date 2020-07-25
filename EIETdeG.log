@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.18)  23 JUN 2020 22:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.18)  25 JUL 2020 11:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2427,7 +2427,7 @@ Package epstopdf Info: Source file: <images/topo3.eps>
 (epstopdf)                    date: 2020-05-22 16:46:00
 (epstopdf)                    size: 154507 bytes
 (epstopdf)             Output file: <images/topo3-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-22 16:54:31
+(epstopdf)                    date: 2020-05-22 16:54:30
 (epstopdf)                    size: 149652 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/topo3-eps-converted
 -to.pdf images/topo3.eps>
@@ -2732,7 +2732,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 148.
 [39 <./rt-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <UMLSerial.eps>
-(epstopdf)                    date: 2020-06-12 16:11:13
+(epstopdf)                    date: 2020-06-12 16:11:12
 (epstopdf)                    size: 132519 bytes
 (epstopdf)             Output file: <UMLSerial-eps-converted-to.pdf>
 (epstopdf)                    date: 2020-06-23 22:59:12
@@ -2806,7 +2806,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 210.
 [41]
 Package epstopdf Info: Source file: <diagrama.eps>
-(epstopdf)                    date: 2020-06-05 16:26:57
+(epstopdf)                    date: 2020-06-05 16:26:56
 (epstopdf)                    size: 9918 bytes
 (epstopdf)             Output file: <diagrama-eps-converted-to.pdf>
 (epstopdf)                    date: 2020-06-05 16:27:26
@@ -3679,7 +3679,7 @@ Package epstopdf Info: Source file: <pcbB.eps>
 (epstopdf)                    date: 2020-04-15 12:36:34
 (epstopdf)                    size: 29960 bytes
 (epstopdf)             Output file: <pcbB-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-04-15 12:57:03
+(epstopdf)                    date: 2020-04-15 12:57:02
 (epstopdf)                    size: 9959 bytes
 (epstopdf)             Command: <repstopdf --outfile=pcbB-eps-converted-to.pdf 
 pcbB.eps>
@@ -3735,7 +3735,7 @@ Package epstopdf Info: Source file: <topo.eps>
 (epstopdf)                    date: 2020-04-14 12:22:58
 (epstopdf)                    size: 138921 bytes
 (epstopdf)             Output file: <topo-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-04-14 12:28:03
+(epstopdf)                    date: 2020-04-14 12:28:02
 (epstopdf)                    size: 134220 bytes
 (epstopdf)             Command: <repstopdf --outfile=topo-eps-converted-to.pdf 
 topo.eps>
@@ -3804,16 +3804,16 @@ Overfull \hbox (23.99794pt too wide) in paragraph at lines 893--912
 [][] 
  []
 
-<images/foto1.jpeg, id=1097, 1056.94875pt x 636.3775pt>
-File: images/foto1.jpeg Graphic file (type jpg)
-<use images/foto1.jpeg>
-Package pdftex.def Info: images/foto1.jpeg  used on input line 919.
-(pdftex.def)             Requested size: 211.386pt x 127.27324pt.
+<images/foto111.png, id=1097, 3100.383pt x 2290.959pt>
+File: images/foto111.png Graphic file (type png)
+<use images/foto111.png>
+Package pdftex.def Info: images/foto111.png  used on input line 919.
+(pdftex.def)             Requested size: 356.5602pt x 263.47223pt.
 <images/foto2.jpeg, id=1098, 888.31876pt x 699.61375pt>
 File: images/foto2.jpeg Graphic file (type jpg)
 <use images/foto2.jpeg>
 Package pdftex.def Info: images/foto2.jpeg  used on input line 925.
-(pdftex.def)             Requested size: 177.6606pt x 139.92027pt.
+(pdftex.def)             Requested size: 222.07915pt x 174.903pt.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 928.
 Package babel Info: Redefining spanish shorthand >>
@@ -3838,7 +3838,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 928.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 928.
-[71 <./images/foto1.jpeg>]
+[71 <./images/foto111.png>]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 928.
 Package babel Info: Redefining spanish shorthand >>
@@ -4087,7 +4087,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 91.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 91.
-<images/topo2.png, id=1143, 704.6325pt x 699.61375pt>
+<images/topo2.png, id=1144, 704.6325pt x 699.61375pt>
 File: images/topo2.png Graphic file (type png)
 <use images/topo2.png>
 Package pdftex.def Info: images/topo2.png  used on input line 98.
@@ -4117,12 +4117,12 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 101.
  [78]
-<images/topo1.png, id=1148, 742.775pt x 481.8pt>
+<images/topo1.png, id=1149, 742.775pt x 481.8pt>
 File: images/topo1.png Graphic file (type png)
 <use images/topo1.png>
 Package pdftex.def Info: images/topo1.png  used on input line 104.
 (pdftex.def)             Requested size: 222.83421pt x 144.5411pt.
-<images/topo3.png, id=1149, 742.775pt x 454.69875pt>
+<images/topo3.png, id=1150, 742.775pt x 454.69875pt>
 File: images/topo3.png Graphic file (type png)
 <use images/topo3.png>
 Package pdftex.def Info: images/topo3.png  used on input line 112.
@@ -4622,8 +4622,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 425.
  ) 
 Here is how much of TeX's memory you used:
  12170 strings out of 494820
- 178198 string characters out of 6177789
- 294157 words of memory out of 5000000
+ 178204 string characters out of 6177789
+ 294116 words of memory out of 5000000
  14855 multiletter control sequences out of 15000+600000
  17170 words of font info for 52 fonts, out of 8000000 for 9000
  89 hyphenation exceptions out of 8191
@@ -4644,9 +4644,9 @@ bx1440.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on EIETdeG.pdf (104 pages, 1644262 bytes).
+Output written on EIETdeG.pdf (104 pages, 2223819 bytes).
 PDF statistics:
- 1727 PDF objects out of 1728 (max. 8388607)
+ 1728 PDF objects out of 1728 (max. 8388607)
  1164 compressed objects within 12 object streams
  354 named destinations out of 1000 (max. 500000)
  627 words of extra memory for PDF output out of 10000 (max. 10000000)
