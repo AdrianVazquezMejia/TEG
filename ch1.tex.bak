@@ -41,7 +41,7 @@ La primera mitad de la dirección MAC contiene el número identificador del fabric
 
 \section{La Referencia del Modelo OSI}
 
-El modelo del sistema de interconexión abierta (OSI) está basado en una  propuesta del la Organización Internacional de estándares (ISO,) para la la estandarización de pilas de protocolos. Para clasificar un protocolo usando el modelo OSI se deben cumplir ciertos requerimientos \citep{inbook}.
+El modelo del sistema de interconexión abierta (OSI) está basado en una  propuesta del la Organización Internacional de Estándares (ISO) para la la estandarización de pilas de protocolos. Para clasificar un protocolo usando el modelo OSI se deben cumplir ciertos requerimientos \citep{inbook}.
 
 \begin{enumerate}
 \item Una capa debe existir para cada nivel de abstracción.
@@ -85,7 +85,7 @@ Esta capa es la responsable por controlar la operación de la subred. La carga de
 La capa de red tiene que lidiar con problemas relacionados con las diferentes arquitecturas de red, diferentes direccionamientos, y diferentes condiciones de operación y restricciones, tanto en los sistemas de origen como en los de destino. La heterogeneidad de red es tomada en cuenta a este nivel.
 
 \subsection{La capa de transporte}
- La función básica de la capa de transporte es aceptar datos de un capa más alta, descomponerla en unidades más pequeñas, si es  necesario y asegurarse que estas piezas llegar correctamente al destino. Para propósitos de eficiencia, se puede multiplexar varias conexiones de transporte.
+ La función básica de la capa de transporte es aceptar datos de una capa más alta, descomponerla en unidades más pequeñas, si es  necesario y asegurarse que estas piezas llegar correctamente al destino. Para propósitos de eficiencia, se puede multiplexar varias conexiones de transporte.
  
  Es la primera capa fin-a-fin  de la pila. En las capas más bajas, la interacción real no necesitaba estar entre los sistemas de de fuente y destino. Enrutadores o sistemas intermedios podían ser parte de la transacción. La interacción en este nivel, sin embargo, es siempre entre puntos finales.
  
@@ -113,7 +113,7 @@ La implementación de la topología mallada ha encontrado problemas con la necesid
 
 El uso de microcontroladores avanzados incrementa altamente el costo  de la construcción de la red, que muchas veces no son necesarios para aplicaciones donde se necesita obtener información sobre los procesos lentos a través de mediciones periódicas.  Un amplio rango de módulos simples WiFi hechos como Sistemas en un Chip (SoC), que además de manejar estándares de comunicación, pueden adquirir datos a través de entradas y salidas de propósito general. Estos abren la posibilidad para la construcción de sensores de red de bajo costo en la ampliamente usada WMN. Sin embargo, cuando muy poco poder de procesamiento no permite la implementación de algoritmos avanzados que soporten el enrutamiento IP en la topología mallada, es posible crear una red simplificada mientras se mantienen las características principales de las redes malladas. 
 
-A continuación se describe el funcionamiento de algunas de redes WiFi malladas, es de observar que existe una amplia gama de funcionamientos, cada una caracterizada por su aplicación, se expondrán algunas relacionadas con el objetivo del trabajo. 
+A continuación se describe el funcionamiento de algunas redes WiFi malladas, es de observar que existe una amplia gama de funcionamientos, cada una caracterizada por su aplicación, se expondrán algunas relacionadas con el objetivo del trabajo. 
 
 \subsection{Red mallada para Internet de las cosas (IoT)}\label{primera}
 
@@ -151,7 +151,7 @@ Un algoritmos es el encargado de balancear la red, el cual está basado en revisi
  
  ESP-MESH es un protocolo de red construido sobre del protocolo WiFi.  Dicho protocolo permite que numerosos dispositivos(Nodos) posicionados sobre un área física estén interconectados bajo única Red de Área Local Inalámbrica (WLAN). Las redes ESP-MESH son auto-organizadas y auto-reparables, es decir, que la red pueden ser construidas y mantenidas de manera autónoma \cite{MESHIDF}.
  
- ESP-MESH permite que los nodos actúen simultáneamente como estación y como punto de acceso (AP). Por lo tanto un nodo puede poseer múltiples conexiones de estaciones a su punto de acceso, mientras que  su estación posee una única conexión a un punto de acceso de una capa superior. Lo que naturalmente resulta en una topología de árbol  de múltiples capas con una jerarquía de padre-hijo(Observe Figura \ref{Fig5: Topologia ESP-MESH}).
+ ESP-MESH permite que los nodos actúen simultáneamente como estación y como punto de acceso (AP). Por lo tanto un nodo puede poseer múltiples conexiones de estaciones a su punto de acceso, mientras que  su estación posee una única conexión a un punto de acceso de una capa superior. Lo que naturalmente resulta en una topología de árbol  de múltiples capas con una jerarquía de padre-hijo (Observe Figura \ref{Fig5: Topologia ESP-MESH}).
  
  \begin{figure}[H]
 \centering
