@@ -8,7 +8,7 @@ Tomando en cuenta la investigaciones realizadas se encontró que en el campo de l
 
 Por lo tanto, es conveniente poseer una arquitectura especifica de la red mallada para el funcionamiento dentro de una red \mb. Así se puede adaptar y configurar de manera más óptima y confiable para las funciones y características del protocolo  \mb.
 
-Para la creación de redes inalámbricas WiFi usando el microcontrolador ESP-32,\emph{Espressif Systems} a través del \emph{ESP-IDF} (Espacio de trabajo para desarrollo de Internet de las cosas) provee dos librerías: la ya mencionada ESP-MESH y ESP-NOW.  La librería ESP-NOW fue ideada para comunicaciones punto a punto en esquemas maestro/esclavo, no para creaciones de redes multi-salto, sin embargo, posee la expansibilidad de manipular el direccionamiento de los datos, brindado la potencialidad de crear redes de diversas arquitecturas.
+Para la creación de redes inalámbricas WiFi usando el microcontrolador ESP-32, \emph{Espressif Systems} a través del \emph{ESP-IDF} (Espacio de trabajo para desarrollo de Internet de las cosas) provee dos librerías: la ya mencionada ESP-MESH y ESP-NOW.  La librería ESP-NOW fue ideada para comunicaciones punto a punto en esquemas maestro/esclavo, no para creaciones de redes multi-salto, sin embargo, posee la expansibilidad de manipular el direccionamiento de los datos, brindado la potencialidad de crear redes de diversas arquitecturas.
 
 En la figura \ref{esperada} se muestra la ilustración de la red esperada, donde se contempla que el maestro Modbus (MA)  emita una solicitud a un eslavo mediante linea serial, los  nodos de la red toman esta información y la transmiten por la red adecuadamente para que llegue al esclavo que requiere ser interrogado. Luego la red, toma la respuesta de dicho esclavo y la entrega al maestro.  Los esclavos pueden estar a más de un salto de distancia del maestro, como es el caso del esclavo 2 (ES 2). 
 
@@ -154,7 +154,7 @@ Existe otra tabla de enrutamiento para las respuestas, de manera tal que las rut
 
 \subsubsection{Características Modbus de los nodos}
  
-Los nodos de la red son esclavos adicionales de la red Modbus, con direcciones reservadas para ellos desde el identificador (101). El modo de operación Modbus en los nodos permite que se puedan obtener  y configurar parámetros de la red, como la tabla de enrutamiento de los nodos. Además el proceso es realizado mediante un protocolo estandarizado y que esta relacionado con la red.
+Los nodos de la red son esclavos adicionales de la red Modbus, con direcciones reservadas para ellos desde el identificador ciento uno (101). El modo de operación Modbus en los nodos permite que se puedan obtener  y configurar parámetros de la red, como la tabla de enrutamiento de los nodos. Además el proceso es realizado mediante un protocolo estandarizado y que esta relacionado con la red.
 
 El funcionamiento como esclavo Modbus en los nodos es permanente, incluso cuando ya se ha implementado la red con equipos Modbus seriales externos, permitiendo actualización de parámetro de la red en cualquier momento. 
 
@@ -224,7 +224,7 @@ El hardware del nodo se puede dividir en tres bloques: el microcontrolador, la a
 
 \textbf{Microcontrolador}
 
-Para la aplicación se usó el encapsulado  ESP-WROOM-32, debido a disponibilidad y encapsulado con escudo WiFi.  Se debe tener en cuenta que se dejaron disponibles los pines del UART 0 para la descarga del software, además de dos pines adicionales para inducir el estado de programación, los cuales son el pin \textit{EN} y el pin de propósito general cero.
+Para la aplicación se usó el encapsulado  ESP-WROOM-32, debido a disponibilidad y encapsulado con escudo WiFi.  Se debe tener en cuenta que se dejaron disponibles los pines del UART0 para la descarga del software, además de dos pines adicionales para inducir el estado de programación, los cuales son el pin \textit{EN} y el pin de propósito general cero.
 
 \begin{figure}[H]
 \centering
@@ -269,7 +269,7 @@ Modbus en sus clases básica dicta que los equipos Modbus  seriales tienen que po
 
 El chip MAX3485 de \emph{Maxim Integrated} provee de las características antes descritas y admite tensión de alimentación de 3,3 V, lo cual hace que se posea un solo nivel de tensión para la alimentación del nodo.
 
-Este chip soporta hasta 32 dispositivos,sin embargo, el uso de nodos distribuye la carga de los esclavos y  la utilización de repetidores se vería disminuida, y se soportarían 32 dispositivos por cada nodo.
+Este chip soporta hasta 32 dispositivos, sin embargo, el uso de nodos distribuye la carga de los esclavos y  la utilización de repetidores se vería disminuida, y se soportarían 32 dispositivos por cada nodo.
 
 La topología RS-485 Modbus sin repetidor posee cables truncados en un par trenzado, sobre los cuales los dispositivos están conectados bien sea directamente o a través de cables de derivación. Los cables truncados también llamado bus, cuya longitud depende de la tasa de baudios, los parámetros del cable y  la carga de dispositivos, para 9600 baudios y un cable calibre de 26 AWG, la máxima longitud es de 1000 m. 
 
