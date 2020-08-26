@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.18)  5 AUG 2020 19:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.18)  26 AUG 2020 15:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1414,7 +1414,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 3.
-<topologia1.png, id=564, 220.825pt x 166.6225pt>
+<topologia1.png, id=559, 220.825pt x 166.6225pt>
 File: topologia1.png Graphic file (type png)
 <use topologia1.png>
 Package pdftex.def Info: topologia1.png  used on input line 11.
@@ -1446,7 +1446,7 @@ Package babel Info: Redefining spanish shorthand "?
  [8
 
 ]
-<mac.png, id=576, 556.0775pt x 264.99pt>
+<mac.png, id=571, 556.0775pt x 264.99pt>
 File: mac.png Graphic file (type png)
 <use mac.png>
 Package pdftex.def Info: mac.png  used on input line 26.
@@ -1747,7 +1747,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 118.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 118.
-<wmn-ex_1.png, id=639, 846.16125pt x 596.2275pt>
+<wmn-ex_1.png, id=634, 846.16125pt x 596.2275pt>
 File: wmn-ex_1.png Graphic file (type png)
 <use wmn-ex_1.png>
 Package pdftex.def Info: wmn-ex_1.png  used on input line 128.
@@ -1839,7 +1839,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 142.
  [18]
-<wmn-ex_2.png, id=659, 678.535pt x 438.63875pt>
+<wmn-ex_2.png, id=654, 678.535pt x 438.63875pt>
 File: wmn-ex_2.png Graphic file (type png)
 <use wmn-ex_2.png>
 Package pdftex.def Info: wmn-ex_2.png  used on input line 145.
@@ -1885,7 +1885,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\new@ifnextchar' on input line 150.
 
-<wmn-ex_3.png, id=665, 582.175pt x 344.28625pt>
+<wmn-ex_3.png, id=660, 582.175pt x 344.28625pt>
 File: wmn-ex_3.png Graphic file (type png)
 <use wmn-ex_3.png>
 Package pdftex.def Info: wmn-ex_3.png  used on input line 158.
@@ -1977,7 +1977,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 187.
  [21]
-<modbus-adu.png, id=689, 634.37pt x 126.4725pt>
+<modbus-adu.png, id=684, 634.37pt x 126.4725pt>
 File: modbus-adu.png Graphic file (type png)
 <use modbus-adu.png>
 Package pdftex.def Info: modbus-adu.png  used on input line 190.
@@ -2148,7 +2148,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 263.
 [25]
-<block-diagram.png, id=719, 469.755pt x 395.4775pt>
+<block-diagram.png, id=714, 469.755pt x 395.4775pt>
 File: block-diagram.png Graphic file (type png)
 <use block-diagram.png>
 Package pdftex.def Info: block-diagram.png  used on input line 267.
@@ -2437,7 +2437,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex (file ./images/topo3-eps-converted-to.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/topo3-eps-converted-to.pdf, id=758, 478.78876pt x 619.31375pt>
+<images/topo3-eps-converted-to.pdf, id=753, 478.78876pt x 619.31375pt>
 File: images/topo3-eps-converted-to.pdf Graphic file (type pdf)
 <use images/topo3-eps-converted-to.pdf>
 Package pdftex.def Info: images/topo3-eps-converted-to.pdf  used on input line 
@@ -2677,7 +2677,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex (file ./rt-eps-converted-to.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<rt-eps-converted-to.pdf, id=819, 548.0475pt x 452.69125pt>
+<rt-eps-converted-to.pdf, id=814, 548.0475pt x 452.69125pt>
 File: rt-eps-converted-to.pdf Graphic file (type pdf)
 <use rt-eps-converted-to.pdf>
 Package pdftex.def Info: rt-eps-converted-to.pdf  used on input line 135.
@@ -2696,7 +2696,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex (file ./UML2-eps-converted-to.pdf): PDF inclusion: fou
 nd PDF version <1.7>, but at most version <1.5> allowed
-<UML2-eps-converted-to.pdf, id=822, 1043.9pt x 573.14125pt>
+<UML2-eps-converted-to.pdf, id=817, 1043.9pt x 573.14125pt>
 File: UML2-eps-converted-to.pdf Graphic file (type pdf)
 <use UML2-eps-converted-to.pdf>
 Package pdftex.def Info: UML2-eps-converted-to.pdf  used on input line 145.
@@ -2745,7 +2745,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex (file ./UMLSerial-eps-converted-to.pdf): PDF inclusion
 : found PDF version <1.7>, but at most version <1.5> allowed
-<UMLSerial-eps-converted-to.pdf, id=833, 993.7125pt x 632.3625pt>
+<UMLSerial-eps-converted-to.pdf, id=828, 993.7125pt x 632.3625pt>
 File: UMLSerial-eps-converted-to.pdf Graphic file (type pdf)
 <use UMLSerial-eps-converted-to.pdf>
 Package pdftex.def Info: UMLSerial-eps-converted-to.pdf  used on input line 151
@@ -2819,7 +2819,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex (file ./diagrama-eps-converted-to.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
-<diagrama-eps-converted-to.pdf, id=851, 281.05pt x 183.68625pt>
+<diagrama-eps-converted-to.pdf, id=846, 281.05pt x 183.68625pt>
 File: diagrama-eps-converted-to.pdf Graphic file (type pdf)
 <use diagrama-eps-converted-to.pdf>
 Package pdftex.def Info: diagrama-eps-converted-to.pdf  used on input line 220.
@@ -2850,12 +2850,12 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 228.
 [42 <./diagrama-eps-converted-to.pdf>]
-<ESP-WROOM-32.jpg, id=859, 720.6925pt x 602.25pt>
+<ESP-WROOM-32.jpg, id=854, 720.6925pt x 602.25pt>
 File: ESP-WROOM-32.jpg Graphic file (type jpg)
 <use ESP-WROOM-32.jpg>
 Package pdftex.def Info: ESP-WROOM-32.jpg  used on input line 231.
 (pdftex.def)             Requested size: 360.34537pt x 301.12425pt.
-<dcdc.jpg, id=863, 192.72pt x 192.72pt>
+<dcdc.jpg, id=858, 192.72pt x 192.72pt>
 File: dcdc.jpg Graphic file (type jpg)
 <use dcdc.jpg>
 Package pdftex.def Info: dcdc.jpg  used on input line 240.
@@ -2984,7 +2984,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 300.
  [46]
-<toolchain.png, id=890, 501.875pt x 370.38374pt>
+<toolchain.png, id=885, 501.875pt x 370.38374pt>
 File: toolchain.png Graphic file (type png)
 <use toolchain.png>
 Package pdftex.def Info: toolchain.png  used on input line 305.
@@ -3484,7 +3484,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 769.
  [62]
-<opcionesPCB.png, id=1020, 606.265pt x 869.2475pt>
+<opcionesPCB.png, id=1015, 606.265pt x 869.2475pt>
 File: opcionesPCB.png Graphic file (type png)
 <use opcionesPCB.png>
 Package pdftex.def Info: opcionesPCB.png  used on input line 772.
@@ -3547,7 +3547,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 775.
 
 [64 <./opcionesPCB.png>]
-<maxim.png, id=1032, 816.04875pt x 285.065pt>
+<maxim.png, id=1027, 816.04875pt x 285.065pt>
 File: maxim.png Graphic file (type png)
 <use maxim.png>
 Package pdftex.def Info: maxim.png  used on input line 794.
@@ -3620,7 +3620,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex (file ./esquematico-eps-converted-to.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<esquematico-eps-converted-to.pdf, id=1055, 429.605pt x 312.16624pt>
+<esquematico-eps-converted-to.pdf, id=1050, 429.605pt x 312.16624pt>
 File: esquematico-eps-converted-to.pdf Graphic file (type pdf)
 <use esquematico-eps-converted-to.pdf>
 Package pdftex.def Info: esquematico-eps-converted-to.pdf  used on input line 8
@@ -3645,7 +3645,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex (file ./pcbF-eps-converted-to.pdf): PDF inclusion: fou
 nd PDF version <1.7>, but at most version <1.5> allowed
-<pcbF-eps-converted-to.pdf, id=1056, 198.7425pt x 121.45375pt>
+<pcbF-eps-converted-to.pdf, id=1051, 198.7425pt x 121.45375pt>
 File: pcbF-eps-converted-to.pdf Graphic file (type pdf)
 <use pcbF-eps-converted-to.pdf>
 Package pdftex.def Info: pcbF-eps-converted-to.pdf  used on input line 852.
@@ -3689,7 +3689,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex (file ./pcbB-eps-converted-to.pdf): PDF inclusion: fou
 nd PDF version <1.7>, but at most version <1.5> allowed
-<pcbB-eps-converted-to.pdf, id=1061, 180.675pt x 108.405pt>
+<pcbB-eps-converted-to.pdf, id=1056, 180.675pt x 108.405pt>
 File: pcbB-eps-converted-to.pdf Graphic file (type pdf)
 <use pcbB-eps-converted-to.pdf>
 Package pdftex.def Info: pcbB-eps-converted-to.pdf  used on input line 857.
@@ -3745,7 +3745,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex (file ./topo-eps-converted-to.pdf): PDF inclusion: fou
 nd PDF version <1.7>, but at most version <1.5> allowed
-<topo-eps-converted-to.pdf, id=1072, 480.79625pt x 619.31375pt>
+<topo-eps-converted-to.pdf, id=1067, 480.79625pt x 619.31375pt>
 File: topo-eps-converted-to.pdf Graphic file (type pdf)
 <use topo-eps-converted-to.pdf>
 Package pdftex.def Info: topo-eps-converted-to.pdf  used on input line 884.
@@ -3804,12 +3804,12 @@ Overfull \hbox (23.99794pt too wide) in paragraph at lines 893--912
 [][] 
  []
 
-<images/foto111.png, id=1097, 3100.383pt x 2290.959pt>
+<images/foto111.png, id=1092, 3100.383pt x 2290.959pt>
 File: images/foto111.png Graphic file (type png)
 <use images/foto111.png>
 Package pdftex.def Info: images/foto111.png  used on input line 919.
 (pdftex.def)             Requested size: 356.5602pt x 263.47223pt.
-<images/foto2.jpeg, id=1098, 888.31876pt x 699.61375pt>
+<images/foto2.jpeg, id=1093, 888.31876pt x 699.61375pt>
 File: images/foto2.jpeg Graphic file (type jpg)
 <use images/foto2.jpeg>
 Package pdftex.def Info: images/foto2.jpeg  used on input line 925.
@@ -4087,7 +4087,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 91.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 91.
-<images/topo2.png, id=1144, 704.6325pt x 699.61375pt>
+<images/topo2.png, id=1139, 704.6325pt x 699.61375pt>
 File: images/topo2.png Graphic file (type png)
 <use images/topo2.png>
 Package pdftex.def Info: images/topo2.png  used on input line 98.
@@ -4117,12 +4117,12 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 101.
  [78]
-<images/topo1.png, id=1149, 742.775pt x 481.8pt>
+<images/topo1.png, id=1144, 742.775pt x 481.8pt>
 File: images/topo1.png Graphic file (type png)
 <use images/topo1.png>
 Package pdftex.def Info: images/topo1.png  used on input line 104.
 (pdftex.def)             Requested size: 222.83421pt x 144.5411pt.
-<images/topo3.png, id=1150, 742.775pt x 454.69875pt>
+<images/topo3.png, id=1145, 742.775pt x 454.69875pt>
 File: images/topo3.png Graphic file (type png)
 <use images/topo3.png>
 Package pdftex.def Info: images/topo3.png  used on input line 112.
@@ -4364,70 +4364,30 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 388.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 394.
+(babel)             in language  on input line 403.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 394.
+(babel)             in language  on input line 403.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 394.
+(babel)             in language  on input line 403.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 394.
+(babel)             in language  on input line 403.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 394.
+(babel)             in language  on input line 403.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 394.
+(babel)             in language  on input line 403.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 394.
+(babel)             in language  on input line 403.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 394.
+(babel)             in language  on input line 403.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 394.
+(babel)             in language  on input line 403.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 394.
+(babel)             in language  on input line 403.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 394.
+(babel)             in language  on input line 403.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 394.
+(babel)             in language  on input line 403.
 [86
-
-]
-Ap\'endice III.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 394.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 394.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 394.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 394.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 394.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 394.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 403.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 403.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 403.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 403.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 403.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 403.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 403.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 403.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 403.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 403.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 403.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 403.
-[87
 
 ] (./EIETdeG.bbl
 Package babel Info: Redefining spanish shorthand <<
@@ -4478,7 +4438,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 64.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 64.
-[88
+[87
 
 ]
 Underfull \hbox (badness 1342) in paragraph at lines 71--74
@@ -4540,7 +4500,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 108.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 108.
-[89]
+[88]
 Underfull \hbox (badness 10000) in paragraph at lines 109--113
 []\T1/cmr/m/n/12 Itead.cc, ``Lm2596 dc-dc buck con-ver-ter step-down po-wer
  []
@@ -4608,7 +4568,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 425.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 425.
-[90]
+[89]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 425.
  (./EIETdeG.aux
 LaTeX Info: Redefining \. on input line 25.
@@ -4617,14 +4577,14 @@ LaTeX Info: Redefining \% on input line 25.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 425.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 425.
 Package rerunfilecheck Info: File `EIETdeG.out' has not changed.
-(rerunfilecheck)             Checksum: 57C3BD643B9C3FDC6CC776D5C6CAB29C;5049.
+(rerunfilecheck)             Checksum: 701AC0276F8A1B44A1EEDA7DC45DDE4D;4989.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 425.
  ) 
 Here is how much of TeX's memory you used:
- 12170 strings out of 494820
- 178204 string characters out of 6177789
- 294116 words of memory out of 5000000
- 14855 multiletter control sequences out of 15000+600000
+ 12165 strings out of 494820
+ 178143 string characters out of 6177789
+ 294069 words of memory out of 5000000
+ 14852 multiletter control sequences out of 15000+600000
  17170 words of font info for 52 fonts, out of 8000000 for 9000
  89 hyphenation exceptions out of 8191
  40i,27n,45p,1401b,719s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -4644,10 +4604,10 @@ bx1440.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on EIETdeG.pdf (104 pages, 2223814 bytes).
+Output written on EIETdeG.pdf (103 pages, 2223355 bytes).
 PDF statistics:
- 1728 PDF objects out of 1728 (max. 8388607)
- 1164 compressed objects within 12 object streams
- 354 named destinations out of 1000 (max. 500000)
- 627 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1719 PDF objects out of 1728 (max. 8388607)
+ 1156 compressed objects within 12 object streams
+ 352 named destinations out of 1000 (max. 500000)
+ 619 words of extra memory for PDF output out of 10000 (max. 10000000)
 

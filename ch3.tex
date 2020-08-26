@@ -54,7 +54,7 @@ Dirección MAC & Código de categoría & Identificador de organización & Valores al
 \begin{enumerate}
 \item Código de categoría:  es establecido en 127 para indicar la trama específica de proveedor.
 \item Identificador de organización:  contiene un identificador único (0x18fe34), los cuales son las primeros tres bytes de la MAC aplicada por \emph{Espressif}.
-\item Valores aleatorios: son usador para prevenir ataques de retransmisión.
+\item Valores aleatorios: son usados para prevenir ataques de retransmisión.
 \item Contenido de proveedor: Contenido de específico de proveedor, contiene datos adicionales.
 \item FCS: Trama de chequeo de errores.
 \end{enumerate}
@@ -73,10 +73,10 @@ ID de elemento& Longitud & ID de organización & Tipo & Versión & Cuerpo\\
 \end{table}
 \begin{enumerate}
 \item  ID de elemento: Es establecido en 221, para indicar elemento de específico de proveedor.
-\item Longitud: Es la longitud total de ID de organización, tipo, version  y cuerpo.
+\item Longitud: Es la longitud total de ID de organización, tipo, versión  y cuerpo.
 \item Tipo: Es establecido en 4, para indicar \espn.
 \item Versión: Versión de \espn.
-\item Cuerpo: El  cuerpo contiene los datas \espn.
+\item Cuerpo: El  cuerpo contiene los datos \espn.
 \end{enumerate}
 
 En el protocolo \espn la cabecera MAC varia respecto a las convencionales, el primer campo es dedicado a la dirección destino, la segunda la dirección de origen y la tercera es usada para establecer la dirección broadcast (0xFF:0xFF:0xFF:0xFF:0xFF:0xFF).En las tramas \espn los bits de control de tramas \textit{FromDS} y \textit{ToDS} son ambos cero. 
@@ -158,7 +158,7 @@ Los nodos de la red son esclavos adicionales de la red Modbus, con direcciones r
 
 El funcionamiento como esclavo Modbus en los nodos es permanente, incluso cuando ya se ha implementado la red con equipos Modbus seriales externos, permitiendo actualización de parámetro de la red en cualquier momento. 
 
-Los nodos poseen un diagnóstico visual que indica cuando se ha recibido o enviado correctamente una trama  serial o inalambricamente. Dicho diagnóstico de basa en un LED que emite un pulso. Otro diagnóstico visual para indicar que se ha encendido el equipo, del mismo tipo se encuentra en la tarjeta de alimentación. No hay diagnostico visual para errores de comunicación.%observe hardaware para mas detalle.
+Los nodos poseen un diagnóstico visual que indica cuando se ha recibido o enviado correctamente una trama  serial o inalambricamente. Dicho diagnóstico se basa en un LED que emite un pulso. Otro diagnóstico visual para indicar que se ha encendido el equipo, del mismo tipo se encuentra en la tarjeta de alimentación. No hay diagnostico visual para errores de comunicación.%observe hardaware para mas detalle.
 
 Los registros disponibles para acceso son los registros de retención desde la dirección cero hasta la 512, y también las diez primeras bobinas. Para las bobinas solo es soportada la función de escribir una bobina simple. La tabla \ref{Tabla 1: Espec HR} describe la asignación de los registros.
 
@@ -311,7 +311,7 @@ Los detalles de la instalación de cada uno de estas herramientas se llevo a cabo
 
 \subsubsection{El sistema operativo en tiempo real}
 
-El microcontrolador ESP32 está diseñado para correr un sistema operativo en tiempo real(RTOS) basado en el  \textit{FreeRTOS} desarrollado por \textit{Amazon}..La lógica funcional del método de programación RTOS es mediante establecimiento de tareas e interrupciones controladas por orden de prioridad y por el temporizador principal del sistema. 
+El microcontrolador ESP32 está diseñado para correr un sistema operativo en tiempo real(RTOS) basado en el  \textit{FreeRTOS} desarrollado por \textit{Amazon}. La lógica funcional del método de programación RTOS es mediante establecimiento de tareas e interrupciones controladas por orden de prioridad y por el temporizador principal del sistema. 
 
 Dicho sistema operativo permite que se creen y desarrollen programas en lenguaje ANSI C, implementado las librerías para el manejo del microcontrolador proveídas por ESP-IDF de \textit{espressif}. Por lo tanto, el desarrollo del programa se basó en la creación de tareas y la comunicación entre ellas basada en colas. Se crearon tareas dos tareas para el manejo de los datos inalámbricos, una para la recepción de datos mediante el UART  y otras tareas con funciones de monitorización.
 

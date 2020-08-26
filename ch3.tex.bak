@@ -54,7 +54,7 @@ Dirección MAC & Código de categoría & Identificador de organización & Valores al
 \begin{enumerate}
 \item Código de categoría:  es establecido en 127 para indicar la trama específica de proveedor.
 \item Identificador de organización:  contiene un identificador único (0x18fe34), los cuales son las primeros tres bytes de la MAC aplicada por \emph{Espressif}.
-\item Valores aleatorios: son usador para prevenir ataques de retransmisión.
+\item Valores aleatorios: son usados para prevenir ataques de retransmisión.
 \item Contenido de proveedor: Contenido de específico de proveedor, contiene datos adicionales.
 \item FCS: Trama de chequeo de errores.
 \end{enumerate}

@@ -93,5 +93,4 @@
 \contentsline {chapter}{RECOMENDACIONES}{83}{chapter.5}
 \contentsline {chapter}{Datos recolectados}{84}{appendix.Alph1}
 \contentsline {chapter}{C\'odigo fuente}{86}{appendix.Alph2}
-\contentsline {chapter}{T\'ITULO DEL ANEXO}{87}{appendix.Alph3}
-\contentsline {chapter}{REFERENCIAS}{88}{appendix*.108}
+\contentsline {chapter}{REFERENCIAS}{87}{appendix*.108}

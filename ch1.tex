@@ -48,7 +48,7 @@ El modelo del sistema de interconexión abierta (OSI) está basado en una  propues
 \item Cada capa debe ejecutar una función bien definida.
 \item La función de cada capa debe formar parte de un estándar internacional.
 \item Los límites de cada capa  deben minimizar el flujo de información a través de las interfaces.
-\item El número de capas debe de suficientemente grande para no forzar múltiples funciones en una sola capa, pero lo suficientemente pequeña para que la arquitectura no sea incómoda.
+\item El número de capas debe ser suficientemente grande para no forzar múltiples funciones en una sola capa, pero lo suficientemente pequeña para que la arquitectura no sea incómoda.
 \end{enumerate}
 
 El modelo consiste en siete (7) capas, juntas son solo un modelo de referencia, y no arquitectura de red. Los estándares de la ISO existe para varios niveles y no son parte de este modelo. Las capas son:
@@ -73,7 +73,7 @@ A la capa capa física  le concierne la transmisión de los bits de data cruda sob
  
  La capa de vínculo de datos provee la primera capa de abstracción en la pila. Esta protege la capa de red de detalles de nivel bajo y errores de la capa física. Esto es logrado agrupando los bits crudos en una unidad de nivel más alta llamada trama de datos, la cual puede ser usada en la capa de red.
  
- La trama de datos consiste en un grupo de bytes. Patrones  especiales de bits delimitan la carga, para que la trama de datos sea reconocida. Esto significa que especial cuidado se debe posee para asegurar que estos patrones especiales no ocurren dentro de la carga, en cuyo caso la trama se perdería. Un mecanismo apropiado debe existir para notificar que la fuente retransmite la trama. 
+ La trama de datos consiste en un grupo de bytes. Patrones  especiales de bits delimitan la carga, para que la trama de datos sea reconocida. Esto significa que se debe poseer especial cuidado  para asegurar que estos patrones especiales no ocurren dentro de la carga, en cuyo caso la trama se perdería. Un mecanismo apropiado debe existir para notificar que la fuente retransmite la trama. 
  
 Otra característica en esta capa es la inclusión del control de flujo y los agradecimientos. En las redes que están basadas en un canal compartido, una subcapa ha sido introducida en la capa de de vínculo de datos, para manejar el control de acceso, con el nombre de subcapa de control  de acceso al medio (MAC).
 
@@ -85,7 +85,7 @@ Esta capa es la responsable por controlar la operación de la subred. La carga de
 La capa de red tiene que lidiar con problemas relacionados con las diferentes arquitecturas de red, diferentes direccionamientos, y diferentes condiciones de operación y restricciones, tanto en los sistemas de origen como en los de destino. La heterogeneidad de red es tomada en cuenta a este nivel.
 
 \subsection{La capa de transporte}
- La función básica de la capa de transporte es aceptar datos de una capa más alta, descomponerla en unidades más pequeñas, si es  necesario y asegurarse que estas piezas llegar correctamente al destino. Para propósitos de eficiencia, se puede multiplexar varias conexiones de transporte.
+ La función básica de la capa de transporte es aceptar datos de una capa más alta, descomponerla en unidades más pequeñas, si es  necesario y asegurarse que estas piezas lleguen correctamente al destino. Para propósitos de eficiencia, se puede multiplexar varias conexiones de transporte.
  
  Es la primera capa fin-a-fin  de la pila. En las capas más bajas, la interacción real no necesitaba estar entre los sistemas de de fuente y destino. Enrutadores o sistemas intermedios podían ser parte de la transacción. La interacción en este nivel, sin embargo, es siempre entre puntos finales.
  
@@ -163,7 +163,7 @@ Un algoritmo es el encargado de balancear la red, el cual está basado en revisio
  
  Cada nodo que pueda formar conexiones \textit{downstream} (desde el nodo a hijos) transmite periódicamente una trama de faro, para comunicar su presencia, estado o para formar nuevas conexiones. 
  
- La intensidad de señal de una potencial conexión \textit{upstream}(desde algún hijo a un padre) esta representada por RSSI (Indicación de la Intensidad de Señal Recibida) en la trama de faro. Esta se una para prevenir que los nodos formen enlaces débiles. 
+ La intensidad de señal de una potencial conexión \textit{upstream}(desde algún hijo a un padre) esta representada por RSSI (Indicación de la Intensidad de Señal Recibida) en la trama de faro. Esta se usa para prevenir que los nodos formen enlaces débiles. 
  
  \subsubsection{La selección del nodo padre}
  
@@ -176,7 +176,7 @@ Un algoritmo es el encargado de balancear la red, el cual está basado en revisio
  \begin{enumerate}
  \item Si la dirección MAC del nodo destino se encuentra en la tabla de enrutamiento y no es el nodo en cuestión, entonces reenvía los paquetes \textit{downstream} al el hijo correspondiente en la tabla de enrutamiento.
 
-\item Si la dirección MAC destino o esta en la tabla de enrutamiento, reenvia los paquetes \textit{upstream} al correspondiente nodo padre. De esta manera el mensaje terminaría en el nodo raíz, cuya tabla de enrutamiento debe contener todos los nodos de la red.
+\item Si la dirección MAC destino no esta en la tabla de enrutamiento, reenvia los paquetes \textit{upstream} al correspondiente nodo padre. De esta manera el mensaje terminaría en el nodo raíz, cuya tabla de enrutamiento debe contener todos los nodos de la red.
  \end{enumerate}
 
 \section{Protocolo MODBUS}
@@ -233,7 +233,7 @@ Toda los datos manejados vía Modbus (bits y registros) deben estar localizados e
 \subsection{Protocolo Modbus sobre línea serial}
 El estándar del protocolo Modbus define una capa de aplicación posicionada en el nivel siete del modelo OSI.  También estandariza un protocolo específico en la línea serial para el intercambio de solicitudes Modbus entre el maestro y uno o varios esclavos, que se ubica en las capas uno y dos del modelo OSI.
 
-Un sistema del tipo maestro-esclavo tiene un nodo maestro que envía comandos a los nodos esclavos. Los nodos esclavos no transmiten datos si una solicitud y no se comunican con otros esclavos. 
+Un sistema del tipo maestro-esclavo tiene un nodo maestro que envía comandos a los nodos esclavos. Los nodos esclavos no transmiten datos sin una solicitud previa ni se comunican con otros esclavos. 
 
 En nivel físico, el protocolo Modbus sobre linea serial puede usar diferentes interfaces, sin embargo, la TIA/EIA-485 (RS-485) es la más común.En la linea serial solo un maestro puede estar conectado en un dado momento y un límite de 247 esclavos. 
 \subsubsection{Modos de transmisión serial}
@@ -340,7 +340,7 @@ Este microcontrolador posee dos núcleos CPU que pueden ser individualmente contr
 
 \section{Sistema Operativo en Tiempo Real}
 
-Un sistema operativo es un programa de comptadora que soporta las funciones básicas de la misma, y provee servicios a otros programas o aplicaciones  que corren en la computadora. Las aplicaciones ejecutan las funcionalidades que el usuario quiere o necesita.  Los servicios del sistema operativo hace el desarrollo de aplicaciones rápido, simple, y mantenible. 
+Un sistema operativo es un programa de computadora que soporta las funciones básicas de la misma, y provee servicios a otros programas o aplicaciones  que corren en la computadora. Las aplicaciones ejecutan las funcionalidades que el usuario quiere o necesita.  Los servicios del sistema operativo hace el desarrollo de aplicaciones rápido, simple, y mantenible. 
 
 La mayoría de los sistemas operativos permiten que se ejecuten múltiples programas al mismo tiempo. Es es llamado multi-tarea. Aunque, en realidad, cada procesador solo puede correr una tarea. Una parte del sistema operativo es llamado planificador,y es responsable de la decisión cual programa correr y cuando, así da la ilusión de la ejecución simultanea de tareas mientras conmuta rápidamente entre cada programa \cite{freertos1}.
 
